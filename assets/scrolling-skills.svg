@@ -11,15 +11,15 @@
   </style>
   <defs>
     <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a855f7"/>
-      <stop offset="35%" stop-color="#c084fc"/>
-      <stop offset="70%" stop-color="#7c3aed"/>
-      <stop offset="100%" stop-color="#a855f7"/>
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="35%" stop-color="#FFD700"/>
+      <stop offset="70%" stop-color="#AA771C"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
     </linearGradient>
     <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7c3aed"/>
-      <stop offset="50%" stop-color="#a855f7"/>
-      <stop offset="100%" stop-color="#c084fc"/>
+      <stop offset="0%" stop-color="#AA771C"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#FFD700"/>
     </linearGradient>
     <clipPath id="clip-container">
       <rect width="990" height="56" x="5" y="2" rx="10"/>

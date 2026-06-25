@@ -3,11 +3,11 @@
     <style>
       @keyframes glow-pulse {
         0%, 100% {
-          filter: drop-shadow(0 0 6px #a855f7) drop-shadow(0 0 12px rgba(168,85,247,0.4));
+          filter: drop-shadow(0 0 6px #D4AF37) drop-shadow(0 0 12px rgba(212,175,55,0.4));
           opacity: 0.9;
         }
         50% {
-          filter: drop-shadow(0 0 14px #c084fc) drop-shadow(0 0 28px rgba(192,132,252,0.5));
+          filter: drop-shadow(0 0 14px #FFD700) drop-shadow(0 0 28px rgba(255,215,0,0.5));
           opacity: 1;
         }
       }
@@ -16,14 +16,14 @@
       }
     </style>
     <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7c3aed">
-        <animate attributeName="stop-color" values="#7c3aed;#a855f7;#c084fc;#a855f7;#7c3aed" dur="4s" repeatCount="indefinite"/>
+      <stop offset="0%" stop-color="#AA771C">
+        <animate attributeName="stop-color" values="#AA771C;#D4AF37;#FFD700;#D4AF37;#AA771C" dur="4s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="50%" stop-color="#a855f7">
-        <animate attributeName="stop-color" values="#a855f7;#c084fc;#7c3aed;#c084fc;#a855f7" dur="4s" repeatCount="indefinite"/>
+      <stop offset="50%" stop-color="#D4AF37">
+        <animate attributeName="stop-color" values="#D4AF37;#FFD700;#AA771C;#FFD700;#D4AF37" dur="4s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="100%" stop-color="#c084fc">
-        <animate attributeName="stop-color" values="#c084fc;#7c3aed;#a855f7;#7c3aed;#c084fc" dur="4s" repeatCount="indefinite"/>
+      <stop offset="100%" stop-color="#FFD700">
+        <animate attributeName="stop-color" values="#FFD700;#AA771C;#D4AF37;#AA771C;#FFD700" dur="4s" repeatCount="indefinite"/>
       </stop>
     </linearGradient>
   </defs>
@@ -51,7 +51,7 @@
     rx="13"
     ry="13"
     fill="none"
-    stroke="#a855f7"
+    stroke="#D4AF37"
     stroke-width="0.5"
     opacity="0.25"
   />

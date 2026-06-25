@@ -7,7 +7,7 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:0d0221,25:1a0533,50:3b0764,75:6b21a8,100:a855f7&height=230&section=header&text=PEDDI%20SAI%20VENKAT%20SUMANTH&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=40&desc=⚡%20Developer%20%20%7C%20%20🤖%20AI%20Builder%20%20%7C%20%20🎮%20Game%20Creator%20%20%7C%20%20🚀%20Innovator&descAlignY=65&descSize=17&descColor=c084fc&stroke=a855f7&strokeWidth=1" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:000000,50:111111,100:D4AF37&height=230&section=header&text=PEDDI%20SAI%20VENKAT%20SUMANTH&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=40&desc=⚡%20Developer%20%20%7C%20%20🤖%20AI%20Builder%20%20%7C%20%20🎮%20Game%20Creator%20%20%7C%20%20🚀%20Innovator&descAlignY=65&descSize=17&descColor=FFD700&stroke=D4AF37&strokeWidth=1" width="100%"/>
 
 <br/>
 
@@ -20,13 +20,13 @@
 
 <!-- ═══ TYPING ANIMATION — Multiple lines with personality ═══ -->
 <a href="https://github.com/saivenkatsumanth9-stack">
-<img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=28&duration=2000&pause=500&color=A855F7&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=75&lines=Hey+there!+I'm+Sumanth+%F0%9F%91%8B;Welcome+to+my+digital+universe+%F0%9F%8C%8C" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=28&duration=2000&pause=500&color=D4AF37&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=75&lines=Hey+there!+I'm+Sumanth+%F0%9F%91%8B;Welcome+to+my+digital+universe+%F0%9F%8C%8C" alt="Typing SVG" />
 </a>
 
 <br/>
 
 <a href="https://github.com/saivenkatsumanth9-stack">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2500&pause=800&color=C084FC&center=true&vCenter=true&repeat=true&width=800&height=35&lines=🎓+3rd+Year+B.Tech+CSE+%40+NNRES;💻+Python+%7C+Java+%7C+C+%7C+C%23+Developer;🤖+AI+%26+Machine+Learning+Enthusiast;🎮+Unity+Game+Developer;⚛️+Exploring+Quantum+Computing;🚀+Building+the+future+one+commit+at+a+time;🤝+Open+to+Internships+%26+Collaborations" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2500&pause=800&color=FFD700&center=true&vCenter=true&repeat=true&width=800&height=35&lines=🎓+3rd+Year+B.Tech+CSE+%40+NNRES;💻+Python+%7C+Java+%7C+C+%7C+C%23+Developer;🤖+AI+%26+Machine+Learning+Enthusiast;🎮+Unity+Game+Developer;⚛️+Exploring+Quantum+Computing;🚀+Building+the+future+one+commit+at+a+time;🤝+Open+to+Internships+%26+Collaborations" alt="Typing SVG" />
 </a>
 
 <br/><br/>
@@ -40,37 +40,37 @@
 <br/><br/>
 
 <!-- ═══ PROFILE METRICS BADGES ═══ -->
-<img src="https://komarev.com/ghpvc/?username=saivenkatsumanth9-stack&color=a855f7&style=for-the-badge&label=PROFILE+VIEWS"/>
+<img src="https://komarev.com/ghpvc/?username=saivenkatsumanth9-stack&color=D4AF37&style=for-the-badge&label=PROFILE+VIEWS"/>
 &nbsp;
-<img src="https://img.shields.io/github/followers/saivenkatsumanth9-stack?style=for-the-badge&color=a855f7&labelColor=0d1117&label=FOLLOWERS&logo=github"/>
+<img src="https://img.shields.io/github/followers/saivenkatsumanth9-stack?style=for-the-badge&color=D4AF37&labelColor=0d1117&label=FOLLOWERS&logo=github"/>
 &nbsp;
-<img src="https://img.shields.io/github/stars/saivenkatsumanth9-stack?style=for-the-badge&color=a855f7&labelColor=0d1117&label=TOTAL+STARS&logo=github&affiliations=OWNER"/>
+<img src="https://img.shields.io/github/stars/saivenkatsumanth9-stack?style=for-the-badge&color=D4AF37&labelColor=0d1117&label=TOTAL+STARS&logo=github&affiliations=OWNER"/>
 
 <br/><br/>
 
 <!-- ═══ INTERACTIVE DETAILS POPUP ═══ -->
 <details>
   <summary style="list-style: none; outline: none; cursor: pointer;">
-    <img src="https://img.shields.io/badge/🔮_TAP_TO_POP_OPEN_SECRET_DRAWER-CLICK_HERE!-7c3aed?style=for-the-badge&logo=probot&logoColor=white&labelColor=0d1117" alt="Interactive Popup Button"/>
+    <img src="https://img.shields.io/badge/🔮_TAP_TO_POP_OPEN_SECRET_DRAWER-CLICK_HERE!-D4AF37?style=for-the-badge&logo=probot&logoColor=black&labelColor=000000" alt="Interactive Popup Button"/>
   </summary>
   <br/>
   <table width="100%">
     <tr>
-      <td align="center" style="background-color: #0d1117; border: 2px solid #a855f7; border-radius: 12px; padding: 20px;">
-        <h3 style="color: #a855f7; margin-top: 0;">✨ You found Peddi's Secret Drawer! ✨</h3>
-        <p style="color: #c084fc; font-size: 15px;">Welcome to this interactive space! Here are some cool facts & animations:</p>
+      <td align="center" style="background-color: #050505; border: 2px solid #D4AF37; border-radius: 12px; padding: 20px;">
+        <h3 style="color: #D4AF37; margin-top: 0;">✨ You found Peddi's Secret Drawer! ✨</h3>
+        <p style="color: #FFD700; font-size: 15px;">Welcome to this interactive space! Here are some cool facts & animations:</p>
         
         <br/>
         
         <!-- Animated typing inside the popup -->
-        <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=16&duration=2000&pause=500&color=A855F7&center=true&vCenter=true&width=500&height=30&lines=💡+I+love+building+fully+autonomous+systems;⚡+I+enjoy+designing+interactive+user+experiences;👾+Currently+working+on+a+secret+Unity+game" alt="Popup Typing" />
+        <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=16&duration=2000&pause=500&color=D4AF37&center=true&vCenter=true&width=500&height=30&lines=💡+I+love+building+fully+autonomous+systems;⚡+I+enjoy+designing+interactive+user+experiences;👾+Currently+working+on+a+secret+Unity+game" alt="Popup Typing" />
         
         <br/><br/>
         
         <!-- Cool status badges inside the popup -->
         <img src="https://img.shields.io/badge/Status-Coding_at_Speed_of_Light-success?style=flat-square&logo=visual-studio-code&logoColor=white" />
         &nbsp;&nbsp;
-        <img src="https://img.shields.io/badge/Mode-Always_Learning-purple?style=flat-square&logo=git&logoColor=white" />
+        <img src="https://img.shields.io/badge/Mode-Always_Learning-D4AF37?style=flat-square&logo=git&logoColor=white" />
         &nbsp;&nbsp;
         <img src="https://img.shields.io/badge/Vibe-Coffee_Driven-orange?style=flat-square" />
       </td>
@@ -185,10 +185,10 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 <!-- Custom Proficiency Bars -->
 | Language | Proficiency | Level |
 |:---------|:------------|:------|
-| 🐍 Python | ![](https://img.shields.io/badge/████████████████████░░░░-85%25-a855f7?style=flat-square&labelColor=0d1117) | ⭐⭐⭐⭐⭐ Advanced |
-| ☕ Java | ![](https://img.shields.io/badge/██████████████████░░░░░░-75%25-7c3aed?style=flat-square&labelColor=0d1117) | ⭐⭐⭐⭐ Intermediate+ |
-| 🔧 C | ![](https://img.shields.io/badge/████████████████░░░░░░░░-65%25-6d28d9?style=flat-square&labelColor=0d1117) | ⭐⭐⭐⭐ Intermediate |
-| 🎮 C# | ![](https://img.shields.io/badge/██████████████████░░░░░░-75%25-5b21b6?style=flat-square&labelColor=0d1117) | ⭐⭐⭐⭐ Intermediate+ |
+| 🐍 Python | ![](https://img.shields.io/badge/████████████████████░░░░-85%25-D4AF37?style=flat-square&labelColor=0d1117) | ⭐⭐⭐⭐⭐ Advanced |
+| ☕ Java | ![](https://img.shields.io/badge/██████████████████░░░░░░-75%25-C5A028?style=flat-square&labelColor=0d1117) | ⭐⭐⭐⭐ Intermediate+ |
+| 🔧 C | ![](https://img.shields.io/badge/████████████████░░░░░░░░-65%25-B69119?style=flat-square&labelColor=0d1117) | ⭐⭐⭐⭐ Intermediate |
+| 🎮 C# | ![](https://img.shields.io/badge/██████████████████░░░░░░-75%25-A7820A?style=flat-square&labelColor=0d1117) | ⭐⭐⭐⭐ Intermediate+ |
 
 </details>
 
@@ -260,7 +260,7 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e)
 ![NLP](https://img.shields.io/badge/NLP-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white&labelColor=1a1a2e)
-![RAG](https://img.shields.io/badge/RAG-8B5CF6?style=for-the-badge&labelColor=1a1a2e)
+![RAG](https://img.shields.io/badge/RAG-D4AF37?style=for-the-badge&labelColor=1a1a2e)
 ![AI APIs](https://img.shields.io/badge/AI_APIs-10A37F?style=for-the-badge&logo=openai&logoColor=white&labelColor=1a1a2e)
 
 </div>
@@ -342,8 +342,8 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 
 ![Unity](https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white&labelColor=1a1a2e)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white&labelColor=1a1a2e)
-![2D](https://img.shields.io/badge/2D_Animation-FF4081?style=for-the-badge&labelColor=1a1a2e)
-![Physics](https://img.shields.io/badge/Game_Physics-0288D1?style=for-the-badge&labelColor=1a1a2e)
+![2D](https://img.shields.io/badge/2D_Animation-D4AF37?style=for-the-badge&labelColor=1a1a2e)
+![Physics](https://img.shields.io/badge/Game_Physics-AA771C?style=for-the-badge&labelColor=1a1a2e)
 
 </div>
 
@@ -374,20 +374,20 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 
 <!-- ═══ ROW 1: Stats + Streak ═══ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=saivenkatsumanth9-stack&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&title_color=a855f7&icon_color=c084fc&text_color=c9d1d9&bg_color=0d1117&rank_icon=github&show=reviews,discussions_started,prs_merged"/>
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=saivenkatsumanth9-stack&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&title_color=a855f7&icon_color=c084fc&text_color=c9d1d9&bg_color=0d1117&rank_icon=github&show=reviews,discussions_started,prs_merged"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=saivenkatsumanth9-stack&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&title_color=D4AF37&icon_color=FFD700&text_color=f0e6d2&bg_color=050505&rank_icon=github&show=reviews,discussions_started,prs_merged"/>
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=saivenkatsumanth9-stack&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&title_color=D4AF37&icon_color=FFD700&text_color=f0e6d2&bg_color=050505&rank_icon=github&show=reviews,discussions_started,prs_merged"/>
 </picture>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=saivenkatsumanth9-stack&hide_border=true&background=0d1117&ring=a855f7&fire=ff6b6b&currStreakLabel=a855f7&sideLabels=c9d1d9&dates=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9"/>
-  <img width="49%" src="https://streak-stats.demolab.com?user=saivenkatsumanth9-stack&hide_border=true&background=0d1117&ring=a855f7&fire=ff6b6b&currStreakLabel=a855f7&sideLabels=c9d1d9&dates=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=saivenkatsumanth9-stack&hide_border=true&background=050505&ring=D4AF37&fire=FFD700&currStreakLabel=FFD700&sideLabels=f0e6d2&dates=8b949e&currStreakNum=f0e6d2&sideNums=f0e6d2"/>
+  <img width="49%" src="https://streak-stats.demolab.com?user=saivenkatsumanth9-stack&hide_border=true&background=050505&ring=D4AF37&fire=FFD700&currStreakLabel=FFD700&sideLabels=f0e6d2&dates=8b949e&currStreakNum=f0e6d2&sideNums=f0e6d2"/>
 </picture>
 
 <br/><br/>
 
 <!-- ═══ ROW 2: Languages Donut ═══ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=saivenkatsumanth9-stack&layout=donut&hide_border=true&bg_color=0d1117&title_color=a855f7&text_color=c9d1d9&langs_count=8"/>
-  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=saivenkatsumanth9-stack&layout=donut&hide_border=true&bg_color=0d1117&title_color=a855f7&text_color=c9d1d9&langs_count=8"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=saivenkatsumanth9-stack&layout=donut&hide_border=true&bg_color=050505&title_color=D4AF37&text_color=f0e6d2&langs_count=8"/>
+  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=saivenkatsumanth9-stack&layout=donut&hide_border=true&bg_color=050505&title_color=D4AF37&text_color=f0e6d2&langs_count=8"/>
 </picture>
 
 </div>
@@ -409,7 +409,7 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 ## 📈 Contribution Graph
 
 <div align="center">
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=saivenkatsumanth9-stack&bg_color=0d1117&color=a855f7&line=7c3aed&point=c084fc&area=true&area_color=3b0764&hide_border=true&custom_title=⚡%20Sumanth's%20Contribution%20Activity" alt="Contribution Graph"/>
+<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=saivenkatsumanth9-stack&bg_color=050505&color=D4AF37&line=FFD700&point=AA771C&area=true&area_color=1f190a&hide_border=true&custom_title=⚡%20Sumanth's%20Contribution%20Activity" alt="Contribution Graph"/>
 </div>
 
 ---
@@ -527,12 +527,12 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 
 <div align="center">
 
-![Game Dev](https://img.shields.io/badge/🎮_Game_Development-1a0050?style=for-the-badge&logoColor=white)
-![AI](https://img.shields.io/badge/🤖_Artificial_Intelligence-2d1065?style=for-the-badge&logoColor=white)
-![Web Dev](https://img.shields.io/badge/🌐_Full_Stack_Web_Dev-3b0764?style=for-the-badge&logoColor=white)
-![Data](https://img.shields.io/badge/📊_Data_Analytics-4c1d95?style=for-the-badge&logoColor=white)
-![Quantum](https://img.shields.io/badge/⚛️_Quantum_Computing-5b21b6?style=for-the-badge&logoColor=white)
-![Open Source](https://img.shields.io/badge/🔓_Open_Source-6d28d9?style=for-the-badge&logoColor=white)
+![Game Dev](https://img.shields.io/badge/🎮_Game_Dev-D4AF37?style=for-the-badge&logoColor=black&labelColor=000000)
+![AI](https://img.shields.io/badge/🤖_AI_/_ML-D4AF37?style=for-the-badge&logoColor=black&labelColor=000000)
+![Web Dev](https://img.shields.io/badge/🌐_Full_Stack-D4AF37?style=for-the-badge&logoColor=black&labelColor=000000)
+![Data](https://img.shields.io/badge/📊_Data_Analytics-D4AF37?style=for-the-badge&logoColor=black&labelColor=000000)
+![Quantum](https://img.shields.io/badge/⚛️_Quantum-D4AF37?style=for-the-badge&logoColor=black&labelColor=000000)
+![Open Source](https://img.shields.io/badge/🔓_Open_Source-D4AF37?style=for-the-badge&logoColor=black&labelColor=000000)
 
 <br/><br/>
 
@@ -554,7 +554,7 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 <br/><br/>
 
 <!-- ═══ RANDOM DEV JOKE ═══ -->
-<img src="https://readme-jokes.vercel.app/api?theme=tokyonight&hideBorder&qColor=%23a855f7&aColor=%23c084fc&bgColor=%230d1117&borderColor=%233b0764" alt="Random Dev Joke"/>
+<img src="https://readme-jokes.vercel.app/api?theme=tokyonight&hideBorder&qColor=%23D4AF37&aColor=%23FFD700&bgColor=%23050505&borderColor=%23AA771C" alt="Random Dev Joke"/>
 
 </div>
 
@@ -596,7 +596,7 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 
 <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0221,25:3b0764,50:6b21a8,75:a855f7,100:c084fc&height=150&section=footer&text=Thanks%20for%20visiting!%20⭐&fontSize=28&fontColor=ffffff&animation=twinkling&fontAlignY=65&desc=Drop%20a%20⭐%20if%20you%20found%20my%20work%20interesting!&descSize=14&descColor=e9d5ff&descAlignY=85" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,50:111111,100:D4AF37&height=150&section=footer&text=Thanks%20for%20visiting!%20⭐&fontSize=28&fontColor=ffffff&animation=twinkling&fontAlignY=65&desc=Drop%20a%20⭐%20if%20you%20found%20my%20work%20interesting!&descSize=14&descColor=FFD700&descAlignY=85" width="100%"/>
 
 <div align="center">
 
@@ -610,7 +610,7 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 
 <br/>
 
-<img src="https://img.shields.io/badge/Built_with-❤️_&_☕-a855f7?style=for-the-badge&labelColor=0d1117" alt="Built with love"/>
+<img src="https://img.shields.io/badge/Built_with-❤️_&_☕-D4AF37?style=for-the-badge&labelColor=000000" alt="Built with love"/>
 
 </div>
 
