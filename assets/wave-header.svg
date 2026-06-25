@@ -1,43 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" width="1440" height="120">
-  <defs>
-    <style>
-      @keyframes wave-shift-1 {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(-30px); }
-      }
-      @keyframes wave-shift-2 {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(40px); }
-      }
-      @keyframes wave-shift-3 {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(-50px); }
-      }
-      .wave-1 { animation: wave-shift-1 8s ease-in-out infinite; }
-      .wave-2 { animation: wave-shift-2 6s ease-in-out infinite; }
-      .wave-3 { animation: wave-shift-3 10s ease-in-out infinite; }
-    </style>
-    <linearGradient id="bg-fade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0d1117" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Background fade -->
-  <rect width="1440" height="120" fill="url(#bg-fade)"/>
-
-  <!-- Wave layer 1 (deepest / back) -->
-  <g class="wave-1">
-    <path d="M0,40 C120,80 240,10 360,50 C480,90 600,20 720,60 C840,100 960,30 1080,70 C1200,110 1320,40 1440,80 L1440,120 L0,120 Z" fill="#AA771C" opacity="0.45"/>
-  </g>
-
-  <!-- Wave layer 2 (middle) -->
-  <g class="wave-2">
-    <path d="M0,60 C160,20 280,90 440,50 C600,10 720,80 880,40 C1040,0 1160,70 1320,30 C1400,10 1440,50 1440,50 L1440,120 L0,120 Z" fill="#D4AF37" opacity="0.5"/>
-  </g>
-
-  <!-- Wave layer 3 (front / top) -->
-  <g class="wave-3">
-    <path d="M0,80 C100,50 200,100 360,70 C520,40 640,95 800,65 C960,35 1080,90 1240,60 C1360,40 1440,75 1440,75 L1440,120 L0,120 Z" fill="#FFD700" opacity="0.45"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 35" width="100%" height="35" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&amp;display=swap');
+    .title-text {
+      font-family: 'Fira Code', monospace;
+      font-size: 13px;
+      fill: #8b949e;
+      text-anchor: middle;
+    }
+  </style>
+  <rect width="1000" height="35" fill="#161b22" rx="8"/>
+  <rect width="1000" height="8" y="27" fill="#161b22"/> <!-- remove bottom roundness -->
+  <!-- Window controls -->
+  <circle cx="20" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="40" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="18" r="6" fill="#27c93f"/>
+  <text x="500" y="22" class="title-text">sumanth@peddi-terminal: ~ (zsh)</text>
 </svg>

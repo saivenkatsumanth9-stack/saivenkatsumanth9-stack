@@ -1,43 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" width="1440" height="120">
-  <defs>
-    <style>
-      @keyframes wave-shift-1 {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(-30px); }
-      }
-      @keyframes wave-shift-2 {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(40px); }
-      }
-      @keyframes wave-shift-3 {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(-50px); }
-      }
-      .wave-1 { animation: wave-shift-1 8s ease-in-out infinite; }
-      .wave-2 { animation: wave-shift-2 6s ease-in-out infinite; }
-      .wave-3 { animation: wave-shift-3 10s ease-in-out infinite; }
-    </style>
-    <linearGradient id="bg-fade-footer" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#0d1117" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Background fade (from bottom) -->
-  <rect width="1440" height="120" fill="url(#bg-fade-footer)"/>
-
-  <!-- Wave layer 1 (deepest / back) — flipped vertically -->
-  <g class="wave-1">
-    <path d="M0,80 C120,40 240,110 360,70 C480,30 600,100 720,60 C840,20 960,90 1080,50 C1200,10 1320,80 1440,40 L1440,0 L0,0 Z" fill="#AA771C" opacity="0.45"/>
-  </g>
-
-  <!-- Wave layer 2 (middle) — flipped vertically -->
-  <g class="wave-2">
-    <path d="M0,60 C160,100 280,30 440,70 C600,110 720,40 880,80 C1040,120 1160,50 1320,90 C1400,110 1440,70 1440,70 L1440,0 L0,0 Z" fill="#D4AF37" opacity="0.5"/>
-  </g>
-
-  <!-- Wave layer 3 (front / top) — flipped vertically -->
-  <g class="wave-3">
-    <path d="M0,40 C100,70 200,20 360,50 C520,80 640,25 800,55 C960,85 1080,30 1240,60 C1360,80 1440,45 1440,45 L1440,0 L0,0 Z" fill="#FFD700" opacity="0.45"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 30" width="100%" height="30" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&amp;display=swap');
+    .status-text {
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      fill: #ffffff;
+    }
+  </style>
+  <rect width="1000" height="30" fill="#21262d" rx="6"/>
+  <rect width="1000" height="8" fill="#21262d"/> <!-- remove top roundness -->
+  <!-- Left Side: Status / Branch -->
+  <rect width="120" height="30" fill="#388bfd" rx="4"/>
+  <rect width="20" height="30" x="110" fill="#388bfd"/>
+  <text x="20" y="19" class="status-text">🔒 TERMINAL</text>
+  
+  <text x="140" y="19" class="status-text" fill="#8b949e">main*</text>
+  
+  <!-- Right Side: Info -->
+  <text x="820" y="19" class="status-text" fill="#8b949e">UTF-8</text>
+  <text x="890" y="19" class="status-text" fill="#8b949e">LF</text>
+  <text x="940" y="19" class="status-text" fill="#27c93f">● ONLINE</text>
 </svg>
