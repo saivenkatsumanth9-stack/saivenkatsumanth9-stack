@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      @keyframes glow-pulse {
+        0%, 100% {
+          filter: drop-shadow(0 0 6px #a855f7) drop-shadow(0 0 12px rgba(168,85,247,0.4));
+          opacity: 0.9;
+        }
+        50% {
+          filter: drop-shadow(0 0 14px #c084fc) drop-shadow(0 0 28px rgba(192,132,252,0.5));
+          opacity: 1;
+        }
+      }
+      .glow-border {
+        animation: glow-pulse 3s ease-in-out infinite;
+      }
+    </style>
+    <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed">
+        <animate attributeName="stop-color" values="#7c3aed;#a855f7;#c084fc;#a855f7;#7c3aed" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#a855f7">
+        <animate attributeName="stop-color" values="#a855f7;#c084fc;#7c3aed;#c084fc;#a855f7" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#c084fc">
+        <animate attributeName="stop-color" values="#c084fc;#7c3aed;#a855f7;#7c3aed;#c084fc" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Animated glowing border rectangle -->
+  <rect
+    class="glow-border"
+    x="3"
+    y="3"
+    width="794"
+    height="394"
+    rx="16"
+    ry="16"
+    fill="none"
+    stroke="url(#border-gradient)"
+    stroke-width="2.5"
+  />
+
+  <!-- Inner subtle secondary border for depth -->
+  <rect
+    x="8"
+    y="8"
+    width="784"
+    height="384"
+    rx="13"
+    ry="13"
+    fill="none"
+    stroke="#a855f7"
+    stroke-width="0.5"
+    opacity="0.25"
+  />
+</svg>
