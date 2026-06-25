@@ -5,6 +5,7 @@
 
 <!-- ═══ TERMINAL HEADER WINDOW ═══ -->
 <img src="./assets/wave-header.svg" width="100%" alt="Terminal Header"/>
+<img src="./assets/matrix-banner.svg" width="100%" alt="Matrix Banner"/>
 
 <div align="center">
 
@@ -96,14 +97,17 @@
   </summary>
   <pre style="font-family: 'Fira Code', monospace; background: #050505; color: #7ee787; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.5;">
 [INFO] Connecting to saivenkatsumanth9-stack... SUCCESS
-[INFO] Booting interactive shell... SUCCESS
+[INFO] Booting zsh interactive shell... SUCCESS
+[INFO] Fetching diagnostics...
 -----------------------------------------------------------
-⚡ <b>SYSTEM INTEGRITY REPORT:</b>
-- <b>Coding Speed:</b> Optimized &amp; Caffeine-Accelerated
-- <b>Clean Code:</b> Strict adherence to DRY &amp; SOLID principles
-- <b>Development Approach:</b> Hands-on building (No placeholder copies)
-- <b>Current Target:</b> Seeking collaborative Software Internships
+⚡ <b>SYSTEM INTEGRITY DIAGNOSTIC REPORT:</b>
+- <b>Core CPU Vibe:</b> Coffee-Driven (94.2% Capacity) [||||||||||||||||||||||||||░░]
+- <b>Git Deployments:</b> Main Branch - 100% Stability [||||||||||||||||||||||||||||]
+- <b>Language Engine:</b> Python, Java, C, C# compilers fully loaded
+- <b>Development Principles:</b> STRICT adherence to DRY &amp; SOLID
+- <b>Current Goal:</b> Securing collaborative Software Internships
 
+[SUCCESS] Diagnosis complete. All systems nominal.
 [SUCCESS] Executed ./run-diagnostic-report.sh successfully.
   </pre>
 </details>
@@ -117,6 +121,11 @@
 
 <!-- Scrolling terminal status logs -->
 <img src="./assets/scrolling-skills.svg" width="100%" alt="Tech Marquee"/>
+
+<br/><br/>
+
+<!-- Animated programming language bar charts -->
+<img src="./assets/language-bars.svg" width="100%" alt="Language Skill Bars"/>
 
 <br/><br/>
 

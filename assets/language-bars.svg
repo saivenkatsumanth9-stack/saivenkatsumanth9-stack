@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 180" width="100%" height="180" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&amp;display=swap');
+    
+    .panel-title {
+      font-family: 'Fira Code', monospace;
+      font-size: 13px;
+      fill: #8b949e;
+    }
+    
+    .label {
+      font-family: 'Fira Code', monospace;
+      font-size: 14px;
+      fill: #c9d1d9;
+      font-weight: 500;
+    }
+    
+    .percentage {
+      font-family: 'Fira Code', monospace;
+      font-size: 13px;
+      fill: #39ff14;
+      font-weight: 700;
+    }
+    
+    .bar-bg {
+      fill: #161b22;
+      rx: 4;
+    }
+    
+    .bar-fill {
+      fill: #39ff14;
+      rx: 4;
+      filter: drop-shadow(0 0 2px #39ff14);
+    }
+    
+    @keyframes load-python {
+      from { width: 0px; }
+      to { width: 595px; } /* 85% of 700px */
+    }
+    @keyframes load-java {
+      from { width: 0px; }
+      to { width: 525px; } /* 75% of 700px */
+    }
+    @keyframes load-c {
+      from { width: 0px; }
+      to { width: 455px; } /* 65% of 700px */
+    }
+    @keyframes load-csharp {
+      from { width: 0px; }
+      to { width: 525px; } /* 75% of 700px */
+    }
+    
+    .run-python { animation: load-python 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+    .run-java { animation: load-java 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+    .run-c { animation: load-c 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+    .run-csharp { animation: load-csharp 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+  </style>
+
+  <rect width="998" height="178" x="1" y="1" rx="8" fill="#0d1117" stroke="#333" stroke-width="1.5"/>
+  
+  <!-- Window top bar border line -->
+  <line x1="1" y1="35" x2="999" y2="35" stroke="#222" stroke-width="1"/>
+
+  <!-- Window controls -->
+  <circle cx="20" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="40" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="18" r="6" fill="#27c93f"/>
+  <text x="500" y="22" class="panel-title" text-anchor="middle">sumanth@peddi-terminal: ~/skills/languages</text>
+
+  <!-- Skill Rows -->
+  <!-- Python -->
+  <g transform="translate(40, 60)">
+    <text y="12" class="label">🐍 Python</text>
+    <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
+    <rect x="150" y="0" height="15" class="bar-fill run-python" width="0"/>
+    <text x="870" y="12" class="percentage">85%</text>
+  </g>
+
+  <!-- Java -->
+  <g transform="translate(40, 90)">
+    <text y="12" class="label">☕ Java</text>
+    <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
+    <rect x="150" y="0" height="15" class="bar-fill run-java" width="0"/>
+    <text x="870" y="12" class="percentage">75%</text>
+  </g>
+
+  <!-- C -->
+  <g transform="translate(40, 120)">
+    <text y="12" class="label">🔧 C</text>
+    <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
+    <rect x="150" y="0" height="15" class="bar-fill run-c" width="0"/>
+    <text x="870" y="12" class="percentage">65%</text>
+  </g>
+
+  <!-- C# -->
+  <g transform="translate(40, 150)">
+    <text y="12" class="label">🎮 C#</text>
+    <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
+    <rect x="150" y="0" height="15" class="bar-fill run-csharp" width="0"/>
+    <text x="870" y="12" class="percentage">75%</text>
+  </g>
+</svg>
