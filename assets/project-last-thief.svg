@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="100%" height="150" fill="none">
+  <style>
+    @keyframes run {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+    @keyframes scroll-ground {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-30px); }
+    }
+    @keyframes obstacle {
+      0% { transform: translateX(180px); }
+      100% { transform: translateX(-120px); }
+    }
+    .term-bg { fill: #0d1117; stroke: #30363d; stroke-width: 2; rx: 6; }
+    .char { fill: #ffb86c; animation: run 0.4s steps(2) infinite; }
+    .obstacle { fill: #ff5555; animation: obstacle 2s linear infinite; }
+    .ground { stroke: #30363d; stroke-width: 2; stroke-dasharray: 10 10; animation: scroll-ground 0.5s linear infinite; }
+  </style>
+  <rect width="298" height="148" x="1" y="1" class="term-bg"/>
+  <circle cx="15" cy="15" r="4" fill="#ff5f56"/>
+  <circle cx="27" cy="15" r="4" fill="#ffbd2e"/>
+  <circle cx="39" cy="15" r="4" fill="#27c93f"/>
+  
+  <!-- Ground -->
+  <line x1="10" y1="120" x2="290" y2="120" stroke="#30363d" stroke-width="4"/>
+  <line x1="10" y1="125" x2="290" y2="125" class="ground"/>
+
+  <!-- Player Thief -->
+  <g class="char">
+    <rect x="50" y="85" width="15" height="30" rx="3"/>
+    <circle cx="58" cy="77" r="7"/>
+    <rect x="50" y="74" width="12" height="3" fill="#000"/>
+  </g>
+
+  <!-- Obstacle -->
+  <g class="obstacle">
+    <rect x="100" y="100" width="20" height="20" rx="2"/>
+    <line x1="100" y1="100" x2="120" y2="120" stroke="#0d1117" stroke-width="2"/>
+    <line x1="120" y1="100" x2="100" y2="120" stroke="#0d1117" stroke-width="2"/>
+  </g>
+
+  <!-- Coin -->
+  <g transform="translate(160, 60)">
+    <circle cx="0" cy="0" r="6" fill="#f1fa8c" stroke="#f1fa8c" stroke-dasharray="2 2"/>
+    <text x="-3" y="4" font-family="monospace" font-size="10" fill="#ffb86c" font-weight="bold">$</text>
+  </g>
+</svg>

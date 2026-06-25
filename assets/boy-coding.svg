@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="300" fill="none">
+  <style>
+    @keyframes type {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    @keyframes code-float {
+      0% { transform: translate(0, 0) scale(0.8); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translate(-30px, -80px) scale(1.2); opacity: 0; }
+    }
+    @keyframes screen-glow {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.4; }
+    }
+    .head { fill: #8b949e; }
+    .body { fill: #c9d1d9; }
+    .computer { stroke: #30363d; stroke-width: 3; fill: #161b22; }
+    .green-glow { fill: #39ff14; filter: blur(15px); }
+    .arm-l { animation: type 0.2s ease-in-out infinite; transform-origin: 150px 180px; }
+    .arm-r { animation: type 0.25s ease-in-out infinite; transform-origin: 170px 180px; }
+    .floating-code {
+      font-family: monospace;
+      font-size: 14px;
+      fill: #39ff14;
+      font-weight: bold;
+      animation: code-float 3s infinite linear;
+    }
+    .code-1 { animation-delay: 0s; }
+    .code-2 { animation-delay: 1s; }
+    .code-3 { animation-delay: 2s; }
+  </style>
+  
+  <!-- Green Screen Glow -->
+  <circle cx="120" cy="140" r="45" class="green-glow" style="animation: screen-glow 4s ease-in-out infinite;"/>
+
+  <!-- Desk & Chair -->
+  <path d="M50 250 H250 M190 250 V200 H220 V250" stroke="#30363d" stroke-width="4"/>
+  <path d="M210 200 V150 H180 V200" stroke="#30363d" stroke-width="4"/>
+
+  <!-- Computer -->
+  <rect x="70" y="100" width="80" height="60" rx="4" class="computer"/>
+  <line x1="110" y1="160" x2="110" y2="185" stroke="#30363d" stroke-width="6"/>
+  <line x1="90" y1="185" x2="130" y2="185" stroke="#30363d" stroke-width="6"/>
+  <rect x="75" y="105" width="70" height="50" rx="2" fill="#0d1117" stroke="#39ff14" stroke-width="1"/>
+  <!-- Code on Screen -->
+  <rect x="80" y="112" width="20" height="3" fill="#39ff14"/>
+  <rect x="80" y="118" width="40" height="3" fill="#39ff14"/>
+  <rect x="80" y="124" width="30" height="3" fill="#39ff14"/>
+  <rect x="80" y="130" width="15" height="3" fill="#39ff14"/>
+  
+  <circle cx="125" cy="140" r="1.5" fill="#39ff14"/>
+
+  <!-- Keyboard -->
+  <rect x="80" y="195" width="50" height="6" rx="2" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Character -->
+  <circle cx="180" cy="110" r="18" class="head"/>
+  <rect x="178" y="102" width="10" height="4" fill="#30363d" rx="1"/>
+  <circle cx="178" cy="110" r="5" fill="#30363d"/>
+  <circle cx="185" cy="107" r="2" fill="#0d1117"/>
+
+  <!-- Body & Torso -->
+  <path d="M165 130 C165 130 150 170 150 200 H210 V140 Z" class="body"/>
+
+  <!-- Arms -->
+  <path d="M160 145 Q135 175 125 190" stroke="#c9d1d9" stroke-width="8" stroke-linecap="round" class="arm-l"/>
+  <path d="M165 145 Q145 170 128 190" stroke="#a1a8b0" stroke-width="7" stroke-linecap="round" class="arm-r"/>
+
+  <!-- Floating Code Symbols -->
+  <g transform="translate(100, 100)">
+    <text x="0" y="0" class="floating-code code-1">&lt;/&gt;</text>
+    <text x="20" y="-10" class="floating-code code-2">{ }</text>
+    <text x="-15" y="-20" class="floating-code code-3">10</text>
+  </g>
+</svg>

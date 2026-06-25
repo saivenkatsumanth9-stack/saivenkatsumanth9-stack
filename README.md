@@ -38,8 +38,10 @@
 
 ## 👤 $ neofetch --profile
 
-<div align="left">
-<pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="65%" valign="top">
+      <pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6; box-shadow: 0 4px 12px rgba(0,0,0,0.5); margin: 0;">
 <span style="color: #58a6ff; font-weight: bold;">sumanth@peddi-terminal</span>:<span style="color: #7ee787;">~</span>$ neofetch
 <span style="color: #ff7b72; font-weight: bold;">          .          </span>  <span style="color: #58a6ff; font-weight: bold;">User</span>: Peddi Sai Venkat Sumanth (Sumanth)
 <span style="color: #ff7b72; font-weight: bold;">         / \         </span>  <span style="color: #58a6ff; font-weight: bold;">Education</span>: B.Tech CSE @ NNRES (2023 - 2027)
@@ -50,8 +52,13 @@
 <span style="color: #ff7b72; font-weight: bold;">    /           \    </span>  <span style="color: #58a6ff; font-weight: bold;">Exploring</span>: React, Node.js, TensorFlow, Quantum Computing
    <span style="color: #ff7b72; font-weight: bold;">/             \   </span>  <span style="color: #58a6ff; font-weight: bold;">Vibe</span>: Coffee-driven developer turning ideas into reality ☕
   <span style="color: #ff7b72; font-weight: bold;">/               \  </span>  <span style="color: #58a6ff; font-weight: bold;">Goal</span>: Secure a Software Internship &amp; build cool products
-</pre>
-</div>
+      </pre>
+    </td>
+    <td width="35%" align="center" valign="middle" style="padding-left: 15px;">
+      <img src="./assets/boy-coding.svg" width="100%" style="max-width: 250px;" alt="Boy Coding"/>
+    </td>
+  </tr>
+</table>
 
 <br/>
 
@@ -136,10 +143,13 @@
 <!-- PROJECT 1 -->
 <div align="left">
 <h3>🤖 Project 1: AI Study Buddy</h3>
-<pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="65%" valign="top">
+      <pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6; margin: 0;">
 <span style="color: #8b949e;">$ python study_buddy.py --enable-rag</span>
->>> Loading RAG Chat Engine... <span style="color: #7ee787;">[SUCCESS]</span>
->>> Initializing Scheduler... <span style="color: #7ee787;">[SUCCESS]</span>
+&gt;&gt;&gt; Loading RAG Chat Engine... <span style="color: #7ee787;">[SUCCESS]</span>
+&gt;&gt;&gt; Initializing Scheduler... <span style="color: #7ee787;">[SUCCESS]</span>
 
 <b>Description:</b>
 Undergraduate-level AI assistant implementing production-grade RAG.
@@ -151,7 +161,13 @@ Allows students to query syllabus materials and optimize study routines.
 - 🧠 <b>Smart Scheduling:</b> Personalized timetables dynamically adjusted by AI.
 - 📄 <b>RAG Chat Engine:</b> Upload coursework PDFs and query them in natural language.
 - 📝 <b>Auto Quiz Gen:</b> Generates customized practice tests from documents.
-</pre>
+      </pre>
+    </td>
+    <td width="35%" align="center" valign="middle" style="padding-left: 15px;">
+      <img src="./assets/project-study-buddy.svg" width="100%" style="max-width: 250px;" alt="Study Buddy Monitor"/>
+    </td>
+  </tr>
+</table>
 </div>
 
 <br/>
@@ -159,10 +175,13 @@ Allows students to query syllabus materials and optimize study routines.
 <!-- PROJECT 2 -->
 <div align="left">
 <h3>🏋️ Project 2: HealthMate</h3>
-<pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="65%" valign="top">
+      <pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6; margin: 0;">
 <span style="color: #8b949e;">$ npm run start --project=healthmate</span>
->>> Connecting to Fitness Chatbot API... <span style="color: #7ee787;">[SUCCESS]</span>
->>> Loading Meal &amp; Workout Loggers... <span style="color: #7ee787;">[SUCCESS]</span>
+&gt;&gt;&gt; Connecting to Fitness Chatbot API... <span style="color: #7ee787;">[SUCCESS]</span>
+&gt;&gt;&gt; Loading Meal &amp; Workout Loggers... <span style="color: #7ee787;">[SUCCESS]</span>
 
 <b>Description:</b>
 A full-stack, responsive health application featuring workout logging,
@@ -174,7 +193,13 @@ nutrition tracking, and an integrated AI fitness chatbot.
 - 📱 <b>Onboarding &amp; Dashboards:</b> Seamless UI flow with interactive charts.
 - 🔢 <b>Health Calculators:</b> Instant BMI, BMR, and TDEE math.
 - 🤖 <b>AI Coach:</b> Personalized workout and nutritional suggestions.
-</pre>
+      </pre>
+    </td>
+    <td width="35%" align="center" valign="middle" style="padding-left: 15px;">
+      <img src="./assets/project-healthmate.svg" width="100%" style="max-width: 250px;" alt="HealthMate Monitor"/>
+    </td>
+  </tr>
+</table>
 </div>
 
 <br/>
@@ -182,10 +207,13 @@ nutrition tracking, and an integrated AI fitness chatbot.
 <!-- PROJECT 3 -->
 <div align="left">
 <h3>🎮 Project 3: Last Thief Standing</h3>
-<pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="65%" valign="top">
+      <pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6; margin: 0;">
 <span style="color: #8b949e;"># run LTS_Game.x86_64</span>
->>> Starting Unity Engine Core... <span style="color: #7ee787;">[SUCCESS]</span>
->>> Initializing Game Physics &amp; AI... <span style="color: #7ee787;">[SUCCESS]</span>
+&gt;&gt;&gt; Starting Unity Engine Core... <span style="color: #7ee787;">[SUCCESS]</span>
+&gt;&gt;&gt; Initializing Game Physics &amp; AI... <span style="color: #7ee787;">[SUCCESS]</span>
 
 <b>Description:</b>
 A fully shipped, physics-based 2D endless runner built from scratch.
@@ -197,7 +225,13 @@ Implements scaling obstacles, coin rewards, and adaptive difficulty.
 - 🕹️ <b>Combat Mechanics:</b> Jump, shoot, and loot loop with responsive controls.
 - 🤖 <b>Intelligent Enemy AI:</b> Obstacles and enemies react dynamically to player moves.
 - 📈 <b>Difficulty Scaling:</b> Game speed scales seamlessly relative to player distance.
-</pre>
+      </pre>
+    </td>
+    <td width="35%" align="center" valign="middle" style="padding-left: 15px;">
+      <img src="./assets/project-last-thief.svg" width="100%" style="max-width: 250px;" alt="Last Thief Monitor"/>
+    </td>
+  </tr>
+</table>
 </div>
 
 <br/>
