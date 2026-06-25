@@ -2,7 +2,7 @@
   <style>
     @keyframes run {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-4px); }
+      50% { transform: translateY(-5px); }
     }
     @keyframes scroll-ground {
       0% { transform: translateX(0); }
@@ -12,11 +12,18 @@
       0% { transform: translateX(180px); }
       100% { transform: translateX(-120px); }
     }
-    .term-bg { fill: #0d1117; stroke: #30363d; stroke-width: 2; rx: 6; }
-    .char { fill: #ffb86c; animation: run 0.4s steps(2) infinite; }
-    .obstacle { fill: #ff5555; animation: obstacle 2s linear infinite; }
-    .ground { stroke: #30363d; stroke-width: 2; stroke-dasharray: 10 10; animation: scroll-ground 0.5s linear infinite; }
+    .term-bg { fill: #0d1117; stroke: url(#border-grad); stroke-width: 2; rx: 6; }
+    .char { fill: #bd93f9; animation: run 0.35s steps(2) infinite; filter: drop-shadow(0 0 2px #bd93f9); }
+    .obstacle { fill: #ff007f; animation: obstacle 1.8s linear infinite; filter: drop-shadow(0 0 3px #ff007f); }
+    .ground { stroke: #00f2fe; stroke-width: 2; stroke-dasharray: 10 10; animation: scroll-ground 0.4s linear infinite; }
   </style>
+  <defs>
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+  </defs>
+  
   <rect width="298" height="148" x="1" y="1" class="term-bg"/>
   <circle cx="15" cy="15" r="4" fill="#ff5f56"/>
   <circle cx="27" cy="15" r="4" fill="#ffbd2e"/>
@@ -33,16 +40,14 @@
     <rect x="50" y="74" width="12" height="3" fill="#000"/>
   </g>
 
-  <!-- Obstacle -->
+  <!-- Obstacle (Spikes) -->
   <g class="obstacle">
-    <rect x="100" y="100" width="20" height="20" rx="2"/>
-    <line x1="100" y1="100" x2="120" y2="120" stroke="#0d1117" stroke-width="2"/>
-    <line x1="120" y1="100" x2="100" y2="120" stroke="#0d1117" stroke-width="2"/>
+    <path d="M 100 120 L 110 95 L 120 120 Z"/>
   </g>
 
-  <!-- Coin -->
-  <g transform="translate(160, 60)">
-    <circle cx="0" cy="0" r="6" fill="#f1fa8c" stroke="#f1fa8c" stroke-dasharray="2 2"/>
-    <text x="-3" y="4" font-family="monospace" font-size="10" fill="#ffb86c" font-weight="bold">$</text>
+  <!-- Glowing Coin -->
+  <g transform="translate(160, 60)" filter="drop-shadow(0 0 3px #ffee32)">
+    <circle cx="0" cy="0" r="6" fill="#ffee32" stroke="#ffee32"/>
+    <text x="-3" y="4" font-family="monospace" font-size="10" fill="#000" font-weight="bold">$</text>
   </g>
 </svg>

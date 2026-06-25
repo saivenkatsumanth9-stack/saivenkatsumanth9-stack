@@ -10,67 +10,85 @@
     .rain-col {
       font-family: monospace;
       font-size: 10px;
-      fill: #39ff14;
       writing-mode: vertical-rl;
       text-orientation: upright;
-      opacity: 0.15;
+      opacity: 0.2;
     }
+    
+    .cyan-rain { fill: #00f2fe; }
+    .pink-rain { fill: #ff007f; }
+    .purple-rain { fill: #bd93f9; }
     
     .c1 { animation: fall 6s linear infinite; }
     .c2 { animation: fall 4s linear infinite; }
     .c3 { animation: fall 8s linear infinite; }
     .c4 { animation: fall 5s linear infinite; }
-    .c5 { animation: fall 7s linear infinite; }
     
     .logo-glow {
-      filter: drop-shadow(0 0 6px #39ff14) drop-shadow(0 0 12px rgba(57,255,20,0.4));
+      filter: drop-shadow(0 0 8px #ff007f) drop-shadow(0 0 15px rgba(0,242,254,0.6));
     }
     
     .title {
       font-family: 'Fira Code', monospace;
       font-size: 32px;
       font-weight: 700;
-      fill: #39ff14;
+      fill: url(#header-grad);
     }
     
     .subtitle {
       font-family: 'Fira Code', monospace;
       font-size: 14px;
-      fill: #8b949e;
+      fill: #c9d1d9;
       letter-spacing: 2px;
+    }
+    .accent {
+      fill: #ffee32;
     }
   </style>
 
-  <rect width="998" height="178" x="1" y="1" rx="8" fill="#0d1117" stroke="#333" stroke-width="1.5"/>
+  <defs>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#bd93f9"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#bd93f9"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="998" height="178" x="1" y="1" rx="8" fill="#0d1117" stroke="url(#border-grad)" stroke-width="2"/>
 
   <!-- Matrix falling streams in background -->
-  <g class="rain-col c1">
+  <g class="rain-col cyan-rain c1">
     <text x="30" y="0">101001101011001010101</text>
-    <text x="230" y="50">01101010011010101101</text>
     <text x="430" y="20">10011011010101001101</text>
-    <text x="630" y="80">01101010011011010101</text>
     <text x="830" y="10">10101101001010101101</text>
   </g>
-  <g class="rain-col c2">
-    <text x="80" y="30">011010101011010011010</text>
-    <text x="280" y="10">100101011001010110110</text>
-    <text x="480" y="90">011010100110101011010</text>
-    <text x="680" y="40">101101010011010110011</text>
-    <text x="880" y="70">010101101010011010110</text>
+  <g class="rain-col pink-rain c2">
+    <text x="180" y="10">010101101010011010110</text>
+    <text x="580" y="40">011010100110101011010</text>
+    <text x="980" y="20">011010101011010011010</text>
   </g>
-  <g class="rain-col c3">
+  <g class="rain-col purple-rain c3">
     <text x="130" y="60">101011010010101011010</text>
-    <text x="330" y="20">011010100110110101010</text>
     <text x="530" y="10">100110110101010011010</text>
-    <text x="730" y="50">011010100110101011010</text>
     <text x="930" y="30">101001101011001010101</text>
   </g>
-  <g class="rain-col c4">
-    <text x="180" y="10">010101101010011010110</text>
-    <text x="380" y="80">101101010011010110011</text>
-    <text x="580" y="40">011010100110101011010</text>
-    <text x="780" y="90">100101011001010110110</text>
-    <text x="980" y="20">011010101011010011010</text>
+  <g class="rain-col cyan-rain c4">
+    <text x="80" y="30">011010101011010011010</text>
+    <text x="280" y="10">100101011001010110110</text>
+    <text x="680" y="40">101101010011010110011</text>
+  </g>
+  <g class="rain-col pink-rain c2">
+    <text x="230" y="50">01101010011010101101</text>
+    <text x="630" y="80">01101010011011010101</text>
+  </g>
+  <g class="rain-col purple-rain c3">
+    <text x="330" y="20">011010100110110101010</text>
+    <text x="730" y="50">011010100110101011010</text>
   </g>
 
   <!-- Foreground Logo/Branding -->
@@ -78,6 +96,6 @@
     <!-- Glowing Title -->
     <text y="-10" class="title logo-glow">PEDDI SAI VENKAT SUMANTH</text>
     <!-- Subtitle -->
-    <text y="25" class="subtitle">&gt; SOFTWARE DEVELOPER &amp; AI BUILDER _</text>
+    <text y="25" class="subtitle">&gt; SOFTWARE DEVELOPER &amp; <tspan class="accent">AI BUILDER</tspan> _</text>
   </g>
 </svg>

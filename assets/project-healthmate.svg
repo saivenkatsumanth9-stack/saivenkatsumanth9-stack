@@ -5,12 +5,12 @@
       100% { stroke-dashoffset: 0; }
     }
     @keyframes scale-heart {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.18); }
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px #ff007f); }
+      50% { transform: scale(1.18); filter: drop-shadow(0 0 6px #ff007f); }
     }
-    .term-bg { fill: #0d1117; stroke: #30363d; stroke-width: 2; rx: 6; }
+    .term-bg { fill: #0d1117; stroke: url(#border-grad); stroke-width: 2; rx: 6; }
     .ecg-line {
-      stroke: #39ff14;
+      stroke: url(#pulse-grad);
       stroke-width: 3;
       stroke-dasharray: 600;
       animation: pulse 3s linear infinite;
@@ -20,6 +20,18 @@
       transform-origin: 12px 12px;
     }
   </style>
+  <defs>
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+    <linearGradient id="pulse-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#bd93f9"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+  </defs>
+  
   <rect width="298" height="148" x="1" y="1" class="term-bg"/>
   <circle cx="15" cy="15" r="4" fill="#ff5f56"/>
   <circle cx="27" cy="15" r="4" fill="#ffbd2e"/>
@@ -29,6 +41,6 @@
   
   <!-- Heart Icon -->
   <g class="heart-group" transform="translate(235, 62) scale(1.5)">
-    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#ff5f56"/>
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#ff007f"/>
   </g>
 </svg>

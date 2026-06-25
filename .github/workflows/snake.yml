@@ -22,15 +22,15 @@ jobs:
         with:
           github_user_name: saivenkatsumanth9-stack
           outputs: dist/github-snake.svg
-          snake_color: '#39FF14'
-          dot_color: '#00FF00'
+          snake_color: '#ff007f'
+          dot_color: '#00f2fe'
           dot_empty_color: '#161b22'
 
       - name: Generate Snake Animation (Dark Mode)
         uses: Platane/snk@v3
         with:
           github_user_name: saivenkatsumanth9-stack
-          outputs: dist/github-snake-dark.svg?palette=github-dark&color_snake=#39FF14&color_dots=#003300,#005500,#009900,#00FF00,#39FF14&color_empty=#161b22
+          outputs: dist/github-snake-dark.svg?palette=github-dark&color_snake=#ff007f&color_dots=#161b22,#5f00a7,#bd00db,#ff007f,#00f2fe&color_empty=#161b22
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0

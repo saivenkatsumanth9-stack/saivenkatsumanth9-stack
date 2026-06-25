@@ -4,13 +4,14 @@
     .console-text {
       font-family: 'Fira Code', monospace;
       font-size: 14px;
-      fill: #39FF14;
       font-weight: 500;
       letter-spacing: 1px;
     }
-    .cmd { fill: #00f2fe; font-weight: 700; }
-    .success { fill: #39FF14; font-weight: 700; }
+    .cmd { fill: #ff007f; font-weight: 700; }
+    .action { fill: #00f2fe; }
+    .success { fill: #39ff14; font-weight: 700; filter: drop-shadow(0 0 1px #39ff14); }
     .info { fill: #ffb86c; }
+    .pkg { fill: #ffee32; }
   </style>
   <rect width="998" height="43" x="1" y="1" rx="6" fill="#0d1117" stroke="#333" stroke-width="1.5"/>
   <!-- Window controls -->
@@ -21,7 +22,7 @@
   <svg width="890" height="45" x="80" y="0">
     <g>
       <text x="0" y="27" class="console-text">
-        <tspan class="cmd">sumanth@peddi:~$</tspan> pip install python java c cs unity react nextjs nodejs tensorflow... <tspan class="success">[SUCCESS 100%]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> git commit -m "build the future" &amp;&amp; git push... <tspan class="success">[DEPLOYED]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> npm run dev... <tspan class="info">[READY on port 3000]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> pip install python java c cs unity react nextjs nodejs tensorflow... <tspan class="success">[SUCCESS 100%]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> git commit -m "build the future" &amp;&amp; git push... <tspan class="success">[DEPLOYED]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> npm run dev... <tspan class="info">[READY on port 3000]</tspan>
+        <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">pip install</tspan> <tspan class="pkg">python java c cs unity react nextjs</tspan>... <tspan class="success">[SUCCESS 100%]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">git commit -m</tspan> <tspan class="pkg">"build future"</tspan>... <tspan class="success">[DEPLOYED]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">npm run</tspan> <tspan class="pkg">dev</tspan>... <tspan class="info">[READY on port 3000]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">pip install</tspan> <tspan class="pkg">python java c cs unity react nextjs</tspan>... <tspan class="success">[SUCCESS 100%]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">git commit -m</tspan> <tspan class="pkg">"build future"</tspan>... <tspan class="success">[DEPLOYED]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">npm run</tspan> <tspan class="pkg">dev</tspan>... <tspan class="info">[READY on port 3000]</tspan>
       </text>
       <animateTransform 
         attributeName="transform" 

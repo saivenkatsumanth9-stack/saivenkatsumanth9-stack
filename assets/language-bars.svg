@@ -18,7 +18,6 @@
     .percentage {
       font-family: 'Fira Code', monospace;
       font-size: 13px;
-      fill: #39ff14;
       font-weight: 700;
     }
     
@@ -28,26 +27,29 @@
     }
     
     .bar-fill {
-      fill: #39ff14;
       rx: 4;
-      filter: drop-shadow(0 0 2px #39ff14);
     }
+    
+    .fill-python { fill: url(#python-grad); filter: drop-shadow(0 0 3px #ffee32); }
+    .fill-java { fill: url(#java-grad); filter: drop-shadow(0 0 3px #ff7b72); }
+    .fill-c { fill: url(#c-grad); filter: drop-shadow(0 0 3px #00f2fe); }
+    .fill-csharp { fill: url(#csharp-grad); filter: drop-shadow(0 0 3px #39ff14); }
     
     @keyframes load-python {
       from { width: 0px; }
-      to { width: 595px; } /* 85% of 700px */
+      to { width: 595px; }
     }
     @keyframes load-java {
       from { width: 0px; }
-      to { width: 525px; } /* 75% of 700px */
+      to { width: 525px; }
     }
     @keyframes load-c {
       from { width: 0px; }
-      to { width: 455px; } /* 65% of 700px */
+      to { width: 455px; }
     }
     @keyframes load-csharp {
       from { width: 0px; }
-      to { width: 525px; } /* 75% of 700px */
+      to { width: 525px; }
     }
     
     .run-python { animation: load-python 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
@@ -56,12 +58,33 @@
     .run-csharp { animation: load-csharp 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
   </style>
 
-  <rect width="998" height="178" x="1" y="1" rx="8" fill="#0d1117" stroke="#333" stroke-width="1.5"/>
+  <defs>
+    <linearGradient id="panel-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+    <linearGradient id="python-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#388bfd"/>
+      <stop offset="100%" stop-color="#ffee32"/>
+    </linearGradient>
+    <linearGradient id="java-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff7b72"/>
+      <stop offset="100%" stop-color="#ff5f56"/>
+    </linearGradient>
+    <linearGradient id="c-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#388bfd"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="csharp-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#39ff14"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="998" height="178" x="1" y="1" rx="8" fill="#0d1117" stroke="url(#panel-border)" stroke-width="1.5"/>
   
-  <!-- Window top bar border line -->
   <line x1="1" y1="35" x2="999" y2="35" stroke="#222" stroke-width="1"/>
 
-  <!-- Window controls -->
   <circle cx="20" cy="18" r="6" fill="#ff5f56"/>
   <circle cx="40" cy="18" r="6" fill="#ffbd2e"/>
   <circle cx="60" cy="18" r="6" fill="#27c93f"/>
@@ -72,31 +95,31 @@
   <g transform="translate(40, 60)">
     <text y="12" class="label">🐍 Python</text>
     <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
-    <rect x="150" y="0" height="15" class="bar-fill run-python" width="0"/>
-    <text x="870" y="12" class="percentage">85%</text>
+    <rect x="150" y="0" height="15" class="bar-fill fill-python run-python" width="0"/>
+    <text x="870" y="12" class="percentage" fill="#ffee32">85%</text>
   </g>
 
   <!-- Java -->
   <g transform="translate(40, 90)">
     <text y="12" class="label">☕ Java</text>
     <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
-    <rect x="150" y="0" height="15" class="bar-fill run-java" width="0"/>
-    <text x="870" y="12" class="percentage">75%</text>
+    <rect x="150" y="0" height="15" class="bar-fill fill-java run-java" width="0"/>
+    <text x="870" y="12" class="percentage" fill="#ff7b72">75%</text>
   </g>
 
   <!-- C -->
   <g transform="translate(40, 120)">
     <text y="12" class="label">🔧 C</text>
     <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
-    <rect x="150" y="0" height="15" class="bar-fill run-c" width="0"/>
-    <text x="870" y="12" class="percentage">65%</text>
+    <rect x="150" y="0" height="15" class="bar-fill fill-c run-c" width="0"/>
+    <text x="870" y="12" class="percentage" fill="#00f2fe">65%</text>
   </g>
 
   <!-- C# -->
   <g transform="translate(40, 150)">
     <text y="12" class="label">🎮 C#</text>
     <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
-    <rect x="150" y="0" height="15" class="bar-fill run-csharp" width="0"/>
-    <text x="870" y="12" class="percentage">75%</text>
+    <rect x="150" y="0" height="15" class="bar-fill fill-csharp run-csharp" width="0"/>
+    <text x="870" y="12" class="percentage" fill="#39ff14">75%</text>
   </g>
 </svg>
