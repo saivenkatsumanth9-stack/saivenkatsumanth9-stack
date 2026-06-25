@@ -46,6 +46,38 @@
 &nbsp;
 <img src="https://img.shields.io/github/stars/saivenkatsumanth9-stack?style=for-the-badge&color=a855f7&labelColor=0d1117&label=TOTAL+STARS&logo=github&affiliations=OWNER"/>
 
+<br/><br/>
+
+<!-- ═══ INTERACTIVE DETAILS POPUP ═══ -->
+<details>
+  <summary style="list-style: none; outline: none; cursor: pointer;">
+    <img src="https://img.shields.io/badge/🔮_TAP_TO_POP_OPEN_SECRET_DRAWER-CLICK_HERE!-7c3aed?style=for-the-badge&logo=probot&logoColor=white&labelColor=0d1117" alt="Interactive Popup Button"/>
+  </summary>
+  <br/>
+  <table width="100%">
+    <tr>
+      <td align="center" style="background-color: #0d1117; border: 2px solid #a855f7; border-radius: 12px; padding: 20px;">
+        <h3 style="color: #a855f7; margin-top: 0;">✨ You found Peddi's Secret Drawer! ✨</h3>
+        <p style="color: #c084fc; font-size: 15px;">Welcome to this interactive space! Here are some cool facts & animations:</p>
+        
+        <br/>
+        
+        <!-- Animated typing inside the popup -->
+        <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=16&duration=2000&pause=500&color=A855F7&center=true&vCenter=true&width=500&height=30&lines=💡+I+love+building+fully+autonomous+systems;⚡+I+enjoy+designing+interactive+user+experiences;👾+Currently+working+on+a+secret+Unity+game" alt="Popup Typing" />
+        
+        <br/><br/>
+        
+        <!-- Cool status badges inside the popup -->
+        <img src="https://img.shields.io/badge/Status-Coding_at_Speed_of_Light-success?style=flat-square&logo=visual-studio-code&logoColor=white" />
+        &nbsp;&nbsp;
+        <img src="https://img.shields.io/badge/Mode-Always_Learning-purple?style=flat-square&logo=git&logoColor=white" />
+        &nbsp;&nbsp;
+        <img src="https://img.shields.io/badge/Vibe-Coffee_Driven-orange?style=flat-square" />
+      </td>
+    </tr>
+  </table>
+</details>
+
 </div>
 
 <br/>
@@ -135,6 +167,11 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 ## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="28"/> &nbsp;Tech Arsenal
 
 <div align="center">
+
+<!-- ═══ SCROLLING TECH MARQUEE ═══ -->
+<img src="./assets/scrolling-skills.svg" width="100%" alt="Tech Marquee"/>
+
+<br/><br/>
 
 <!-- ═══ LANGUAGES ═══ -->
 <details open>
@@ -401,7 +438,7 @@ print(me)  # Let's build something extraordinary together! 🚀✨
 
 <div align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow-animate.svg"/>
   <img alt="3D Contrib" src="./profile-3d-contrib/profile-green-animate.svg" width="100%"/>
 </picture>
 
