@@ -41,21 +41,36 @@
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="65%" valign="top">
-      <pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6; box-shadow: 0 4px 12px rgba(0,0,0,0.5); margin: 0;">
-<span style="color: #58a6ff; font-weight: bold;">sumanth@peddi-terminal</span>:<span style="color: #7ee787;">~</span>$ neofetch
-<span style="color: #ff7b72; font-weight: bold;">          .          </span>  <span style="color: #58a6ff; font-weight: bold;">User</span>: Peddi Sai Venkat Sumanth (Sumanth)
-<span style="color: #ff7b72; font-weight: bold;">         / \         </span>  <span style="color: #58a6ff; font-weight: bold;">Education</span>: B.Tech CSE @ NNRES (2023 - 2027)
-<span style="color: #ff7b72; font-weight: bold;">        /   \        </span>  <span style="color: #58a6ff; font-weight: bold;">CGPA</span>: 7.45 / 10.0 (Highly Consistent)
-<span style="color: #ff7b72; font-weight: bold;">       /     \       </span>  <span style="color: #58a6ff; font-weight: bold;">Location</span>: Hyderabad, India 🇮🇳
-<span style="color: #ff7b72; font-weight: bold;">      /       \      </span>  <span style="color: #58a6ff; font-weight: bold;">Languages</span>: Python, Java, C, C#
-<span style="color: #ff7b72; font-weight: bold;">     /=========\     </span>  <span style="color: #58a6ff; font-weight: bold;">Skills</span>: Git, VS Code, MySQL, Unity, HTML/CSS/JS
-<span style="color: #ff7b72; font-weight: bold;">    /           \    </span>  <span style="color: #58a6ff; font-weight: bold;">Exploring</span>: React, Node.js, TensorFlow, Quantum Computing
-   <span style="color: #ff7b72; font-weight: bold;">/             \   </span>  <span style="color: #58a6ff; font-weight: bold;">Vibe</span>: Coffee-driven developer turning ideas into reality ☕
-  <span style="color: #ff7b72; font-weight: bold;">/               \  </span>  <span style="color: #58a6ff; font-weight: bold;">Goal</span>: Secure a Software Internship &amp; build cool products
-      </pre>
+      <div style="font-family: 'Fira Code', monospace; background-color: #0c0c0d; border: 1.5px solid #d4af37; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.65); overflow: hidden; margin: 0;">
+        <!-- Terminal Header -->
+        <div style="background-color: #1a1a1c; border-bottom: 1px solid #2d2d30; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #ff5f56; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #ffbd2e; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #27c93f; display: inline-block;"></span>
+          </div>
+          <div style="color: #d4af37; font-size: 13px; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+            <span>💻</span> <span>whoami</span>
+          </div>
+          <div style="width: 50px;"></div>
+        </div>
+        <!-- Terminal Body -->
+        <div style="padding: 20px; line-height: 1.7; color: #c9d1d9; font-size: 13.5px; overflow-x: auto; background-color: #0a0a0c;">
+<span style="color: #ffd700; font-weight: bold;">sumanth@peddi-terminal</span>:<span style="color: #8b949e;">~</span>$ neofetch
+<span style="color: #ffd700; font-weight: bold;">          .          </span>  <span style="color: #d4af37; font-weight: bold;">User</span>: Peddi Sai Venkat Sumanth (Sumanth)
+<span style="color: #ffd700; font-weight: bold;">         / \         </span>  <span style="color: #d4af37; font-weight: bold;">Education</span>: B.Tech CSE @ NNRES (2023 - 2027)
+<span style="color: #ffd700; font-weight: bold;">        /   \        </span>  <span style="color: #d4af37; font-weight: bold;">CGPA</span>: 7.45 / 10.0 (Highly Consistent)
+<span style="color: #ffd700; font-weight: bold;">       /     \       </span>  <span style="color: #d4af37; font-weight: bold;">Location</span>: Hyderabad, India 🇮🇳
+<span style="color: #ffd700; font-weight: bold;">      /       \      </span>  <span style="color: #d4af37; font-weight: bold;">Languages</span>: Python, Java, C, C#
+<span style="color: #ffd700; font-weight: bold;">     /=========\     </span>  <span style="color: #d4af37; font-weight: bold;">Skills</span>: Git, VS Code, MySQL, Unity, HTML/CSS/JS
+<span style="color: #ffd700; font-weight: bold;">    /           \    </span>  <span style="color: #d4af37; font-weight: bold;">Exploring</span>: React, Node.js, TensorFlow
+   <span style="color: #ffd700; font-weight: bold;">/             \   </span>  <span style="color: #d4af37; font-weight: bold;">Vibe</span>: Coffee-driven developer turning ideas into code ☕
+  <span style="color: #ffd700; font-weight: bold;">/               \  </span>  <span style="color: #d4af37; font-weight: bold;">Goal</span>: Secure a Software Internship &amp; build cool products
+        </div>
+      </div>
     </td>
-    <td width="35%" align="center" valign="middle" style="padding-left: 15px;">
-      <img src="./assets/boy-coding.svg" width="100%" style="max-width: 250px;" alt="Boy Coding"/>
+    <td width="35%" align="center" valign="middle" style="padding-left: 20px;">
+      <img src="./assets/boy-coding.svg" width="100%" style="max-width: 290px; filter: drop-shadow(0 4px 15px rgba(212,175,55,0.15));" alt="Boy Coding"/>
     </td>
   </tr>
 </table>
