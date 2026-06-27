@@ -76,6 +76,7 @@
 </table>
 
 <br/>
+<img src="./assets/section-divider.svg" width="100%" alt=""/>
 
 <!-- ═══════════════════════ INTERACTIVE WORKSPACE TREE ═══════════════════════ -->
 
@@ -110,6 +111,7 @@
 </div>
 
 <br/>
+<img src="./assets/section-divider.svg" width="100%" alt=""/>
 
 <!-- ═══════════════════════ INTERACTIVE SECRET DRAWER ═══════════════════════ -->
 <div align="left">
@@ -136,6 +138,7 @@
 </div>
 
 <br/>
+<img src="./assets/section-divider.svg" width="100%" alt=""/>
 
 <!-- ═══════════════════════ TECH MARQUEE ═══════════════════════ -->
 
@@ -149,7 +152,8 @@
 <!-- Animated programming language bar charts -->
 <img src="./assets/language-bars.svg" width="100%" alt="Language Skill Bars"/>
 
-<br/><br/>
+<br/>
+<img src="./assets/section-divider.svg" width="100%" alt=""/>
 
 <!-- ═══════════════════════ FEATURED PROJECTS ═══════════════════════ -->
 
@@ -250,6 +254,7 @@ Implements scaling obstacles, coin rewards, and adaptive difficulty.
 </div>
 
 <br/>
+<img src="./assets/section-divider.svg" width="100%" alt=""/>
 
 <!-- ═══════════════════════ GITHUB STATS DASHBOARD ═══════════════════════ -->
 
@@ -276,6 +281,7 @@ Implements scaling obstacles, coin rewards, and adaptive difficulty.
 </div>
 
 <br/>
+<img src="./assets/section-divider.svg" width="100%" alt=""/>
 
 <!-- ═══════════════════════ CONTRIBUTION GRAPH ═══════════════════════ -->
 
@@ -304,6 +310,7 @@ Implements scaling obstacles, coin rewards, and adaptive difficulty.
 </div>
 
 <br/>
+<img src="./assets/section-divider.svg" width="100%" alt=""/>
 
 <!-- ═══════════════════════ 3D CONTRIBUTION GRAPH ═══════════════════════ -->
 

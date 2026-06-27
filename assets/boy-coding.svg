@@ -1,339 +1,444 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 400" width="100%" height="400" fill="none">
-  <defs>
-    <!-- Gold Metallic Gradients -->
-    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffe666"/>
-      <stop offset="50%" stop-color="#ffd700"/>
-      <stop offset="100%" stop-color="#b59410"/>
-    </linearGradient>
-    <linearGradient id="gold-glow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#ffd700" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="radial-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#ffd700" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Dark Metal Gradients -->
-    <linearGradient id="dark-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2a2a30"/>
-      <stop offset="100%" stop-color="#121215"/>
-    </linearGradient>
-    <linearGradient id="desk-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1e1e24"/>
-      <stop offset="50%" stop-color="#25252d"/>
-      <stop offset="100%" stop-color="#18181e"/>
-    </linearGradient>
-
-    <!-- Screen Clip Paths -->
-    <clipPath id="screen-clip-left">
-      <rect x="94" y="74" width="62" height="122" rx="3" />
-    </clipPath>
-    <clipPath id="screen-clip-right">
-      <rect x="179" y="99" width="122" height="87" rx="3" />
-    </clipPath>
-
-    <!-- Soft Shadow Filter -->
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
-    </filter>
-  </defs>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="600" fill="none">
   <style>
-    /* Typing Animations */
-    @keyframes type-l {
-      0%, 100% { transform: rotate(0deg) translateY(0); }
-      50% { transform: rotate(-3deg) translateY(-2px); }
+    /* ===== TYPING ANIMATION ===== */
+    @keyframes type-left {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-4deg); }
+      75% { transform: rotate(2deg); }
     }
-    @keyframes type-r {
-      0%, 100% { transform: rotate(0deg) translateY(0); }
-      50% { transform: rotate(3deg) translateY(-3px); }
+    @keyframes type-right {
+      0%, 100% { transform: rotate(0deg); }
+      30% { transform: rotate(3deg); }
+      70% { transform: rotate(-3deg); }
     }
-    .arm-l {
-      animation: type-l 0.16s ease-in-out infinite;
-      transform-origin: 295px 180px;
+    .hand-l {
+      animation: type-left 0.28s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      transform-origin: 390px 395px;
     }
-    .arm-r {
-      animation: type-r 0.2s ease-in-out infinite;
-      transform-origin: 290px 182px;
-    }
-
-    /* Screen Code Scroll Animations */
-    @keyframes scroll-y-left {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-88px); }
-    }
-    @keyframes scroll-y-right {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-60px); }
-    }
-    .code-scroll-left {
-      animation: scroll-y-left 5s linear infinite;
-    }
-    .code-scroll-right {
-      animation: scroll-y-right 3.5s linear infinite;
+    .hand-r {
+      animation: type-right 0.22s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      transform-origin: 430px 395px;
     }
 
-    /* Rotating Gears */
-    @keyframes spin-cw {
+    /* ===== HEAD BOB ===== */
+    @keyframes head-bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(2px); }
+    }
+    .head-group {
+      animation: head-bob 1.8s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+    }
+
+    /* ===== MONITOR GLOW PULSE ===== */
+    @keyframes glow-pulse {
+      0%, 100% { opacity: 0.03; }
+      50% { opacity: 0.1; }
+    }
+    .monitor-glow {
+      animation: glow-pulse 3s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+    }
+    .monitor-glow-2 {
+      animation: glow-pulse 3s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+      animation-delay: 1.5s;
+    }
+
+    /* ===== CODE SCROLL ===== */
+    @keyframes scroll-code-1 {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-120px); }
+    }
+    @keyframes scroll-code-2 {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-90px); }
+    }
+    .code-scroll-1 {
+      animation: scroll-code-1 8s linear infinite;
+    }
+    .code-scroll-2 {
+      animation: scroll-code-2 6s linear infinite;
+    }
+
+    /* ===== CURSOR BLINK ===== */
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .cursor {
+      animation: blink 1s steps(1) infinite;
+    }
+
+    /* ===== GEAR ROTATION ===== */
+    @keyframes spin-gear {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-    @keyframes spin-ccw {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(-360deg); }
-    }
-    .gear-1 {
-      animation: spin-cw 5s linear infinite;
-      transform-origin: 263px 47px;
-    }
-    .gear-2 {
-      animation: spin-ccw 5s linear infinite;
-      transform-origin: 283px 53px;
+    .gear-icon {
+      animation: spin-gear 12s linear infinite;
+      transform-origin: 680px 120px;
     }
 
-    /* Floating Speech Bubble & Code Symbols */
-    @keyframes float {
+    /* ===== GEAR FLOAT ===== */
+    @keyframes gear-float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+      50% { transform: translateY(-8px); }
     }
-    .bubble-group {
-      animation: float 4s ease-in-out infinite;
+    .gear-group {
+      animation: gear-float 4s cubic-bezier(0.37, 0, 0.63, 1) infinite;
     }
-    .floating-code {
-      animation: float 3s ease-in-out infinite;
-    }
-    .floating-code.d1 { animation-delay: 1s; }
-    .floating-code.d2 { animation-delay: 2s; }
 
-    /* Rising Steam */
-    @keyframes steam {
-      0% { transform: translateY(0) scaleX(1); opacity: 0; }
-      15% { opacity: 0.6; }
-      50% { transform: translateY(-6px) scaleX(1.2); opacity: 0.3; }
-      100% { transform: translateY(-12px) scaleX(0.8); opacity: 0; }
+    /* ===== BREATHING GLOW ON FACE FROM SCREEN ===== */
+    @keyframes face-glow {
+      0%, 100% { opacity: 0.04; }
+      50% { opacity: 0.12; }
     }
-    .steam-line {
-      animation: steam 2s infinite ease-in-out;
-      transform-origin: bottom center;
+    .face-screen-glow {
+      animation: face-glow 3s cubic-bezier(0.37, 0, 0.63, 1) infinite;
     }
-    .steam-line.s2 { animation-delay: 1s; }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      .hand-l, .hand-r, .head-group, .monitor-glow, .monitor-glow-2,
+      .code-scroll-1, .code-scroll-2, .cursor, .gear-icon, .gear-group,
+      .face-screen-glow {
+        animation: none !important;
+      }
+      .cursor { opacity: 1; }
+    }
   </style>
 
-  <!-- ================= BACKGROUND FLOATING WIDGETS ================= -->
-  <g class="floating-code">
-    <text x="50" y="50" fill="#ffd700" font-family="monospace" font-weight="bold" font-size="14" opacity="0.15">&lt;/&gt;</text>
-  </g>
-  <g class="floating-code d1">
-    <text x="390" y="90" fill="#ffd700" font-family="monospace" font-weight="bold" font-size="14" opacity="0.15">{ }</text>
-  </g>
-  <g class="floating-code d2">
-    <text x="180" y="40" fill="#ffd700" font-family="monospace" font-weight="bold" font-size="12" opacity="0.12">zsh</text>
-  </g>
+  <defs>
+    <!-- Clip paths for monitor screens -->
+    <clipPath id="screen-1-clip">
+      <rect x="148" y="145" width="225" height="170" rx="4"/>
+    </clipPath>
+    <clipPath id="screen-2-clip">
+      <rect x="398" y="170" width="195" height="145" rx="4"/>
+    </clipPath>
+  </defs>
 
-  <!-- ================= GROUND WORKSPACE SHADOW ================= -->
-  <ellipse cx="250" cy="365" rx="190" ry="12" fill="url(#radial-glow)"/>
-  <ellipse cx="250" cy="365" rx="170" ry="8" fill="#000" opacity="0.4"/>
+  <!-- ===== BACKGROUND ===== -->
+  <rect width="800" height="600" fill="#1a1d2e"/>
 
-  <!-- ================= THE OFFICE CHAIR (BACK) ================= -->
-  <g id="chair-back" filter="url(#shadow)">
-    <!-- Headrest -->
-    <rect x="306" y="116" width="28" height="18" rx="6" fill="#18181a" stroke="url(#gold-grad)" stroke-width="1.2"/>
-    <!-- Headrest Support -->
-    <path d="M320,134 L320,145" stroke="url(#gold-grad)" stroke-width="3" stroke-linecap="round"/>
-    <!-- Main Backrest -->
-    <rect x="300" y="145" width="40" height="92" rx="10" fill="url(#dark-grad)" stroke="url(#gold-grad)" stroke-width="1.5"/>
-    <rect x="306" y="152" width="28" height="78" rx="6" fill="#0b0b0d" stroke="url(#gold-grad)" stroke-width="0.8" opacity="0.5"/>
-  </g>
+  <!-- Subtle wall line -->
+  <line x1="0" y1="480" x2="800" y2="480" stroke="#232740" stroke-width="2"/>
 
-  <!-- ================= THE DESK & DRAWERS ================= -->
-  <!-- Left Side Drawer Cabinet -->
-  <rect x="60" y="256" width="75" height="92" rx="4" fill="url(#dark-grad)" stroke="url(#gold-grad)" stroke-width="1.2" filter="url(#shadow)"/>
-  <line x1="60" y1="286" x2="135" y2="286" stroke="url(#gold-grad)" stroke-width="1" opacity="0.4"/>
-  <line x1="60" y1="316" x2="135" y2="316" stroke="url(#gold-grad)" stroke-width="1" opacity="0.4"/>
-  <!-- Drawer Handles -->
-  <rect x="92" y="268" width="12" height="4" rx="1.5" fill="url(#gold-grad)"/>
-  <rect x="92" y="298" width="12" height="4" rx="1.5" fill="url(#gold-grad)"/>
-  <rect x="92" y="328" width="12" height="4" rx="1.5" fill="url(#gold-grad)"/>
-  
-  <!-- Desk Right Leg -->
-  <path d="M330,256 L326,348 L334,348 L338,256 Z" fill="url(#gold-grad)"/>
-  <!-- Tabletop -->
-  <rect x="40" y="246" width="320" height="10" rx="3.5" fill="url(#desk-grad)" stroke="url(#gold-grad)" stroke-width="1.5" filter="url(#shadow)"/>
+  <!-- ===== FLOOR ===== -->
+  <rect x="0" y="480" width="800" height="120" fill="#151828"/>
 
-  <!-- ================= MONITORS ================= -->
-  <!-- Left Vertical Monitor -->
-  <g id="left-monitor" filter="url(#shadow)">
-    <!-- Stand -->
-    <path d="M120,246 L130,246 L128,195 L122,195 Z" fill="#18181a" stroke="url(#gold-grad)" stroke-width="1"/>
-    <!-- Outer Bezel -->
-    <rect x="90" y="70" width="70" height="130" rx="6" fill="#121214" stroke="url(#gold-grad)" stroke-width="1.5" />
+  <!-- ===== DESK ===== -->
+  <!-- Desk top surface -->
+  <rect x="100" y="420" width="520" height="14" rx="3" fill="#2a2d42"/>
+  <rect x="100" y="420" width="520" height="3" rx="1" fill="#323660"/>
+
+  <!-- Desk left legs -->
+  <rect x="120" y="434" width="12" height="80" fill="#24273c"/>
+  <rect x="180" y="434" width="12" height="80" fill="#24273c"/>
+
+  <!-- Desk right legs -->
+  <rect x="530" y="434" width="12" height="80" fill="#24273c"/>
+  <rect x="590" y="434" width="12" height="80" fill="#24273c"/>
+
+  <!-- Desk drawer panel left -->
+  <rect x="115" y="436" width="82" height="58" rx="3" fill="#222540"/>
+  <rect x="140" y="452" width="32" height="3" rx="1.5" fill="#3a3d58"/>
+  <rect x="140" y="470" width="32" height="3" rx="1.5" fill="#3a3d58"/>
+
+  <!-- ===== MONITOR 1 (LEFT - LARGER) ===== -->
+  <g>
+    <!-- Monitor stand -->
+    <rect x="240" y="330" width="16" height="90" fill="#2a2d42"/>
+    <rect x="220" y="410" width="56" height="8" rx="3" fill="#2a2d42"/>
+
+    <!-- Monitor body -->
+    <rect x="140" y="138" width="240" height="185" rx="8" fill="#1e2030"/>
+    <!-- Monitor bezel highlight -->
+    <rect x="140" y="138" width="240" height="4" rx="2" fill="#2e3150"/>
+
     <!-- Screen -->
-    <rect x="94" y="74" width="62" height="122" rx="3" fill="#070708" />
-    
-    <!-- Scrolling Code lines -->
-    <g clip-path="url(#screen-clip-left)">
-      <g class="code-scroll-left">
-        <g id="vert-code-lines">
-          <rect x="98" y="10" width="22" height="3" fill="url(#gold-grad)" rx="1"/>
-          <rect x="98" y="18" width="38" height="3" fill="#ffffff" rx="1" opacity="0.9"/>
-          <rect x="98" y="26" width="16" height="3" fill="#a1a1a6" rx="1" opacity="0.6"/>
-          <rect x="98" y="34" width="45" height="3" fill="url(#gold-grad)" rx="1"/>
-          <rect x="98" y="42" width="28" height="3" fill="#ffffff" rx="1"/>
-          <rect x="98" y="50" width="12" height="3" fill="#a1a1a6" rx="1" opacity="0.6"/>
-          <rect x="98" y="58" width="32" height="3" fill="url(#gold-grad)" rx="1"/>
-          <rect x="98" y="66" width="48" height="3" fill="#ffffff" rx="1"/>
-          <rect x="98" y="74" width="20" height="3" fill="#a1a1a6" rx="1" opacity="0.6"/>
-          <rect x="98" y="82" width="36" height="3" fill="url(#gold-grad)" rx="1"/>
-        </g>
-        <use xlink:href="#vert-code-lines" x="0" y="88"/>
+    <rect x="148" y="145" width="225" height="170" rx="4" fill="#0c1018"/>
+
+    <!-- Screen glow overlay -->
+    <rect x="148" y="145" width="225" height="170" rx="4" fill="#22ff55" class="monitor-glow"/>
+
+    <!-- Scrolling code lines on Monitor 1 -->
+    <g clip-path="url(#screen-1-clip)">
+      <g class="code-scroll-1">
+        <!-- Code block 1 -->
+        <rect x="158" y="155" width="60" height="3" rx="1" fill="#4ade80" opacity="0.9"/>
+        <rect x="225" y="155" width="35" height="3" rx="1" fill="#22c55e" opacity="0.6"/>
+        <rect x="158" y="164" width="45" height="3" rx="1" fill="#86efac" opacity="0.5"/>
+        <rect x="210" y="164" width="80" height="3" rx="1" fill="#4ade80" opacity="0.8"/>
+        <rect x="170" y="173" width="90" height="3" rx="1" fill="#22c55e" opacity="0.7"/>
+        <rect x="158" y="182" width="30" height="3" rx="1" fill="#bbf7d0" opacity="0.4"/>
+        <rect x="195" y="182" width="55" height="3" rx="1" fill="#4ade80" opacity="0.9"/>
+        <rect x="170" y="191" width="70" height="3" rx="1" fill="#22c55e" opacity="0.6"/>
+        <rect x="248" y="191" width="25" height="3" rx="1" fill="#86efac" opacity="0.5"/>
+        <rect x="158" y="200" width="100" height="3" rx="1" fill="#4ade80" opacity="0.8"/>
+        <rect x="170" y="209" width="40" height="3" rx="1" fill="#22c55e" opacity="0.6"/>
+        <rect x="218" y="209" width="60" height="3" rx="1" fill="#bbf7d0" opacity="0.4"/>
+        <rect x="158" y="218" width="55" height="3" rx="1" fill="#4ade80" opacity="0.9"/>
+        <rect x="220" y="218" width="45" height="3" rx="1" fill="#86efac" opacity="0.5"/>
+        <rect x="170" y="227" width="85" height="3" rx="1" fill="#22c55e" opacity="0.7"/>
+        <rect x="158" y="236" width="38" height="3" rx="1" fill="#4ade80" opacity="0.8"/>
+        <rect x="205" y="236" width="70" height="3" rx="1" fill="#bbf7d0" opacity="0.4"/>
+        <rect x="170" y="245" width="50" height="3" rx="1" fill="#22c55e" opacity="0.6"/>
+        <rect x="228" y="245" width="35" height="3" rx="1" fill="#4ade80" opacity="0.9"/>
+        <rect x="158" y="254" width="75" height="3" rx="1" fill="#86efac" opacity="0.5"/>
+        <rect x="158" y="263" width="42" height="3" rx="1" fill="#4ade80" opacity="0.8"/>
+        <rect x="208" y="263" width="55" height="3" rx="1" fill="#22c55e" opacity="0.7"/>
+        <!-- Duplicate block for seamless loop -->
+        <rect x="158" y="275" width="60" height="3" rx="1" fill="#4ade80" opacity="0.9"/>
+        <rect x="225" y="275" width="35" height="3" rx="1" fill="#22c55e" opacity="0.6"/>
+        <rect x="158" y="284" width="45" height="3" rx="1" fill="#86efac" opacity="0.5"/>
+        <rect x="210" y="284" width="80" height="3" rx="1" fill="#4ade80" opacity="0.8"/>
+        <rect x="170" y="293" width="90" height="3" rx="1" fill="#22c55e" opacity="0.7"/>
+        <rect x="158" y="302" width="30" height="3" rx="1" fill="#bbf7d0" opacity="0.4"/>
+        <rect x="195" y="302" width="55" height="3" rx="1" fill="#4ade80" opacity="0.9"/>
+        <rect x="170" y="311" width="70" height="3" rx="1" fill="#22c55e" opacity="0.6"/>
+        <rect x="248" y="311" width="25" height="3" rx="1" fill="#86efac" opacity="0.5"/>
+        <rect x="158" y="320" width="100" height="3" rx="1" fill="#4ade80" opacity="0.8"/>
       </g>
     </g>
+
+    <!-- Line numbers gutter -->
+    <rect x="148" y="145" width="8" height="170" fill="#0f1520"/>
+    <text x="152" y="159" font-family="monospace" font-size="5" fill="#4ade80" opacity="0.3">1</text>
+    <text x="152" y="168" font-family="monospace" font-size="5" fill="#4ade80" opacity="0.3">2</text>
+    <text x="152" y="177" font-family="monospace" font-size="5" fill="#4ade80" opacity="0.3">3</text>
+    <text x="152" y="186" font-family="monospace" font-size="5" fill="#4ade80" opacity="0.3">4</text>
+    <text x="152" y="195" font-family="monospace" font-size="5" fill="#4ade80" opacity="0.3">5</text>
+
+    <!-- Blinking cursor -->
+    <rect x="285" y="155" width="2" height="8" fill="#4ade80" class="cursor"/>
+
+    <!-- Monitor status LED -->
+    <circle cx="260" cy="322" r="2" fill="#4ade80" opacity="0.6"/>
   </g>
 
-  <!-- Right Horizontal Monitor -->
-  <g id="right-monitor" filter="url(#shadow)">
-    <!-- Stand -->
-    <path d="M230,246 L240,246 L238,188 L232,188 Z" fill="#18181a" stroke="url(#gold-grad)" stroke-width="1"/>
-    <!-- Outer Bezel -->
-    <rect x="175" y="95" width="130" height="95" rx="6" fill="#121214" stroke="url(#gold-grad)" stroke-width="1.5"/>
+  <!-- ===== MONITOR 2 (RIGHT - SLIGHTLY SMALLER) ===== -->
+  <g>
+    <!-- Monitor stand -->
+    <rect x="485" y="338" width="14" height="82" fill="#2a2d42"/>
+    <rect x="468" y="412" width="48" height="7" rx="3" fill="#2a2d42"/>
+
+    <!-- Monitor body -->
+    <rect x="390" y="163" width="210" height="160" rx="8" fill="#1e2030"/>
+    <rect x="390" y="163" width="210" height="4" rx="2" fill="#2e3150"/>
+
     <!-- Screen -->
-    <rect x="179" y="99" width="122" height="87" rx="3" fill="#070708"/>
-    <!-- Screen Accent Glow -->
-    <rect x="179" y="99" width="122" height="87" rx="3" fill="url(#gold-glow)" opacity="0.15"/>
-    
-    <!-- Scrolling Code lines -->
-    <g clip-path="url(#screen-clip-right)">
-      <!-- Subtle Screen Grid -->
-      <path d="M179,120 H301 M179,140 H301 M179,160 H301 M210,99 V186 M250,99 V186 M290,99 V186" stroke="#ffd700" stroke-width="0.3" opacity="0.08" />
-      <g class="code-scroll-right">
-        <g id="horiz-code-lines">
-          <rect x="185" y="10" width="35" height="3.5" fill="url(#gold-grad)" rx="1"/>
-          <rect x="185" y="18" width="55" height="3.5" fill="#ffffff" rx="1"/>
-          <rect x="185" y="26" width="22" height="3.5" fill="#a1a1a6" rx="1" opacity="0.6"/>
-          <rect x="185" y="34" width="70" height="3.5" fill="url(#gold-grad)" rx="1"/>
-          <rect x="185" y="42" width="40" height="3.5" fill="#ffffff" rx="1"/>
-          <rect x="185" y="50" width="30" height="3.5" fill="#a1a1a6" rx="1" opacity="0.6"/>
-        </g>
-        <use xlink:href="#horiz-code-lines" x="0" y="60"/>
+    <rect x="398" y="170" width="195" height="145" rx="4" fill="#0c1018"/>
+
+    <!-- Screen glow overlay -->
+    <rect x="398" y="170" width="195" height="145" rx="4" fill="#22ff55" class="monitor-glow-2"/>
+
+    <!-- Scrolling code lines on Monitor 2 -->
+    <g clip-path="url(#screen-2-clip)">
+      <g class="code-scroll-2">
+        <rect x="408" y="180" width="50" height="3" rx="1" fill="#4ade80" opacity="0.8"/>
+        <rect x="465" y="180" width="30" height="3" rx="1" fill="#22c55e" opacity="0.5"/>
+        <rect x="420" y="189" width="75" height="3" rx="1" fill="#86efac" opacity="0.6"/>
+        <rect x="408" y="198" width="40" height="3" rx="1" fill="#4ade80" opacity="0.9"/>
+        <rect x="455" y="198" width="55" height="3" rx="1" fill="#22c55e" opacity="0.6"/>
+        <rect x="420" y="207" width="60" height="3" rx="1" fill="#bbf7d0" opacity="0.4"/>
+        <rect x="408" y="216" width="85" height="3" rx="1" fill="#4ade80" opacity="0.7"/>
+        <rect x="420" y="225" width="45" height="3" rx="1" fill="#22c55e" opacity="0.8"/>
+        <rect x="472" y="225" width="35" height="3" rx="1" fill="#86efac" opacity="0.5"/>
+        <rect x="408" y="234" width="65" height="3" rx="1" fill="#4ade80" opacity="0.9"/>
+        <rect x="420" y="243" width="50" height="3" rx="1" fill="#22c55e" opacity="0.6"/>
+        <rect x="478" y="243" width="28" height="3" rx="1" fill="#bbf7d0" opacity="0.4"/>
+        <rect x="408" y="252" width="38" height="3" rx="1" fill="#86efac" opacity="0.7"/>
+        <rect x="455" y="252" width="50" height="3" rx="1" fill="#4ade80" opacity="0.8"/>
+        <!-- Duplicate for seamless loop -->
+        <rect x="408" y="270" width="50" height="3" rx="1" fill="#4ade80" opacity="0.8"/>
+        <rect x="465" y="270" width="30" height="3" rx="1" fill="#22c55e" opacity="0.5"/>
+        <rect x="420" y="279" width="75" height="3" rx="1" fill="#86efac" opacity="0.6"/>
+        <rect x="408" y="288" width="40" height="3" rx="1" fill="#4ade80" opacity="0.9"/>
+        <rect x="455" y="288" width="55" height="3" rx="1" fill="#22c55e" opacity="0.6"/>
+        <rect x="420" y="297" width="60" height="3" rx="1" fill="#bbf7d0" opacity="0.4"/>
+        <rect x="408" y="306" width="85" height="3" rx="1" fill="#4ade80" opacity="0.7"/>
       </g>
     </g>
+
+    <!-- Tab bar at top of screen 2 -->
+    <rect x="398" y="170" width="50" height="8" rx="2" fill="#1a2030"/>
+    <rect x="452" y="170" width="50" height="8" rx="2" fill="#0c1018"/>
+    <circle cx="410" cy="174" r="1.5" fill="#4ade80" opacity="0.5"/>
+    <circle cx="464" cy="174" r="1.5" fill="#fbbf24" opacity="0.5"/>
+
+    <!-- Monitor status LED -->
+    <circle cx="495" cy="320" r="2" fill="#4ade80" opacity="0.6"/>
   </g>
 
-  <!-- Keyboard and Mouse on Desk -->
-  <rect x="220" y="240" width="54" height="4" rx="1" fill="#18181a" stroke="url(#gold-grad)" stroke-width="0.8"/>
-  <rect x="224" y="240" width="46" height="1.5" fill="url(#gold-grad)" opacity="0.7"/>
-  <ellipse cx="282" cy="242" rx="2" ry="3" fill="#18181a" stroke="url(#gold-grad)" stroke-width="0.8"/>
+  <!-- ===== KEYBOARD ===== -->
+  <rect x="350" y="405" width="130" height="14" rx="3" fill="#2a2d42"/>
+  <!-- Key rows -->
+  <rect x="355" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="362" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="369" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="376" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="383" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="390" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="397" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="404" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="411" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="418" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="425" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="432" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="439" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="446" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="453" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="460" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="467" y="407" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="358" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="365" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="372" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="379" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="386" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="393" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="400" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="407" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="414" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="421" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="428" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="435" y="413" width="18" height="4" rx="1" fill="#363a55"/>
+  <rect x="456" y="413" width="5" height="4" rx="1" fill="#363a55"/>
+  <rect x="463" y="413" width="5" height="4" rx="1" fill="#363a55"/>
 
-  <!-- Coffee Mug with Steam -->
-  <g id="coffee-mug">
-    <path d="M158,236 H168 V246 A5,5 0 0,1 163,251 H163 A5,5 0 0,1 158,246 Z" fill="url(#gold-grad)" stroke="#121214" stroke-width="1.2" />
-    <path d="M168,238 Q171,241 168,244" fill="none" stroke="url(#gold-grad)" stroke-width="1.2" stroke-linecap="round"/>
-    <!-- Steam Paths -->
-    <path class="steam-line" d="M161,232 Q163,228 161,224 T161,216" fill="none" stroke="url(#gold-grad)" stroke-width="1" stroke-linecap="round" opacity="0"/>
-    <path class="steam-line s2" d="M164,232 Q162,228 164,224 T164,216" fill="none" stroke="url(#gold-grad)" stroke-width="1" stroke-linecap="round" opacity="0"/>
-  </g>
+  <!-- Mouse -->
+  <ellipse cx="500" cy="414" rx="10" ry="7" fill="#2a2d42"/>
+  <line x1="500" y1="408" x2="500" y2="413" stroke="#363a55" stroke-width="1"/>
 
-  <!-- ================= THE OFFICE CHAIR (SEAT & BASE) ================= -->
-  <g id="chair-base" filter="url(#shadow)">
-    <!-- Seat -->
-    <rect x="274" y="234" width="66" height="11" rx="4" fill="url(#dark-grad)" stroke="url(#gold-grad)" stroke-width="1.5"/>
-    <!-- Gas Lift Shaft -->
-    <rect x="302" y="245" width="10" height="40" fill="#121214" stroke="url(#gold-grad)" stroke-width="1"/>
-    <!-- Five-Star Swivel Base legs -->
-    <path d="M276,285 L328,285 M302,285 L285,293 M302,285 L319,293" stroke="url(#gold-grad)" stroke-width="3" stroke-linecap="round" />
-    <!-- Caster Wheels -->
-    <circle cx="276" cy="290" r="3.5" fill="#121214" stroke="url(#gold-grad)" stroke-width="1"/>
-    <circle cx="328" cy="290" r="3.5" fill="#121214" stroke="url(#gold-grad)" stroke-width="1"/>
-    <circle cx="285" cy="297" r="3.5" fill="#121214" stroke="url(#gold-grad)" stroke-width="1"/>
-    <circle cx="319" cy="297" r="3.5" fill="#121214" stroke="url(#gold-grad)" stroke-width="1"/>
-  </g>
+  <!-- ===== OFFICE CHAIR ===== -->
+  <!-- Chair back -->
+  <rect x="435" y="290" width="55" height="100" rx="12" fill="#24273c"/>
+  <rect x="440" y="295" width="45" height="90" rx="8" fill="#1e2030"/>
 
-  <!-- ================= THE DEVELOPER (BOY) ================= -->
-  <g id="programmer">
-    <!-- Legs / Pants -->
-    <path d="M294,235 L246,247 L251,296 L262,296 L258,255 L305,245 Z" fill="#18181d" stroke="url(#gold-grad)" stroke-width="0.8"/>
-    <!-- Gold Shoes -->
-    <path d="M251,296 L242,301 L244,306 L262,306 L262,296 Z" fill="url(#gold-grad)" stroke="#121214" stroke-width="1"/>
+  <!-- Chair seat -->
+  <rect x="395" y="388" width="80" height="12" rx="5" fill="#24273c"/>
 
-    <!-- White Shirt & Torso -->
-    <path d="M280,175 L310,175 L310,235 L275,235 Z" fill="#ffffff" />
-    <!-- Gold Geometric stripes on shirt -->
-    <line x1="282" y1="188" x2="308" y2="188" stroke="url(#gold-grad)" stroke-width="0.8" opacity="0.35"/>
-    <line x1="280" y1="204" x2="310" y2="204" stroke="url(#gold-grad)" stroke-width="0.8" opacity="0.35"/>
-    <line x1="277" y1="220" x2="310" y2="220" stroke="url(#gold-grad)" stroke-width="0.8" opacity="0.35"/>
+  <!-- Chair stem -->
+  <rect x="430" y="400" width="10" height="50" fill="#2a2d42"/>
 
-    <!-- Black Vest with Gold Border -->
-    <path d="M280,175 C285,175 288,185 288,195 C288,215 277,225 275,235 H306 V175 Z" fill="#0f0f12" stroke="url(#gold-grad)" stroke-width="1.2" />
-    <circle cx="295" cy="190" r="1.5" fill="url(#gold-grad)"/>
-    <circle cx="295" cy="205" r="1.5" fill="url(#gold-grad)"/>
-    <circle cx="295" cy="220" r="1.5" fill="url(#gold-grad)"/>
+  <!-- Chair base (5-star) -->
+  <line x1="400" y1="452" x2="470" y2="452" stroke="#2a2d42" stroke-width="5" stroke-linecap="round"/>
+  <line x1="435" y1="450" x2="415" y2="462" stroke="#2a2d42" stroke-width="5" stroke-linecap="round"/>
+  <line x1="435" y1="450" x2="455" y2="462" stroke="#2a2d42" stroke-width="5" stroke-linecap="round"/>
+  <!-- Wheels -->
+  <circle cx="400" cy="455" r="4" fill="#363a55"/>
+  <circle cx="470" cy="455" r="4" fill="#363a55"/>
+  <circle cx="415" cy="465" r="4" fill="#363a55"/>
+  <circle cx="455" cy="465" r="4" fill="#363a55"/>
 
-    <!-- Face / Head -->
-    <circle cx="286" cy="140" r="14" fill="#fddcb4" stroke="#121214" stroke-width="0.8"/>
-    <!-- Cool Black Hair -->
-    <path d="M272,138 C270,126 285,118 299,126 C303,130 299,141 294,141 C290,139 285,144 278,144 Z" fill="#121214" />
-    <!-- Gold Wire-frame Glasses -->
-    <circle cx="275" cy="138" r="4.5" fill="none" stroke="url(#gold-grad)" stroke-width="1.2" />
-    <line x1="279.5" y1="138" x2="284.5" y2="138" stroke="url(#gold-grad)" stroke-width="1" />
-    <line x1="270.5" y1="138" x2="269" y2="138" stroke="url(#gold-grad)" stroke-width="1" />
+  <!-- ===== THE DEVELOPER ===== -->
+  <g id="developer">
+    <!-- Legs -->
+    <rect x="410" y="400" width="22" height="55" rx="5" fill="#1e2030" transform="rotate(-15, 410, 400)"/>
+    <!-- Shoes -->
+    <ellipse cx="390" cy="448" rx="16" ry="7" fill="#1a1d2e"/>
 
-    <!-- typing Arms (Animated) -->
-    <!-- Left Arm -->
-    <path class="arm-l" d="M300,180 Q265,195 240,233" fill="none" stroke="#121214" stroke-width="7.5" stroke-linecap="round" />
-    <path class="arm-l" d="M300,180 Q265,195 240,233" fill="none" stroke="url(#gold-grad)" stroke-width="1.5" stroke-linecap="round" opacity="0.8" />
-    <circle class="arm-l" cx="240" cy="233" r="3.5" fill="url(#gold-grad)" />
-    <circle class="arm-l" cx="238" cy="235" r="2.8" fill="#fddcb4" />
+    <!-- Torso / Blue Hoodie -->
+    <path d="M400,280 C400,280 390,310 390,350 L390,395 L470,395 L470,320 C470,300 460,280 440,275 Z" fill="#3b82f6"/>
+    <!-- Hoodie pocket line -->
+    <path d="M405,355 Q430,365 455,355" fill="none" stroke="#2563eb" stroke-width="1.5" opacity="0.5"/>
+    <!-- Hoodie collar -->
+    <path d="M415,282 Q428,295 440,282" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <!-- Hoodie hood back -->
+    <path d="M440,275 Q455,260 448,250 Q440,258 430,262 Z" fill="#3b82f6"/>
 
-    <!-- Right Arm -->
-    <path class="arm-r" d="M295,182 Q260,203 244,235" fill="none" stroke="#25252c" stroke-width="7" stroke-linecap="round" />
-    <path class="arm-r" d="M295,182 Q260,203 244,235" fill="none" stroke="url(#gold-grad)" stroke-width="1.2" stroke-linecap="round" opacity="0.8" />
-    <circle class="arm-r" cx="244" cy="235" r="3.5" fill="url(#gold-grad)" />
-    <circle class="arm-r" cx="242" cy="237" r="2.8" fill="#fddcb4" />
-  </g>
+    <!-- Arms -->
+    <!-- Upper arm (left, reaching to keyboard) -->
+    <path class="hand-l" d="M395,310 Q380,350 385,395" fill="none" stroke="#3b82f6" stroke-width="18" stroke-linecap="round"/>
+    <!-- Hand/fingers left -->
+    <circle class="hand-l" cx="385" cy="398" r="7" fill="#d4a574"/>
 
-  <!-- ================= THE GOLD WIREFRAME TRASH CAN ================= -->
-  <g id="trash-can" filter="url(#shadow)">
-    <path d="M375,305 L395,305 L390,345 L380,345 Z" fill="#0f0f12" stroke="url(#gold-grad)" stroke-width="1.5" />
-    <!-- Vertical Wireframe Grid -->
-    <line x1="379" y1="305" x2="382" y2="345" stroke="url(#gold-grad)" stroke-width="0.8" opacity="0.6"/>
-    <line x1="385" y1="305" x2="385" y2="345" stroke="url(#gold-grad)" stroke-width="0.8" opacity="0.6"/>
-    <line x1="391" y1="305" x2="388" y2="345" stroke="url(#gold-grad)" stroke-width="0.8" opacity="0.6"/>
-    <!-- Horizontal Rings -->
-    <path d="M375,315 Q385,317 395,315" fill="none" stroke="url(#gold-grad)" stroke-width="0.8" opacity="0.6"/>
-    <path d="M377,327 Q385,329 393,327" fill="none" stroke="url(#gold-grad)" stroke-width="0.8" opacity="0.6"/>
-    <path d="M379,339 Q385,341 391,339" fill="none" stroke="url(#gold-grad)" stroke-width="0.8" opacity="0.6"/>
-    <!-- Glowing crumpled papers inside -->
-    <circle cx="383" cy="338" r="4.5" fill="url(#gold-grad)"/>
-    <circle cx="388" cy="341" r="3.8" fill="#e2b107"/>
-    <circle cx="385" cy="331" r="3.2" fill="#ffe666"/>
-  </g>
+    <!-- Upper arm (right, reaching to keyboard) -->
+    <path class="hand-r" d="M455,315 Q445,355 435,395" fill="none" stroke="#3b82f6" stroke-width="16" stroke-linecap="round"/>
+    <!-- Hand/fingers right -->
+    <circle class="hand-r" cx="435" cy="398" r="7" fill="#d4a574"/>
 
-  <!-- ================= FLOATING SPEECH BUBBLE WITH SPINNING GEARS ================= -->
-  <g class="bubble-group" filter="url(#shadow)">
-    <!-- Chat Bubble Body -->
-    <path d="M250,20 H300 C310,20 315,25 315,35 V60 C315,70 310,75 300,75 H280 L265,90 L265,75 H250 C240,75 235,70 235,60 V35 C235,25 240,20 250,20 Z" fill="#0f0f12" stroke="url(#gold-grad)" stroke-width="1.8"/>
-    <path d="M250,20 H300 C310,20 315,25 315,35 V60 C315,70 310,75 300,75 H280 L265,90 L265,75 H250 C240,75 235,70 235,60 V35 C235,25 240,20 250,20 Z" fill="url(#gold-glow)" opacity="0.2"/>
+    <!-- Finger details left -->
+    <rect class="hand-l" x="378" y="396" width="4" height="6" rx="2" fill="#d4a574"/>
+    <rect class="hand-l" x="383" y="395" width="4" height="7" rx="2" fill="#d4a574"/>
+    <rect class="hand-l" x="388" y="396" width="4" height="6" rx="2" fill="#d4a574"/>
 
-    <!-- Gear 1 (Rotating Clockwise) -->
-    <g class="gear-1">
-      <circle cx="263" cy="47" r="7.5" fill="none" stroke="url(#gold-grad)" stroke-width="3" />
-      <rect x="261" y="36.5" width="4" height="21" fill="url(#gold-grad)" rx="1"/>
-      <rect x="261" y="36.5" width="4" height="21" fill="url(#gold-grad)" rx="1" transform="rotate(45, 263, 47)"/>
-      <rect x="261" y="36.5" width="4" height="21" fill="url(#gold-grad)" rx="1" transform="rotate(90, 263, 47)"/>
-      <rect x="261" y="36.5" width="4" height="21" fill="url(#gold-grad)" rx="1" transform="rotate(135, 263, 47)"/>
-      <circle cx="263" cy="47" r="3.5" fill="#0f0f12" />
+    <!-- Finger details right -->
+    <rect class="hand-r" x="428" y="396" width="4" height="6" rx="2" fill="#d4a574"/>
+    <rect class="hand-r" x="433" y="395" width="4" height="7" rx="2" fill="#d4a574"/>
+    <rect class="hand-r" x="438" y="396" width="4" height="6" rx="2" fill="#d4a574"/>
+
+    <!-- ===== HEAD (with bob animation) ===== -->
+    <g class="head-group">
+      <!-- Neck -->
+      <rect x="422" y="258" width="14" height="22" fill="#d4a574"/>
+
+      <!-- Head shape -->
+      <ellipse cx="432" cy="245" rx="28" ry="32" fill="#d4a574"/>
+
+      <!-- Hair (short dark, side profile facing right) -->
+      <path d="M404,240 Q404,208 432,205 Q460,208 462,225 Q462,235 458,240 Q455,230 450,225 Q440,218 425,220 Q412,222 408,235 Z" fill="#1a1d2e"/>
+      <!-- Hair side detail -->
+      <path d="M404,240 Q402,230 408,222" fill="none" stroke="#1a1d2e" stroke-width="5" stroke-linecap="round"/>
+      <!-- Hair top volume -->
+      <path d="M415,210 Q432,200 450,210" fill="#1a1d2e" stroke="#1a1d2e" stroke-width="3"/>
+
+      <!-- Ear -->
+      <ellipse cx="405" cy="248" rx="5" ry="7" fill="#c4956a"/>
+
+      <!-- Eye (side profile - one eye visible facing right) -->
+      <ellipse cx="448" cy="242" rx="4" ry="3.5" fill="#ffffff"/>
+      <circle cx="450" cy="242" r="2.5" fill="#1a1d2e"/>
+      <circle cx="451" cy="241" r="0.8" fill="#ffffff"/>
+
+      <!-- Eyebrow -->
+      <path d="M444,235 Q450,232 455,234" fill="none" stroke="#1a1d2e" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Nose -->
+      <path d="M458,247 Q462,252 458,256" fill="none" stroke="#c4956a" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Mouth (slight smile) -->
+      <path d="M448,262 Q453,265 458,263" fill="none" stroke="#b8845e" stroke-width="1.5" stroke-linecap="round"/>
+
+      <!-- Screen glow on face -->
+      <ellipse cx="445" cy="250" rx="20" ry="22" fill="#22ff55" class="face-screen-glow" opacity="0.04"/>
     </g>
+  </g>
 
-    <!-- Gear 2 (Rotating Counter-Clockwise) -->
-    <g class="gear-2">
-      <circle cx="283" cy="53" r="5.5" fill="none" stroke="url(#gold-grad)" stroke-width="2.2" />
-      <rect x="281.5" y="45" width="3" height="16" fill="url(#gold-grad)" rx="0.8"/>
-      <rect x="281.5" y="45" width="3" height="16" fill="url(#gold-grad)" rx="0.8" transform="rotate(45, 283, 53)"/>
-      <rect x="281.5" y="45" width="3" height="16" fill="url(#gold-grad)" rx="0.8" transform="rotate(90, 283, 53)"/>
-      <rect x="281.5" y="45" width="3" height="16" fill="url(#gold-grad)" rx="0.8" transform="rotate(135, 283, 53)"/>
-      <circle cx="283" cy="53" r="2.5" fill="#0f0f12" />
+  <!-- ===== FLOATING GEAR ICON (upper right) ===== -->
+  <g class="gear-group">
+    <g class="gear-icon">
+      <!-- Gear teeth -->
+      <circle cx="680" cy="120" r="22" fill="none" stroke="#3b82f6" stroke-width="8"/>
+      <!-- Gear tooth nubs -->
+      <rect x="674" y="92" width="12" height="10" rx="2" fill="#3b82f6"/>
+      <rect x="674" y="138" width="12" height="10" rx="2" fill="#3b82f6"/>
+      <rect x="652" y="114" width="10" height="12" rx="2" fill="#3b82f6"/>
+      <rect x="698" y="114" width="10" height="12" rx="2" fill="#3b82f6"/>
+      <!-- Diagonal teeth -->
+      <rect x="656" y="96" width="10" height="10" rx="2" fill="#3b82f6" transform="rotate(45, 661, 101)"/>
+      <rect x="694" y="96" width="10" height="10" rx="2" fill="#3b82f6" transform="rotate(45, 699, 101)"/>
+      <rect x="656" y="134" width="10" height="10" rx="2" fill="#3b82f6" transform="rotate(45, 661, 139)"/>
+      <rect x="694" y="134" width="10" height="10" rx="2" fill="#3b82f6" transform="rotate(45, 699, 139)"/>
+      <!-- Gear center hole -->
+      <circle cx="680" cy="120" r="8" fill="#1a1d2e"/>
     </g>
   </g>
+
+  <!-- ===== SMALL DECORATIVE ELEMENTS ===== -->
+  <!-- Coffee mug on desk -->
+  <rect x="310" y="398" width="18" height="22" rx="3" fill="#363a55"/>
+  <rect x="310" y="398" width="18" height="5" rx="2" fill="#3b82f6"/>
+  <path d="M328,404 Q334,407 328,412" fill="none" stroke="#363a55" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Small plant pot -->
+  <rect x="140" y="398" width="20" height="20" rx="2" fill="#363a55"/>
+  <circle cx="150" cy="395" r="10" fill="#22c55e" opacity="0.7"/>
+  <circle cx="145" cy="390" r="6" fill="#4ade80" opacity="0.6"/>
+  <circle cx="156" cy="388" r="7" fill="#22c55e" opacity="0.8"/>
+
+  <!-- Subtle ambient particles -->
+  <circle cx="120" cy="200" r="1.5" fill="#3b82f6" opacity="0.15"/>
+  <circle cx="650" cy="250" r="1" fill="#4ade80" opacity="0.1"/>
+  <circle cx="700" cy="350" r="1.2" fill="#3b82f6" opacity="0.12"/>
+  <circle cx="80" cy="350" r="0.8" fill="#4ade80" opacity="0.08"/>
+  <circle cx="730" cy="180" r="1" fill="#3b82f6" opacity="0.1"/>
 </svg>

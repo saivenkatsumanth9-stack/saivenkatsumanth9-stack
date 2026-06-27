@@ -12,25 +12,58 @@
     .success { fill: #39ff14; font-weight: 700; filter: drop-shadow(0 0 1px #39ff14); }
     .info { fill: #ffb86c; }
     .pkg { fill: #ffee32; }
+
+    /* === BREATHING WINDOW CONTROLS === */
+    @keyframes breathe-ctrl {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.12); opacity: 1; }
+    }
+    .ctrl-red { animation: breathe-ctrl 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; transform-origin: 20px 22px; }
+    .ctrl-yellow { animation: breathe-ctrl 3s cubic-bezier(0.4, 0, 0.6, 1) 0.4s infinite; transform-origin: 35px 22px; }
+    .ctrl-green { animation: breathe-ctrl 3s cubic-bezier(0.4, 0, 0.6, 1) 0.8s infinite; transform-origin: 50px 22px; }
+
+    /* === GOLD GLOW TRAIL === */
+    .text-glow {
+      filter: drop-shadow(0 0 3px rgba(255,215,0,0.3)) drop-shadow(0 0 6px rgba(255,215,0,0.15));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ctrl-red, .ctrl-yellow, .ctrl-green { animation: none; opacity: 1; transform: none; }
+      .text-glow { filter: none; }
+    }
   </style>
+  <defs>
+    <!-- Fade-out mask for smooth left/right edges -->
+    <linearGradient id="fade-mask-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="black"/>
+      <stop offset="6%" stop-color="white"/>
+      <stop offset="94%" stop-color="white"/>
+      <stop offset="100%" stop-color="black"/>
+    </linearGradient>
+    <mask id="edge-fade">
+      <rect x="0" y="0" width="890" height="45" fill="url(#fade-mask-grad)"/>
+    </mask>
+  </defs>
   <rect width="998" height="43" x="1" y="1" rx="6" fill="#0d1117" stroke="#333" stroke-width="1.5"/>
   <!-- Window controls -->
-  <circle cx="20" cy="22" r="5" fill="#ff5f56"/>
-  <circle cx="35" cy="22" r="5" fill="#ffbd2e"/>
-  <circle cx="50" cy="22" r="5" fill="#27c93f"/>
+  <circle cx="20" cy="22" r="5" fill="#ff5f56" class="ctrl-red"/>
+  <circle cx="35" cy="22" r="5" fill="#ffbd2e" class="ctrl-yellow"/>
+  <circle cx="50" cy="22" r="5" fill="#27c93f" class="ctrl-green"/>
   
   <svg width="890" height="45" x="80" y="0">
-    <g>
-      <text x="0" y="27" class="console-text">
-        <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">pip install</tspan> <tspan class="pkg">python java c cs unity react nextjs</tspan>... <tspan class="success">[SUCCESS 100%]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">git commit -m</tspan> <tspan class="pkg">"build future"</tspan>... <tspan class="success">[DEPLOYED]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">npm run</tspan> <tspan class="pkg">dev</tspan>... <tspan class="info">[READY on port 3000]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">pip install</tspan> <tspan class="pkg">python java c cs unity react nextjs</tspan>... <tspan class="success">[SUCCESS 100%]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">git commit -m</tspan> <tspan class="pkg">"build future"</tspan>... <tspan class="success">[DEPLOYED]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">npm run</tspan> <tspan class="pkg">dev</tspan>... <tspan class="info">[READY on port 3000]</tspan>
-      </text>
-      <animateTransform 
-        attributeName="transform" 
-        type="translate" 
-        from="0 0" 
-        to="-1360 0" 
-        dur="25s" 
-        repeatCount="indefinite" />
+    <g mask="url(#edge-fade)" class="text-glow">
+      <g>
+        <text x="0" y="27" class="console-text">
+          <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">pip install</tspan> <tspan class="pkg">python java c cs unity react nextjs</tspan>... <tspan class="success">[SUCCESS 100%]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">git commit -m</tspan> <tspan class="pkg">"build future"</tspan>... <tspan class="success">[DEPLOYED]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">npm run</tspan> <tspan class="pkg">dev</tspan>... <tspan class="info">[READY on port 3000]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">pip install</tspan> <tspan class="pkg">python java c cs unity react nextjs</tspan>... <tspan class="success">[SUCCESS 100%]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">git commit -m</tspan> <tspan class="pkg">"build future"</tspan>... <tspan class="success">[DEPLOYED]</tspan>       •       <tspan class="cmd">sumanth@peddi:~$</tspan> <tspan class="action">npm run</tspan> <tspan class="pkg">dev</tspan>... <tspan class="info">[READY on port 3000]</tspan>
+        </text>
+        <animateTransform 
+          attributeName="transform" 
+          type="translate" 
+          from="0 0" 
+          to="-1360 0" 
+          dur="25s" 
+          repeatCount="indefinite" />
+      </g>
     </g>
   </svg>
 </svg>

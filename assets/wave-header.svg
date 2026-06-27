@@ -7,12 +7,73 @@
       fill: #8b949e;
       text-anchor: middle;
     }
+
+    /* Gold shimmer sweep */
+    @keyframes shimmer-sweep {
+      0%   { transform: translateX(-150px); }
+      100% { transform: translateX(1150px); }
+    }
+
+    /* Breathing scale for window controls */
+    @keyframes dot-breathe {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.08); }
+    }
+
+    /* CRT scanline */
+    @keyframes scanline-move {
+      0%   { transform: translateY(-2px); }
+      100% { transform: translateY(37px); }
+    }
+
+    .shimmer-bar {
+      animation: shimmer-sweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .dot-1 { animation: dot-breathe 2.4s cubic-bezier(0.45, 0, 0.55, 1) infinite; transform-origin: 20px 18px; }
+    .dot-2 { animation: dot-breathe 2.4s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.3s; transform-origin: 40px 18px; }
+    .dot-3 { animation: dot-breathe 2.4s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.6s; transform-origin: 60px 18px; }
+
+    .scanline {
+      animation: scanline-move 3s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .shimmer-bar, .dot-1, .dot-2, .dot-3, .scanline {
+        animation: none;
+      }
+    }
   </style>
+
+  <defs>
+    <linearGradient id="gold-shimmer" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#ffd700" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffe666" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#ffd700" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffd700" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="header-clip">
+      <rect width="1000" height="35" rx="8"/>
+    </clipPath>
+  </defs>
+
   <rect width="1000" height="35" fill="#161b22" rx="8"/>
   <rect width="1000" height="8" y="27" fill="#161b22"/> <!-- remove bottom roundness -->
+
+  <!-- Gold shimmer overlay -->
+  <g clip-path="url(#header-clip)">
+    <rect class="shimmer-bar" width="150" height="35" fill="url(#gold-shimmer)"/>
+  </g>
+
+  <!-- CRT scanline -->
+  <g clip-path="url(#header-clip)">
+    <rect class="scanline" width="1000" height="1" fill="#ffe666" opacity="0.04"/>
+  </g>
+
   <!-- Window controls -->
-  <circle cx="20" cy="18" r="6" fill="#ff5f56"/>
-  <circle cx="40" cy="18" r="6" fill="#ffbd2e"/>
-  <circle cx="60" cy="18" r="6" fill="#27c93f"/>
+  <circle class="dot-1" cx="20" cy="18" r="6" fill="#ff5f56"/>
+  <circle class="dot-2" cx="40" cy="18" r="6" fill="#ffbd2e"/>
+  <circle class="dot-3" cx="60" cy="18" r="6" fill="#27c93f"/>
   <text x="500" y="22" class="title-text">sumanth@peddi-terminal: ~ (zsh)</text>
 </svg>

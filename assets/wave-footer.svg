@@ -6,18 +6,96 @@
       font-size: 12px;
       fill: #ffffff;
     }
+
+    /* Gold shimmer sweep */
+    @keyframes shimmer-sweep {
+      0%   { transform: translateX(-150px); }
+      100% { transform: translateX(1150px); }
+    }
+
+    /* Online dot glow pulse */
+    @keyframes online-pulse {
+      0%, 100% { opacity: 0.35; r: 6px; }
+      50%      { opacity: 0.7; r: 9px; }
+    }
+
+    @keyframes online-dot-breathe {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.7; }
+    }
+
+    /* CRT scanline */
+    @keyframes scanline-move-footer {
+      0%   { transform: translateY(-2px); }
+      100% { transform: translateY(32px); }
+    }
+
+    .shimmer-bar-f {
+      animation: shimmer-sweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .scanline-f {
+      animation: scanline-move-footer 3.5s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .shimmer-bar-f, .scanline-f {
+        animation: none;
+      }
+    }
   </style>
+
+  <defs>
+    <linearGradient id="gold-shimmer-f" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#ffd700" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffe666" stop-opacity="0.10"/>
+      <stop offset="60%" stop-color="#ffd700" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffd700" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="footer-clip">
+      <rect width="1000" height="30" rx="6"/>
+    </clipPath>
+    <filter id="online-glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
   <rect width="1000" height="30" fill="#21262d" rx="6"/>
   <rect width="1000" height="8" fill="#21262d"/> <!-- remove top roundness -->
+
+  <!-- Gold shimmer overlay -->
+  <g clip-path="url(#footer-clip)">
+    <rect class="shimmer-bar-f" width="150" height="30" fill="url(#gold-shimmer-f)"/>
+  </g>
+
+  <!-- CRT scanline -->
+  <g clip-path="url(#footer-clip)">
+    <rect class="scanline-f" width="1000" height="1" fill="#ffe666" opacity="0.035"/>
+  </g>
+
   <!-- Left Side: Status / Branch -->
   <rect width="120" height="30" fill="#388bfd" rx="4"/>
   <rect width="20" height="30" x="110" fill="#388bfd"/>
   <text x="20" y="19" class="status-text">🔒 TERMINAL</text>
-  
+
   <text x="140" y="19" class="status-text" fill="#8b949e">main*</text>
-  
+
   <!-- Right Side: Info -->
   <text x="820" y="19" class="status-text" fill="#8b949e">UTF-8</text>
   <text x="890" y="19" class="status-text" fill="#8b949e">LF</text>
+
+  <!-- ONLINE status with pulsing glow -->
+  <g filter="url(#online-glow)">
+    <!-- Glow halo behind the dot -->
+    <circle cx="944" cy="14" r="6" fill="#27c93f" opacity="0.35">
+      <animate attributeName="opacity" values="0.35;0.7;0.35" dur="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </circle>
+  </g>
   <text x="940" y="19" class="status-text" fill="#27c93f">● ONLINE</text>
 </svg>

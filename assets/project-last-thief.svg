@@ -16,18 +16,100 @@
     .char { fill: #bd93f9; animation: run 0.35s steps(2) infinite; filter: drop-shadow(0 0 2px #bd93f9); }
     .obstacle { fill: #ff007f; animation: obstacle 1.8s linear infinite; filter: drop-shadow(0 0 3px #ff007f); }
     .ground { stroke: #00f2fe; stroke-width: 2; stroke-dasharray: 10 10; animation: scroll-ground 0.4s linear infinite; }
+
+    /* === ROTATING BORDER CHASE === */
+    @keyframes border-chase {
+      0% { stroke-dashoffset: 900; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .chase-border {
+      stroke-dasharray: 40 860;
+      animation: border-chase 4s linear infinite;
+    }
+
+    /* === DIAGONAL SHIMMER SWEEP === */
+    @keyframes shimmer-diag {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(500px); }
+    }
+    .shimmer-sweep {
+      animation: shimmer-diag 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 5s infinite;
+    }
+
+    /* === BREATHING WINDOW CONTROLS === */
+    @keyframes breathe-ctrl {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+    .ctrl-red { animation: breathe-ctrl 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; transform-origin: 15px 15px; }
+    .ctrl-yellow { animation: breathe-ctrl 3s cubic-bezier(0.4, 0, 0.6, 1) 0.4s infinite; transform-origin: 27px 15px; }
+    .ctrl-green { animation: breathe-ctrl 3s cubic-bezier(0.4, 0, 0.6, 1) 0.8s infinite; transform-origin: 39px 15px; }
+
+    /* === PARTICLE TRAIL BEHIND CHARACTER === */
+    @keyframes particle-trail {
+      0% { opacity: 0.7; r: 2; transform: translateX(0); }
+      100% { opacity: 0; r: 0.5; transform: translateX(-25px); }
+    }
+    .trail-p1 { animation: particle-trail 0.5s cubic-bezier(0.4, 0, 1, 1) infinite; }
+    .trail-p2 { animation: particle-trail 0.5s cubic-bezier(0.4, 0, 1, 1) 0.12s infinite; }
+    .trail-p3 { animation: particle-trail 0.5s cubic-bezier(0.4, 0, 1, 1) 0.24s infinite; }
+    .trail-p4 { animation: particle-trail 0.5s cubic-bezier(0.4, 0, 1, 1) 0.36s infinite; }
+
+    /* === COIN GLOW PULSE === */
+    @keyframes coin-glow {
+      0%, 100% { filter: drop-shadow(0 0 3px #ffee32); }
+      50% { filter: drop-shadow(0 0 8px #ffd700) drop-shadow(0 0 14px rgba(255,215,0,0.5)); }
+    }
+    .coin-group {
+      animation: coin-glow 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .char { animation: none; }
+      .obstacle { animation: none; transform: translateX(50px); }
+      .ground { animation: none; }
+      .chase-border { animation: none; stroke-dasharray: none; }
+      .shimmer-sweep { animation: none; opacity: 0; }
+      .ctrl-red, .ctrl-yellow, .ctrl-green { animation: none; opacity: 1; transform: none; }
+      .trail-p1, .trail-p2, .trail-p3, .trail-p4 { animation: none; opacity: 0; }
+      .coin-group { animation: none; filter: drop-shadow(0 0 3px #ffee32); }
+    }
   </style>
   <defs>
     <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00f2fe"/>
       <stop offset="100%" stop-color="#ff007f"/>
     </linearGradient>
+    <linearGradient id="chase-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe666"/>
+      <stop offset="50%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#ffe666"/>
+    </linearGradient>
+    <linearGradient id="shimmer-diag-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,230,102,0)"/>
+      <stop offset="45%" stop-color="rgba(255,230,102,0)"/>
+      <stop offset="50%" stop-color="rgba(255,230,102,0.35)"/>
+      <stop offset="55%" stop-color="rgba(255,230,102,0)"/>
+      <stop offset="100%" stop-color="rgba(255,230,102,0)"/>
+    </linearGradient>
+    <clipPath id="card-clip">
+      <rect width="298" height="148" x="1" y="1" rx="6"/>
+    </clipPath>
   </defs>
   
   <rect width="298" height="148" x="1" y="1" class="term-bg"/>
-  <circle cx="15" cy="15" r="4" fill="#ff5f56"/>
-  <circle cx="27" cy="15" r="4" fill="#ffbd2e"/>
-  <circle cx="39" cy="15" r="4" fill="#27c93f"/>
+
+  <!-- Rotating border chase -->
+  <rect width="298" height="148" x="1" y="1" rx="6" fill="none" stroke="url(#chase-gold)" stroke-width="1.5" class="chase-border" opacity="0.85"/>
+
+  <!-- Shimmer sweep -->
+  <g clip-path="url(#card-clip)">
+    <rect class="shimmer-sweep" x="-150" y="0" width="200" height="150" fill="url(#shimmer-diag-grad)"/>
+  </g>
+
+  <circle cx="15" cy="15" r="4" fill="#ff5f56" class="ctrl-red"/>
+  <circle cx="27" cy="15" r="4" fill="#ffbd2e" class="ctrl-yellow"/>
+  <circle cx="39" cy="15" r="4" fill="#27c93f" class="ctrl-green"/>
   
   <!-- Ground -->
   <line x1="10" y1="120" x2="290" y2="120" stroke="#30363d" stroke-width="4"/>
@@ -38,6 +120,11 @@
     <rect x="50" y="85" width="15" height="30" rx="3"/>
     <circle cx="58" cy="77" r="7"/>
     <rect x="50" y="74" width="12" height="3" fill="#000"/>
+    <!-- Particle trail -->
+    <circle cx="47" cy="100" r="2" fill="#bd93f9" class="trail-p1" opacity="0"/>
+    <circle cx="45" cy="107" r="1.5" fill="#bd93f9" class="trail-p2" opacity="0"/>
+    <circle cx="48" cy="112" r="1.5" fill="#bd93f9" class="trail-p3" opacity="0"/>
+    <circle cx="44" cy="95" r="1" fill="#bd93f9" class="trail-p4" opacity="0"/>
   </g>
 
   <!-- Obstacle (Spikes) -->
@@ -46,7 +133,7 @@
   </g>
 
   <!-- Glowing Coin -->
-  <g transform="translate(160, 60)" filter="drop-shadow(0 0 3px #ffee32)">
+  <g transform="translate(160, 60)" class="coin-group">
     <circle cx="0" cy="0" r="6" fill="#ffee32" stroke="#ffee32"/>
     <text x="-3" y="4" font-family="monospace" font-size="10" fill="#000" font-weight="bold">$</text>
   </g>

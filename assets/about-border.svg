@@ -1,18 +1,59 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
   <defs>
     <style>
-      @keyframes glow-pulse {
+      /* === ENHANCED 3-LEVEL GLOW PULSE === */
+      @keyframes glow-pulse-3 {
         0%, 100% {
-          filter: drop-shadow(0 0 6px #D4AF37) drop-shadow(0 0 12px rgba(212,175,55,0.4));
-          opacity: 0.9;
+          filter: drop-shadow(0 0 4px #b59410) drop-shadow(0 0 8px rgba(181,148,16,0.3));
+          opacity: 0.85;
         }
-        50% {
-          filter: drop-shadow(0 0 14px #FFD700) drop-shadow(0 0 28px rgba(255,215,0,0.5));
+        33% {
+          filter: drop-shadow(0 0 10px #D4AF37) drop-shadow(0 0 20px rgba(212,175,55,0.45));
+          opacity: 0.95;
+        }
+        66% {
+          filter: drop-shadow(0 0 18px #FFD700) drop-shadow(0 0 36px rgba(255,215,0,0.55)) drop-shadow(0 0 50px rgba(255,230,102,0.25));
           opacity: 1;
         }
       }
       .glow-border {
-        animation: glow-pulse 3s ease-in-out infinite;
+        animation: glow-pulse-3 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      /* === ROTATING DASH CHASE === */
+      @keyframes dash-chase {
+        0% { stroke-dashoffset: 2400; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .chase-border {
+        stroke-dasharray: 60 2340;
+        animation: dash-chase 6s linear infinite;
+      }
+
+      /* === CORNER SPARKLES === */
+      @keyframes corner-sparkle {
+        0%, 100% { r: 2; opacity: 0.3; }
+        50% { r: 4.5; opacity: 1; }
+      }
+      .sparkle-tl { animation: corner-sparkle 2.5s cubic-bezier(0.4, 0, 0.6, 1) 0s infinite; }
+      .sparkle-tr { animation: corner-sparkle 2.5s cubic-bezier(0.4, 0, 0.6, 1) 0.6s infinite; }
+      .sparkle-br { animation: corner-sparkle 2.5s cubic-bezier(0.4, 0, 0.6, 1) 1.2s infinite; }
+      .sparkle-bl { animation: corner-sparkle 2.5s cubic-bezier(0.4, 0, 0.6, 1) 1.8s infinite; }
+
+      /* === INNER AMBIENT GLOW === */
+      @keyframes ambient-breathe {
+        0%, 100% { opacity: 0.03; }
+        50% { opacity: 0.08; }
+      }
+      .ambient-glow {
+        animation: ambient-breathe 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .glow-border { animation: none; filter: drop-shadow(0 0 6px #D4AF37); opacity: 0.9; }
+        .chase-border { animation: none; stroke-dasharray: none; }
+        .sparkle-tl, .sparkle-tr, .sparkle-br, .sparkle-bl { animation: none; opacity: 0.5; r: 3; }
+        .ambient-glow { animation: none; opacity: 0.05; }
       }
     </style>
     <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -26,7 +67,19 @@
         <animate attributeName="stop-color" values="#FFD700;#AA771C;#D4AF37;#AA771C;#FFD700" dur="4s" repeatCount="indefinite"/>
       </stop>
     </linearGradient>
+    <linearGradient id="chase-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe666"/>
+      <stop offset="50%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#ffe666"/>
+    </linearGradient>
+    <radialGradient id="ambient-radial" cx="50%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
   </defs>
+
+  <!-- Inner ambient glow -->
+  <ellipse cx="400" cy="200" rx="350" ry="175" fill="url(#ambient-radial)" class="ambient-glow" opacity="0.03"/>
 
   <!-- Animated glowing border rectangle -->
   <rect
@@ -42,6 +95,21 @@
     stroke-width="2.5"
   />
 
+  <!-- Rotating dash chase border -->
+  <rect
+    class="chase-border"
+    x="3"
+    y="3"
+    width="794"
+    height="394"
+    rx="16"
+    ry="16"
+    fill="none"
+    stroke="url(#chase-grad)"
+    stroke-width="2"
+    opacity="0.9"
+  />
+
   <!-- Inner subtle secondary border for depth -->
   <rect
     x="8"
@@ -55,4 +123,10 @@
     stroke-width="0.5"
     opacity="0.25"
   />
+
+  <!-- Corner accent sparkles -->
+  <circle cx="19" cy="19" r="2" fill="#FFD700" class="sparkle-tl" filter="drop-shadow(0 0 4px #FFD700)"/>
+  <circle cx="781" cy="19" r="2" fill="#FFD700" class="sparkle-tr" filter="drop-shadow(0 0 4px #FFD700)"/>
+  <circle cx="781" cy="381" r="2" fill="#FFD700" class="sparkle-br" filter="drop-shadow(0 0 4px #FFD700)"/>
+  <circle cx="19" cy="381" r="2" fill="#FFD700" class="sparkle-bl" filter="drop-shadow(0 0 4px #FFD700)"/>
 </svg>

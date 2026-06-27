@@ -30,11 +30,12 @@
       rx: 4;
     }
     
-    .fill-python { fill: url(#python-grad); filter: drop-shadow(0 0 3px #ffee32); }
-    .fill-java { fill: url(#java-grad); filter: drop-shadow(0 0 3px #ff7b72); }
-    .fill-c { fill: url(#c-grad); filter: drop-shadow(0 0 3px #00f2fe); }
-    .fill-csharp { fill: url(#csharp-grad); filter: drop-shadow(0 0 3px #39ff14); }
+    .fill-python { fill: url(#python-grad); }
+    .fill-java { fill: url(#java-grad); }
+    .fill-c { fill: url(#c-grad); }
+    .fill-csharp { fill: url(#csharp-grad); }
     
+    /* === BAR LOADING WITH STAGGERED DELAYS === */
     @keyframes load-python {
       from { width: 0px; }
       to { width: 595px; }
@@ -52,10 +53,100 @@
       to { width: 525px; }
     }
     
-    .run-python { animation: load-python 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
-    .run-java { animation: load-java 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
-    .run-c { animation: load-c 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
-    .run-csharp { animation: load-csharp 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+    .run-python { animation: load-python 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards, bar-glow-python 2.5s cubic-bezier(0.4, 0, 0.2, 1) 2s infinite; animation-delay: 0s; }
+    .run-java { animation: load-java 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards, bar-glow-java 2.5s cubic-bezier(0.4, 0, 0.2, 1) 2.3s infinite; animation-delay: 0.3s, 2.3s; }
+    .run-c { animation: load-c 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards, bar-glow-c 2.5s cubic-bezier(0.4, 0, 0.2, 1) 2.6s infinite; animation-delay: 0.6s, 2.6s; }
+    .run-csharp { animation: load-csharp 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards, bar-glow-csharp 2.5s cubic-bezier(0.4, 0, 0.2, 1) 2.9s infinite; animation-delay: 0.9s, 2.9s; }
+
+    /* === PULSING GLOW FOR EACH BAR === */
+    @keyframes bar-glow-python {
+      0%, 100% { filter: drop-shadow(0 0 3px #ffee32); }
+      50% { filter: drop-shadow(0 0 8px #ffee32) drop-shadow(0 0 16px rgba(255,238,50,0.4)); }
+    }
+    @keyframes bar-glow-java {
+      0%, 100% { filter: drop-shadow(0 0 3px #ff7b72); }
+      50% { filter: drop-shadow(0 0 8px #ff7b72) drop-shadow(0 0 16px rgba(255,123,114,0.4)); }
+    }
+    @keyframes bar-glow-c {
+      0%, 100% { filter: drop-shadow(0 0 3px #00f2fe); }
+      50% { filter: drop-shadow(0 0 8px #00f2fe) drop-shadow(0 0 16px rgba(0,242,254,0.4)); }
+    }
+    @keyframes bar-glow-csharp {
+      0%, 100% { filter: drop-shadow(0 0 3px #39ff14); }
+      50% { filter: drop-shadow(0 0 8px #39ff14) drop-shadow(0 0 16px rgba(57,255,20,0.4)); }
+    }
+
+    /* === SHIMMER SWEEP === */
+    @keyframes shimmer-sweep {
+      0% { transform: translateX(-100px); }
+      100% { transform: translateX(800px); }
+    }
+    .shimmer-python { animation: shimmer-sweep 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.2s forwards; opacity: 0.6; }
+    .shimmer-java { animation: shimmer-sweep 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.5s forwards; opacity: 0.6; }
+    .shimmer-c { animation: shimmer-sweep 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.8s forwards; opacity: 0.6; }
+    .shimmer-csharp { animation: shimmer-sweep 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3.1s forwards; opacity: 0.6; }
+
+    /* === PERCENTAGE FADE IN === */
+    @keyframes fade-in-pct {
+      0%, 80% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .pct-python { opacity: 0; animation: fade-in-pct 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1.8s forwards; }
+    .pct-java { opacity: 0; animation: fade-in-pct 0.6s cubic-bezier(0.4, 0, 0.2, 1) 2.1s forwards; }
+    .pct-c { opacity: 0; animation: fade-in-pct 0.6s cubic-bezier(0.4, 0, 0.2, 1) 2.4s forwards; }
+    .pct-csharp { opacity: 0; animation: fade-in-pct 0.6s cubic-bezier(0.4, 0, 0.2, 1) 2.7s forwards; }
+
+    /* === PARTICLE SPARKLES === */
+    @keyframes sparkle-python {
+      0% { cx: 150; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 0.8; }
+      100% { cx: 745; opacity: 0; }
+    }
+    @keyframes sparkle-java {
+      0% { cx: 150; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 0.8; }
+      100% { cx: 675; opacity: 0; }
+    }
+    @keyframes sparkle-c-lang {
+      0% { cx: 150; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 0.8; }
+      100% { cx: 605; opacity: 0; }
+    }
+    @keyframes sparkle-csharp-anim {
+      0% { cx: 150; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 0.8; }
+      100% { cx: 675; opacity: 0; }
+    }
+    .spark-p1 { animation: sparkle-python 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0s forwards; }
+    .spark-p2 { animation: sparkle-python 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.1s forwards; }
+    .spark-p3 { animation: sparkle-python 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.2s forwards; }
+    .spark-j1 { animation: sparkle-java 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.3s forwards; }
+    .spark-j2 { animation: sparkle-java 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.4s forwards; }
+    .spark-j3 { animation: sparkle-java 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards; }
+    .spark-c1 { animation: sparkle-c-lang 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.6s forwards; }
+    .spark-c2 { animation: sparkle-c-lang 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.7s forwards; }
+    .spark-c3 { animation: sparkle-c-lang 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.8s forwards; }
+    .spark-cs1 { animation: sparkle-csharp-anim 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.9s forwards; }
+    .spark-cs2 { animation: sparkle-csharp-anim 2s cubic-bezier(0.1, 0.8, 0.2, 1) 1.0s forwards; }
+    .spark-cs3 { animation: sparkle-csharp-anim 2s cubic-bezier(0.1, 0.8, 0.2, 1) 1.1s forwards; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .run-python, .run-java, .run-c, .run-csharp { animation: none; }
+      .run-python { width: 595px; filter: drop-shadow(0 0 3px #ffee32); }
+      .run-java { width: 525px; filter: drop-shadow(0 0 3px #ff7b72); }
+      .run-c { width: 455px; filter: drop-shadow(0 0 3px #00f2fe); }
+      .run-csharp { width: 525px; filter: drop-shadow(0 0 3px #39ff14); }
+      .shimmer-python, .shimmer-java, .shimmer-c, .shimmer-csharp { animation: none; opacity: 0; }
+      .pct-python, .pct-java, .pct-c, .pct-csharp { animation: none; opacity: 1; }
+      .spark-p1, .spark-p2, .spark-p3,
+      .spark-j1, .spark-j2, .spark-j3,
+      .spark-c1, .spark-c2, .spark-c3,
+      .spark-cs1, .spark-cs2, .spark-cs3 { animation: none; opacity: 0; }
+    }
   </style>
 
   <defs>
@@ -79,6 +170,19 @@
       <stop offset="0%" stop-color="#39ff14"/>
       <stop offset="100%" stop-color="#00f2fe"/>
     </linearGradient>
+    <!-- Shimmer gradient for the sweep effect -->
+    <linearGradient id="shimmer-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)" />
+      <stop offset="40%" stop-color="rgba(255,230,102,0)" />
+      <stop offset="50%" stop-color="rgba(255,230,102,0.7)" />
+      <stop offset="60%" stop-color="rgba(255,230,102,0)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+    <!-- Clip paths for shimmer containment -->
+    <clipPath id="clip-python"><rect x="190" y="60" width="595" height="15" rx="4"/></clipPath>
+    <clipPath id="clip-java"><rect x="190" y="90" width="525" height="15" rx="4"/></clipPath>
+    <clipPath id="clip-c"><rect x="190" y="120" width="455" height="15" rx="4"/></clipPath>
+    <clipPath id="clip-csharp"><rect x="190" y="150" width="525" height="15" rx="4"/></clipPath>
   </defs>
 
   <rect width="998" height="178" x="1" y="1" rx="8" fill="#0d1117" stroke="url(#panel-border)" stroke-width="1.5"/>
@@ -96,7 +200,15 @@
     <text y="12" class="label">🐍 Python</text>
     <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
     <rect x="150" y="0" height="15" class="bar-fill fill-python run-python" width="0"/>
-    <text x="870" y="12" class="percentage" fill="#ffee32">85%</text>
+    <text x="870" y="12" class="percentage pct-python" fill="#ffee32">85%</text>
+    <!-- Sparkles -->
+    <circle class="spark-p1" cx="150" cy="4" r="1.5" fill="#ffe666" opacity="0"/>
+    <circle class="spark-p2" cx="150" cy="8" r="1" fill="#ffd700" opacity="0"/>
+    <circle class="spark-p3" cx="150" cy="12" r="1.5" fill="#ffe666" opacity="0"/>
+  </g>
+  <!-- Shimmer overlay for Python -->
+  <g clip-path="url(#clip-python)">
+    <rect class="shimmer-python" x="90" y="60" width="100" height="15" fill="url(#shimmer-grad)" rx="4"/>
   </g>
 
   <!-- Java -->
@@ -104,7 +216,13 @@
     <text y="12" class="label">☕ Java</text>
     <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
     <rect x="150" y="0" height="15" class="bar-fill fill-java run-java" width="0"/>
-    <text x="870" y="12" class="percentage" fill="#ff7b72">75%</text>
+    <text x="870" y="12" class="percentage pct-java" fill="#ff7b72">75%</text>
+    <circle class="spark-j1" cx="150" cy="4" r="1.5" fill="#ff9b92" opacity="0"/>
+    <circle class="spark-j2" cx="150" cy="8" r="1" fill="#ff7b72" opacity="0"/>
+    <circle class="spark-j3" cx="150" cy="12" r="1.5" fill="#ff9b92" opacity="0"/>
+  </g>
+  <g clip-path="url(#clip-java)">
+    <rect class="shimmer-java" x="90" y="90" width="100" height="15" fill="url(#shimmer-grad)" rx="4"/>
   </g>
 
   <!-- C -->
@@ -112,7 +230,13 @@
     <text y="12" class="label">🔧 C</text>
     <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
     <rect x="150" y="0" height="15" class="bar-fill fill-c run-c" width="0"/>
-    <text x="870" y="12" class="percentage" fill="#00f2fe">65%</text>
+    <text x="870" y="12" class="percentage pct-c" fill="#00f2fe">65%</text>
+    <circle class="spark-c1" cx="150" cy="4" r="1.5" fill="#66f7fe" opacity="0"/>
+    <circle class="spark-c2" cx="150" cy="8" r="1" fill="#00f2fe" opacity="0"/>
+    <circle class="spark-c3" cx="150" cy="12" r="1.5" fill="#66f7fe" opacity="0"/>
+  </g>
+  <g clip-path="url(#clip-c)">
+    <rect class="shimmer-c" x="90" y="120" width="100" height="15" fill="url(#shimmer-grad)" rx="4"/>
   </g>
 
   <!-- C# -->
@@ -120,6 +244,12 @@
     <text y="12" class="label">🎮 C#</text>
     <rect x="150" y="0" width="700" height="15" class="bar-bg"/>
     <rect x="150" y="0" height="15" class="bar-fill fill-csharp run-csharp" width="0"/>
-    <text x="870" y="12" class="percentage" fill="#39ff14">75%</text>
+    <text x="870" y="12" class="percentage pct-csharp" fill="#39ff14">75%</text>
+    <circle class="spark-cs1" cx="150" cy="4" r="1.5" fill="#7fff5e" opacity="0"/>
+    <circle class="spark-cs2" cx="150" cy="8" r="1" fill="#39ff14" opacity="0"/>
+    <circle class="spark-cs3" cx="150" cy="12" r="1.5" fill="#7fff5e" opacity="0"/>
+  </g>
+  <g clip-path="url(#clip-csharp)">
+    <rect class="shimmer-csharp" x="90" y="150" width="100" height="15" fill="url(#shimmer-grad)" rx="4"/>
   </g>
 </svg>

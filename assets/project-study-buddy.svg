@@ -9,18 +9,94 @@
     .prompt { fill: #ff007f; font-weight: bold; }
     .green { fill: #39ff14; }
     .cyan { fill: #00f2fe; }
+
+    /* === ROTATING BORDER CHASE === */
+    @keyframes border-chase {
+      0% { stroke-dashoffset: 900; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .chase-border {
+      stroke-dasharray: 40 860;
+      animation: border-chase 4s linear infinite;
+    }
+
+    /* === DIAGONAL SHIMMER SWEEP === */
+    @keyframes shimmer-diag {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(500px); }
+    }
+    .shimmer-sweep {
+      animation: shimmer-diag 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 5s infinite;
+    }
+
+    /* === BREATHING WINDOW CONTROLS === */
+    @keyframes breathe-ctrl {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+    .ctrl-red { animation: breathe-ctrl 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; transform-origin: 15px 15px; }
+    .ctrl-yellow { animation: breathe-ctrl 3s cubic-bezier(0.4, 0, 0.6, 1) 0.4s infinite; transform-origin: 27px 15px; }
+    .ctrl-green { animation: breathe-ctrl 3s cubic-bezier(0.4, 0, 0.6, 1) 0.8s infinite; transform-origin: 39px 15px; }
+
+    /* === AMBIENT GOLD GLOW === */
+    @keyframes ambient-pulse {
+      0%, 100% { opacity: 0.03; }
+      50% { opacity: 0.07; }
+    }
+    .ambient-glow {
+      animation: ambient-pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .chase-border { animation: none; stroke-dasharray: none; }
+      .shimmer-sweep { animation: none; opacity: 0; }
+      .ctrl-red, .ctrl-yellow, .ctrl-green { animation: none; opacity: 1; transform: none; }
+      .ambient-glow { animation: none; opacity: 0.04; }
+      g[style*="fade-response"] { animation: none; opacity: 1; }
+    }
   </style>
   <defs>
     <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00f2fe"/>
       <stop offset="100%" stop-color="#ff007f"/>
     </linearGradient>
+    <linearGradient id="chase-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe666"/>
+      <stop offset="50%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#ffe666"/>
+    </linearGradient>
+    <linearGradient id="shimmer-diag-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,230,102,0)"/>
+      <stop offset="45%" stop-color="rgba(255,230,102,0)"/>
+      <stop offset="50%" stop-color="rgba(255,230,102,0.35)"/>
+      <stop offset="55%" stop-color="rgba(255,230,102,0)"/>
+      <stop offset="100%" stop-color="rgba(255,230,102,0)"/>
+    </linearGradient>
+    <radialGradient id="ambient-gold" cx="50%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <clipPath id="card-clip">
+      <rect width="298" height="148" x="1" y="1" rx="6"/>
+    </clipPath>
   </defs>
   
   <rect width="298" height="148" x="1" y="1" class="term-bg"/>
-  <circle cx="15" cy="15" r="4" fill="#ff5f56"/>
-  <circle cx="27" cy="15" r="4" fill="#ffbd2e"/>
-  <circle cx="39" cy="15" r="4" fill="#27c93f"/>
+
+  <!-- Ambient gold glow -->
+  <ellipse cx="150" cy="75" rx="130" ry="65" fill="url(#ambient-gold)" class="ambient-glow" opacity="0.03"/>
+
+  <!-- Rotating border chase -->
+  <rect width="298" height="148" x="1" y="1" rx="6" fill="none" stroke="url(#chase-gold)" stroke-width="1.5" class="chase-border" opacity="0.85"/>
+
+  <!-- Shimmer sweep -->
+  <g clip-path="url(#card-clip)">
+    <rect class="shimmer-sweep" x="-150" y="0" width="200" height="150" fill="url(#shimmer-diag-grad)"/>
+  </g>
+
+  <circle cx="15" cy="15" r="4" fill="#ff5f56" class="ctrl-red"/>
+  <circle cx="27" cy="15" r="4" fill="#ffbd2e" class="ctrl-yellow"/>
+  <circle cx="39" cy="15" r="4" fill="#27c93f" class="ctrl-green"/>
   
   <g transform="translate(15, 45)">
     <text x="0" y="0" class="term-text prompt">$ python study_buddy.py</text>

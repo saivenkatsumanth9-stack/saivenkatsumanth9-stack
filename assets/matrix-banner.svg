@@ -1,12 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 180" width="100%" height="180" fill="none">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&amp;display=swap');
-    
+
+    /* ── Original rain animation (now with premium easing) ── */
     @keyframes fall {
-      0% { transform: translateY(-200px); }
+      0%   { transform: translateY(-200px); }
       100% { transform: translateY(200px); }
     }
-    
+
     .rain-col {
       font-family: monospace;
       font-size: 10px;
@@ -14,27 +15,37 @@
       text-orientation: upright;
       opacity: 0.2;
     }
-    
-    .cyan-rain { fill: #00f2fe; }
-    .pink-rain { fill: #ff007f; }
+
+    .cyan-rain   { fill: #00f2fe; }
+    .pink-rain   { fill: #ff007f; }
     .purple-rain { fill: #bd93f9; }
-    
-    .c1 { animation: fall 6s linear infinite; }
-    .c2 { animation: fall 4s linear infinite; }
-    .c3 { animation: fall 8s linear infinite; }
-    .c4 { animation: fall 5s linear infinite; }
-    
-    .logo-glow {
-      filter: drop-shadow(0 0 8px #ff007f) drop-shadow(0 0 15px rgba(0,242,254,0.6));
+
+    .c1 { animation: fall 6s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    .c2 { animation: fall 4s cubic-bezier(0.35, 0, 0.65, 1) infinite; }
+    .c3 { animation: fall 8s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    .c4 { animation: fall 5s cubic-bezier(0.35, 0, 0.65, 1) infinite; }
+
+    /* ── Title glow breathing ── */
+    @keyframes glow-breathe {
+      0%, 100% {
+        filter: drop-shadow(0 0 8px #ff007f) drop-shadow(0 0 15px rgba(0,242,254,0.6));
+      }
+      50% {
+        filter: drop-shadow(0 0 16px #ff007f) drop-shadow(0 0 30px rgba(0,242,254,0.8)) drop-shadow(0 0 40px rgba(189,147,249,0.4));
+      }
     }
-    
+
+    .logo-glow {
+      animation: glow-breathe 3s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    }
+
     .title {
       font-family: 'Fira Code', monospace;
       font-size: 32px;
       font-weight: 700;
       fill: url(#header-grad);
     }
-    
+
     .subtitle {
       font-family: 'Fira Code', monospace;
       font-size: 14px;
@@ -43,6 +54,110 @@
     }
     .accent {
       fill: #ffee32;
+    }
+
+    /* ── Cursor blink ── */
+    @keyframes cursor-blink {
+      0%, 49.9%  { opacity: 1; }
+      50%, 100%  { opacity: 0; }
+    }
+    .cursor {
+      animation: cursor-blink 1s step-end infinite;
+    }
+
+    /* ── Aurora background glow ── */
+    @keyframes aurora-shift-1 {
+      0%, 100% { cx: 420; cy: 80; r: 90; }
+      33%      { cx: 500; cy: 70; r: 110; }
+      66%      { cx: 560; cy: 90; r: 95; }
+    }
+    @keyframes aurora-shift-2 {
+      0%, 100% { cx: 580; cy: 85; r: 80; }
+      33%      { cx: 500; cy: 95; r: 100; }
+      66%      { cx: 440; cy: 75; r: 85; }
+    }
+
+    /* ── Starfield twinkle ── */
+    @keyframes twinkle-1 {
+      0%, 100% { opacity: 0.08; }
+      50%      { opacity: 0.28; }
+    }
+    @keyframes twinkle-2 {
+      0%, 100% { opacity: 0.12; }
+      50%      { opacity: 0.3; }
+    }
+    @keyframes twinkle-3 {
+      0%, 100% { opacity: 0.05; }
+      50%      { opacity: 0.22; }
+    }
+
+    .star-a { animation: twinkle-1 3s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+    .star-b { animation: twinkle-2 4s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.5s; }
+    .star-c { animation: twinkle-3 5s cubic-bezier(0.45, 0, 0.55, 1) infinite 1.2s; }
+    .star-d { animation: twinkle-1 3.5s cubic-bezier(0.45, 0, 0.55, 1) infinite 2s; }
+    .star-e { animation: twinkle-2 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.8s; }
+
+    /* ── Floating particle animations ── */
+    @keyframes float-a {
+      0%, 100% { transform: translateY(0px); opacity: 0.15; }
+      50%      { transform: translateY(-6px); opacity: 0.38; }
+    }
+    @keyframes float-b {
+      0%, 100% { transform: translateY(0px); opacity: 0.2; }
+      50%      { transform: translateY(-8px); opacity: 0.35; }
+    }
+    @keyframes float-c {
+      0%, 100% { transform: translateY(0px); opacity: 0.18; }
+      50%      { transform: translateY(-5px); opacity: 0.4; }
+    }
+    @keyframes float-d {
+      0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.15; }
+      50%      { transform: translateY(-7px) translateX(3px); opacity: 0.32; }
+    }
+    @keyframes float-e {
+      0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+      50%      { transform: translateY(-4px) translateX(-2px); opacity: 0.36; }
+    }
+
+    .fl-a  { animation: float-a 5s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+    .fl-b  { animation: float-b 6s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.4s; }
+    .fl-c  { animation: float-c 5.5s cubic-bezier(0.45, 0, 0.55, 1) infinite 1s; }
+    .fl-d  { animation: float-d 7s cubic-bezier(0.45, 0, 0.55, 1) infinite 1.5s; }
+    .fl-e  { animation: float-e 6.5s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.8s; }
+    .fl-f  { animation: float-a 5.8s cubic-bezier(0.45, 0, 0.55, 1) infinite 2s; }
+    .fl-g  { animation: float-b 6.2s cubic-bezier(0.45, 0, 0.55, 1) infinite 2.5s; }
+    .fl-h  { animation: float-c 5.2s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.2s; }
+    .fl-i  { animation: float-d 7.5s cubic-bezier(0.45, 0, 0.55, 1) infinite 3s; }
+    .fl-j  { animation: float-e 6.8s cubic-bezier(0.45, 0, 0.55, 1) infinite 1.2s; }
+    .fl-k  { animation: float-a 5.4s cubic-bezier(0.45, 0, 0.55, 1) infinite 3.5s; }
+    .fl-l  { animation: float-b 6.4s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.6s; }
+    .fl-m  { animation: float-c 5.6s cubic-bezier(0.45, 0, 0.55, 1) infinite 4s; }
+    .fl-n  { animation: float-d 7.2s cubic-bezier(0.45, 0, 0.55, 1) infinite 1.8s; }
+    .fl-o  { animation: float-e 6.6s cubic-bezier(0.45, 0, 0.55, 1) infinite 2.2s; }
+    .fl-p  { animation: float-a 5.3s cubic-bezier(0.45, 0, 0.55, 1) infinite 4.5s; }
+    .fl-q  { animation: float-b 6.1s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.9s; }
+    .fl-r  { animation: float-c 5.7s cubic-bezier(0.45, 0, 0.55, 1) infinite 3.2s; }
+    .fl-s  { animation: float-d 7.3s cubic-bezier(0.45, 0, 0.55, 1) infinite 2.8s; }
+    .fl-t  { animation: float-e 6.3s cubic-bezier(0.45, 0, 0.55, 1) infinite 1.4s; }
+    .fl-u  { animation: float-a 5.9s cubic-bezier(0.45, 0, 0.55, 1) infinite 5s; }
+    .fl-v  { animation: float-b 6.7s cubic-bezier(0.45, 0, 0.55, 1) infinite 3.8s; }
+    .fl-w  { animation: float-c 5.1s cubic-bezier(0.45, 0, 0.55, 1) infinite 1.6s; }
+    .fl-x  { animation: float-d 7.4s cubic-bezier(0.45, 0, 0.55, 1) infinite 4.2s; }
+    .fl-y  { animation: float-e 6.9s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.3s; }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .c1, .c2, .c3, .c4, .logo-glow, .cursor,
+      .star-a, .star-b, .star-c, .star-d, .star-e,
+      .fl-a, .fl-b, .fl-c, .fl-d, .fl-e, .fl-f, .fl-g, .fl-h,
+      .fl-i, .fl-j, .fl-k, .fl-l, .fl-m, .fl-n, .fl-o, .fl-p,
+      .fl-q, .fl-r, .fl-s, .fl-t, .fl-u, .fl-v, .fl-w, .fl-x, .fl-y {
+        animation: none;
+      }
+      .logo-glow {
+        filter: drop-shadow(0 0 8px #ff007f) drop-shadow(0 0 15px rgba(0,242,254,0.6));
+      }
+      .cursor { opacity: 1; }
     }
   </style>
 
@@ -57,11 +172,73 @@
       <stop offset="50%" stop-color="#bd93f9"/>
       <stop offset="100%" stop-color="#ff007f"/>
     </linearGradient>
+
+    <!-- Aurora glow gradients -->
+    <radialGradient id="aurora-1" cx="0.42" cy="0.45" r="0.35">
+      <stop offset="0%" stop-color="#bd93f9" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#bd93f9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aurora-2" cx="0.58" cy="0.5" r="0.3">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="aurora-blur">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+
+    <clipPath id="banner-clip">
+      <rect width="998" height="178" x="1" y="1" rx="8"/>
+    </clipPath>
   </defs>
 
   <rect width="998" height="178" x="1" y="1" rx="8" fill="#0d1117" stroke="url(#border-grad)" stroke-width="2"/>
 
-  <!-- Matrix falling streams in background -->
+  <!-- ═══ Starfield background ═══ -->
+  <g clip-path="url(#banner-clip)">
+    <circle class="star-a" cx="45" cy="22" r="0.8" fill="#ffffff" opacity="0.1"/>
+    <circle class="star-b" cx="120" cy="155" r="1" fill="#ffffff" opacity="0.12"/>
+    <circle class="star-c" cx="195" cy="40" r="0.6" fill="#ffffff" opacity="0.08"/>
+    <circle class="star-d" cx="310" cy="160" r="1.2" fill="#ffffff" opacity="0.15"/>
+    <circle class="star-e" cx="380" cy="30" r="0.7" fill="#ffffff" opacity="0.1"/>
+    <circle class="star-a" cx="455" cy="150" r="0.9" fill="#ffffff" opacity="0.12"/>
+    <circle class="star-b" cx="540" cy="18" r="1.1" fill="#ffffff" opacity="0.1"/>
+    <circle class="star-c" cx="615" cy="165" r="0.5" fill="#ffffff" opacity="0.08"/>
+    <circle class="star-d" cx="700" cy="25" r="1" fill="#ffffff" opacity="0.14"/>
+    <circle class="star-e" cx="770" cy="155" r="0.8" fill="#ffffff" opacity="0.1"/>
+    <circle class="star-a" cx="850" cy="35" r="1.3" fill="#ffffff" opacity="0.12"/>
+    <circle class="star-b" cx="920" cy="140" r="0.6" fill="#ffffff" opacity="0.09"/>
+    <circle class="star-c" cx="75" cy="95" r="0.7" fill="#ffffff" opacity="0.1"/>
+    <circle class="star-d" cx="250" cy="100" r="0.9" fill="#ffffff" opacity="0.08"/>
+    <circle class="star-e" cx="650" cy="90" r="1" fill="#ffffff" opacity="0.11"/>
+    <circle class="star-a" cx="960" cy="60" r="0.5" fill="#ffffff" opacity="0.1"/>
+    <circle class="star-b" cx="160" cy="120" r="1.1" fill="#ffffff" opacity="0.07"/>
+    <circle class="star-c" cx="500" cy="165" r="0.8" fill="#ffffff" opacity="0.12"/>
+    <circle class="star-d" cx="820" cy="100" r="0.6" fill="#ffffff" opacity="0.09"/>
+    <circle class="star-e" cx="420" cy="45" r="1.4" fill="#ffffff" opacity="0.1"/>
+  </g>
+
+  <!-- ═══ Aurora background glow ═══ -->
+  <g clip-path="url(#banner-clip)" filter="url(#aurora-blur)">
+    <ellipse cx="420" cy="80" rx="120" ry="60" fill="#bd93f9" opacity="0.1">
+      <animate attributeName="cx" values="420;500;560;420" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="cy" values="80;70;90;80" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="rx" values="120;150;130;120" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.1;0.16;0.08;0.1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+    <ellipse cx="580" cy="85" rx="100" ry="50" fill="#00f2fe" opacity="0.07">
+      <animate attributeName="cx" values="580;500;440;580" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="cy" values="85;95;75;85" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="rx" values="100;130;110;100" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.07;0.12;0.06;0.07" dur="10s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+    <ellipse cx="500" cy="90" rx="80" ry="40" fill="#ff007f" opacity="0.05">
+      <animate attributeName="cx" values="500;540;460;500" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <animate attributeName="opacity" values="0.05;0.09;0.04;0.05" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+    </ellipse>
+  </g>
+
+  <!-- ═══ Matrix falling streams (ORIGINAL — preserved exactly) ═══ -->
   <g class="rain-col cyan-rain c1">
     <text x="30" y="0">101001101011001010101</text>
     <text x="430" y="20">10011011010101001101</text>
@@ -91,11 +268,40 @@
     <text x="730" y="50">011010100110101011010</text>
   </g>
 
-  <!-- Foreground Logo/Branding -->
+  <!-- ═══ Floating particle dots (25 particles) ═══ -->
+  <g clip-path="url(#banner-clip)">
+    <circle class="fl-a" cx="50"  cy="30"  r="1.2" fill="#ffd700" opacity="0.2"/>
+    <circle class="fl-b" cx="130" cy="140" r="1.8" fill="#ffffff" opacity="0.18"/>
+    <circle class="fl-c" cx="200" cy="55"  r="1"   fill="#ffd700" opacity="0.25"/>
+    <circle class="fl-d" cx="270" cy="130" r="2"   fill="#ffffff" opacity="0.15"/>
+    <circle class="fl-e" cx="340" cy="40"  r="1.5" fill="#ffd700" opacity="0.22"/>
+    <circle class="fl-f" cx="410" cy="150" r="1.3" fill="#ffffff" opacity="0.2"/>
+    <circle class="fl-g" cx="470" cy="35"  r="2.2" fill="#ffd700" opacity="0.18"/>
+    <circle class="fl-h" cx="530" cy="145" r="1"   fill="#ffffff" opacity="0.25"/>
+    <circle class="fl-i" cx="590" cy="28"  r="1.8" fill="#ffd700" opacity="0.15"/>
+    <circle class="fl-j" cx="660" cy="155" r="1.5" fill="#ffffff" opacity="0.2"/>
+    <circle class="fl-k" cx="720" cy="42"  r="2.5" fill="#ffd700" opacity="0.17"/>
+    <circle class="fl-l" cx="800" cy="135" r="1.2" fill="#ffffff" opacity="0.22"/>
+    <circle class="fl-m" cx="870" cy="50"  r="1.8" fill="#ffd700" opacity="0.15"/>
+    <circle class="fl-n" cx="940" cy="120" r="1"   fill="#ffffff" opacity="0.2"/>
+    <circle class="fl-o" cx="90"  cy="110" r="2"   fill="#ffd700" opacity="0.18"/>
+    <circle class="fl-p" cx="160" cy="85"  r="1.3" fill="#ffffff" opacity="0.15"/>
+    <circle class="fl-q" cx="310" cy="95"  r="1.5" fill="#ffd700" opacity="0.22"/>
+    <circle class="fl-r" cx="450" cy="110" r="2.8" fill="#ffffff" opacity="0.16"/>
+    <circle class="fl-s" cx="550" cy="100" r="1"   fill="#ffd700" opacity="0.2"/>
+    <circle class="fl-t" cx="620" cy="65"  r="1.8" fill="#ffffff" opacity="0.18"/>
+    <circle class="fl-u" cx="750" cy="80"  r="2.2" fill="#ffd700" opacity="0.15"/>
+    <circle class="fl-v" cx="690" cy="120" r="1.5" fill="#ffffff" opacity="0.2"/>
+    <circle class="fl-w" cx="380" cy="160" r="3"   fill="#ffd700" opacity="0.17"/>
+    <circle class="fl-x" cx="850" cy="95"  r="1.2" fill="#ffffff" opacity="0.19"/>
+    <circle class="fl-y" cx="970" cy="50"  r="1.8" fill="#ffd700" opacity="0.16"/>
+  </g>
+
+  <!-- ═══ Foreground Logo/Branding (ORIGINAL — preserved exactly) ═══ -->
   <g transform="translate(500, 90)" text-anchor="middle">
     <!-- Glowing Title -->
     <text y="-10" class="title logo-glow">PEDDI SAI VENKAT SUMANTH</text>
-    <!-- Subtitle -->
-    <text y="25" class="subtitle">&gt; SOFTWARE DEVELOPER &amp; <tspan class="accent">AI BUILDER</tspan> _</text>
+    <!-- Subtitle with blinking cursor -->
+    <text y="25" class="subtitle">&gt; SOFTWARE DEVELOPER &amp; <tspan class="accent">AI BUILDER</tspan> <tspan class="cursor">_</tspan></text>
   </g>
 </svg>
