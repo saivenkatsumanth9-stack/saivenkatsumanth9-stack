@@ -69,92 +69,150 @@ Git · GitHub Actions (CI/CD) · Vitest (100% Pass Rate) · Unity Engine (2D/3D 
 ### 🚀 `> ./PROJECTS`
 
 ```bash
-$ git log --all --graph --decorate --oneline
+$ git log --all --graph --decorate --oneline --status=verified
 ```
 
-<!-- PROJECT 1: BENEFITX -->
-<div align="left">
-<pre style="font-family: 'JetBrains Mono', monospace; background-color: #0c101b; color: #f8fafc; border: 1.2px solid #1e293b; border-left: 4px solid #22c55e; border-radius: 6px; padding: 16px; line-height: 1.55;">
-<span style="color: #22c55e; font-weight: bold;">┌─ 01 // BENEFITX ─────────────────────────────────────────────────────────────────────────────┐</span>
-│ <span style="color: #06b6d4; font-weight: bold;">AI GovTech Welfare Scheme Discovery &amp; Decision Support Platform</span>                             │
-│                                                                                             │
-│ • <span style="color: #94a3b8;">Core Problem :</span> Complex scheme eligibility and dense notices prevent eligible citizens from benefits. │
-│ • <span style="color: #94a3b8;">Architecture :</span> 17-route application suite with citizen portal &amp; officer verification console.│
-│ • <span style="color: #94a3b8;">Engines (5)  :</span> Recommendation Scoring • Criteria Eligibility • Document Readiness        │
-│                  Zero-Mutation What-If Simulator • Multilingual Translation (EN, TE, HI)    │
-│ • <span style="color: #94a3b8;">Test Suite   :</span> 40/40 Unit Tests Passing with Vitest (100% Coverage).                          │
-│                                                                                             │
-│ <span style="color: #94a3b8;">STACK:</span> React 19 • TypeScript • TanStack Start • Nitro • Radix UI • Tailwind CSS • Vitest       │
-│ <span style="color: #94a3b8;">LINKS:</span> <a href="https://github.com/saivenkatsumanth9-stack/BENEFITX" style="color: #22c55e; text-decoration: none;"><b>[ SOURCE REPO ]</b></a> ─────────────────────── <a href="https://benefit-navigator-main.vercel.app" style="color: #06b6d4; text-decoration: none;"><b>[ LIVE PRODUCTION PORTAL ↗ ]</b></a>                  │
-<span style="color: #22c55e; font-weight: bold;">└─────────────────────────────────────────────────────────────────────────────────────────────┘</span>
-</pre>
-</div>
+<table>
+  <!-- ROW 1: BENEFITX & HANDSCAPE -->
+  <tr>
+    <td width="50%" valign="top">
+      <div align="left">
+        <h3>🏛️ 01. BENEFITX</h3>
+        <p><strong>AI-Powered Welfare Scheme Discovery & Decision Support Platform</strong></p>
+        <p>An enterprise GovTech platform solving welfare scheme underutilization through automated eligibility matching, document readiness checks, and plain-language translations.</p>
+        <ul>
+          <li><strong>5 Core Engines:</strong> Profile Recommendation, Rule-Based Eligibility, Document Readiness, What-If Simulator, and Multilingual Translation (EN/TE/HI).</li>
+          <li><strong>Architecture:</strong> 17-route portal (Citizen Onboarding, Search, Gov-Admin Verification Console).</li>
+          <li><strong>QA & Coverage:</strong> 40/40 Unit Tests passing with Vitest.</li>
+        </ul>
+        <p>
+          <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+          <img src="https://img.shields.io/badge/TanStack_Start-FF4154?style=flat-square"/>
+          <img src="https://img.shields.io/badge/Nitro-F59E0B?style=flat-square"/>
+          <img src="https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white"/>
+        </p>
+        <p>
+          <a href="https://github.com/saivenkatsumanth9-stack/BENEFITX"><img src="https://img.shields.io/badge/📁_SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" alt="Source Code"/></a>&nbsp;
+          <a href="https://benefit-navigator-main.vercel.app"><img src="https://img.shields.io/badge/🌐_LIVE_PORTAL-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portal"/></a>
+        </p>
+      </div>
+    </td>
+    <td width="50%" valign="top">
+      <div align="left">
+        <h3>🎮 02. HANDSCAPE</h3>
+        <p><strong>3D Cyber Escape Room Controlled by Real-Time Computer Vision</strong></p>
+        <p>A browser-based 3D escape room game where player hands act as the physical controller using real-time machine learning on standard webcam streams.</p>
+        <ul>
+          <li><strong>11 Kinetic Gestures:</strong> Real-time Point, Pinch, Grab, Fist, Open Palm, Wrist Roll, Directional Swipes, and Dual-Hand Synchrony.</li>
+          <li><strong>Vision Pipeline:</strong> MediaPipe 21-landmark Float16 WASM model @ 60 FPS (100% on-device privacy).</li>
+          <li><strong>Audio Engine:</strong> Pure procedural Web Audio synthesizer (0 external sound downloads).</li>
+        </ul>
+        <p>
+          <img src="https://img.shields.io/badge/MediaPipe_AI-0097A7?style=flat-square&logo=google"/>
+          <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white"/>
+          <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+          <img src="https://img.shields.io/badge/Web_Audio-10B981?style=flat-square"/>
+        </p>
+        <p>
+          <a href="https://github.com/saivenkatsumanth9-stack/HandScapeGame-"><img src="https://img.shields.io/badge/📁_SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" alt="Source Code"/></a>&nbsp;
+          <a href="https://github.com/saivenkatsumanth9-stack/HandScapeGame-#-demo-video"><img src="https://img.shields.io/badge/🎥_DEMO_VIDEO-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo Video"/></a>
+        </p>
+      </div>
+    </td>
+  </tr>
 
-<!-- PROJECT 2: HANDSCAPE -->
-<div align="left">
-<pre style="font-family: 'JetBrains Mono', monospace; background-color: #0c101b; color: #f8fafc; border: 1.2px solid #1e293b; border-left: 4px solid #06b6d4; border-radius: 6px; padding: 16px; line-height: 1.55;">
-<span style="color: #06b6d4; font-weight: bold;">┌─ 02 // HANDSCAPE-ESCAPE ────────────────────────────────────────────────────────────────────┐</span>
-│ <span style="color: #06b6d4; font-weight: bold;">3D Cyber Escape Room Controlled by Real-Time Computer Vision &amp; Hand Tracking</span>                │
-│                                                                                             │
-│ • <span style="color: #94a3b8;">Core Problem :</span> Traditional 3D interaction demands expensive VR gear or clunky mouse clicks.│
-│ • <span style="color: #94a3b8;">CV Pipeline  :</span> MediaPipe HandLandmarker extracts 21 3D skeletal points per hand at 60 FPS. │
-│ • <span style="color: #94a3b8;">Mechanics    :</span> 11 Kinetic Gestures (Pinch, Point, Grab, Fist, Open Palm, Wrist Roll, Swipe) │
-│ • <span style="color: #94a3b8;">Architecture :</span> 100% On-Device WebAssembly execution (0 video uploads) + Procedural Web Audio.│
-│                                                                                             │
-│ <span style="color: #94a3b8;">STACK:</span> React 19 • TypeScript • Three.js • Google MediaPipe • Tailwind v4 • Web Audio API    │
-│ <span style="color: #94a3b8;">LINKS:</span> <a href="https://github.com/saivenkatsumanth9-stack/HandScapeGame-" style="color: #06b6d4; text-decoration: none;"><b>[ SOURCE REPO ]</b></a> ─────────────────────── <a href="https://github.com/saivenkatsumanth9-stack/HandScapeGame-#-demo-video" style="color: #22c55e; text-decoration: none;"><b>[ VIDEO DEMO &amp; TELEMETRY ↗ ]</b></a>                   │
-<span style="color: #06b6d4; font-weight: bold;">└─────────────────────────────────────────────────────────────────────────────────────────────┘</span>
-</pre>
-</div>
+  <!-- ROW 2: AGENTIC RESEARCH AGENT & FINFLOW -->
+  <tr>
+    <td width="50%" valign="top">
+      <div align="left">
+        <h3>🔎 03. Agentic Research Agent</h3>
+        <p><strong>Autonomous Multi-Tool ReAct Agent with Safe AST Goal Decomposition</strong></p>
+        <p>An inspectable research agent implementing the ReAct (<code>Thought → Action → Observation</code>) loop built on FastAPI with deterministic subgoal planning.</p>
+        <ul>
+          <li><strong>Multi-Tool Pipeline:</strong> Safe AST Calculator (no unsafe <code>eval</code>), Wikipedia Summary, Web Search, URL Fetch Reader, and Scratchpad Notepad.</li>
+          <li><strong>Audit Trace:</strong> Returns complete step-by-step reasoning logs and tool observations with synthesized answers.</li>
+          <li><strong>Offline Safe:</strong> Network tools degrade gracefully to <code>UNAVAILABLE</code> without crashing; runs with 0 paid API keys.</li>
+        </ul>
+        <p>
+          <img src="https://img.shields.io/badge/Python_3.10+-3776AB?style=flat-square&logo=python&logoColor=white"/>
+          <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+          <img src="https://img.shields.io/badge/Pydantic_v2-E92063?style=flat-square&logo=pydantic&logoColor=white"/>
+          <img src="https://img.shields.io/badge/ReAct_Agents-7928CA?style=flat-square"/>
+        </p>
+        <p>
+          <a href="https://github.com/saivenkatsumanth9-stack/05-agentic-research-agent"><img src="https://img.shields.io/badge/📁_SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" alt="Source Code"/></a>&nbsp;
+          <a href="https://github.com/saivenkatsumanth9-stack/05-agentic-research-agent#api-reference"><img src="https://img.shields.io/badge/📡_REST_API-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="API Specs"/></a>
+        </p>
+      </div>
+    </td>
+    <td width="50%" valign="top">
+      <div align="left">
+        <h3>💳 04. FinFlow Finance Tracker</h3>
+        <p><strong>Personal Finance Platform & In-Browser Receipt OCR Scanning Engine</strong></p>
+        <p>A dark-first, privacy-respecting financial tracking platform engineered for university students and salaried professionals with custom debit spend caps.</p>
+        <ul>
+          <li><strong>OCR Camera Scanner:</strong> In-browser Tesseract.js extracts line items and monetary totals directly from receipt photos.</li>
+          <li><strong>Occupational Presets:</strong> Custom profiles for Students (mess/allowance) vs Salaried Employees (investments/SIPs/rent).</li>
+          <li><strong>FLO Local AI:</strong> Heuristic cash flow advisor analyzing recurring spend and budget partitions (50/30/20).</li>
+        </ul>
+        <p>
+          <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+          <img src="https://img.shields.io/badge/Tesseract_OCR-5C2D91?style=flat-square"/>
+          <img src="https://img.shields.io/badge/Framer_Motion-FF0055?style=flat-square"/>
+        </p>
+        <p>
+          <a href="https://github.com/saivenkatsumanth9-stack/finflow-finance-tracker"><img src="https://img.shields.io/badge/📁_SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" alt="Source Code"/></a>&nbsp;
+          <a href="https://github.com/saivenkatsumanth9-stack/finflow-finance-tracker"><img src="https://img.shields.io/badge/📖_DOCUMENTATION-38B2AC?style=for-the-badge" alt="Docs"/></a>
+        </p>
+      </div>
+    </td>
+  </tr>
 
-<!-- PROJECT 3: AGENTIC RESEARCH AGENT -->
-<div align="left">
-<pre style="font-family: 'JetBrains Mono', monospace; background-color: #0c101b; color: #f8fafc; border: 1.2px solid #1e293b; border-left: 4px solid #a855f7; border-radius: 6px; padding: 16px; line-height: 1.55;">
-<span style="color: #a855f7; font-weight: bold;">┌─ 03 // AGENTIC-RESEARCH-AGENT ──────────────────────────────────────────────────────────────┐</span>
-│ <span style="color: #06b6d4; font-weight: bold;">Autonomous Multi-Tool ReAct Agent with Deterministic Goal Decomposition</span>                     │
-│                                                                                             │
-│ • <span style="color: #94a3b8;">Core Problem :</span> Compound questions fail in single-prompt LLMs without verifiable audit logs.│
-│ • <span style="color: #94a3b8;">Reasoning    :</span> ReAct loop (<span style="color: #a855f7;">Thought → Action → Observation</span>) with deterministic goal planner.│
-│ • <span style="color: #94a3b8;">Tool Matrix  :</span> Safe AST Calculator (no eval) • Wikipedia Summary • Web Search • URL Reader │
-│ • <span style="color: #94a3b8;">Resilience   :</span> 100% Offline-safe fault handling; zero external API token dependencies.       │
-│                                                                                             │
-│ <span style="color: #94a3b8;">STACK:</span> Python 3.10+ • FastAPI • Uvicorn • Pydantic v2 • Safe AST Parser • ReAct Controller │
-│ <span style="color: #94a3b8;">LINKS:</span> <a href="https://github.com/saivenkatsumanth9-stack/05-agentic-research-agent" style="color: #a855f7; text-decoration: none;"><b>[ SOURCE REPO ]</b></a> ─────────────────────── <a href="https://github.com/saivenkatsumanth9-stack/05-agentic-research-agent#api-reference" style="color: #06b6d4; text-decoration: none;"><b>[ API SPECIFICATION ↗ ]</b></a>                        │
-<span style="color: #a855f7; font-weight: bold;">└─────────────────────────────────────────────────────────────────────────────────────────────┘</span>
-</pre>
-</div>
-
-<!-- PROJECT 4: FINFLOW -->
-<div align="left">
-<pre style="font-family: 'JetBrains Mono', monospace; background-color: #0c101b; color: #f8fafc; border: 1.2px solid #1e293b; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 16px; line-height: 1.55;">
-<span style="color: #f59e0b; font-weight: bold;">┌─ 04 // FINFLOW-FINANCE-TRACKER ─────────────────────────────────────────────────────────────┐</span>
-│ <span style="color: #06b6d4; font-weight: bold;">Personal Finance Management Engine &amp; In-Browser Receipt OCR Scanner</span>                          │
-│                                                                                             │
-│ • <span style="color: #94a3b8;">Core Problem :</span> Generic budget apps expose financial data to third-party cloud servers.    │
-│ • <span style="color: #94a3b8;">Features     :</span> Occupational Presets (Student vs Employee) • 50/30/20 Debit Cap Limiter       │
-│                  Dynamic Banking Labels ("Credited To" / "Debited From") • FLO Local AI     │
-│ • <span style="color: #94a3b8;">Vision OCR   :</span> In-browser Tesseract.js extracts totals directly from receipt photos.         │
-│                                                                                             │
-│ <span style="color: #94a3b8;">STACK:</span> React 19 • TypeScript • Tailwind CSS v4 • Framer Motion • Recharts • Tesseract.js  │
-│ <span style="color: #94a3b8;">LINKS:</span> <a href="https://github.com/saivenkatsumanth9-stack/finflow-finance-tracker" style="color: #f59e0b; text-decoration: none;"><b>[ SOURCE REPO ]</b></a> ─────────────────────── <a href="https://github.com/saivenkatsumanth9-stack/finflow-finance-tracker" style="color: #06b6d4; text-decoration: none;"><b>[ ARCHITECTURE DOCS ↗ ]</b></a>                        │
-<span style="color: #f59e0b; font-weight: bold;">└─────────────────────────────────────────────────────────────────────────────────────────────┘</span>
-</pre>
-</div>
-
-<!-- PROJECT 5 & 6: STUDYBUDDY & CLASSWIZ -->
-<div align="left">
-<pre style="font-family: 'JetBrains Mono', monospace; background-color: #0c101b; color: #f8fafc; border: 1.2px solid #1e293b; border-left: 4px solid #3b82f6; border-radius: 6px; padding: 16px; line-height: 1.55;">
-<span style="color: #3b82f6; font-weight: bold;">┌─ 05 // STUDYBUDDY-AI &amp; CLASSWIZ-STUDIO ─────────────────────────────────────────────────────┐</span>
-│ • <span style="color: #06b6d4; font-weight: bold;">StudyBuddy AI :</span> Gamified RAG Document Assistant (TanStack Start, React 19, Supabase RAG)  │
-│                   PDF contextual Q&amp;A • Dynamic study schedule generator • Custom quiz lab.  │
-│                   <a href="https://github.com/saivenkatsumanth9-stack/studybudy-LLM" style="color: #3b82f6; text-decoration: none;"><b>[ GitHub: studybudy-LLM ]</b></a>                                                 │
-│                                                                                             │
-│ • <span style="color: #06b6d4; font-weight: bold;">ClassWiz      :</span> Casio fx-991CW Scientific Calculator &amp; 2D Graphing Engine (Math.js, OCR)     │
-│                   AST math parsing • Cartesian curve plotter • Camera formula OCR solver.   │
-│                   <a href="https://github.com/saivenkatsumanth9-stack/Smart-Calculator" style="color: #3b82f6; text-decoration: none;"><b>[ GitHub: Smart-Calculator ]</b></a>                                              │
-<span style="color: #3b82f6; font-weight: bold;">└─────────────────────────────────────────────────────────────────────────────────────────────┘</span>
-</pre>
-</div>
+  <!-- ROW 3: STUDYBUDDY & CLASSWIZ STUDIO -->
+  <tr>
+    <td width="50%" valign="top">
+      <div align="left">
+        <h3>📚 05. StudyBuddy AI</h3>
+        <p><strong>Gamified RAG Document Assistant & Exam Preparation Platform</strong></p>
+        <p>An AI learning platform built with TanStack Start, React 19, and Supabase. Supports uploading lecture PDFs (up to 20MB) to query notes contextually using Retrieval-Augmented Generation (RAG).</p>
+        <ul>
+          <li><strong>Key Features:</strong> Intelligent dynamic study blocks, automated multiple-choice quiz generator, and gamified streak tracking.</li>
+        </ul>
+        <p>
+          <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+          <img src="https://img.shields.io/badge/TanStack_Start-FF4154?style=flat-square"/>
+          <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white"/>
+          <img src="https://img.shields.io/badge/RAG_NLP-6366F1?style=flat-square"/>
+        </p>
+        <p>
+          <a href="https://github.com/saivenkatsumanth9-stack/studybudy-LLM"><img src="https://img.shields.io/badge/📁_SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" alt="Source Code"/></a>
+        </p>
+      </div>
+    </td>
+    <td width="50%" valign="top">
+      <div align="left">
+        <h3>🧮 06. ClassWiz Studio</h3>
+        <p><strong>Casio fx-991CW Scientific Calculator & 2D Graphing Engine</strong></p>
+        <p>A web-based scientific calculator inspired by the Casio fx-991CW ClassWiz. Features AST mathematical parsing, 2D Cartesian curve plotting, quadratic/linear equation solvers, and voice speech input.</p>
+        <ul>
+          <li><strong>Image-to-Solve:</strong> In-browser Tesseract.js OCR parses math formulas from photo uploads with an 80+ formula library.</li>
+        </ul>
+        <p>
+          <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
+          <img src="https://img.shields.io/badge/Math.js_AST-0052CC?style=flat-square"/>
+          <img src="https://img.shields.io/badge/Web_Speech-10B981?style=flat-square"/>
+          <img src="https://img.shields.io/badge/Canvas_API-EA4335?style=flat-square"/>
+        </p>
+        <p>
+          <a href="https://github.com/saivenkatsumanth9-stack/Smart-Calculator"><img src="https://img.shields.io/badge/📁_SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" alt="Source Code"/></a>
+        </p>
+      </div>
+    </td>
+  </tr>
+</table>
 
 <img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
 
@@ -162,6 +220,12 @@ $ git log --all --graph --decorate --oneline
 
 <div align="center">
 
+<!-- Trophies -->
+<img src="https://github-profile-trophy.vercel.app/?username=saivenkatsumanth9-stack&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies" />
+
+<br/><br/>
+
+<!-- Stats Grid -->
 <table>
   <tr>
     <td width="50%" align="center">
@@ -180,14 +244,22 @@ $ git log --all --graph --decorate --oneline
 
 <br/>
 
-<!-- Activity Frequency -->
+<!-- Contribution Activity Graph -->
 <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=saivenkatsumanth9-stack&bg_color=080a10&color=22c55e&line=22c55e&point=06b6d4&area=true&area_color=0f1422&hide_border=true&custom_title=⚡%20Contribution%20Frequency%20Monitor" alt="Contribution Graph"/>
+
+<br/><br/>
+
+<!-- 3D Contribution Visualizer -->
+<h3>🌐 3D Contribution Landscape</h3>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-green.svg"/>
+  <img src="./profile-3d-contrib/profile-night-green.svg" width="100%" alt="3D Contribution Graph"/>
+</picture>
 
 <br/><br/>
 
 <!-- Contribution Snake -->
 <h3>🐍 Contribution Snake Matrix</h3>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/saivenkatsumanth9-stack/saivenkatsumanth9-stack/output/github-snake-dark.svg"/>
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/saivenkatsumanth9-stack/saivenkatsumanth9-stack/output/github-snake.svg"/>
