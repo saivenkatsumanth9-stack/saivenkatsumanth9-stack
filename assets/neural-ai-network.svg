@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300">
+  <defs>
+    <!-- Glow filters -->
+    <filter id="glow-green" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-violet" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-strong-green" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
+      
+      text {
+        font-family: 'JetBrains Mono', monospace;
+        user-select: none;
+      }
+      
+      .node {
+        animation: pulse 3s infinite ease-in-out;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+      }
+      .blink { animation: blink 2s infinite; }
+
+      /* Node delays */
+      .d0 { animation-delay: 0.0s; }
+      .d1 { animation-delay: 0.4s; }
+      .d2 { animation-delay: 0.8s; }
+      .d3 { animation-delay: 1.2s; }
+      .d4 { animation-delay: 1.6s; }
+      
+      /* Dots */
+      .dot { opacity: 0; }
+      
+      .dot1 { animation: move1 2.5s infinite linear; animation-delay: 0s; }
+      @keyframes move1 {
+        0% { transform: translate(140px, 60px); opacity: 0; }
+        10% { transform: translate(140px, 60px); opacity: 1; }
+        90% { transform: translate(340px, 90px); opacity: 1; }
+        100% { transform: translate(340px, 90px); opacity: 0; }
+      }
+      .dot2 { animation: move2 3.0s infinite linear; animation-delay: 1s; }
+      @keyframes move2 {
+        0% { transform: translate(340px, 150px); opacity: 0; }
+        10% { transform: translate(340px, 150px); opacity: 1; }
+        90% { transform: translate(540px, 240px); opacity: 1; }
+        100% { transform: translate(540px, 240px); opacity: 0; }
+      }
+      .dot3 { animation: move3 2.2s infinite linear; animation-delay: 0.5s; }
+      @keyframes move3 {
+        0% { transform: translate(540px, 60px); opacity: 0; }
+        10% { transform: translate(540px, 60px); opacity: 1; }
+        90% { transform: translate(740px, 90px); opacity: 1; }
+        100% { transform: translate(740px, 90px); opacity: 0; }
+      }
+      .dot4 { animation: move4 2.8s infinite linear; animation-delay: 1.5s; }
+      @keyframes move4 {
+        0% { transform: translate(140px, 180px); opacity: 0; }
+        10% { transform: translate(140px, 180px); opacity: 1; }
+        90% { transform: translate(340px, 210px); opacity: 1; }
+        100% { transform: translate(340px, 210px); opacity: 0; }
+      }
+      .dot5 { animation: move5 2.4s infinite linear; animation-delay: 2s; }
+      @keyframes move5 {
+        0% { transform: translate(340px, 30px); opacity: 0; }
+        10% { transform: translate(340px, 30px); opacity: 1; }
+        90% { transform: translate(540px, 120px); opacity: 1; }
+        100% { transform: translate(540px, 120px); opacity: 0; }
+      }
+      .dot6 { animation: move6 2.6s infinite linear; animation-delay: 0.8s; }
+      @keyframes move6 {
+        0% { transform: translate(540px, 240px); opacity: 0; }
+        10% { transform: translate(540px, 240px); opacity: 1; }
+        90% { transform: translate(740px, 210px); opacity: 1; }
+        100% { transform: translate(740px, 210px); opacity: 0; }
+      }
+      .dot7 { animation: move7 3.1s infinite linear; animation-delay: 1.2s; }
+      @keyframes move7 {
+        0% { transform: translate(140px, 240px); opacity: 0; }
+        10% { transform: translate(140px, 240px); opacity: 1; }
+        90% { transform: translate(340px, 270px); opacity: 1; }
+        100% { transform: translate(340px, 270px); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="transparent" />
+
+  <!-- Headers/Footers -->
+  <text x="20" y="30" fill="#22c55e" font-size="10" font-weight="700">&gt; AI_NEURAL_ARCHITECTURE</text>
+  <text x="860" y="30" fill="#06b6d4" font-size="9" text-anchor="end" class="blink">SYNAPSES: ACTIVE</text>
+  <text x="440" y="285" fill="#64748b" font-size="8" text-anchor="middle">INFERENCE ENGINE v3.7 // READY</text>
+
+  <!-- LINES -->
+  <g stroke="rgba(34,197,94,0.15)" stroke-width="0.5">
+    <line x1="140" y1="60" x2="340" y2="30" /><line x1="140" y1="60" x2="340" y2="90" /><line x1="140" y1="60" x2="340" y2="150" /><line x1="140" y1="60" x2="340" y2="210" /><line x1="140" y1="60" x2="340" y2="270" /><line x1="140" y1="120" x2="340" y2="30" /><line x1="140" y1="120" x2="340" y2="90" /><line x1="140" y1="120" x2="340" y2="150" /><line x1="140" y1="120" x2="340" y2="210" /><line x1="140" y1="120" x2="340" y2="270" /><line x1="140" y1="180" x2="340" y2="30" /><line x1="140" y1="180" x2="340" y2="90" /><line x1="140" y1="180" x2="340" y2="150" /><line x1="140" y1="180" x2="340" y2="210" /><line x1="140" y1="180" x2="340" y2="270" /><line x1="140" y1="240" x2="340" y2="30" /><line x1="140" y1="240" x2="340" y2="90" /><line x1="140" y1="240" x2="340" y2="150" /><line x1="140" y1="240" x2="340" y2="210" /><line x1="140" y1="240" x2="340" y2="270" /><line x1="340" y1="30" x2="540" y2="60" /><line x1="340" y1="30" x2="540" y2="120" /><line x1="340" y1="30" x2="540" y2="180" /><line x1="340" y1="30" x2="540" y2="240" /><line x1="340" y1="90" x2="540" y2="60" /><line x1="340" y1="90" x2="540" y2="120" /><line x1="340" y1="90" x2="540" y2="180" /><line x1="340" y1="90" x2="540" y2="240" /><line x1="340" y1="150" x2="540" y2="60" /><line x1="340" y1="150" x2="540" y2="120" /><line x1="340" y1="150" x2="540" y2="180" /><line x1="340" y1="150" x2="540" y2="240" /><line x1="340" y1="210" x2="540" y2="60" /><line x1="340" y1="210" x2="540" y2="120" /><line x1="340" y1="210" x2="540" y2="180" /><line x1="340" y1="210" x2="540" y2="240" /><line x1="340" y1="270" x2="540" y2="60" /><line x1="340" y1="270" x2="540" y2="120" /><line x1="340" y1="270" x2="540" y2="180" /><line x1="340" y1="270" x2="540" y2="240" /><line x1="540" y1="60" x2="740" y2="90" /><line x1="540" y1="60" x2="740" y2="150" /><line x1="540" y1="60" x2="740" y2="210" /><line x1="540" y1="120" x2="740" y2="90" /><line x1="540" y1="120" x2="740" y2="150" /><line x1="540" y1="120" x2="740" y2="210" /><line x1="540" y1="180" x2="740" y2="90" /><line x1="540" y1="180" x2="740" y2="150" /><line x1="540" y1="180" x2="740" y2="210" /><line x1="540" y1="240" x2="740" y2="90" /><line x1="540" y1="240" x2="740" y2="150" /><line x1="540" y1="240" x2="740" y2="210" />
+  </g>
+
+  <!-- DOTS -->
+  <g>
+    <circle class="dot dot1" cx="0" cy="0" r="2" fill="#22c55e" filter="url(#glow-green)" /><circle class="dot dot2" cx="0" cy="0" r="2" fill="#22c55e" filter="url(#glow-green)" /><circle class="dot dot3" cx="0" cy="0" r="2" fill="#22c55e" filter="url(#glow-green)" /><circle class="dot dot4" cx="0" cy="0" r="2" fill="#22c55e" filter="url(#glow-green)" /><circle class="dot dot5" cx="0" cy="0" r="2" fill="#22c55e" filter="url(#glow-green)" /><circle class="dot dot6" cx="0" cy="0" r="2" fill="#22c55e" filter="url(#glow-green)" /><circle class="dot dot7" cx="0" cy="0" r="2" fill="#22c55e" filter="url(#glow-green)" />
+  </g>
+
+  <!-- NODES -->
+  <g>
+    
+    <g class="node d0" style="transform-origin: 140px 60px;">
+      <circle cx="140" cy="60" r="18" fill="#0f1422" stroke="#22c55e" stroke-width="1.5" filter="url(#glow-green)" />
+      <text x="140" y="60" fill="white" font-size="6" text-anchor="middle" dominant-baseline="middle">DATA</text>
+    </g>
+    <g class="node d1" style="transform-origin: 140px 120px;">
+      <circle cx="140" cy="120" r="18" fill="#0f1422" stroke="#22c55e" stroke-width="1.5" filter="url(#glow-green)" />
+      <text x="140" y="120" fill="white" font-size="6" text-anchor="middle" dominant-baseline="middle">VISION</text>
+    </g>
+    <g class="node d2" style="transform-origin: 140px 180px;">
+      <circle cx="140" cy="180" r="18" fill="#0f1422" stroke="#22c55e" stroke-width="1.5" filter="url(#glow-green)" />
+      <text x="140" y="180" fill="white" font-size="6" text-anchor="middle" dominant-baseline="middle">TEXT</text>
+    </g>
+    <g class="node d3" style="transform-origin: 140px 240px;">
+      <circle cx="140" cy="240" r="18" fill="#0f1422" stroke="#22c55e" stroke-width="1.5" filter="url(#glow-green)" />
+      <text x="140" y="240" fill="white" font-size="6" text-anchor="middle" dominant-baseline="middle">CODE</text>
+    </g>
+    <g class="node d0" style="transform-origin: 340px 30px;">
+      <circle cx="340" cy="30" r="18" fill="#0f1422" stroke="#06b6d4" stroke-width="1.5" filter="url(#glow-cyan)" />
+      <text x="340" y="30" fill="white" font-size="5" text-anchor="middle" dominant-baseline="middle">MediaPipe</text>
+    </g>
+    <g class="node d1" style="transform-origin: 340px 90px;">
+      <circle cx="340" cy="90" r="18" fill="#0f1422" stroke="#06b6d4" stroke-width="1.5" filter="url(#glow-cyan)" />
+      <text x="340" y="90" fill="white" font-size="5" text-anchor="middle" dominant-baseline="middle">RAG</text>
+    </g>
+    <g class="node d2" style="transform-origin: 340px 150px;">
+      <circle cx="340" cy="150" r="18" fill="#0f1422" stroke="#06b6d4" stroke-width="1.5" filter="url(#glow-cyan)" />
+      <text x="340" y="150" fill="white" font-size="5" text-anchor="middle" dominant-baseline="middle">ReAct</text>
+    </g>
+    <g class="node d3" style="transform-origin: 340px 210px;">
+      <circle cx="340" cy="210" r="18" fill="#0f1422" stroke="#06b6d4" stroke-width="1.5" filter="url(#glow-cyan)" />
+      <text x="340" y="210" fill="white" font-size="5" text-anchor="middle" dominant-baseline="middle">OCR</text>
+    </g>
+    <g class="node d4" style="transform-origin: 340px 270px;">
+      <circle cx="340" cy="270" r="18" fill="#0f1422" stroke="#06b6d4" stroke-width="1.5" filter="url(#glow-cyan)" />
+      <text x="340" y="270" fill="white" font-size="5" text-anchor="middle" dominant-baseline="middle">Embeddings</text>
+    </g>
+    <g class="node d0" style="transform-origin: 540px 60px;">
+      <circle cx="540" cy="60" r="18" fill="#0f1422" stroke="#a855f7" stroke-width="1.5" filter="url(#glow-violet)" />
+      <text x="540" y="60" fill="white" font-size="5" text-anchor="middle" dominant-baseline="middle">FastAPI</text>
+    </g>
+    <g class="node d1" style="transform-origin: 540px 120px;">
+      <circle cx="540" cy="120" r="18" fill="#0f1422" stroke="#a855f7" stroke-width="1.5" filter="url(#glow-violet)" />
+      <text x="540" y="120" fill="white" font-size="5" text-anchor="middle" dominant-baseline="middle">Supabase</text>
+    </g>
+    <g class="node d2" style="transform-origin: 540px 180px;">
+      <circle cx="540" cy="180" r="18" fill="#0f1422" stroke="#a855f7" stroke-width="1.5" filter="url(#glow-violet)" />
+      <text x="540" y="180" fill="white" font-size="5" text-anchor="middle" dominant-baseline="middle">Three.js</text>
+    </g>
+    <g class="node d3" style="transform-origin: 540px 240px;">
+      <circle cx="540" cy="240" r="18" fill="#0f1422" stroke="#a855f7" stroke-width="1.5" filter="url(#glow-violet)" />
+      <text x="540" y="240" fill="white" font-size="5" text-anchor="middle" dominant-baseline="middle">TanStack</text>
+    </g>
+    <g class="node d0" style="transform-origin: 740px 90px;">
+      <circle cx="740" cy="90" r="18" fill="#0f1422" stroke="#22c55e" stroke-width="1.5" filter="url(#glow-strong-green)" />
+      <text x="740" y="90" fill="white" font-size="6" text-anchor="middle" dominant-baseline="middle">DEPLOY</text>
+    </g>
+    <g class="node d1" style="transform-origin: 740px 150px;">
+      <circle cx="740" cy="150" r="18" fill="#0f1422" stroke="#22c55e" stroke-width="1.5" filter="url(#glow-strong-green)" />
+      <text x="740" y="150" fill="white" font-size="6" text-anchor="middle" dominant-baseline="middle">SCALE</text>
+    </g>
+    <g class="node d2" style="transform-origin: 740px 210px;">
+      <circle cx="740" cy="210" r="18" fill="#0f1422" stroke="#22c55e" stroke-width="1.5" filter="url(#glow-strong-green)" />
+      <text x="740" y="210" fill="white" font-size="6" text-anchor="middle" dominant-baseline="middle">SHIP</text>
+    </g>
+  </g>
+
+</svg>

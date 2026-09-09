@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" width="880" height="200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
+      
+      .bg-panel { fill: #0a0f1a; stroke: rgba(34, 197, 94, 0.3); stroke-width: 1px; }
+      .text-mono { font-family: 'JetBrains Mono', monospace; }
+      
+      /* Colors */
+      .primary { fill: #22c55e; }
+      .secondary { fill: #06b6d4; }
+      .tertiary { fill: #a855f7; }
+      .muted { fill: #94a3b8; }
+      
+      /* Animations */
+      .blinking { animation: blink 2s infinite; }
+      .typewriter { opacity: 0; animation: fadeInStay 0.1s forwards; }
+      .delay-05 { animation-delay: 0.5s; }
+      .delay-10 { animation-delay: 1s; }
+      .delay-15 { animation-delay: 1.5s; }
+      .delay-20 { animation-delay: 2s; }
+      
+      .pulse-dot { opacity: 0.2; animation: pulse 2s infinite alternate; }
+      .dot-1 { animation-delay: 0.3s; }
+      .dot-2 { animation-delay: 0.6s; }
+      .dot-3 { animation-delay: 0.9s; }
+      .dot-4 { animation-delay: 1.2s; }
+      .dot-5 { animation-delay: 1.5s; }
+      .dot-6 { animation-delay: 1.8s; }
+      
+      .scanline { animation: scan 4s linear infinite; pointer-events: none; }
+      
+      .progress-ring {
+        stroke-dasharray: 220;
+        stroke-dashoffset: 220;
+        animation: drawRing 3s forwards ease-in-out;
+      }
+      
+      @keyframes blink { 
+        0%, 100% { opacity: 1; } 
+        50% { opacity: 0.3; } 
+      }
+      @keyframes fadeInStay { 
+        to { opacity: 1; } 
+      }
+      @keyframes pulse { 
+        to { opacity: 1; filter: drop-shadow(0 0 4px #22c55e); } 
+      }
+      @keyframes scan { 
+        0% { transform: translateY(-10px); } 
+        100% { transform: translateY(210px); } 
+      }
+      @keyframes drawRing { 
+        to { stroke-dashoffset: 0; } 
+      }
+    </style>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Panel -->
+  <rect width="878" height="198" x="1" y="1" rx="8" class="bg-panel"/>
+  
+  <!-- Section Dividers -->
+  <line x1="220" y1="20" x2="220" y2="180" stroke="#22c55e" stroke-width="1" opacity="0.1" />
+  <line x1="660" y1="20" x2="660" y2="180" stroke="#22c55e" stroke-width="1" opacity="0.1" />
+
+  <!-- LEFT SECTION (25%) -->
+  <g id="left-section">
+    <!-- Hexagonal Shield -->
+    <polygon points="110,55 135,70 135,100 110,115 85,100 85,70" fill="none" stroke="#22c55e" stroke-width="2" filter="url(#glow)"/>
+    
+    <!-- Checkmark inside Shield -->
+    <path d="M100,85 L108,93 L122,75" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Progress Ring -->
+    <!-- Circumference of r=35 is ~220 -->
+    <circle cx="110" cy="85" r="35" fill="none" stroke="#22c55e" stroke-width="2" class="progress-ring" transform="rotate(-90 110 85)" filter="url(#glow)"/>
+    <circle cx="110" cy="85" r="35" fill="none" stroke="#22c55e" stroke-width="0.5" opacity="0.2" />
+    
+    <!-- Blinking Text -->
+    <text x="110" y="150" font-size="9" text-anchor="middle" class="primary text-mono blinking">CREDENTIALS VERIFIED</text>
+  </g>
+
+  <!-- CENTER SECTION (50%) -->
+  <g id="center-section" class="text-mono">
+    <!-- Command Line -->
+    <text x="250" y="60" font-size="10" class="primary">$ verify --credentials --all</text>
+    
+    <!-- Terminal Output -->
+    <text x="250" y="85" font-size="9" class="muted typewriter delay-05">&gt; Scanning credential database...</text>
+    
+    <!-- Highlighted Certs -->
+    <text x="250" y="110" font-size="10" font-weight="700" class="secondary typewriter delay-10">&gt; 9 CERTIFICATES AUTHENTICATED</text>
+    
+    <!-- Highlighted Experience -->
+    <text x="250" y="135" font-size="10" class="secondary typewriter delay-15">&gt; 80+ LEETCODE PROBLEMS VERIFIED</text>
+    
+    <!-- Final Clearance Level -->
+    <text x="250" y="160" font-size="10" font-weight="700" class="primary typewriter delay-20">&gt; CLEARANCE LEVEL: FULL-STACK ENGINEER</text>
+  </g>
+
+  <!-- RIGHT SECTION (25%) -->
+  <g id="right-section" class="text-mono">
+    <!-- MongoDB -->
+    <circle cx="690" cy="56" r="3" fill="#22c55e" class="pulse-dot dot-1"/>
+    <text x="705" y="60" font-size="8" class="muted">MongoDB</text>
+
+    <!-- ServiceNow -->
+    <circle cx="690" cy="76" r="3" fill="#22c55e" class="pulse-dot dot-2"/>
+    <text x="705" y="80" font-size="8" class="muted">ServiceNow</text>
+
+    <!-- AWS -->
+    <circle cx="690" cy="96" r="3" fill="#22c55e" class="pulse-dot dot-3"/>
+    <text x="705" y="100" font-size="8" class="muted">AWS</text>
+
+    <!-- Google AI -->
+    <circle cx="690" cy="116" r="3" fill="#22c55e" class="pulse-dot dot-4"/>
+    <text x="705" y="120" font-size="8" class="muted">Google AI</text>
+
+    <!-- Quantum -->
+    <circle cx="690" cy="136" r="3" fill="#22c55e" class="pulse-dot dot-5"/>
+    <text x="705" y="140" font-size="8" class="muted">Quantum</text>
+
+    <!-- Unity -->
+    <circle cx="690" cy="156" r="3" fill="#22c55e" class="pulse-dot dot-6"/>
+    <text x="705" y="160" font-size="8" class="muted">Unity</text>
+  </g>
+
+  <!-- SCAN LINE -->
+  <!-- Sweeps top to bottom every 4s -->
+  <rect width="880" height="2" x="0" y="0" fill="#22c55e" opacity="0.2" class="scanline"/>
+</svg>

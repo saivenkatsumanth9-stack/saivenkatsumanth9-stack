@@ -26,6 +26,12 @@
 
 ### 💻 `> ./WHOAMI`
 
+<div align="center">
+  <img src="./assets/holo-identity.svg" width="100%" alt="Holographic Identity Card"/>
+</div>
+
+<br/>
+
 ```bash
 $ cat /proc/developer_info
 
@@ -39,6 +45,12 @@ $ cat /proc/developer_info
 │ CURRENT MODE : 🟢 BUILDING (Available for Software Internships & Collabs) │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
+
+<br/>
+
+<div align="center">
+  <img src="./assets/isometric-workspace.svg" width="100%" alt="3D Isometric Developer Workstation"/>
+</div>
 
 <img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
 
@@ -54,6 +66,20 @@ $ cat /proc/developer_info
 
 <div align="center">
   <img src="./assets/tech-matrix.svg" width="100%" alt="Tech Stack Architectural Matrix" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="./assets/circuit-techstack.svg" width="100%" alt="Hardware & Software Circuit Architecture" />
+</div>
+
+<br/>
+
+#### 🧠 `> ./NEURAL_INFERENCE_PIPELINE`
+
+<div align="center">
+  <img src="./assets/neural-ai-network.svg" width="100%" alt="Neural AI System & Inference Pipeline" />
 </div>
 
 <img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
@@ -247,6 +273,12 @@ $ cat /proc/developer_info
 <img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
 
 ### 📜 `> ./ACHIEVEMENTS_AND_CERTIFICATIONS`
+
+<div align="center">
+  <img src="./assets/achievement-scanner.svg" width="100%" alt="Cybersecurity Credential Verification Scanner" />
+</div>
+
+<br/>
 
 ```bash
 $ cat /etc/credentials/registry.json --verified

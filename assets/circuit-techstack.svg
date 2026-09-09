@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
+      
+      text {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 0.4; filter: brightness(1); }
+        50% { opacity: 1; filter: brightness(1.5) drop-shadow(0 0 3px currentColor); }
+      }
+      
+      .led-green { animation: pulse 2s infinite ease-in-out; color: #22c55e; fill: currentColor; }
+      .led-cyan { animation: pulse 2.5s infinite ease-in-out; color: #06b6d4; fill: currentColor; }
+      .led-violet { animation: pulse 2.2s infinite ease-in-out; color: #a855f7; fill: currentColor; }
+      .led-amber { animation: pulse 3s infinite ease-in-out; color: #f59e0b; fill: currentColor; }
+      .led-blue { animation: pulse 1.8s infinite ease-in-out; color: #3b82f6; fill: currentColor; }
+      .led-magenta { animation: pulse 2.7s infinite ease-in-out; color: #ec4899; fill: currentColor; }
+
+      @keyframes travel1 {
+        0% { offset-distance: 0%; opacity: 0; }
+        5% { opacity: 1; }
+        95% { opacity: 1; }
+        100% { offset-distance: 100%; opacity: 0; }
+      }
+      
+      .signal1 { offset-path: path('M 310 100 L 330 100 L 330 100 L 350 100'); animation: travel1 3s infinite linear; }
+      .signal2 { offset-path: path('M 600 100 L 620 100 L 620 100 L 640 100'); animation: travel1 4s infinite linear 1s; }
+      .signal3 { offset-path: path('M 195 180 L 195 200 L 195 200 L 195 220'); animation: travel1 3.5s infinite linear 0.5s; }
+      .signal4 { offset-path: path('M 485 180 L 485 200 L 485 200 L 485 220'); animation: travel1 4.5s infinite linear 2s; }
+      .signal5 { offset-path: path('M 310 290 L 330 290 L 330 290 L 350 290'); animation: travel1 2.8s infinite linear 1.5s; }
+
+      .grid-pattern {
+        fill: url(#pcb-grid);
+      }
+      
+      .chip-bg {
+        fill: #0a0f1a;
+      }
+      
+      .chip-notch {
+        fill: #080a10;
+      }
+      
+      .chip-pin {
+        stroke: #475569;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+      }
+      
+      .trace {
+        stroke: #b87333;
+        stroke-width: 1;
+        fill: none;
+        stroke-opacity: 0.3;
+      }
+    </style>
+    
+    <pattern id="pcb-grid" width="15" height="15" patternUnits="userSpaceOnUse">
+      <path d="M 15 0 L 0 0 0 15" fill="none" stroke="rgba(34,197,94,0.03)" stroke-width="1"/>
+    </pattern>
+
+    <linearGradient id="mounting-hole" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <g id="chip-pins-h">
+      <path class="chip-pin" d="M -8 20 L 0 20" />
+      <path class="chip-pin" d="M -8 40 L 0 40" />
+      <path class="chip-pin" d="M -8 60 L 0 60" />
+      <path class="chip-pin" d="M -8 80 L 0 80" />
+      <path class="chip-pin" d="M -8 100 L 0 100" />
+      <path class="chip-pin" d="M -8 120 L 0 120" />
+    </g>
+    
+    <g id="chip-pins-h-right">
+      <path class="chip-pin" d="M 230 20 L 238 20" />
+      <path class="chip-pin" d="M 230 40 L 238 40" />
+      <path class="chip-pin" d="M 230 60 L 238 60" />
+      <path class="chip-pin" d="M 230 80 L 238 80" />
+      <path class="chip-pin" d="M 230 100 L 238 100" />
+      <path class="chip-pin" d="M 230 120 L 238 120" />
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#080a10" />
+  <rect width="100%" height="100%" class="grid-pattern" />
+
+  <!-- Mounting Holes -->
+  <circle cx="20" cy="20" r="8" fill="url(#mounting-hole)" />
+  <circle cx="20" cy="20" r="4" fill="#080a10" />
+  <circle cx="860" cy="20" r="8" fill="url(#mounting-hole)" />
+  <circle cx="860" cy="20" r="4" fill="#080a10" />
+  <circle cx="20" cy="380" r="8" fill="url(#mounting-hole)" />
+  <circle cx="20" cy="380" r="4" fill="#080a10" />
+  <circle cx="860" cy="380" r="8" fill="url(#mounting-hole)" />
+  <circle cx="860" cy="380" r="4" fill="#080a10" />
+
+  <!-- PCB Traces -->
+  <!-- R1C1 to R1C2 -->
+  <path class="trace" d="M 310 70 L 330 70 L 330 100 L 350 100" />
+  <path class="trace" d="M 310 100 L 330 100 L 330 100 L 350 100" />
+  <path class="trace" d="M 310 130 L 330 130 L 330 100 L 350 100" />
+  
+  <!-- R1C2 to R1C3 -->
+  <path class="trace" d="M 600 70 L 620 70 L 620 100 L 640 100" />
+  <path class="trace" d="M 600 100 L 620 100 L 620 100 L 640 100" />
+  <path class="trace" d="M 600 130 L 620 130 L 620 100 L 640 100" />
+
+  <!-- R1C1 to R2C1 -->
+  <path class="trace" d="M 165 180 L 165 200 L 195 200 L 195 220" />
+  <path class="trace" d="M 195 180 L 195 200 L 195 200 L 195 220" />
+  <path class="trace" d="M 225 180 L 225 200 L 195 200 L 195 220" />
+
+  <!-- R1C2 to R2C2 -->
+  <path class="trace" d="M 455 180 L 455 200 L 485 200 L 485 220" />
+  <path class="trace" d="M 485 180 L 485 200 L 485 200 L 485 220" />
+  <path class="trace" d="M 515 180 L 515 200 L 485 200 L 485 220" />
+  
+  <!-- R2C1 to R2C2 -->
+  <path class="trace" d="M 310 260 L 330 260 L 330 290 L 350 290" />
+  <path class="trace" d="M 310 290 L 330 290 L 330 290 L 350 290" />
+  
+  <!-- Animated Signals on Traces -->
+  <circle r="1.5" fill="#22c55e" class="signal1" filter="url(#glow)" />
+  <circle r="1.5" fill="#22c55e" class="signal2" filter="url(#glow)" />
+  <circle r="1.5" fill="#22c55e" class="signal3" filter="url(#glow)" />
+  <circle r="1.5" fill="#22c55e" class="signal4" filter="url(#glow)" />
+  <circle r="1.5" fill="#22c55e" class="signal5" filter="url(#glow)" />
+
+
+  <!-- TOP BANNER -->
+  <text x="40" y="30" fill="#22c55e" font-size="11" font-weight="bold">&gt; SYSTEM_ARCHITECTURE // TECH_STACK_v4.2</text>
+  <text x="840" y="30" fill="#94a3b8" font-size="9" text-anchor="end">ALL SYSTEMS NOMINAL</text>
+
+  <!-- BOTTOM BANNER -->
+  <text x="40" y="385" fill="#64748b" font-size="8">$ lspci --verbose | grep -i "installed_modules"</text>
+
+  <!-- CHIP 1: LANGUAGES -->
+  <g transform="translate(80, 40)">
+    <use href="#chip-pins-h" />
+    <use href="#chip-pins-h-right" />
+    <rect width="230" height="140" rx="8" class="chip-bg" stroke="rgba(34, 197, 94, 0.5)" stroke-width="1" />
+    <circle cx="8" cy="8" r="8" class="chip-notch" />
+    
+    <text x="20" y="25" fill="#22c55e" font-size="9" font-weight="bold">LANGUAGES</text>
+    <circle cx="215" cy="20" r="3" class="led-green" filter="url(#glow)" />
+    
+    <text x="20" y="50" fill="#cbd5e1" font-size="8">• Python</text>
+    <text x="20" y="65" fill="#cbd5e1" font-size="8">• Java</text>
+    <text x="20" y="80" fill="#cbd5e1" font-size="8">• C</text>
+    <text x="120" y="50" fill="#cbd5e1" font-size="8">• C#</text>
+    <text x="120" y="65" fill="#cbd5e1" font-size="8">• TypeScript</text>
+    <text x="120" y="80" fill="#cbd5e1" font-size="8">• JavaScript</text>
+  </g>
+
+  <!-- CHIP 2: FRONTEND & 3D -->
+  <g transform="translate(350, 40)">
+    <use href="#chip-pins-h" />
+    <use href="#chip-pins-h-right" />
+    <rect width="230" height="140" rx="8" class="chip-bg" stroke="rgba(6, 182, 212, 0.5)" stroke-width="1" />
+    <circle cx="8" cy="8" r="8" class="chip-notch" />
+    
+    <text x="20" y="25" fill="#06b6d4" font-size="9" font-weight="bold">FRONTEND &amp; 3D</text>
+    <circle cx="215" cy="20" r="3" class="led-cyan" filter="url(#glow)" />
+    
+    <text x="20" y="50" fill="#cbd5e1" font-size="8">• React 19</text>
+    <text x="20" y="65" fill="#cbd5e1" font-size="8">• Three.js</text>
+    <text x="20" y="80" fill="#cbd5e1" font-size="8">• Tailwind CSS</text>
+    <text x="120" y="50" fill="#cbd5e1" font-size="8">• Framer Motion</text>
+  </g>
+
+  <!-- CHIP 3: BACKEND & API -->
+  <g transform="translate(620, 40)">
+    <use href="#chip-pins-h" />
+    <use href="#chip-pins-h-right" />
+    <rect width="230" height="140" rx="8" class="chip-bg" stroke="rgba(168, 85, 247, 0.5)" stroke-width="1" />
+    <circle cx="8" cy="8" r="8" class="chip-notch" />
+    
+    <text x="20" y="25" fill="#a855f7" font-size="9" font-weight="bold">BACKEND &amp; API</text>
+    <circle cx="215" cy="20" r="3" class="led-violet" filter="url(#glow)" />
+    
+    <text x="20" y="50" fill="#cbd5e1" font-size="8">• Node.js</text>
+    <text x="20" y="65" fill="#cbd5e1" font-size="8">• FastAPI</text>
+    <text x="120" y="50" fill="#cbd5e1" font-size="8">• Nitro</text>
+    <text x="120" y="65" fill="#cbd5e1" font-size="8">• TanStack Start</text>
+  </g>
+
+  <!-- CHIP 4: CLOUD & DEPLOY -->
+  <g transform="translate(80, 220)">
+    <use href="#chip-pins-h" />
+    <use href="#chip-pins-h-right" />
+    <rect width="230" height="140" rx="8" class="chip-bg" stroke="rgba(245, 158, 11, 0.5)" stroke-width="1" />
+    <circle cx="8" cy="8" r="8" class="chip-notch" />
+    
+    <text x="20" y="25" fill="#f59e0b" font-size="9" font-weight="bold">CLOUD &amp; DEPLOY</text>
+    <circle cx="215" cy="20" r="3" class="led-amber" filter="url(#glow)" />
+    
+    <text x="20" y="50" fill="#cbd5e1" font-size="8">• AWS</text>
+    <text x="20" y="65" fill="#cbd5e1" font-size="8">• GCP</text>
+    <text x="20" y="80" fill="#cbd5e1" font-size="8">• Vercel</text>
+    <text x="120" y="50" fill="#cbd5e1" font-size="8">• Docker</text>
+    <text x="120" y="65" fill="#cbd5e1" font-size="8">• Supabase</text>
+  </g>
+
+  <!-- CHIP 5: DATA & DB -->
+  <g transform="translate(350, 220)">
+    <use href="#chip-pins-h" />
+    <use href="#chip-pins-h-right" />
+    <rect width="230" height="140" rx="8" class="chip-bg" stroke="rgba(59, 130, 246, 0.5)" stroke-width="1" />
+    <circle cx="8" cy="8" r="8" class="chip-notch" />
+    
+    <text x="20" y="25" fill="#3b82f6" font-size="9" font-weight="bold">DATA &amp; DB</text>
+    <circle cx="215" cy="20" r="3" class="led-blue" filter="url(#glow)" />
+    
+    <text x="20" y="50" fill="#cbd5e1" font-size="8">• MongoDB</text>
+    <text x="20" y="65" fill="#cbd5e1" font-size="8">• SQL</text>
+    <text x="120" y="50" fill="#cbd5e1" font-size="8">• Supabase</text>
+    <text x="120" y="65" fill="#cbd5e1" font-size="8">• LocalStorage</text>
+  </g>
+
+  <!-- CHIP 6: AI & VISION -->
+  <g transform="translate(620, 220)">
+    <use href="#chip-pins-h" />
+    <use href="#chip-pins-h-right" />
+    <rect width="230" height="140" rx="8" class="chip-bg" stroke="rgba(236, 72, 153, 0.5)" stroke-width="1" />
+    <circle cx="8" cy="8" r="8" class="chip-notch" />
+    
+    <text x="20" y="25" fill="#ec4899" font-size="9" font-weight="bold">AI &amp; VISION</text>
+    <circle cx="215" cy="20" r="3" class="led-magenta" filter="url(#glow)" />
+    
+    <text x="20" y="50" fill="#cbd5e1" font-size="8">• MediaPipe</text>
+    <text x="20" y="65" fill="#cbd5e1" font-size="8">• RAG</text>
+    <text x="20" y="80" fill="#cbd5e1" font-size="8">• ReAct</text>
+    <text x="120" y="50" fill="#cbd5e1" font-size="8">• Tesseract.js</text>
+    <text x="120" y="65" fill="#cbd5e1" font-size="8">• Scikit-learn</text>
+  </g>
+
+</svg>
