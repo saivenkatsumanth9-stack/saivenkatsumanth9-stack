@@ -44,25 +44,9 @@ $ cat /proc/developer_info
 
 ### ⚙️ `> ./TECH_STACK`
 
-```ini
-[01_LANGUAGES]
-Python · TypeScript · JavaScript (ES6+) · Java · C# · C++ · C · SQL · HTML5/CSS3
-
-[02_WEB_ARCHITECTURE]
-React 19 · TanStack Start (SSR) · Node.js · FastAPI · Tailwind CSS v4 · Nitro · Radix UI · Framer Motion
-
-[03_AI_AND_COMPUTER_VISION]
-ReAct Autonomous Agents · Google MediaPipe (21 3D Landmarks) · RAG Pipelines · Tesseract.js OCR · AST Parser · Scikit-Learn
-
-[04_CLOUD_AND_INFRASTRUCTURE]
-AWS · Google Cloud (GCP) · Supabase · Vercel Edge · Docker · Linux / Bash Environment
-
-[05_DATABASES_AND_STORAGE]
-PostgreSQL · Firebase Firestore · Amazon DynamoDB · MySQL · Offline-First Browser LocalStorage
-
-[06_DEV_TOOLS_AND_QA]
-Git · GitHub Actions (CI/CD) · Vitest (100% Pass Rate) · Unity Engine (2D/3D Physics) · Postman · Vite
-```
+<div align="center">
+  <img src="./assets/tech-matrix.svg" width="100%" alt="Tech Stack Architectural Matrix" />
+</div>
 
 <img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
 
@@ -171,7 +155,7 @@ $ git log --all --graph --decorate --oneline --status=verified
     </td>
   </tr>
 
-  <!-- ROW 3: STUDYBUDDY & CLASSWIZ STUDIO -->
+  <!-- ROW 3: STUDYBUDDY & HEALTHMATE -->
   <tr>
     <td width="50%" valign="top">
       <div align="left">
@@ -194,25 +178,127 @@ $ git log --all --graph --decorate --oneline --status=verified
     </td>
     <td width="50%" valign="top">
       <div align="left">
-        <h3>🧮 06. ClassWiz Studio</h3>
-        <p><strong>Casio fx-991CW Scientific Calculator & 2D Graphing Engine</strong></p>
-        <p>A web-based scientific calculator inspired by the Casio fx-991CW ClassWiz. Features AST mathematical parsing, 2D Cartesian curve plotting, quadratic/linear equation solvers, and voice speech input.</p>
+        <h3>🎮 06. Last Standing Thief</h3>
+        <p><strong>2D Endless Runner Game Engine Built with Unity & C#</strong></p>
+        <p>A fully shipped, physics-based 2D endless runner built in Unity. Implements dynamic obstacle scaling, responsive jump & shoot combat mechanics, coin rewards, and intelligent enemy AI routines.</p>
         <ul>
-          <li><strong>Image-to-Solve:</strong> In-browser Tesseract.js OCR parses math formulas from photo uploads with an 80+ formula library.</li>
+          <li><strong>Game Engine:</strong> Unity Engine • C# Scripting • 2D Animation • Distance-Based Difficulty Scaling.</li>
         </ul>
         <p>
-          <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
-          <img src="https://img.shields.io/badge/Math.js_AST-0052CC?style=flat-square"/>
-          <img src="https://img.shields.io/badge/Web_Speech-10B981?style=flat-square"/>
-          <img src="https://img.shields.io/badge/Canvas_API-EA4335?style=flat-square"/>
+          <img src="https://img.shields.io/badge/Unity_Engine-000000?style=flat-square&logo=unity&logoColor=white"/>
+          <img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white"/>
+          <img src="https://img.shields.io/badge/2D_Physics-38B2AC?style=flat-square"/>
+          <img src="https://img.shields.io/badge/Enemy_AI-EA4335?style=flat-square"/>
         </p>
         <p>
-          <a href="https://github.com/saivenkatsumanth9-stack/Smart-Calculator"><img src="https://img.shields.io/badge/📁_SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" alt="Source Code"/></a>
+          <a href="https://github.com/saivenkatsumanth9-stack"><img src="https://img.shields.io/badge/📁_VIEW_PROJECT-181717?style=for-the-badge&logo=github&logoColor=white" alt="View Project"/></a>
         </p>
       </div>
     </td>
   </tr>
 </table>
+
+<img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
+
+### 📜 `> ./ACHIEVEMENTS_AND_CERTIFICATIONS`
+
+```bash
+$ cat /etc/credentials/registry.json --verified
+```
+
+<table>
+  <!-- ROW 1: MONGODB, SERVICENOW, AWS GENAI -->
+  <tr>
+    <td width="33.3%" valign="top">
+      <div align="left">
+        <h4>🍃 MongoDB</h4>
+        <p><strong>Advanced Database Certification</strong></p>
+        <p><em>Credential Record • NoSQL Architecture</em></p>
+        <p><img src="https://img.shields.io/badge/STATUS-VERIFIED-22c55e?style=flat-square" /></p>
+      </div>
+    </td>
+    <td width="33.3%" valign="top">
+      <div align="left">
+        <h4>⚡ ServiceNow</h4>
+        <p><strong>Certified Application Developer (CAD)</strong></p>
+        <p><em>Micro-Certifications & Badges</em></p>
+        <p><img src="https://img.shields.io/badge/STATUS-VERIFIED-22c55e?style=flat-square" /></p>
+      </div>
+    </td>
+    <td width="33.3%" valign="top">
+      <div align="left">
+        <h4>☁️ AWS (Amazon Web Services)</h4>
+        <p><strong>DevOps & AI on AWS: Upgrading Apps with GenAI</strong></p>
+        <p><em>Coursera • 2026</em></p>
+        <p><img src="https://img.shields.io/badge/STATUS-CERTIFIED-22c55e?style=flat-square" /></p>
+      </div>
+    </td>
+  </tr>
+
+  <!-- ROW 2: GOOGLE AI ESSENTIALS, ART OF PROMPTING, QUANTUM -->
+  <tr>
+    <td width="33.3%" valign="top">
+      <div align="left">
+        <h4>🤖 Google</h4>
+        <p><strong>Google AI Essentials Specialization</strong></p>
+        <p><em>Google (Coursera) • 2026</em></p>
+        <p><img src="https://img.shields.io/badge/STATUS-CERTIFIED-22c55e?style=flat-square" /></p>
+      </div>
+    </td>
+    <td width="33.3%" valign="top">
+      <div align="left">
+        <h4>💡 Google</h4>
+        <p><strong>Discover the Art of Prompting</strong></p>
+        <p><em>Google (Coursera) • 2026</em></p>
+        <p><img src="https://img.shields.io/badge/STATUS-CERTIFIED-22c55e?style=flat-square" /></p>
+      </div>
+    </td>
+    <td width="33.3%" valign="top">
+      <div align="left">
+        <h4>⚛️ Quantum Computing</h4>
+        <p><strong>The Complete Quantum Computing Course</strong></p>
+        <p><em>Udemy • 2026</em></p>
+        <p><img src="https://img.shields.io/badge/STATUS-CERTIFIED-22c55e?style=flat-square" /></p>
+      </div>
+    </td>
+  </tr>
+
+  <!-- ROW 3: UNITY MASTER, PROMPT ENGINEERING, DATA ANALYTICS & LEETCODE -->
+  <tr>
+    <td width="33.3%" valign="top">
+      <div align="left">
+        <h4>🎮 Unity 6 & C#</h4>
+        <p><strong>Unity 6 & C# Full Master Course</strong></p>
+        <p><em>Udemy • 2026</em></p>
+        <p><img src="https://img.shields.io/badge/STATUS-CERTIFIED-22c55e?style=flat-square" /></p>
+      </div>
+    </td>
+    <td width="33.3%" valign="top">
+      <div align="left">
+        <h4>📊 Data Analytics</h4>
+        <p><strong>Data Analytics Certification</strong></p>
+        <p><em>Verified Record • 2024</em></p>
+        <p><img src="https://img.shields.io/badge/STATUS-CERTIFIED-22c55e?style=flat-square" /></p>
+      </div>
+    </td>
+    <td width="33.3%" valign="top">
+      <div align="left">
+        <h4>🧠 LeetCode</h4>
+        <p><strong>80+ DSA Problems Solved</strong></p>
+        <p><em>Data Structures & Algorithms</em></p>
+        <p><img src="https://img.shields.io/badge/RANK-PROBLEM_SOLVER-f59e0b?style=flat-square" /></p>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
+
+### 🧭 `> ./ROADMAP`
+
+<div align="center">
+  <img src="./assets/journey-timeline.svg" width="100%" alt="Engineering Journey Git Commit Timeline" />
+</div>
 
 <img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
 
@@ -270,20 +356,6 @@ $ git log --all --graph --decorate --oneline --status=verified
 
 <img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
 
-### 🧭 `> ./ROADMAP`
-
-```text
-●───────────────────────●───────────────────────●───────────────────────●
-2024                    2025                    2026                    2027
-FOUNDATIONS             SYSTEMS & ML            ADVANCED ENGINEERING    PRODUCTION ENGINEER
-
-• C / Java / Python     • Full-Stack Apps       • Autonomous AI Agents  • Scalable Cloud
-• Data Structures       • Data Science Pipelines• MediaPipe Vision AI   • Distributed Systems
-• Shell & Linux Basics  • Unity 2D Physics      • GovTech Production    • Senior Engineering
-```
-
-<img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
-
 ### 🕹️ `> ./COMMAND_CENTER`
 
 Explore the interactive **React 19 + TypeScript + Vite + Tailwind CSS v4** developer command center application in [`portfolio/`](./portfolio):
@@ -301,31 +373,17 @@ npm install && npm run dev
 
 <img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
 
-### 📡 `> ./TRANSMISSION`
-
-```bash
-sumanth@github:~$ echo "Keep building."
-> SYSTEM STATUS : ONLINE
-> CONNECTION    : SECURE_TLS_v1.3
-> CURRENT MODE  : BUILDING HIGH-IMPACT SYSTEMS
-```
+### 📡 `> ./CONNECT`
 
 <div align="center">
+  <img src="./assets/connect-footer.svg" width="100%" alt="Connect Footer and Terminal Uplink" />
 
-<br/>
+  <br/><br/>
 
-<a href="https://linkedin.com/in/saivenkatsumanth"><img src="https://img.shields.io/badge/[_LINKEDIN_]-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>&nbsp;&nbsp;
-<a href="mailto:saivenkatsumanth9@gmail.com"><img src="https://img.shields.io/badge/[_EMAIL_]-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>&nbsp;&nbsp;
-<a href="https://github.com/saivenkatsumanth9-stack"><img src="https://img.shields.io/badge/[_GITHUB_]-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/></a>&nbsp;&nbsp;
-<a href="https://benefit-navigator-main.vercel.app"><img src="https://img.shields.io/badge/[_LIVE_PORTAL_]-000000?style=flat-square&logo=vercel&logoColor=white" alt="Portal"/></a>
+  <!-- Real-time Traffic Telemetry -->
+  <img src="https://komarev.com/ghpvc/?username=saivenkatsumanth9-stack&style=flat-square&color=22c55e&label=TERMINAL_PULSES" alt="Visitor Counter"/>
 
-<br/><br/>
+  <br/><br/>
 
-<!-- Real-time Traffic Telemetry -->
-<img src="https://komarev.com/ghpvc/?username=saivenkatsumanth9-stack&style=flat-square&color=22c55e&label=TERMINAL_PULSES" alt="Visitor Counter"/>
-
-<br/><br/>
-
-<sub>⚡ <i>Architected & Maintained by Peddi Sai Venkat Sumanth</i></sub>
-
+  <sub>⚡ <i>Architected & Maintained by Peddi Sai Venkat Sumanth (Sumanth)</i></sub>
 </div>

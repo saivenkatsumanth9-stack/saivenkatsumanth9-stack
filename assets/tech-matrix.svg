@@ -1,0 +1,278 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 480" width="100%" height="480" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap');
+    
+    @keyframes pulse-cyan {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    @keyframes card-glow {
+      0%, 100% { stroke-opacity: 0.4; }
+      50% { stroke-opacity: 0.9; }
+    }
+    @keyframes line-flow {
+      0% { stroke-dashoffset: 40; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .pulse { animation: pulse-cyan 2.5s ease-in-out infinite; transform-origin: center; }
+    .card-border { animation: card-glow 4s ease-in-out infinite; }
+    .flow-line { stroke-dasharray: 4 4; animation: line-flow 6s linear infinite; }
+  </style>
+
+  <defs>
+    <linearGradient id="matrix-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060810"/>
+      <stop offset="50%" stop-color="#090d18"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+
+    <linearGradient id="card-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1322"/>
+      <stop offset="100%" stop-color="#080b14"/>
+    </linearGradient>
+
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+
+    <linearGradient id="magenta-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#bd00ff"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+
+    <clipPath id="matrix-clip">
+      <rect width="1100" height="480" rx="8"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1100" height="480" rx="8" fill="url(#matrix-bg)" stroke="#1a233a" stroke-width="1.2"/>
+
+  <!-- Top Title Header -->
+  <g transform="translate(30, 36)">
+    <circle cx="8" cy="8" r="4.5" fill="#00f2fe" class="pulse"/>
+    <text x="24" y="12" class="mono" font-size="14" fill="#ffffff" font-weight="800" letter-spacing="1.5">
+      TECH_STACK // ARCHITECTURAL MATRIX
+    </text>
+    <text x="24" y="28" class="mono" font-size="9.5" fill="#64748b" letter-spacing="1">
+      RUNTIME ENVIRONMENT • MULTI-DISCIPLINARY SYSTEMS • PRODUCTION VERIFIED
+    </text>
+  </g>
+
+  <!-- Top Right Indicator Badge -->
+  <g transform="translate(890, 24)">
+    <rect width="180" height="28" rx="5" fill="#0d1424" stroke="#1e293b" stroke-width="1"/>
+    <circle cx="18" cy="14" r="3.5" fill="#22c55e" class="pulse"/>
+    <text x="32" y="18" class="mono" font-size="10.5" fill="#22c55e" font-weight="700" letter-spacing="1">6 CLUSTERS ACTIVE</text>
+  </g>
+
+  <!-- Horizontal Header Line -->
+  <line x1="30" y1="80" x2="1070" y2="80" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="550" cy="80" r="3" fill="#bd00ff"/>
+
+  <!-- ==================== CLUSTER 01: CORE LANGUAGES ==================== -->
+  <g transform="translate(30, 95)">
+    <rect width="505" height="105" rx="6" fill="url(#card-grad-1)" stroke="#bd00ff" stroke-opacity="0.4" stroke-width="1" class="card-border"/>
+    <text x="16" y="22" class="mono" font-size="10" fill="#f43f5e" font-weight="700" letter-spacing="1">[01] CORE LANGUAGES</text>
+    <text x="380" y="22" class="mono" font-size="8.5" fill="#64748b" letter-spacing="1">LEVEL: PROFICIENT</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(16, 36)">
+      <!-- Python -->
+      <rect width="90" height="26" rx="4" fill="#131b2e" stroke="#22c55e" stroke-width="0.8"/>
+      <circle cx="12" cy="13" r="2.5" fill="#22c55e"/>
+      <text x="24" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Python</text>
+
+      <!-- TypeScript -->
+      <rect x="100" width="105" height="26" rx="4" fill="#131b2e" stroke="#00f2fe" stroke-width="0.8"/>
+      <circle cx="112" cy="13" r="2.5" fill="#00f2fe"/>
+      <text x="124" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">TypeScript</text>
+
+      <!-- Java -->
+      <rect x="215" width="75" height="26" rx="4" fill="#131b2e" stroke="#f59e0b" stroke-width="0.8"/>
+      <circle cx="227" cy="13" r="2.5" fill="#f59e0b"/>
+      <text x="239" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Java</text>
+
+      <!-- C# -->
+      <rect x="300" width="65" height="26" rx="4" fill="#131b2e" stroke="#bd00ff" stroke-width="0.8"/>
+      <circle cx="312" cy="13" r="2.5" fill="#bd00ff"/>
+      <text x="324" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">C#</text>
+
+      <!-- C / C++ -->
+      <rect x="375" width="95" height="26" rx="4" fill="#131b2e" stroke="#00f2fe" stroke-width="0.8"/>
+      <circle cx="387" cy="13" r="2.5" fill="#00f2fe"/>
+      <text x="399" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">C / SQL</text>
+    </g>
+
+    <text x="16" y="88" class="mono" font-size="8.5" fill="#64748b">APPLICATIONS: Data Science, Scalable Services, Algorithms, LeetCode (80+ Solved)</text>
+  </g>
+
+  <!-- ==================== CLUSTER 02: CLIENT & 3D FRONTEND ==================== -->
+  <g transform="translate(565, 95)">
+    <rect width="505" height="105" rx="6" fill="url(#card-grad-1)" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="1" class="card-border"/>
+    <text x="16" y="22" class="mono" font-size="10" fill="#00f2fe" font-weight="700" letter-spacing="1">[02] CLIENT &amp; 3D FRONTEND ARCHITECTURE</text>
+    <text x="380" y="22" class="mono" font-size="8.5" fill="#64748b" letter-spacing="1">SPA · SSR · WEBGL</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(16, 36)">
+      <!-- React 19 -->
+      <rect width="95" height="26" rx="4" fill="#131b2e" stroke="#00f2fe" stroke-width="0.8"/>
+      <circle cx="12" cy="13" r="2.5" fill="#00f2fe"/>
+      <text x="24" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">React 19</text>
+
+      <!-- Three.js -->
+      <rect x="105" width="95" height="26" rx="4" fill="#131b2e" stroke="#ffffff" stroke-width="0.8"/>
+      <circle cx="117" cy="13" r="2.5" fill="#ffffff"/>
+      <text x="129" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Three.js</text>
+
+      <!-- TanStack Start -->
+      <rect x="210" width="125" height="26" rx="4" fill="#131b2e" stroke="#f43f5e" stroke-width="0.8"/>
+      <circle cx="222" cy="13" r="2.5" fill="#f43f5e"/>
+      <text x="234" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">TanStack Start</text>
+
+      <!-- Tailwind v4 -->
+      <rect x="345" width="125" height="26" rx="4" fill="#131b2e" stroke="#38bdf8" stroke-width="0.8"/>
+      <circle cx="357" cy="13" r="2.5" fill="#38bdf8"/>
+      <text x="369" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Tailwind CSS v4</text>
+    </g>
+
+    <text x="16" y="88" class="mono" font-size="8.5" fill="#64748b">CAPABILITIES: Cross-device 60fps rendering, Glassmorphism UI, Responsive Web Apps</text>
+  </g>
+
+  <!-- ==================== CLUSTER 03: BACKEND ENGINES ==================== -->
+  <g transform="translate(30, 215)">
+    <rect width="505" height="105" rx="6" fill="url(#card-grad-1)" stroke="#8b5cf6" stroke-opacity="0.4" stroke-width="1" class="card-border"/>
+    <text x="16" y="22" class="mono" font-size="10" fill="#a855f7" font-weight="700" letter-spacing="1">[03] BACKEND ENGINES &amp; FRAMEWORKS</text>
+    <text x="390" y="22" class="mono" font-size="8.5" fill="#64748b" letter-spacing="1">MICROSERVICES</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(16, 36)">
+      <!-- FastAPI -->
+      <rect width="90" height="26" rx="4" fill="#131b2e" stroke="#009688" stroke-width="0.8"/>
+      <circle cx="12" cy="13" r="2.5" fill="#009688"/>
+      <text x="24" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">FastAPI</text>
+
+      <!-- Nitro Engine -->
+      <rect x="100" width="110" height="26" rx="4" fill="#131b2e" stroke="#f59e0b" stroke-width="0.8"/>
+      <circle cx="112" cy="13" r="2.5" fill="#f59e0b"/>
+      <text x="124" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Nitro Engine</text>
+
+      <!-- Spring Boot -->
+      <rect x="220" width="115" height="26" rx="4" fill="#131b2e" stroke="#22c55e" stroke-width="0.8"/>
+      <circle cx="232" cy="13" r="2.5" fill="#22c55e"/>
+      <text x="244" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Spring Boot</text>
+
+      <!-- Node.js / Express -->
+      <rect x="345" width="125" height="26" rx="4" fill="#131b2e" stroke="#22c55e" stroke-width="0.8"/>
+      <circle cx="357" cy="13" r="2.5" fill="#22c55e"/>
+      <text x="369" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Node / REST API</text>
+    </g>
+
+    <text x="16" y="88" class="mono" font-size="8.5" fill="#64748b">SERVICES: Deterministic Decision Engines, REST Endpoints, Safe AST Parsers, Uvicorn</text>
+  </g>
+
+  <!-- ==================== CLUSTER 04: CLOUD & DEV TOOLS ==================== -->
+  <g transform="translate(565, 215)">
+    <rect width="505" height="105" rx="6" fill="url(#card-grad-1)" stroke="#06b6d4" stroke-opacity="0.4" stroke-width="1" class="card-border"/>
+    <text x="16" y="22" class="mono" font-size="10" fill="#06b6d4" font-weight="700" letter-spacing="1">[04] CLOUD PLATFORMS &amp; DEV TOOLS</text>
+    <text x="390" y="22" class="mono" font-size="8.5" fill="#64748b" letter-spacing="1">CI/CD &amp; CLOUD</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(16, 36)">
+      <!-- AWS -->
+      <rect width="70" height="26" rx="4" fill="#131b2e" stroke="#f59e0b" stroke-width="0.8"/>
+      <circle cx="12" cy="13" r="2.5" fill="#f59e0b"/>
+      <text x="24" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">AWS</text>
+
+      <!-- Supabase -->
+      <rect x="80" width="95" height="26" rx="4" fill="#131b2e" stroke="#22c55e" stroke-width="0.8"/>
+      <circle cx="92" cy="13" r="2.5" fill="#22c55e"/>
+      <text x="104" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Supabase</text>
+
+      <!-- Vercel Edge -->
+      <rect x="185" width="105" height="26" rx="4" fill="#131b2e" stroke="#ffffff" stroke-width="0.8"/>
+      <circle cx="197" cy="13" r="2.5" fill="#ffffff"/>
+      <text x="209" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Vercel Edge</text>
+
+      <!-- Git / GitHub Actions -->
+      <rect x="300" width="170" height="26" rx="4" fill="#131b2e" stroke="#3b82f6" stroke-width="0.8"/>
+      <circle cx="312" cy="13" r="2.5" fill="#3b82f6"/>
+      <text x="324" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Git · GitHub Actions</text>
+    </g>
+
+    <text x="16" y="88" class="mono" font-size="8.5" fill="#64748b">INFRA: Serverless hosting, Edge deployment, automated CI/CD workflows, Vitest (100% Pass)</text>
+  </g>
+
+  <!-- ==================== CLUSTER 05: PERSISTENCE & DATABASES ==================== -->
+  <g transform="translate(30, 335)">
+    <rect width="505" height="105" rx="6" fill="url(#card-grad-1)" stroke="#f43f5e" stroke-opacity="0.4" stroke-width="1" class="card-border"/>
+    <text x="16" y="22" class="mono" font-size="10" fill="#f43f5e" font-weight="700" letter-spacing="1">[05] PERSISTENCE &amp; DATABASE ENGINES</text>
+    <text x="385" y="22" class="mono" font-size="8.5" fill="#64748b" letter-spacing="1">POLYGLOT STORE</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(16, 36)">
+      <!-- MongoDB -->
+      <rect width="105" height="26" rx="4" fill="#131b2e" stroke="#22c55e" stroke-width="0.8"/>
+      <circle cx="12" cy="13" r="2.5" fill="#22c55e"/>
+      <text x="24" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">MongoDB</text>
+
+      <!-- Firestore -->
+      <rect x="115" width="100" height="26" rx="4" fill="#131b2e" stroke="#f59e0b" stroke-width="0.8"/>
+      <circle cx="127" cy="13" r="2.5" fill="#f59e0b"/>
+      <text x="139" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Firestore</text>
+
+      <!-- PostgreSQL / MySQL -->
+      <rect x="225" width="135" height="26" rx="4" fill="#131b2e" stroke="#3b82f6" stroke-width="0.8"/>
+      <circle cx="237" cy="13" r="2.5" fill="#3b82f6"/>
+      <text x="249" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">PostgreSQL / SQL</text>
+
+      <!-- Local-First -->
+      <rect x="370" width="105" height="26" rx="4" fill="#131b2e" stroke="#22c55e" stroke-width="0.8"/>
+      <circle cx="382" cy="13" r="2.5" fill="#22c55e"/>
+      <text x="394" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Local-First</text>
+    </g>
+
+    <text x="16" y="88" class="mono" font-size="8.5" fill="#64748b">STORAGE: Certified MongoDB, Real-time NoSQL synchronization, Relational Schemas, LocalStorage</text>
+  </g>
+
+  <!-- ==================== CLUSTER 06: AI, VISION & QUANTUM ==================== -->
+  <g transform="translate(565, 335)">
+    <rect width="505" height="105" rx="6" fill="url(#card-grad-1)" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1" class="card-border"/>
+    <text x="16" y="22" class="mono" font-size="10" fill="#22c55e" font-weight="700" letter-spacing="1">[06] AI, COMPUTER VISION &amp; GAME DEV</text>
+    <text x="400" y="22" class="mono" font-size="8.5" fill="#64748b" letter-spacing="1">INTELLIGENCE</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(16, 36)">
+      <!-- MediaPipe Vision -->
+      <rect width="130" height="26" rx="4" fill="#131b2e" stroke="#00f2fe" stroke-width="0.8"/>
+      <circle cx="12" cy="13" r="2.5" fill="#00f2fe"/>
+      <text x="24" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">MediaPipe Vision</text>
+
+      <!-- ReAct Agents -->
+      <rect x="140" width="115" height="26" rx="4" fill="#131b2e" stroke="#bd00ff" stroke-width="0.8"/>
+      <circle cx="152" cy="13" r="2.5" fill="#bd00ff"/>
+      <text x="164" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">ReAct Agents</text>
+
+      <!-- RAG / NLP -->
+      <rect x="265" width="95" height="26" rx="4" fill="#131b2e" stroke="#f59e0b" stroke-width="0.8"/>
+      <circle cx="277" cy="13" r="2.5" fill="#f59e0b"/>
+      <text x="289" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">RAG / NLP</text>
+
+      <!-- Unity Game Engine -->
+      <rect x="370" width="105" height="26" rx="4" fill="#131b2e" stroke="#ffffff" stroke-width="0.8"/>
+      <circle cx="382" cy="13" r="2.5" fill="#ffffff"/>
+      <text x="394" y="17" class="mono" font-size="10" fill="#f8fafc" font-weight="600">Unity 6 (C#)</text>
+    </g>
+
+    <text x="16" y="88" class="mono" font-size="8.5" fill="#64748b">PIPELINES: MediaPipe 21-point tracking, ReAct Tool Loops, Tesseract OCR, Quantum Computing</text>
+  </g>
+
+  <!-- Bottom Terminal Status Line -->
+  <g transform="translate(30, 462)">
+    <text x="0" y="0" class="mono" font-size="9" fill="#475569">STATUS // ALL 6 MODULES COMPILED &amp; VERIFIED</text>
+    <text x="690" y="0" class="mono" font-size="9" fill="#475569">DEVELOPER_ID: saivenkatsumanth9-stack // NNRES_CSE_2027</text>
+  </g>
+</svg>

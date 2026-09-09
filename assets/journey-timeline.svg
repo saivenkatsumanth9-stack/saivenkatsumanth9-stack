@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 280" width="100%" height="280" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap');
+
+    @keyframes path-dash {
+      0% { stroke-dashoffset: 80; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes node-breathe {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px #00f2fe); }
+      50% { transform: scale(1.15); filter: drop-shadow(0 0 12px #22c55e); }
+    }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .timeline-path { stroke-dasharray: 6 6; animation: path-dash 12s linear infinite; }
+    .node-pulse { animation: node-breathe 3s ease-in-out infinite; transform-origin: center; }
+  </style>
+
+  <defs>
+    <linearGradient id="timeline-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060810"/>
+      <stop offset="50%" stop-color="#090d18"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+
+    <linearGradient id="card-surface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1322"/>
+      <stop offset="100%" stop-color="#080b14"/>
+    </linearGradient>
+
+    <linearGradient id="path-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#bd00ff"/>
+      <stop offset="40%" stop-color="#8b5cf6"/>
+      <stop offset="70%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1100" height="280" rx="8" fill="url(#timeline-bg)" stroke="#1a233a" stroke-width="1.2"/>
+
+  <!-- Top Title -->
+  <g transform="translate(30, 32)">
+    <circle cx="8" cy="8" r="4.5" fill="#f43f5e"/>
+    <text x="24" y="12" class="mono" font-size="13.5" fill="#ffffff" font-weight="800" letter-spacing="1.5">
+      ENGINEERING_JOURNEY // GIT COMMIT TIMELINE
+    </text>
+    <text x="440" y="12" class="mono" font-size="9" fill="#64748b" letter-spacing="1">
+      CONTINUOUS EVOLUTION &amp; ACADEMIC RIGOR
+    </text>
+  </g>
+
+  <!-- Flowing Curved Connecting Path -->
+  <path d="M 140 160 C 240 160, 270 190, 380 190 C 490 190, 520 160, 630 160 C 740 160, 770 190, 880 190 C 960 190, 990 170, 1030 170" 
+        stroke="url(#path-gradient)" stroke-width="2.5" fill="none" class="timeline-path"/>
+
+  <!-- ==================== NODE 01: 2023 - 2024 ==================== -->
+  <g transform="translate(40, 65)">
+    <rect width="215" height="85" rx="6" fill="url(#card-surface)" stroke="#bd00ff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="12" y="18" class="mono" font-size="9" fill="#bd00ff" font-weight="700">[c0d3:01] 2023 – 2024</text>
+    <text x="12" y="34" class="mono" font-size="11" fill="#f8fafc" font-weight="700">FOUNDATIONS</text>
+    <text x="12" y="52" class="mono" font-size="8.5" fill="#94a3b8">• B.Tech CSE @ NNRES (CGPA: 7.45)</text>
+    <text x="12" y="66" class="mono" font-size="8.5" fill="#94a3b8">• Python, C, Java, SQL, Linux Shell</text>
+    <text x="12" y="78" class="mono" font-size="8.5" fill="#94a3b8">• Data Structures &amp; OOP Concepts</text>
+  </g>
+  <!-- Node Circle 1 -->
+  <g transform="translate(140, 160)">
+    <circle r="14" fill="#0c101d" stroke="#bd00ff" stroke-width="3"/>
+    <circle r="6" fill="#bd00ff"/>
+  </g>
+
+  <!-- ==================== NODE 02: 2025 ==================== -->
+  <g transform="translate(290, 95)">
+    <rect width="215" height="85" rx="6" fill="url(#card-surface)" stroke="#8b5cf6" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="12" y="18" class="mono" font-size="9" fill="#a855f7" font-weight="700">[7f8a:02] 2025</text>
+    <text x="12" y="34" class="mono" font-size="11" fill="#f8fafc" font-weight="700">AI &amp; SYSTEMS</text>
+    <text x="12" y="52" class="mono" font-size="8.5" fill="#94a3b8">• Full-Stack Apps (React, FastAPI)</text>
+    <text x="12" y="66" class="mono" font-size="8.5" fill="#94a3b8">• Unity 2D Physics Game Engine</text>
+    <text x="12" y="78" class="mono" font-size="8.5" fill="#94a3b8">• 80+ LeetCode DSA Solved</text>
+  </g>
+  <!-- Node Circle 2 -->
+  <g transform="translate(390, 190)">
+    <circle r="14" fill="#0c101d" stroke="#8b5cf6" stroke-width="3"/>
+    <circle r="6" fill="#8b5cf6"/>
+  </g>
+
+  <!-- ==================== NODE 03: 2026 (CURRENT) ==================== -->
+  <g transform="translate(545, 55)">
+    <rect width="245" height="95" rx="6" fill="url(#card-surface)" stroke="#00f2fe" stroke-opacity="0.8" stroke-width="1.2"/>
+    <text x="12" y="18" class="mono" font-size="9" fill="#00f2fe" font-weight="700">[b4c2:03] 2026 (ACTIVE / SHIP)</text>
+    <text x="12" y="34" class="mono" font-size="11" fill="#00f2fe" font-weight="700">AGENTIC AI &amp; VISION 3D</text>
+    <text x="12" y="52" class="mono" font-size="8.5" fill="#94a3b8">• BENEFITX GovTech Platform (Live)</text>
+    <text x="12" y="66" class="mono" font-size="8.5" fill="#94a3b8">• HANDSCAPE MediaPipe 60fps 3D</text>
+    <text x="12" y="78" class="mono" font-size="8.5" fill="#94a3b8">• Autonomous ReAct Multi-Tool Agent</text>
+    <text x="12" y="90" class="mono" font-size="8.5" fill="#94a3b8">• MongoDB &amp; AWS AI Certifications</text>
+  </g>
+  <!-- Node Circle 3 -->
+  <g transform="translate(660, 160)">
+    <circle r="15" fill="#0c101d" stroke="#00f2fe" stroke-width="3" class="node-pulse"/>
+    <circle r="6" fill="#00f2fe"/>
+  </g>
+
+  <!-- ==================== NODE 04: 2027 (HEAD -> MAIN) ==================== -->
+  <g transform="translate(810, 95)">
+    <rect width="250" height="85" rx="6" fill="url(#card-surface)" stroke="#22c55e" stroke-opacity="0.8" stroke-width="1"/>
+    <text x="12" y="18" class="mono" font-size="9" fill="#22c55e" font-weight="700">[HEAD → main] 2027</text>
+    <text x="12" y="34" class="mono" font-size="11" fill="#22c55e" font-weight="700">SOFTWARE ARCHITECT</text>
+    <text x="12" y="52" class="mono" font-size="8.5" fill="#94a3b8">• B.Tech CSE Graduation</text>
+    <text x="12" y="66" class="mono" font-size="8.5" fill="#94a3b8">• Scalable Distributed Systems</text>
+    <text x="12" y="78" class="mono" font-size="8.5" fill="#94a3b8">• Production High-Impact Engineering</text>
+  </g>
+  <!-- Node Circle 4 -->
+  <g transform="translate(930, 190)">
+    <circle r="14" fill="#0c101d" stroke="#22c55e" stroke-width="3"/>
+    <circle r="6" fill="#22c55e"/>
+  </g>
+
+  <!-- Bottom Status Text -->
+  <g transform="translate(30, 260)">
+    <text x="0" y="0" class="mono" font-size="9" fill="#475569">GIT_STATUS // FAST-FORWARD COMMITS • CLEAN MERGE INTO PRODUCTION</text>
+  </g>
+</svg>

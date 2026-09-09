@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 240" width="100%" height="240" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap');
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    @keyframes cursor-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .pulse { animation: pulse-dot 2.5s ease-in-out infinite; transform-origin: center; }
+    .cursor { animation: cursor-blink 0.9s step-end infinite; }
+  </style>
+
+  <defs>
+    <linearGradient id="footer-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060810"/>
+      <stop offset="50%" stop-color="#090d18"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+
+    <linearGradient id="box-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1322"/>
+      <stop offset="100%" stop-color="#080b14"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1100" height="240" rx="8" fill="url(#footer-bg)" stroke="#1a233a" stroke-width="1.2"/>
+
+  <!-- Top Title: ./connect --tls-handshake -->
+  <g transform="translate(30, 32)">
+    <text x="0" y="0" class="mono" font-size="14" fill="#f8fafc" font-weight="700">
+      <tspan fill="#00f2fe">&gt;</tspan> ./connect --tls-handshake
+    </text>
+  </g>
+
+  <!-- Handshake Instruction Frame -->
+  <g transform="translate(30, 48)">
+    <rect width="640" height="30" rx="4" fill="#090d18" stroke="#1e293b" stroke-width="0.8"/>
+    <text x="16" y="19" class="mono" font-size="9.5" fill="#94a3b8" letter-spacing="1">
+      SECURE CONNECTION REQUEST // ESTABLISH DIRECT COMMUNICATION CHANNEL
+    </text>
+  </g>
+
+  <!-- Connect Channels Grid (4 Boxes) -->
+  <g transform="translate(30, 92)">
+    <!-- GitHub -->
+    <a href="https://github.com/saivenkatsumanth9-stack" target="_blank">
+      <rect width="250" height="52" rx="5" fill="url(#box-card)" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="1"/>
+      <text x="20" y="22" class="mono" font-size="9.5" fill="#00f2fe" font-weight="700">[ GITHUB ]</text>
+      <text x="20" y="40" class="mono" font-size="10" fill="#f8fafc">github.com/saivenkatsumanth9-stack</text>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://linkedin.com/in/saivenkatsumanth" target="_blank">
+      <g transform="translate(265, 0)">
+        <rect width="250" height="52" rx="5" fill="url(#box-card)" stroke="#0a66c2" stroke-opacity="0.4" stroke-width="1"/>
+        <text x="20" y="22" class="mono" font-size="9.5" fill="#0a66c2" font-weight="700">[ LINKEDIN ]</text>
+        <text x="20" y="40" class="mono" font-size="10" fill="#f8fafc">linkedin.com/in/saivenkatsumanth</text>
+      </g>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:saivenkatsumanth9@gmail.com">
+      <g transform="translate(530, 0)">
+        <rect width="250" height="52" rx="5" fill="url(#box-card)" stroke="#ea4335" stroke-opacity="0.4" stroke-width="1"/>
+        <text x="20" y="22" class="mono" font-size="9.5" fill="#ea4335" font-weight="700">[ ENCRYPTED EMAIL ]</text>
+        <text x="20" y="40" class="mono" font-size="10" fill="#f8fafc">saivenkatsumanth9@gmail.com</text>
+      </g>
+    </a>
+
+    <!-- Base Station -->
+    <g transform="translate(795, 0)">
+      <rect width="245" height="52" rx="5" fill="url(#box-card)" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1"/>
+      <text x="20" y="22" class="mono" font-size="9.5" fill="#22c55e" font-weight="700">[ BASE STATION ]</text>
+      <text x="20" y="40" class="mono" font-size="10" fill="#f8fafc">Hyderabad, India (IST / UTC+5:30)</text>
+    </g>
+  </g>
+
+  <!-- ==================== BOTTOM TERMINAL BAR ==================== -->
+  <g transform="translate(30, 160)">
+    <rect width="1040" height="60" rx="6" fill="#080b14" stroke="#1a233a" stroke-width="1"/>
+    
+    <!-- Dots -->
+    <circle cx="16" cy="14" r="3.5" fill="#ef4444"/>
+    <circle cx="28" cy="14" r="3.5" fill="#f59e0b"/>
+    <circle cx="40" cy="14" r="3.5" fill="#22c55e"/>
+    <text x="56" y="17" class="mono" font-size="8.5" fill="#64748b">DEV_OS_TERMINAL // SESSION_TERMINATION</text>
+
+    <!-- Terminal Command & Output -->
+    <text x="16" y="40" class="mono" font-size="11" fill="#00f2fe" font-weight="700">developer@github:~$</text>
+    <text x="175" y="40" class="mono" font-size="11" fill="#f8fafc">echo "Keep building."</text>
+    <text x="325" y="40" class="mono" font-size="11" fill="#f43f5e" font-weight="700">&gt; "Keep building."</text>
+    <rect class="cursor" x="480" y="29" width="7" height="14" fill="#f43f5e"/>
+
+    <!-- Bottom Readout -->
+    <text x="620" y="40" class="mono" font-size="9" fill="#22c55e">● ONLINE</text>
+    <text x="700" y="40" class="mono" font-size="9" fill="#00f2fe">● TLS 1.3 SECURE</text>
+    <text x="830" y="40" class="mono" font-size="9" fill="#bd00ff">● AUTONOMOUS / BUILDING</text>
+    <text x="990" y="40" class="mono" font-size="9" fill="#64748b">ID // 0xST_2027</text>
+  </g>
+</svg>
