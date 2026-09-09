@@ -52,22 +52,30 @@ $ cat /proc/developer_info
 
 ### 🚀 `> ./PROJECTS`
 
-```bash
-$ git log --all --graph --decorate --oneline --status=verified
-```
+<div align="center">
+  <img src="./assets/projects-matrix.svg" width="100%" alt="Mission Control Project Showcase" />
+</div>
+
+<br/>
 
 <table>
   <!-- ROW 1: BENEFITX & HANDSCAPE -->
   <tr>
     <td width="50%" valign="top">
       <div align="left">
-        <h3>🏛️ 01. BENEFITX</h3>
-        <p><strong>AI-Powered Welfare Scheme Discovery & Decision Support Platform</strong></p>
-        <p>An enterprise GovTech platform solving welfare scheme underutilization through automated eligibility matching, document readiness checks, and plain-language translations.</p>
-        <ul>
-          <li><strong>5 Core Engines:</strong> Profile Recommendation, Rule-Based Eligibility, Document Readiness, What-If Simulator, and Multilingual Translation (EN/TE/HI).</li>
-          <li><strong>Architecture:</strong> 17-route portal (Citizen Onboarding, Search, Gov-Admin Verification Console).</li>
-          <li><strong>QA & Coverage:</strong> 40/40 Unit Tests passing with Vitest.</li>
+        <p><img src="https://img.shields.io/badge/01_FLAGSHIP-LIVE_PRODUCTION-22c55e?style=for-the-badge&logo=vercel&logoColor=white"/></p>
+        <h3>🏛️ BENEFITX</h3>
+        <p><strong>AI-Powered Government Welfare Scheme Discovery & Application Readiness Engine</strong></p>
+        <p>An enterprise-grade GovTech platform solving welfare scheme underutilization. Features automated profile criteria matching, document readiness validation, zero-mutation What-If scenario simulations, and plain-language translations for citizens and administrators.</p>
+        
+```text
+[Citizen Input] ➔ [5 Core Decision Engines] ➔ [Nitro Server] ➔ [Scheme Registry]
+```
+
+<ul>
+          <li><strong>5 Decision Engines:</strong> Profile Recommendation Scoring • Rule-Based Criteria Matching • Document Readiness Tracker • Zero-Mutation What-If Simulator • Multilingual Translation (English, Telugu, Hindi).</li>
+          <li><strong>Architecture:</strong> 17-Route Suite with Citizen Portal & Gov-Admin Verification Console.</li>
+          <li><strong>QA & Coverage:</strong> 40/40 Unit Tests Passing with Vitest (100% Pass Rate).</li>
         </ul>
         <p>
           <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black"/>
@@ -84,13 +92,19 @@ $ git log --all --graph --decorate --oneline --status=verified
     </td>
     <td width="50%" valign="top">
       <div align="left">
-        <h3>🎮 02. HANDSCAPE</h3>
-        <p><strong>3D Cyber Escape Room Controlled by Real-Time Computer Vision</strong></p>
-        <p>A browser-based 3D escape room game where player hands act as the physical controller using real-time machine learning on standard webcam streams.</p>
-        <ul>
+        <p><img src="https://img.shields.io/badge/02_VISION_AI-60_FPS_WASM-00f2fe?style=for-the-badge&logo=google&logoColor=white"/></p>
+        <h3>🎮 HANDSCAPE</h3>
+        <p><strong>3D Cyber Escape Room Controlled by Real-Time Computer Vision & Hand Tracking</strong></p>
+        <p>A browser-based 3D escape room game where your hands are the physical controller. Evaluates raw webcam frames in real time using client-side machine learning to manipulate 3D mechanisms across 7 tactical chambers with zero hardware barriers.</p>
+
+```text
+[Webcam Stream] ➔ [MediaPipe 21-Points] ➔ [LandmarkProcessor] ➔ [Three.js Physics]
+```
+
+<ul>
           <li><strong>11 Kinetic Gestures:</strong> Real-time Point, Pinch, Grab, Fist, Open Palm, Wrist Roll, Directional Swipes, and Dual-Hand Synchrony.</li>
-          <li><strong>Vision Pipeline:</strong> MediaPipe 21-landmark Float16 WASM model @ 60 FPS (100% on-device privacy).</li>
-          <li><strong>Audio Engine:</strong> Pure procedural Web Audio synthesizer (0 external sound downloads).</li>
+          <li><strong>100% Client-Side Privacy:</strong> Zero video frames uploaded or stored; runs via WebAssembly GPU/CPU delegates.</li>
+          <li><strong>Procedural Audio:</strong> Pure Web Audio synthesizer generating runtime reactive chords with 0 sound file downloads.</li>
         </ul>
         <p>
           <img src="https://img.shields.io/badge/MediaPipe_AI-0097A7?style=flat-square&logo=google"/>
@@ -111,13 +125,19 @@ $ git log --all --graph --decorate --oneline --status=verified
   <tr>
     <td width="50%" valign="top">
       <div align="left">
-        <h3>🔎 03. Agentic Research Agent</h3>
+        <p><img src="https://img.shields.io/badge/03_AUTONOMOUS-ReAct_AGENT-a855f7?style=for-the-badge"/></p>
+        <h3>🔎 Agentic Research Agent</h3>
         <p><strong>Autonomous Multi-Tool ReAct Agent with Safe AST Goal Decomposition</strong></p>
-        <p>An inspectable research agent implementing the ReAct (<code>Thought → Action → Observation</code>) loop built on FastAPI with deterministic subgoal planning.</p>
-        <ul>
-          <li><strong>Multi-Tool Pipeline:</strong> Safe AST Calculator (no unsafe <code>eval</code>), Wikipedia Summary, Web Search, URL Fetch Reader, and Scratchpad Notepad.</li>
-          <li><strong>Audit Trace:</strong> Returns complete step-by-step reasoning logs and tool observations with synthesized answers.</li>
-          <li><strong>Offline Safe:</strong> Network tools degrade gracefully to <code>UNAVAILABLE</code> without crashing; runs with 0 paid API keys.</li>
+        <p>An inspectable research agent implementing the ReAct (<code>Thought → Action → Observation</code>) loop built on FastAPI. Deconstructs compound multi-part inquiries into discrete subgoals and chains specialized tools to synthesize verified results with 100% audit traces.</p>
+
+```text
+[User Goal] ➔ [ReAct Loop] ➔ [Safe AST / Wikipedia / Search] ➔ [Step-by-Step Trace]
+```
+
+<ul>
+          <li><strong>Multi-Tool Pipeline:</strong> Safe AST-based Calculator (no unsafe <code>eval</code>), Wikipedia Summary, Web Search, URL Fetch Reader, and Scratchpad Notepad.</li>
+          <li><strong>Offline-Safe Architecture:</strong> Outbound network tools degrade gracefully to <code>UNAVAILABLE</code> observations without crashing.</li>
+          <li><strong>Zero Cost:</strong> Runs fully functional with 0 external paid API keys.</li>
         </ul>
         <p>
           <img src="https://img.shields.io/badge/Python_3.10+-3776AB?style=flat-square&logo=python&logoColor=white"/>
@@ -133,13 +153,19 @@ $ git log --all --graph --decorate --oneline --status=verified
     </td>
     <td width="50%" valign="top">
       <div align="left">
-        <h3>💳 04. FinFlow Finance Tracker</h3>
+        <p><img src="https://img.shields.io/badge/04_FINTECH-RECEIPT_OCR-f59e0b?style=for-the-badge"/></p>
+        <h3>💳 FinFlow Finance Tracker</h3>
         <p><strong>Personal Finance Platform & In-Browser Receipt OCR Scanning Engine</strong></p>
-        <p>A dark-first, privacy-respecting financial tracking platform engineered for university students and salaried professionals with custom debit spend caps.</p>
-        <ul>
-          <li><strong>OCR Camera Scanner:</strong> In-browser Tesseract.js extracts line items and monetary totals directly from receipt photos.</li>
-          <li><strong>Occupational Presets:</strong> Custom profiles for Students (mess/allowance) vs Salaried Employees (investments/SIPs/rent).</li>
-          <li><strong>FLO Local AI:</strong> Heuristic cash flow advisor analyzing recurring spend and budget partitions (50/30/20).</li>
+        <p>A dark-first, privacy-respecting financial tracking platform engineered for university students and salaried professionals with custom debit spend caps and banking ledger semantics.</p>
+
+```text
+[Receipt Photo] ➔ [Tesseract.js OCR] ➔ [FLO Local AI] ➔ [Encrypted LocalStorage]
+```
+
+<ul>
+          <li><strong>In-Browser OCR:</strong> Tesseract.js parses printed receipt line items and monetary totals directly on-device.</li>
+          <li><strong>Occupational Presets:</strong> Tailored onboarding for Students (allowances/mess) vs Salaried Employees (salaries/SIPs/rent).</li>
+          <li><strong>FLO Local AI:</strong> Heuristic cash flow advisor analyzing recurring spend and 50/30/20 budget partitions.</li>
         </ul>
         <p>
           <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black"/>
@@ -155,15 +181,21 @@ $ git log --all --graph --decorate --oneline --status=verified
     </td>
   </tr>
 
-  <!-- ROW 3: STUDYBUDDY & HEALTHMATE -->
+  <!-- ROW 3: STUDYBUDDY & LAST STANDING THIEF -->
   <tr>
     <td width="50%" valign="top">
       <div align="left">
-        <h3>📚 05. StudyBuddy AI</h3>
-        <p><strong>Gamified RAG Document Assistant & Exam Preparation Platform</strong></p>
+        <p><img src="https://img.shields.io/badge/05_EDTECH-VECTOR_RAG-3b82f6?style=for-the-badge"/></p>
+        <h3>📚 StudyBuddy AI</h3>
+        <p><strong>Gamified RAG Document Assistant & Dynamic Exam Preparation Platform</strong></p>
         <p>An AI learning platform built with TanStack Start, React 19, and Supabase. Supports uploading lecture PDFs (up to 20MB) to query notes contextually using Retrieval-Augmented Generation (RAG).</p>
-        <ul>
-          <li><strong>Key Features:</strong> Intelligent dynamic study blocks, automated multiple-choice quiz generator, and gamified streak tracking.</li>
+
+```text
+[Lecture PDF] ➔ [Vector RAG Embeddings] ➔ [Contextual AI Chat] ➔ [Quiz Engine]
+```
+
+<ul>
+          <li><strong>Key Capabilities:</strong> Intelligent dynamic study blocks, automated syllabus-aligned multiple choice quizzes, and Pomodoro streak metrics.</li>
         </ul>
         <p>
           <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black"/>
@@ -178,11 +210,17 @@ $ git log --all --graph --decorate --oneline --status=verified
     </td>
     <td width="50%" valign="top">
       <div align="left">
-        <h3>🎮 06. Last Standing Thief</h3>
+        <p><img src="https://img.shields.io/badge/06_GAME_DEV-UNITY_2D_ENGINE-000000?style=for-the-badge&logo=unity&logoColor=white"/></p>
+        <h3>🎮 Last Standing Thief</h3>
         <p><strong>2D Endless Runner Game Engine Built with Unity & C#</strong></p>
         <p>A fully shipped, physics-based 2D endless runner built in Unity. Implements dynamic obstacle scaling, responsive jump & shoot combat mechanics, coin rewards, and intelligent enemy AI routines.</p>
-        <ul>
-          <li><strong>Game Engine:</strong> Unity Engine • C# Scripting • 2D Animation • Distance-Based Difficulty Scaling.</li>
+
+```text
+[Player Input] ➔ [Unity 2D Physics Core] ➔ [Dynamic AI Spawner] ➔ [Score Engine]
+```
+
+<ul>
+          <li><strong>Game Engine:</strong> Unity Engine • C# Scripting • 2D Animation • Distance-Based Difficulty Progression.</li>
         </ul>
         <p>
           <img src="https://img.shields.io/badge/Unity_Engine-000000?style=flat-square&logo=unity&logoColor=white"/>
