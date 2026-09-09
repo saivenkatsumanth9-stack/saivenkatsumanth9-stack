@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 24" width="100%" height="24" fill="none">
+  <style>
+    @keyframes beam-travel {
+      0% { transform: translateX(-300px); }
+      100% { transform: translateX(1100px); }
+    }
+    @keyframes node-pulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px #00f2fe); }
+      50% { transform: scale(1.3); filter: drop-shadow(0 0 12px #bd00ff); }
+    }
+    .beam { animation: beam-travel 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+    .node { animation: node-pulse 2.5s ease-in-out infinite; transform-origin: 500px 12px; }
+  </style>
+
+  <defs>
+    <linearGradient id="cyber-line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#00f2fe" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#bd00ff" stop-opacity="0.8"/>
+      <stop offset="80%" stop-color="#00f2fe" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="beam-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00f2fe" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#bd00ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="divider-clip">
+      <rect width="1000" height="24"/>
+    </clipPath>
+  </defs>
+
+  <!-- Static ambient line -->
+  <line x1="50" y1="12" x2="950" y2="12" stroke="url(#cyber-line-grad)" stroke-width="1.2"/>
+
+  <!-- Scanning energy beam -->
+  <g clip-path="url(#divider-clip)">
+    <rect class="beam" x="0" y="10.5" width="220" height="3" rx="1.5" fill="url(#beam-grad)"/>
+  </g>
+
+  <!-- Center Isometric Hexagon / Diamond -->
+  <g class="node">
+    <rect x="495" y="7" width="10" height="10" rx="1.5" fill="#00f2fe" transform="rotate(45 500 12)"/>
+    <circle cx="500" cy="12" r="2.5" fill="#ffffff"/>
+  </g>
+
+  <!-- Flanking Data Nodes -->
+  <circle cx="460" cy="12" r="1.5" fill="#bd00ff" opacity="0.6"/>
+  <circle cx="430" cy="12" r="1" fill="#00f2fe" opacity="0.4"/>
+  <circle cx="540" cy="12" r="1.5" fill="#bd00ff" opacity="0.6"/>
+  <circle cx="570" cy="12" r="1" fill="#00f2fe" opacity="0.4"/>
+</svg>

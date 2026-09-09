@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="400" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=JetBrains+Mono:wght@400;600;800&amp;display=swap');
+
+    /* Animations */
+    @keyframes grid-flow {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(40px); }
+    }
+    @keyframes orbit-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes orbit-spin-rev {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.35; filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.4)); }
+      50% { opacity: 0.75; filter: drop-shadow(0 0 35px rgba(121, 40, 202, 0.8)); }
+    }
+    @keyframes float-panel {
+      0%, 100% { transform: translateY(0px) rotateX(0deg); }
+      50% { transform: translateY(-8px) rotateX(1deg); }
+    }
+    @keyframes float-panel-alt {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(6px); }
+    }
+    @keyframes scanline-sweep {
+      0% { transform: translateY(-50px); }
+      100% { transform: translateY(450px); }
+    }
+    @keyframes text-shimmer {
+      0% { stop-color: #00f2fe; }
+      50% { stop-color: #bd00ff; }
+      100% { stop-color: #00f2fe; }
+    }
+    @keyframes cursor-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .orbitron { font-family: 'Orbitron', -apple-system, sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    .glow-core { animation: pulse-glow 4s ease-in-out infinite; }
+    .floating-1 { animation: float-panel 5s ease-in-out infinite; }
+    .floating-2 { animation: float-panel-alt 6s ease-in-out infinite; }
+    .orbit-1 { animation: orbit-spin 25s linear infinite; transform-origin: 600px 180px; }
+    .orbit-2 { animation: orbit-spin-rev 35s linear infinite; transform-origin: 600px 180px; }
+    .scanline { animation: scanline-sweep 4s linear infinite; }
+    .cursor { animation: cursor-blink 0.9s step-end infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .glow-core, .floating-1, .floating-2, .orbit-1, .orbit-2, .scanline, .cursor {
+        animation: none;
+      }
+    }
+  </style>
+
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04050a"/>
+      <stop offset="50%" stop-color="#070914"/>
+      <stop offset="100%" stop-color="#030408"/>
+    </linearGradient>
+
+    <!-- 3D Perspective Grid Gradient -->
+    <linearGradient id="grid-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#00f2fe" stop-opacity="0.12"/>
+      <stop offset="80%" stop-color="#7928ca" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#bd00ff" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Neon Text Shimmer -->
+    <linearGradient id="neon-sumanth" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe">
+        <animate attributeName="stop-color" values="#00f2fe;#7928ca;#00f2fe" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#bd00ff">
+        <animate attributeName="stop-color" values="#bd00ff;#00f2fe;#bd00ff" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#00f2fe">
+        <animate attributeName="stop-color" values="#00f2fe;#7928ca;#00f2fe" dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Glassmorphic Panel Gradient -->
+    <linearGradient id="glass-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12162e" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#0a0c1a" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Border Glow -->
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#7928ca" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#bd00ff" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Radial Glow Filter -->
+    <filter id="neon-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur1"/>
+      <feGaussianBlur stdDeviation="20" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="hero-clip">
+      <rect width="1200" height="400" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Canvas Base -->
+  <rect width="1200" height="400" rx="12" fill="url(#bg-grad)" stroke="#1a203d" stroke-width="1.5"/>
+
+  <!-- 3D Background Perspective Grid -->
+  <g clip-path="url(#hero-clip)">
+    <!-- Perspective Horizon Floor -->
+    <g opacity="0.45">
+      <!-- Perspective Lines vanishing to center (600, 180) -->
+      <line x1="600" y1="180" x2="-200" y2="450" stroke="url(#grid-fade)" stroke-width="1.2"/>
+      <line x1="600" y1="180" x2="0" y2="450" stroke="url(#grid-fade)" stroke-width="1.2"/>
+      <line x1="600" y1="180" x2="200" y2="450" stroke="url(#grid-fade)" stroke-width="1.2"/>
+      <line x1="600" y1="180" x2="400" y2="450" stroke="url(#grid-fade)" stroke-width="1.2"/>
+      <line x1="600" y1="180" x2="520" y2="450" stroke="url(#grid-fade)" stroke-width="1.2"/>
+      <line x1="600" y1="180" x2="680" y2="450" stroke="url(#grid-fade)" stroke-width="1.2"/>
+      <line x1="600" y1="180" x2="800" y2="450" stroke="url(#grid-fade)" stroke-width="1.2"/>
+      <line x1="600" y1="180" x2="1000" y2="450" stroke="url(#grid-fade)" stroke-width="1.2"/>
+      <line x1="600" y1="180" x2="1200" y2="450" stroke="url(#grid-fade)" stroke-width="1.2"/>
+      <line x1="600" y1="180" x2="1400" y2="450" stroke="url(#grid-fade)" stroke-width="1.2"/>
+
+      <!-- Perspective Horizontal Iso-Grid Lines -->
+      <line x1="100" y1="230" x2="1100" y2="230" stroke="url(#grid-fade)" stroke-width="0.8"/>
+      <line x1="0" y1="270" x2="1200" y2="270" stroke="url(#grid-fade)" stroke-width="1.0"/>
+      <line x1="-100" y1="320" x2="1300" y2="320" stroke="url(#grid-fade)" stroke-width="1.2"/>
+      <line x1="-200" y1="380" x2="1400" y2="380" stroke="url(#grid-fade)" stroke-width="1.5"/>
+    </g>
+
+    <!-- Scanline Hologram Effect -->
+    <rect class="scanline" x="0" y="0" width="1200" height="3" fill="#00f2fe" opacity="0.12"/>
+
+    <!-- Concentric Orbital Rings with 3D Rotation -->
+    <ellipse class="orbit-1" cx="600" cy="180" rx="360" ry="110" stroke="#00f2fe" stroke-width="1" stroke-dasharray="14 10 4 10" opacity="0.25"/>
+    <ellipse class="orbit-2" cx="600" cy="180" rx="460" ry="140" stroke="#bd00ff" stroke-width="1" stroke-dasharray="25 15 5 15" opacity="0.2"/>
+  </g>
+
+  <!-- Ambient Holographic Glow Backing -->
+  <circle class="glow-core" cx="600" cy="180" r="160" fill="#00f2fe" opacity="0.12"/>
+  <circle class="glow-core" cx="600" cy="180" r="90" fill="#bd00ff" opacity="0.15"/>
+
+  <!-- Left Futuristic Telemetry Floating Card -->
+  <g class="floating-1" transform="translate(60, 60)">
+    <rect width="240" height="150" rx="10" fill="url(#glass-card)" stroke="url(#border-glow)" stroke-width="1.2"/>
+    <!-- Top Status Bar -->
+    <rect width="240" height="26" rx="10" fill="#141936" opacity="0.8"/>
+    <circle cx="18" cy="13" r="4" fill="#00f2fe"/>
+    <text x="32" y="17" class="mono" font-size="9.5" fill="#00f2fe" font-weight="700" letter-spacing="1.5">SYS.DIAGNOSTICS</text>
+    
+    <text x="18" y="52" class="mono" font-size="10" fill="#8892b0">CORE_ENGINE:</text>
+    <text x="135" y="52" class="mono" font-size="10" fill="#22c55e" font-weight="600">● ONLINE</text>
+
+    <text x="18" y="74" class="mono" font-size="10" fill="#8892b0">AGENTIC_AI:</text>
+    <text x="135" y="74" class="mono" font-size="10" fill="#00f2fe" font-weight="600">ReAct Loop</text>
+
+    <text x="18" y="96" class="mono" font-size="10" fill="#8892b0">VISION_3D:</text>
+    <text x="135" y="96" class="mono" font-size="10" fill="#bd00ff" font-weight="600">MediaPipe/60fps</text>
+
+    <text x="18" y="118" class="mono" font-size="10" fill="#8892b0">FULL_STACK:</text>
+    <text x="135" y="118" class="mono" font-size="10" fill="#e2e8f0" font-weight="600">React 19/FastAPI</text>
+
+    <line x1="15" y1="132" x2="225" y2="132" stroke="#1f274a" stroke-width="1"/>
+    <text x="18" y="142" class="mono" font-size="8" fill="#5a678a">LATENCY: 0.4ms · SECURE_TLS</text>
+  </g>
+
+  <!-- Right Futuristic Mission Status Floating Card -->
+  <g class="floating-2" transform="translate(900, 60)">
+    <rect width="240" height="150" rx="10" fill="url(#glass-card)" stroke="url(#border-glow)" stroke-width="1.2"/>
+    <!-- Top Status Bar -->
+    <rect width="240" height="26" rx="10" fill="#141936" opacity="0.8"/>
+    <circle cx="18" cy="13" r="4" fill="#bd00ff"/>
+    <text x="32" y="17" class="mono" font-size="9.5" fill="#bd00ff" font-weight="700" letter-spacing="1.5">MISSION_LOG</text>
+
+    <text x="18" y="52" class="mono" font-size="10" fill="#8892b0">DEPLOYMENTS:</text>
+    <text x="140" y="52" class="mono" font-size="10" fill="#22c55e" font-weight="600">6 Verified</text>
+
+    <text x="18" y="74" class="mono" font-size="10" fill="#8892b0">QA_TEST_PASS:</text>
+    <text x="140" y="74" class="mono" font-size="10" fill="#00f2fe" font-weight="600">100% (Vitest)</text>
+
+    <text x="18" y="96" class="mono" font-size="10" fill="#8892b0">ACADEMICS:</text>
+    <text x="140" y="96" class="mono" font-size="10" fill="#bd00ff" font-weight="600">B.Tech (2027)</text>
+
+    <text x="18" y="118" class="mono" font-size="10" fill="#8892b0">AVAILABILITY:</text>
+    <text x="140" y="118" class="mono" font-size="10" fill="#22c55e" font-weight="600">Internships 🟢</text>
+
+    <line x1="15" y1="132" x2="225" y2="132" stroke="#1f274a" stroke-width="1"/>
+    <text x="18" y="142" class="mono" font-size="8" fill="#5a678a">BRANCH: main* · NODE_v22</text>
+  </g>
+
+  <!-- CENTER COMMAND HERO TERMINAL -->
+  <!-- Upper Command Line Prompt -->
+  <g transform="translate(600, 95)" text-anchor="middle">
+    <rect x="-170" y="-18" width="340" height="26" rx="13" fill="#0f132b" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="1"/>
+    <text y="-1" class="mono" font-size="11" fill="#00f2fe" font-weight="700">
+      <tspan fill="#7928ca">▸</tspan> <tspan fill="#8892b0">user@command-center</tspan> <tspan fill="#00f2fe">$ whoami --3d</tspan>
+    </text>
+  </g>
+
+  <!-- MAIN NAME DISPLAY: SUMANTH -->
+  <g transform="translate(600, 190)" text-anchor="middle">
+    <!-- Depth Drop Shadows (3D Stacking Layer) -->
+    <text y="4" class="orbitron" font-size="64" font-weight="900" fill="#030408" letter-spacing="8" opacity="0.9">SUMANTH</text>
+    <text y="2" class="orbitron" font-size="64" font-weight="900" fill="#13092e" letter-spacing="8" opacity="0.8">SUMANTH</text>
+    
+    <!-- Neon Glow Foreground -->
+    <text y="0" class="orbitron glow-core" font-size="64" font-weight="900" fill="url(#neon-sumanth)" letter-spacing="8" filter="url(#neon-blur)">SUMANTH</text>
+    <text y="0" class="orbitron" font-size="64" font-weight="900" fill="#ffffff" letter-spacing="8" opacity="0.95">SUMANTH</text>
+  </g>
+
+  <!-- FULL NAME SUB-CALLOUT -->
+  <text x="600" y="222" text-anchor="middle" class="mono" font-size="12" fill="#8892b0" letter-spacing="4" font-weight="600">
+    PEDDI SAI VENKAT SUMANTH
+  </text>
+
+  <!-- ROLE BADGE / PILL -->
+  <g transform="translate(600, 265)">
+    <rect x="-310" y="-16" width="620" height="32" rx="16" fill="url(#glass-card)" stroke="url(#border-glow)" stroke-width="1.2"/>
+    <text y="5" text-anchor="middle" class="orbitron" font-size="12" fill="#00f2fe" font-weight="700" letter-spacing="2">
+      SOFTWARE DEVELOPER <tspan fill="#bd00ff">◆</tspan> AI BUILDER <tspan fill="#bd00ff">◆</tspan> COMPUTER SCIENCE ENGINEER
+    </text>
+  </g>
+
+  <!-- BOTTOM COMMAND LINE STATUS READOUT -->
+  <g transform="translate(600, 335)" text-anchor="middle">
+    <rect x="-240" y="-14" width="480" height="28" rx="6" fill="#090c1e" stroke="#1c2347" stroke-width="1"/>
+    <circle cx="-215" cy="0" r="4.5" fill="#22c55e">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="15" y="4" class="mono" font-size="10.5" fill="#cbd5e1">
+      <tspan fill="#22c55e" font-weight="700">ONLINE</tspan> · Initializing 3D Command Matrix... <tspan class="cursor" fill="#00f2fe">█</tspan>
+    </text>
+  </g>
+
+  <!-- Corner Tech Accent Decals -->
+  <path d="M 20 50 L 20 20 L 50 20" stroke="#00f2fe" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M 1180 50 L 1180 20 L 1150 20" stroke="#bd00ff" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M 20 350 L 20 380 L 50 380" stroke="#bd00ff" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M 1180 350 L 1180 380 L 1150 380" stroke="#00f2fe" stroke-width="2" fill="none" opacity="0.6"/>
+</svg>
