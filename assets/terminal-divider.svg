@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 16" width="100%" height="16" fill="none">
+  <style>
+    @keyframes laser-sweep {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(1100px); }
+    }
+    .laser { animation: laser-sweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+  </style>
+
+  <defs>
+    <linearGradient id="term-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#22c55e" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.8"/>
+      <stop offset="85%" stop-color="#22c55e" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pulse-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#22c55e" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="divider-box">
+      <rect width="1000" height="16"/>
+    </clipPath>
+  </defs>
+
+  <!-- Base Grid Line -->
+  <line x1="20" y1="8" x2="980" y2="8" stroke="url(#term-line)" stroke-width="1"/>
+
+  <!-- Traveling Laser Beam -->
+  <g clip-path="url(#divider-box)">
+    <rect class="laser" x="0" y="7" width="160" height="2" fill="url(#pulse-beam)" rx="1"/>
+  </g>
+
+  <!-- Left/Center/Right Node Markers -->
+  <circle cx="500" cy="8" r="2.5" fill="#06b6d4"/>
+  <circle cx="480" cy="8" r="1.5" fill="#22c55e" opacity="0.6"/>
+  <circle cx="520" cy="8" r="1.5" fill="#22c55e" opacity="0.6"/>
+</svg>

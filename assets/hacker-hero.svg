@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="420" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&amp;family=Inter:wght@700;800;900&amp;display=swap');
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    @keyframes cursor-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes grid-glow {
+      0%, 100% { opacity: 0.04; }
+      50% { opacity: 0.08; }
+    }
+    @keyframes scan-laser {
+      0% { transform: translateY(0px); opacity: 0.15; }
+      50% { opacity: 0.35; }
+      100% { transform: translateY(420px); opacity: 0.15; }
+    }
+    @keyframes branch-flow {
+      0% { stroke-dashoffset: 60; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes float-subtle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .sans { font-family: 'Inter', -apple-system, sans-serif; }
+
+    .pulse { animation: pulse-dot 2s ease-in-out infinite; transform-origin: center; }
+    .cursor { animation: cursor-blink 0.85s step-end infinite; }
+    .grid { animation: grid-glow 4s ease-in-out infinite; }
+    .scanline { animation: scan-laser 5s linear infinite; }
+    .git-branch { stroke-dasharray: 6 6; animation: branch-flow 10s linear infinite; }
+    .floating-card { animation: float-subtle 4s ease-in-out infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pulse, .cursor, .grid, .scanline, .git-branch, .floating-card { animation: none; }
+      .cursor { opacity: 1; }
+    }
+  </style>
+
+  <defs>
+    <!-- Background Canvas Gradient -->
+    <linearGradient id="charcoal-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a10"/>
+      <stop offset="50%" stop-color="#0b0e17"/>
+      <stop offset="100%" stop-color="#06070a"/>
+    </linearGradient>
+
+    <!-- Terminal Panel Gradient -->
+    <linearGradient id="terminal-surface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e121d"/>
+      <stop offset="100%" stop-color="#090c14"/>
+    </linearGradient>
+
+    <!-- Subtle Cyan-Green Border -->
+    <linearGradient id="border-laser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+
+    <clipPath id="hero-bound">
+      <rect width="1200" height="420" rx="8"/>
+    </clipPath>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="420" rx="8" fill="url(#charcoal-bg)" stroke="#1a2233" stroke-width="1.2"/>
+
+  <!-- Background Technical Grid -->
+  <g class="grid" clip-path="url(#hero-bound)" stroke="#06b6d4" stroke-width="0.75">
+    <line x1="0" y1="70" x2="1200" y2="70"/>
+    <line x1="0" y1="140" x2="1200" y2="140"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="280" x2="1200" y2="280"/>
+    <line x1="0" y1="350" x2="1200" y2="350"/>
+
+    <line x1="120" y1="0" x2="120" y2="420"/>
+    <line x1="240" y1="0" x2="240" y2="420"/>
+    <line x1="360" y1="0" x2="360" y2="420"/>
+    <line x1="480" y1="0" x2="480" y2="420"/>
+    <line x1="600" y1="0" x2="600" y2="420"/>
+    <line x1="720" y1="0" x2="720" y2="420"/>
+    <line x1="840" y1="0" x2="840" y2="420"/>
+    <line x1="960" y1="0" x2="960" y2="420"/>
+    <line x1="1080" y1="0" x2="1080" y2="420"/>
+  </g>
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="150" cy="180" r="140" fill="#22c55e" opacity="0.04" filter="blur(30px)"/>
+  <circle cx="980" cy="200" r="160" fill="#06b6d4" opacity="0.04" filter="blur(35px)"/>
+
+  <!-- Scanline Laser -->
+  <g clip-path="url(#hero-bound)">
+    <rect class="scanline" x="0" y="0" width="1200" height="2" fill="#06b6d4"/>
+  </g>
+
+  <!-- Top System Header Bar -->
+  <rect x="0" y="0" width="1200" height="34" rx="8" fill="#0b0e17" stroke="#1a2233" stroke-width="1"/>
+  <rect x="0" y="24" width="1200" height="10" fill="#0b0e17"/>
+  
+  <!-- Left Window Indicators -->
+  <circle cx="20" cy="17" r="4.5" fill="#ef4444"/>
+  <circle cx="36" cy="17" r="4.5" fill="#f59e0b"/>
+  <circle cx="52" cy="17" r="4.5" fill="#22c55e"/>
+
+  <text x="76" y="21" class="mono" font-size="11" fill="#64748b" font-weight="600">SUMANTH@ENGINEERING-STATION: ~/workspace (linux-x86_64)</text>
+  
+  <!-- Right Micro-Pills -->
+  <g transform="translate(860, 9)">
+    <rect width="90" height="16" rx="3" fill="#131b2c" stroke="#1e293b" stroke-width="0.8"/>
+    <circle cx="10" cy="8" r="2.5" fill="#22c55e" class="pulse"/>
+    <text x="18" y="11.5" class="mono" font-size="9" fill="#22c55e" font-weight="700">KERNEL: OK</text>
+
+    <rect x="100" width="110" height="16" rx="3" fill="#131b2c" stroke="#1e293b" stroke-width="0.8"/>
+    <text x="108" y="11.5" class="mono" font-size="9" fill="#06b6d4" font-weight="700">BRANCH: main*</text>
+
+    <rect x="220" width="100" height="16" rx="3" fill="#131b2c" stroke="#1e293b" stroke-width="0.8"/>
+    <text x="228" y="11.5" class="mono" font-size="9" fill="#a855f7" font-weight="700">BUILD: PASSING</text>
+  </g>
+
+  <!-- ==================== LEFT: INTERACTIVE TERMINAL WINDOW ==================== -->
+  <g transform="translate(45, 60)">
+    <!-- Terminal Chassis -->
+    <rect width="520" height="325" rx="6" fill="url(#terminal-surface)" stroke="#1e293b" stroke-width="1.2"/>
+    
+    <!-- Titlebar -->
+    <rect width="520" height="28" rx="6" fill="#111624"/>
+    <rect y="22" width="520" height="6" fill="#111624"/>
+    <text x="16" y="18" class="mono" font-size="10.5" fill="#94a3b8" font-weight="600">┌─ session: dev_environment [zsh] ────────────────┐</text>
+    
+    <!-- Terminal Lines -->
+    <!-- Line 1: whoami -->
+    <text x="18" y="55" class="mono" font-size="11.5" fill="#64748b">$ <tspan fill="#06b6d4">whoami</tspan></text>
+    <text x="18" y="75" class="mono" font-size="11.5" fill="#f8fafc" font-weight="600">sumanth <tspan fill="#64748b">// Peddi Sai Venkat Sumanth</tspan></text>
+
+    <!-- Line 2: cat role.txt -->
+    <text x="18" y="105" class="mono" font-size="11.5" fill="#64748b">$ <tspan fill="#06b6d4">cat</tspan> role.txt</text>
+    <text x="18" y="125" class="mono" font-size="11.5" fill="#22c55e" font-weight="600">Software Engineer &amp; AI Systems Builder</text>
+
+    <!-- Line 3: systemctl status -->
+    <text x="18" y="155" class="mono" font-size="11.5" fill="#64748b">$ <tspan fill="#06b6d4">systemctl status</tspan> engineer.service</text>
+    <circle cx="23" cy="172" r="3.5" fill="#22c55e" class="pulse"/>
+    <text x="32" y="176" class="mono" font-size="11" fill="#22c55e" font-weight="700">● ACTIVE (running)</text>
+    <text x="160" y="176" class="mono" font-size="10.5" fill="#94a3b8">uptime: 2023 - 2027 [B.Tech CSE]</text>
+
+    <!-- Line 4: git log -->
+    <text x="18" y="206" class="mono" font-size="11.5" fill="#64748b">$ <tspan fill="#06b6d4">git log --oneline -n 3</tspan></text>
+    <text x="18" y="226" class="mono" font-size="10.5" fill="#a855f7">e8ffc8f <tspan fill="#e2e8f0">feat(benefitx): deploy 5-engine decision platform</tspan></text>
+    <text x="18" y="244" class="mono" font-size="10.5" fill="#a855f7">7b210ac <tspan fill="#e2e8f0">feat(handscape): 21-landmark MediaPipe 60fps 3D engine</tspan></text>
+    <text x="18" y="262" class="mono" font-size="10.5" fill="#a855f7">9104f3d <tspan fill="#e2e8f0">feat(agent): autonomous ReAct multi-tool loop</tspan></text>
+
+    <!-- Line 5: active prompt -->
+    <text x="18" y="296" class="mono" font-size="11.5" fill="#64748b">sumanth@dev:<tspan fill="#06b6d4">~/projects</tspan>$ <tspan fill="#f8fafc">./run_pipeline.sh</tspan> <tspan class="cursor" fill="#22c55e">█</tspan></text>
+    
+    <!-- Footer statusline -->
+    <line x1="0" y1="307" x2="520" y2="307" stroke="#1a2233" stroke-width="1"/>
+    <text x="16" y="319" class="mono" font-size="9" fill="#475569">UTF-8 · LF · ZSH 5.9 · MEM: 14% · CPU: 0.12 LOAD</text>
+  </g>
+
+  <!-- ==================== RIGHT: COMMAND BRANDING & METRICS ==================== -->
+  <g transform="translate(605, 60)">
+    <!-- Main Big Typography -->
+    <text x="0" y="42" class="sans" font-size="44" font-weight="900" fill="url(#title-grad)" letter-spacing="-0.5">
+      SUMANTH
+    </text>
+
+    <text x="0" y="66" class="mono" font-size="12" fill="#06b6d4" font-weight="700" letter-spacing="2.5">
+      PEDDI SAI VENKAT SUMANTH // SDE
+    </text>
+
+    <text x="0" y="92" class="mono" font-size="12.5" fill="#94a3b8" font-weight="500">
+      Software Development <tspan fill="#22c55e">◆</tspan> Agentic AI <tspan fill="#06b6d4">◆</tspan> Cloud &amp; Vision Systems
+    </text>
+
+    <!-- Subtle Git Branch Diagram in SVG -->
+    <g transform="translate(0, 115)">
+      <rect width="550" height="90" rx="6" fill="#0c101b" stroke="#1e293b" stroke-width="1"/>
+      <text x="14" y="20" class="mono" font-size="9.5" fill="#64748b" font-weight="700" letter-spacing="1">GIT ORCHESTRATION PIPELINE</text>
+      
+      <!-- Branch Lines -->
+      <line x1="20" y1="52" x2="530" y2="52" stroke="#22c55e" stroke-width="2" class="git-branch"/>
+      <path d="M 120 52 C 160 52, 170 72, 210 72 L 400 72 C 430 72, 440 52, 470 52" stroke="#06b6d4" stroke-width="1.8" fill="none"/>
+      
+      <!-- Commit Nodes -->
+      <circle cx="60" cy="52" r="5" fill="#22c55e"/>
+      <text x="50" y="40" class="mono" font-size="8.5" fill="#94a3b8">v1.0</text>
+
+      <circle cx="150" cy="52" r="5" fill="#22c55e"/>
+      <circle cx="210" cy="72" r="4.5" fill="#06b6d4"/>
+      <text x="220" y="75" class="mono" font-size="8.5" fill="#06b6d4">feat/vision-ai</text>
+
+      <circle cx="320" cy="72" r="4.5" fill="#06b6d4"/>
+      <circle cx="390" cy="72" r="4.5" fill="#06b6d4"/>
+
+      <circle cx="470" cy="52" r="5" fill="#8b5cf6"/>
+      <text x="450" y="40" class="mono" font-size="8.5" fill="#8b5cf6">merge/prod</text>
+
+      <circle cx="510" cy="52" r="5" fill="#22c55e"/>
+    </g>
+
+    <!-- Floating System Telemetry Chips (2x2 Grid) -->
+    <g transform="translate(0, 220)">
+      <!-- Chip 1 -->
+      <g>
+        <rect width="265" height="46" rx="5" fill="#0d111c" stroke="#1e293b" stroke-width="1"/>
+        <text x="14" y="20" class="mono" font-size="9" fill="#64748b">CORE ARCHITECTURE</text>
+        <text x="14" y="36" class="mono" font-size="11" fill="#f8fafc" font-weight="700">React 19 · FastAPI · Nitro</text>
+      </g>
+
+      <!-- Chip 2 -->
+      <g transform="translate(285, 0)">
+        <rect width="265" height="46" rx="5" fill="#0d111c" stroke="#1e293b" stroke-width="1"/>
+        <text x="14" y="20" class="mono" font-size="9" fill="#64748b">AGENTIC AI &amp; VISION</text>
+        <text x="14" y="36" class="mono" font-size="11" fill="#22c55e" font-weight="700">ReAct Loop · MediaPipe 3D</text>
+      </g>
+
+      <!-- Chip 3 -->
+      <g transform="translate(0, 56)">
+        <rect width="265" height="46" rx="5" fill="#0d111c" stroke="#1e293b" stroke-width="1"/>
+        <text x="14" y="20" class="mono" font-size="9" fill="#64748b">TEST COVERAGE &amp; QA</text>
+        <text x="14" y="36" class="mono" font-size="11" fill="#06b6d4" font-weight="700">100% Passing (Vitest)</text>
+      </g>
+
+      <!-- Chip 4 -->
+      <g transform="translate(285, 56)">
+        <rect width="265" height="46" rx="5" fill="#0d111c" stroke="#1e293b" stroke-width="1"/>
+        <text x="14" y="20" class="mono" font-size="9" fill="#64748b">DEPLOYMENT STATUS</text>
+        <text x="14" y="36" class="mono" font-size="11" fill="#a855f7" font-weight="700">Vercel · AWS · Supabase</text>
+      </g>
+    </g>
+  </g>
+</svg>
