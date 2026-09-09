@@ -1,351 +1,191 @@
-<!-- ╔══════════════════════════════════════════════════════════════════╗ -->
-<!-- ║               PEDDI SAI VENKAT SUMANTH — GitHub Profile         ║ -->
-<!-- ║               ✨ Crafted with precision & passion ✨             ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════╝ -->
-
-<!-- ═══ TERMINAL HEADER WINDOW ═══ -->
-<img src="./assets/wave-header.svg" width="100%" alt="Terminal Header"/>
-<img src="./assets/matrix-banner.svg" width="100%" alt="Matrix Banner"/>
-
 <div align="center">
 
-<br/>
+<!-- ═══════════════════════ CAPSULE / GRADIENT HEADER ═══════════════════════ -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,20,50,100&height=220&section=header&text=SAMANTHA%20THIPPANI&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Full%20Stack%20Developer%20%7C%20AI%20%26%20Cloud%20Enthusiast&descFontSize=18&descAlignY=62&descAlign=50" width="100%" alt="Samantha Thippani Header Banner"/>
 
-<!-- ═══ MONOSPACE TYPING BANNERS ═══ -->
-<a href="https://github.com/saivenkatsumanth9-stack">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=2000&pause=500&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=75&lines=Hey+there!+I'm+Sumanth+%F0%9F%91%8B;Welcome+to+my+terminal+profile+%F0%9F%92%BB" alt="Typing SVG" />
+<!-- ═══════════════════════ ANIMATED TYPING BANNER ═══════════════════════ -->
+<a href="https://github.com/samanthathippani">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2500&pause=800&color=7AA2F7&center=true&vCenter=true&repeat=true&width=800&height=45&lines=🚀+Full-Stack+Developer+%26+Cloud+Builder;⚡+React.js+%7C+Angular+%7C+Spring+Boot+%7C+Python+%7C+Flask;🤖+Integrating+NLP%2C+Generative+AI+%26+Predictive+Analytics;🎓+B.Tech+Information+Technology+%40+TKRCET;🤝+Open+to+Software+Engineering+Internships+%26+Roles" alt="Typing SVG" />
 </a>
 
 <br/>
 
-<a href="https://github.com/saivenkatsumanth9-stack">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=2500&pause=800&color=7EE787&center=true&vCenter=true&repeat=true&width=800&height=35&lines=🎓+3rd+Year+B.Tech+CSE+%40+NNRES;💻+Python+%7C+Java+%7C+C+%7C+C%23+Developer;🤖+AI+%26+Machine+Learning+Enthusiast;🎮+Unity+Game+Developer;🤝+Open+to+Internships+%26+Collaborations" alt="Typing SVG" />
-</a>
-
-<br/>
-
-<!-- ═══ NATIVE SOCIALS ═══ -->
-<a href="https://linkedin.com/in/saivenkatsumanth"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white"/></a>&nbsp;
-<a href="https://github.com/saivenkatsumanth9-stack"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/></a>&nbsp;
-<a href="mailto:saivenkatsumanth9@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=flat-square&logo=gmail&logoColor=white"/></a>&nbsp;
-<a href="tel:+917075867969"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white"/></a>
+<!-- ═══════════════════════ SOCIAL BADGES ═══════════════════════ -->
+<a href="https://linkedin.com/in/samanthathippani"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>&nbsp;
+<a href="https://github.com/samanthathippani"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>&nbsp;
+<a href="mailto:thippanicherry@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>&nbsp;
+<a href="tel:+919849396145"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"/></a>
 
 <br/><br/>
 
 </div>
 
-<!-- ═══════════════════════ ABOUT ME SECTION ═══════════════════════ -->
+---
 
-## 👤 $ neofetch --profile
+### 👤 `About Me`
 
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
+```yaml
+identity:
+  name: Samantha Thippani
+  role: Full Stack Developer & AI Engineer
+  education: "B.Tech in Information Technology @ TKR College of Engineering and Technology (2023 – 2027) | CGPA: 7.0/10.0"
+  location: "Hyderabad, India 🇮🇳"
+  status: "🟢 Actively seeking Full-Time & Internship Software Engineering Opportunities"
+  summary: >
+    Passionate IT undergraduate with hands-on experience architecting scalable full-stack applications 
+    using React, Angular, Spring Boot, and Python on AWS & GCP. Proven track record of shipping 
+    data-driven platforms integrated with NLP, Gemini API, time-series forecasting, and cloud databases.
+```
+
+---
+
+### 🏆 `GitHub Profile Trophies`
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=samanthathippani&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies" />
+</div>
+
+---
+
+### 🛠️ `Technical Arsenal & Skills`
+
+<div align="center">
+
+| Domain | Badges & Technologies |
+| :--- | :--- |
+| **Programming Languages** | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black"/> <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/> |
+| **Frontend Frameworks** | <img src="https://img.shields.io/badge/React.js-61DAFB?style=for-the-badge&logo=react&logoColor=black"/> <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"/> <img src="https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white"/> |
+| **Backend Frameworks** | <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/> <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"/> |
+| **Cloud & Databases** | <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white"/> <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white"/> <img src="https://img.shields.io/badge/Firebase_Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/> <img src="https://img.shields.io/badge/Amazon_DynamoDB-4053D6?style=for-the-badge&logo=amazondynamodb&logoColor=white"/> |
+| **AI, ML & Data Science** | <img src="https://img.shields.io/badge/Google_Gemini_API-8E75B2?style=for-the-badge&logo=google&logoColor=white"/> <img src="https://img.shields.io/badge/NLP_Models-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"/> <img src="https://img.shields.io/badge/Prophet_Forecasting-4285F4?style=for-the-badge&logo=meta&logoColor=white"/> <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/> <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge"/> |
+| **Developer Tools** | <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"/> <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"/> |
+
+</div>
+
+---
+
+### 🚀 `Featured Projects`
+
+<table>
+  <!-- Project 1: Edu Tape -->
   <tr>
-    <td width="65%" valign="top">
-      <div style="font-family: 'Fira Code', monospace; background-color: #0c0c0d; border: 1.5px solid #d4af37; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.65); overflow: hidden; margin: 0;">
-        <!-- Terminal Header -->
-        <div style="background-color: #1a1a1c; border-bottom: 1px solid #2d2d30; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between;">
-          <div style="display: flex; gap: 8px; align-items: center;">
-            <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #ff5f56; display: inline-block;"></span>
-            <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #ffbd2e; display: inline-block;"></span>
-            <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #27c93f; display: inline-block;"></span>
-          </div>
-          <div style="color: #d4af37; font-size: 13px; font-weight: bold; display: flex; align-items: center; gap: 6px;">
-            <span>💻</span> <span>whoami</span>
-          </div>
-          <div style="width: 50px;"></div>
-        </div>
-        <!-- Terminal Body -->
-        <div style="padding: 20px; line-height: 1.7; color: #c9d1d9; font-size: 13.5px; overflow-x: auto; background-color: #0a0a0c;">
-<span style="color: #ffd700; font-weight: bold;">sumanth@peddi-terminal</span>:<span style="color: #8b949e;">~</span>$ neofetch
-<span style="color: #ffd700; font-weight: bold;">          .          </span>  <span style="color: #d4af37; font-weight: bold;">User</span>: Peddi Sai Venkat Sumanth (Sumanth)
-<span style="color: #ffd700; font-weight: bold;">         / \         </span>  <span style="color: #d4af37; font-weight: bold;">Education</span>: B.Tech CSE @ NNRES (2023 - 2027)
-<span style="color: #ffd700; font-weight: bold;">        /   \        </span>  <span style="color: #d4af37; font-weight: bold;">CGPA</span>: 7.45 / 10.0 (Highly Consistent)
-<span style="color: #ffd700; font-weight: bold;">       /     \       </span>  <span style="color: #d4af37; font-weight: bold;">Location</span>: Hyderabad, India 🇮🇳
-<span style="color: #ffd700; font-weight: bold;">      /       \      </span>  <span style="color: #d4af37; font-weight: bold;">Languages</span>: Python, Java, C, C#
-<span style="color: #ffd700; font-weight: bold;">     /=========\     </span>  <span style="color: #d4af37; font-weight: bold;">Skills</span>: Git, VS Code, MySQL, Unity, HTML/CSS/JS
-<span style="color: #ffd700; font-weight: bold;">    /           \    </span>  <span style="color: #d4af37; font-weight: bold;">Exploring</span>: React, Node.js, TensorFlow
-   <span style="color: #ffd700; font-weight: bold;">/             \   </span>  <span style="color: #d4af37; font-weight: bold;">Vibe</span>: Coffee-driven developer turning ideas into code ☕
-  <span style="color: #ffd700; font-weight: bold;">/               \  </span>  <span style="color: #d4af37; font-weight: bold;">Goal</span>: Secure a Software Internship &amp; build cool products
-        </div>
+    <td width="50%" valign="top">
+      <div align="left">
+        <h3>🎮 Edu Tape — AI-Powered Gamified Learning Platform</h3>
+        <p><em>Jan 2026 • Progressive Web App (PWA)</em></p>
+        <p>A full-stack gamified e-learning Progressive Web App built to deliver offline-capable, cross-device educational experiences with real-time AI adaptability.</p>
+        <ul>
+          <li><strong>AI Integration:</strong> Gemini API & NLP models generate adaptive quizzes, customized learning roadmaps, and intelligent recommendations.</li>
+          <li><strong>Scalable Cloud:</strong> Firestore & DynamoDB on AWS/GCP for real-time progress synchronization.</li>
+          <li><strong>Gamification Engine:</strong> Interactive badges, real-time leaderboard rankings, and XP rewards.</li>
+          <li><strong>Expos:</strong> Showcased at <strong>SPARKEXPO-26</strong> & <strong>IDEONEX'26</strong>.</li>
+        </ul>
+        <p>
+          <img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+          <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"/>
+          <img src="https://img.shields.io/badge/Gemini_API-8E75B2?style=flat-square"/>
+          <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white"/>
+          <img src="https://img.shields.io/badge/Firestore-FFCA28?style=flat-square&logo=firebase&logoColor=black"/>
+        </p>
+        <p>
+          <a href="https://github.com/samanthathippani"><strong>📁 Explore on GitHub</strong></a>
+        </p>
       </div>
     </td>
-    <td width="35%" align="center" valign="middle" style="padding-left: 20px;">
-      <img src="./assets/boy-coding.svg" width="100%" style="max-width: 290px; filter: drop-shadow(0 4px 15px rgba(212,175,55,0.15));" alt="Boy Coding"/>
+    <!-- Project 2: Stock Intelligence & Forecaster -->
+    <td width="50%" valign="top">
+      <div align="left">
+        <h3>📈 Stock Intelligence & Market Forecaster</h3>
+        <p><em>Sep 2025 • Quantitative Analytics & Prediction</em></p>
+        <p>An AI-driven stock market predictive intelligence application delivering historical trend decomposition and predictive forecasts for 10+ asset tickers.</p>
+        <ul>
+          <li><strong>Time-Series Engine:</strong> Integrated Meta Prophet model for algorithmic price forecasting.</li>
+          <li><strong>Live Market Feeds:</strong> <code>yfinance</code> and <code>mplfinance</code> for interactive candlestick telemetry and technical indicators.</li>
+          <li><strong>Automated Reports:</strong> Built-in FPDF generation pipeline with SMTP automated email dispatch for daily executive market briefings.</li>
+        </ul>
+        <p>
+          <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+          <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"/>
+          <img src="https://img.shields.io/badge/Prophet-4285F4?style=flat-square"/>
+          <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white"/>
+          <img src="https://img.shields.io/badge/SMTP_Alerts-EA4335?style=flat-square"/>
+        </p>
+        <p>
+          <a href="https://github.com/samanthathippani"><strong>📁 Explore on GitHub</strong></a>
+        </p>
+      </div>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 📜 `Licenses, Certifications & Honors`
+
+- 🥇 **NPTEL – Python for Data Science** — *Indian Institute of Technology Madras (Credential: NPTEL26CS80S457305063)*
+- 🥇 **NPTEL – Data Analysis and Decision Making** — *Indian Institute of Technology Kanpur (Credential: NPTEL25MG125S958205976)*
+- 🤖 **Gemini Academy – Transforming Higher Education with Google Gemini** — *Google & STTAR*
+- 💼 **Microsoft 365 Copilot Chat** — *Module Assessment Passed, Microsoft*
+- 💡 **IBM SkillsBuild – Introduction to Generative AI** — *IBM*
+- 🚀 **Generative AI Fundamentals** — *SAWiT.AI Learnathon Program*
+- 🔬 **5-Day Machine Learning Workshop** — *Innomatics Research Labs*
+
+---
+
+### 📊 `GitHub Telemetry & Activity`
+
+<div align="center">
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://github-readme-stats.vercel.app/api?username=samanthathippani&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&theme=tokyonight" width="100%" alt="GitHub Stats"/>
+    </td>
+    <td width="50%" align="center">
+      <img src="https://streak-stats.demolab.com?user=samanthathippani&hide_border=true&theme=tokyonight" width="100%" alt="GitHub Streak"/>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=samanthathippani&layout=compact&hide_border=true&theme=tokyonight" width="60%" alt="Top Languages"/>
     </td>
   </tr>
 </table>
 
 <br/>
-<img src="./assets/section-divider.svg" width="100%" alt=""/>
 
-<!-- ═══════════════════════ INTERACTIVE WORKSPACE TREE ═══════════════════════ -->
+<!-- ═══════════════════════ CONTRIBUTION SNAKE ANIMATION ═══════════════════════ -->
+<h3>🐍 Contribution Snake Matrix</h3>
 
-## 📂 $ tree sumanth-workspace/
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/samanthathippani/samanthathippani/output/github-snake-dark.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/samanthathippani/samanthathippani/output/github-snake.svg"/>
+  <img alt="Snake Animation" src="https://raw.githubusercontent.com/samanthathippani/samanthathippani/output/github-snake-dark.svg" width="100%"/>
+</picture>
 
-<div align="left">
-<pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6;">
-<details open>
-<summary style="cursor: pointer; color: #58a6ff; outline: none; font-weight: bold; list-style: none;"><b>📁 sumanth-workspace/</b> (Click folders to collapse/expand)</summary>
-│
-<details open>
-<summary style="cursor: pointer; color: #ff7b72; outline: none; list-style: none;">├── 📂 projects/</summary>
-│   ├── 🤖 <a href="#-project-1-ai-study-buddy" style="color: #a5d6ff; text-decoration: none;">ai-study-buddy.py</a> (Plan Smart. Study Better. NLP + RAG)
-│   ├── 🏋️ <a href="#-project-2-healthmate" style="color: #a5d6ff; text-decoration: none;">healthmate.js</a> (Full-Stack + AI Fitness Coaching chatbot)
-│   └── 🎮 <a href="#-project-3-last-thief-standing" style="color: #a5d6ff; text-decoration: none;">last-thief-standing.cs</a> (Shipped Unity 2D physics runner game)
-</details>
-│
-<details open>
-<summary style="cursor: pointer; color: #ff7b72; outline: none; list-style: none;">├── 📂 academic-milestones/</summary>
-│   ├── 🎓 <span style="color: #ff7b72;">btech-cse.log</span> (NNRES | 2023 - 2027 | CGPA: 7.45)
-│   ├── 📗 <span style="color: #ff7b72;">intermediate.log</span> (Sri Chaitanya | 2021 - 2023 | 81%)
-│   └── 📘 <span style="color: #ff7b72;">ssc.log</span> (Suprabath Model HS | 2019 - 2021 | 69%)
-</details>
-│
-<details>
-<summary style="cursor: pointer; color: #ff7b72; outline: none; list-style: none;">└── 📄 contact.sh (Click to expand connect scripts)</summary>
-    ├── 📧 <a href="mailto:saivenkatsumanth9@gmail.com" style="color: #a5d6ff; text-decoration: none;">email_client.sh</a> (saivenkatsumanth9@gmail.com)
-    └── 🔗 <a href="https://linkedin.com/in/saivenkatsumanth" style="color: #a5d6ff; text-decoration: none;">linkedin_connect.sh</a> (in/saivenkatsumanth)
-</details>
-</details>
-</pre>
 </div>
 
-<br/>
-<img src="./assets/section-divider.svg" width="100%" alt=""/>
+---
 
-<!-- ═══════════════════════ INTERACTIVE SECRET DRAWER ═══════════════════════ -->
-<div align="left">
-<details>
-  <summary style="cursor: pointer; list-style: none; outline: none;">
-    <pre style="font-family: 'Fira Code', monospace; background: #161b22; color: #58a6ff; border: 1px solid #30363d; border-radius: 6px; padding: 12px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">$ ./run-diagnostic-report.sh  # 👈 CLICK TO EXECUTE</pre>
-  </summary>
-  <pre style="font-family: 'Fira Code', monospace; background: #050505; color: #7ee787; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.5;">
-[INFO] Connecting to saivenkatsumanth9-stack... SUCCESS
-[INFO] Booting zsh interactive shell... SUCCESS
-[INFO] Fetching diagnostics...
------------------------------------------------------------
-⚡ <b>SYSTEM INTEGRITY DIAGNOSTIC REPORT:</b>
-- <b>Core CPU Vibe:</b> Coffee-Driven (94.2% Capacity) [||||||||||||||||||||||||||░░]
-- <b>Git Deployments:</b> Main Branch - 100% Stability [||||||||||||||||||||||||||||]
-- <b>Language Engine:</b> Python, Java, C, C# compilers fully loaded
-- <b>Development Principles:</b> STRICT adherence to DRY &amp; SOLID
-- <b>Current Goal:</b> Securing collaborative Software Internships
+### 🤝 `Connect & Collaborate`
 
-[SUCCESS] Diagnosis complete. All systems nominal.
-[SUCCESS] Executed ./run-diagnostic-report.sh successfully.
-  </pre>
-</details>
-</div>
+<div align="center">
+
+I am always enthusiastic about discussing **Full-Stack Web Development, AI Integration, and Open-Source Collaborations**.
 
 <br/>
-<img src="./assets/section-divider.svg" width="100%" alt=""/>
 
-<!-- ═══════════════════════ TECH MARQUEE ═══════════════════════ -->
-
-## ⚙️ $ cat /etc/environment
-
-<!-- Scrolling terminal status logs -->
-<img src="./assets/scrolling-skills.svg" width="100%" alt="Tech Marquee"/>
+<a href="https://linkedin.com/in/samanthathippani"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>&nbsp;&nbsp;
+<a href="mailto:thippanicherry@gmail.com"><img src="https://img.shields.io/badge/Email-Send_Message-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>&nbsp;&nbsp;
+<a href="https://github.com/samanthathippani"><img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
 
 <br/><br/>
 
-<!-- Animated programming language bar charts -->
-<img src="./assets/language-bars.svg" width="100%" alt="Language Skill Bars"/>
-
-<br/>
-<img src="./assets/section-divider.svg" width="100%" alt=""/>
-
-<!-- ═══════════════════════ FEATURED PROJECTS ═══════════════════════ -->
-
-## 🛠️ $ ls -la ./projects/
-
-<!-- PROJECT 1 -->
-<div align="left">
-<h3>🤖 Project 1: AI Study Buddy</h3>
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="65%" valign="top">
-      <pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6; margin: 0;">
-<span style="color: #8b949e;">$ python study_buddy.py --enable-rag</span>
-&gt;&gt;&gt; Loading RAG Chat Engine... <span style="color: #7ee787;">[SUCCESS]</span>
-&gt;&gt;&gt; Initializing Scheduler... <span style="color: #7ee787;">[SUCCESS]</span>
-
-<b>Description:</b>
-Undergraduate-level AI assistant implementing production-grade RAG.
-Allows students to query syllabus materials and optimize study routines.
-
-<b>Tech Stack:</b> Python • NLP • RAG • TensorFlow • OpenAI API
-
-<b>Core Features:</b>
-- 🧠 <b>Smart Scheduling:</b> Personalized timetables dynamically adjusted by AI.
-- 📄 <b>RAG Chat Engine:</b> Upload coursework PDFs and query them in natural language.
-- 📝 <b>Auto Quiz Gen:</b> Generates customized practice tests from documents.
-      </pre>
-    </td>
-    <td width="35%" align="center" valign="middle" style="padding-left: 15px;">
-      <img src="./assets/project-study-buddy.svg" width="100%" style="max-width: 250px;" alt="Study Buddy Monitor"/>
-    </td>
-  </tr>
-</table>
-</div>
-
-<br/>
-
-<!-- PROJECT 2 -->
-<div align="left">
-<h3>🏋️ Project 2: HealthMate</h3>
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="65%" valign="top">
-      <pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6; margin: 0;">
-<span style="color: #8b949e;">$ npm run start --project=healthmate</span>
-&gt;&gt;&gt; Connecting to Fitness Chatbot API... <span style="color: #7ee787;">[SUCCESS]</span>
-&gt;&gt;&gt; Loading Meal &amp; Workout Loggers... <span style="color: #7ee787;">[SUCCESS]</span>
-
-<b>Description:</b>
-A full-stack, responsive health application featuring workout logging,
-nutrition tracking, and an integrated AI fitness chatbot.
-
-<b>Tech Stack:</b> HTML5 • CSS3 • JavaScript • OpenAI API
-
-<b>Core Features:</b>
-- 📱 <b>Onboarding &amp; Dashboards:</b> Seamless UI flow with interactive charts.
-- 🔢 <b>Health Calculators:</b> Instant BMI, BMR, and TDEE math.
-- 🤖 <b>AI Coach:</b> Personalized workout and nutritional suggestions.
-      </pre>
-    </td>
-    <td width="35%" align="center" valign="middle" style="padding-left: 15px;">
-      <img src="./assets/project-healthmate.svg" width="100%" style="max-width: 250px;" alt="HealthMate Monitor"/>
-    </td>
-  </tr>
-</table>
-</div>
-
-<br/>
-
-<!-- PROJECT 3 -->
-<div align="left">
-<h3>🎮 Project 3: Last Thief Standing</h3>
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="65%" valign="top">
-      <pre style="font-family: 'Fira Code', monospace; background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; border-radius: 6px; padding: 18px; line-height: 1.6; margin: 0;">
-<span style="color: #8b949e;"># run LTS_Game.x86_64</span>
-&gt;&gt;&gt; Starting Unity Engine Core... <span style="color: #7ee787;">[SUCCESS]</span>
-&gt;&gt;&gt; Initializing Game Physics &amp; AI... <span style="color: #7ee787;">[SUCCESS]</span>
-
-<b>Description:</b>
-A fully shipped, physics-based 2D endless runner built from scratch.
-Implements scaling obstacles, coin rewards, and adaptive difficulty.
-
-<b>Tech Stack:</b> Unity Engine • C# scripting • 2D Animation • Game Physics
-
-<b>Core Features:</b>
-- 🕹️ <b>Combat Mechanics:</b> Jump, shoot, and loot loop with responsive controls.
-- 🤖 <b>Intelligent Enemy AI:</b> Obstacles and enemies react dynamically to player moves.
-- 📈 <b>Difficulty Scaling:</b> Game speed scales seamlessly relative to player distance.
-      </pre>
-    </td>
-    <td width="35%" align="center" valign="middle" style="padding-left: 15px;">
-      <img src="./assets/project-last-thief.svg" width="100%" style="max-width: 250px;" alt="Last Thief Monitor"/>
-    </td>
-  </tr>
-</table>
-</div>
-
-<br/>
-<img src="./assets/section-divider.svg" width="100%" alt=""/>
-
-<!-- ═══════════════════════ GITHUB STATS DASHBOARD ═══════════════════════ -->
-
-## 📊 $ cat /var/log/github/stats
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=saivenkatsumanth9-stack&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&title_color=58a6ff&icon_color=7ee787&text_color=c9d1d9&bg_color=0d1117&rank_icon=github&show=reviews,discussions_started,prs_merged"/>
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=saivenkatsumanth9-stack&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&title_color=58a6ff&icon_color=7ee787&text_color=c9d1d9&bg_color=0d1117&rank_icon=github&show=reviews,discussions_started,prs_merged"/>
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=saivenkatsumanth9-stack&hide_border=true&background=0d1117&ring=58a6ff&fire=ff7b72&currStreakLabel=58a6ff&sideLabels=c9d1d9&dates=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9"/>
-  <img width="49%" src="https://streak-stats.demolab.com?user=saivenkatsumanth9-stack&hide_border=true&background=0d1117&ring=58a6ff&fire=ff7b72&currStreakLabel=58a6ff&sideLabels=c9d1d9&dates=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9"/>
-</picture>
+<!-- PROFILE VIEWS COUNTER -->
+<img src="https://komarev.com/ghpvc/?username=samanthathippani&style=flat-square&color=7aa2f7&label=PROFILE+VIEWS" alt="Profile Views"/>
 
 <br/><br/>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=saivenkatsumanth9-stack&layout=donut&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8"/>
-  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=saivenkatsumanth9-stack&layout=donut&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8"/>
-</picture>
-
-</div>
-
-<br/>
-<img src="./assets/section-divider.svg" width="100%" alt=""/>
-
-<!-- ═══════════════════════ CONTRIBUTION GRAPH ═══════════════════════ -->
-
-## 📈 $ journalctl -u contribution-activity.service
-
-<div align="center">
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=saivenkatsumanth9-stack&bg_color=0d1117&color=58a6ff&line=58a6ff&point=7ee787&area=true&area_color=161b22&hide_border=true&custom_title=⚡%20Sumanth's%20Contribution%20Activity" alt="Contribution Graph"/>
-</div>
-
-<br/>
-
-<!-- ═══════════════════════ SNAKE ANIMATION ═══════════════════════ -->
-
-## 🐍 $ ./run-contribution-snake --theme=terminal
-
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/saivenkatsumanth9-stack/saivenkatsumanth9-stack/output/github-snake-dark.svg"/>
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/saivenkatsumanth9-stack/saivenkatsumanth9-stack/output/github-snake.svg"/>
-  <img alt="Snake animation" src="https://raw.githubusercontent.com/saivenkatsumanth9-stack/saivenkatsumanth9-stack/output/github-snake-dark.svg" width="100%"/>
-</picture>
-
-<br/>
-
-<sub>🔧 <i>Auto-generated every 12 hours via GitHub Actions</i></sub>
-</div>
-
-<br/>
-<img src="./assets/section-divider.svg" width="100%" alt=""/>
-
-<!-- ═══════════════════════ 3D CONTRIBUTION GRAPH ═══════════════════════ -->
-
-## 🌐 $ ./render-3d-map --output=rainbow
-
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow-animate.svg"/>
-  <img alt="3D Contrib" src="./profile-3d-contrib/profile-green-animate.svg" width="100%"/>
-</picture>
-
-<br/>
-
-<sub>🔧 <i>Auto-generated daily via GitHub Actions</i></sub>
-</div>
-
-<br/>
-
-<!-- ═══════════════════════ TERMINAL FOOTER DIVIDER ═══════════════════════ -->
-<img src="./assets/wave-footer.svg" width="100%" alt="Terminal Footer"/>
-
-<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-
-<div align="center">
-
-<br/>
-
-*"Code is like humor. When you have to explain it, it's bad."* — **Cory House**
-
-<br/>
-
-**Made with 💻 and mass amounts of ☕ by [Sumanth](https://github.com/saivenkatsumanth9-stack)**
-
-<br/>
-
-<img src="https://img.shields.io/badge/Status-ONLINE-27c93f?style=flat-square&labelColor=21262d" alt="Online Status"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,20,50,100&height=100&section=footer" width="100%" alt="Footer Banner"/>
 
 </div>

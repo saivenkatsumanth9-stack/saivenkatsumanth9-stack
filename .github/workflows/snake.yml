@@ -2,7 +2,8 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: '0 */12 * * *'
+    # Runs every 12 hours
+    - cron: "0 */12 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -17,20 +18,13 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Generate Snake Animation (Light Mode)
+      - name: Generate Snake SVG Animations
         uses: Platane/snk@v3
         with:
-          github_user_name: saivenkatsumanth9-stack
-          outputs: dist/github-snake.svg
-          snake_color: '#ff007f'
-          dot_color: '#00f2fe'
-          dot_empty_color: '#161b22'
-
-      - name: Generate Snake Animation (Dark Mode)
-        uses: Platane/snk@v3
-        with:
-          github_user_name: saivenkatsumanth9-stack
-          outputs: dist/github-snake-dark.svg?palette=github-dark&color_snake=#ff007f&color_dots=#161b22,#5f00a7,#bd00db,#ff007f,#00f2fe&color_empty=#161b22
+          github_user_name: samanthathippani
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=#7aa2f7&color_dots=#16161e,#24283b,#414868,#7aa2f7,#bb9af7&color_empty=#16161e
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
