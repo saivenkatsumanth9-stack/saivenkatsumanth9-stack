@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 240" width="100%" height="240" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap');
+
+    @keyframes pulse-cyan {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    @keyframes glow-border {
+      0%, 100% { stroke-opacity: 0.4; }
+      50% { stroke-opacity: 0.85; }
+    }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .pulse { animation: pulse-cyan 2.5s ease-in-out infinite; transform-origin: center; }
+    .glow-box { animation: glow-border 4s ease-in-out infinite; }
+  </style>
+
+  <defs>
+    <linearGradient id="mission-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060810"/>
+      <stop offset="50%" stop-color="#090d18"/>
+      <stop offset="100%" stop-color="#04060c"/>
+    </linearGradient>
+
+    <linearGradient id="pillar-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1322"/>
+      <stop offset="100%" stop-color="#080b14"/>
+    </linearGradient>
+
+    <linearGradient id="cyan-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="50%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#bd00ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1100" height="240" rx="8" fill="url(#mission-bg)" stroke="#1a233a" stroke-width="1.2"/>
+
+  <!-- Top Title -->
+  <g transform="translate(30, 32)">
+    <circle cx="8" cy="8" r="4.5" fill="#00f2fe" class="pulse"/>
+    <text x="24" y="12" class="mono" font-size="14" fill="#ffffff" font-weight="800" letter-spacing="1.5">
+      CORE_MISSION // ENGINEERING PHILOSOPHY &amp; APPROACH
+    </text>
+    <text x="24" y="28" class="mono" font-size="9" fill="#64748b" letter-spacing="1">
+      "EXPLORE DEEPLY. BUILD RELENTLESSLY. LEARN EVERY SINGLE DAY."
+    </text>
+  </g>
+
+  <!-- 4 Pillars Grid -->
+  <g transform="translate(30, 75)">
+    <!-- Pillar 01: EXPLORE -->
+    <g>
+      <rect width="245" height="135" rx="6" fill="url(#pillar-card)" stroke="#00f2fe" stroke-opacity="0.5" stroke-width="1" class="glow-box"/>
+      <circle cx="18" cy="22" r="3" fill="#00f2fe"/>
+      <text x="28" y="25" class="mono" font-size="10" fill="#00f2fe" font-weight="700">01 // EXPLORE</text>
+      <text x="18" y="52" class="mono" font-size="11" fill="#f8fafc" font-weight="700">Curiosity-Led R&amp;D</text>
+      <text x="18" y="74" class="mono" font-size="8.8" fill="#94a3b8">• Deep-dive into Agentic AI,</text>
+      <text x="18" y="88" class="mono" font-size="8.8" fill="#94a3b8">  MediaPipe 3D &amp; Quantum.</text>
+      <text x="18" y="102" class="mono" font-size="8.8" fill="#94a3b8">• Dissect cutting-edge papers</text>
+      <text x="18" y="116" class="mono" font-size="8.8" fill="#94a3b8">  and open-source architectures.</text>
+    </g>
+
+    <!-- Pillar 02: BUILD -->
+    <g transform="translate(265, 0)">
+      <rect width="245" height="135" rx="6" fill="url(#pillar-card)" stroke="#22c55e" stroke-opacity="0.5" stroke-width="1" class="glow-box"/>
+      <circle cx="18" cy="22" r="3" fill="#22c55e"/>
+      <text x="28" y="25" class="mono" font-size="10" fill="#22c55e" font-weight="700">02 // BUILD</text>
+      <text x="18" y="52" class="mono" font-size="11" fill="#f8fafc" font-weight="700">Zero-Fluff Execution</text>
+      <text x="18" y="74" class="mono" font-size="8.8" fill="#94a3b8">• 7 real-world projects shipped.</text>
+      <text x="18" y="88" class="mono" font-size="8.8" fill="#94a3b8">• 5 deterministic decision engines.</text>
+      <text x="18" y="102" class="mono" font-size="8.8" fill="#94a3b8">• 100% on-device privacy &amp; 60fps</text>
+      <text x="18" y="116" class="mono" font-size="8.8" fill="#94a3b8">  client-side WebAssembly.</text>
+    </g>
+
+    <!-- Pillar 03: LEARN -->
+    <g transform="translate(530, 0)">
+      <rect width="245" height="135" rx="6" fill="url(#pillar-card)" stroke="#bd00ff" stroke-opacity="0.5" stroke-width="1" class="glow-box"/>
+      <circle cx="18" cy="22" r="3" fill="#bd00ff"/>
+      <text x="28" y="25" class="mono" font-size="10" fill="#bd00ff" font-weight="700">03 // LEARN DAILY</text>
+      <text x="18" y="52" class="mono" font-size="11" fill="#f8fafc" font-weight="700">Continuous Mastery</text>
+      <text x="18" y="74" class="mono" font-size="8.8" fill="#94a3b8">• 80+ LeetCode DSA Solved.</text>
+      <text x="18" y="88" class="mono" font-size="8.8" fill="#94a3b8">• Certified in AWS AI, Google,</text>
+      <text x="18" y="102" class="mono" font-size="8.8" fill="#94a3b8">  MongoDB &amp; ServiceNow.</text>
+      <text x="18" y="116" class="mono" font-size="8.8" fill="#94a3b8">• Daily habit of code refinement.</text>
+    </g>
+
+    <!-- Pillar 04: SHIP -->
+    <g transform="translate(795, 0)">
+      <rect width="245" height="135" rx="6" fill="url(#pillar-card)" stroke="#f59e0b" stroke-opacity="0.5" stroke-width="1" class="glow-box"/>
+      <circle cx="18" cy="22" r="3" fill="#f59e0b"/>
+      <text x="28" y="25" class="mono" font-size="10" fill="#f59e0b" font-weight="700">04 // SHIP &amp; SCALE</text>
+      <text x="18" y="52" class="mono" font-size="11" fill="#f8fafc" font-weight="700">Production Rigor</text>
+      <text x="18" y="74" class="mono" font-size="8.8" fill="#94a3b8">• 40/40 Unit Tests passing (Vitest).</text>
+      <text x="18" y="88" class="mono" font-size="8.8" fill="#94a3b8">• Live multi-route production portal</text>
+      <text x="18" y="102" class="mono" font-size="8.8" fill="#94a3b8">  deployed on Vercel Edge.</text>
+      <text x="18" y="116" class="mono" font-size="8.8" fill="#94a3b8">• Clean architecture &amp; CI/CD.</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Line -->
+  <line x1="30" y1="225" x2="1070" y2="225" stroke="url(#cyan-beam)" stroke-width="0.8"/>
+</svg>

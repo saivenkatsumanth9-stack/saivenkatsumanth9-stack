@@ -20,7 +20,7 @@
     <linearGradient id="footer-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#060810"/>
       <stop offset="50%" stop-color="#090d18"/>
-      <stop offset="100%" stop-color="#05070c"/>
+      <stop offset="100%" stop-color="#04060c"/>
     </linearGradient>
 
     <linearGradient id="box-card" x1="0%" y1="0%" x2="100%" y2="100%">

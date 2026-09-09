@@ -42,6 +42,14 @@ $ cat /proc/developer_info
 
 <img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
 
+### 🎯 `> ./MISSION_AND_APPROACH`
+
+<div align="center">
+  <img src="./assets/mission-approach.svg" width="100%" alt="Mission and Engineering Philosophy" />
+</div>
+
+<img src="./assets/terminal-divider.svg" width="100%" alt="Divider"/>
+
 ### ⚙️ `> ./TECH_STACK`
 
 <div align="center">
