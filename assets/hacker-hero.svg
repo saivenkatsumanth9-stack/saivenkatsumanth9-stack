@@ -1,246 +1,419 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="420" fill="none">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&amp;family=Inter:wght@700;800;900&amp;display=swap');
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-    }
-    @keyframes cursor-blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    @keyframes grid-glow {
-      0%, 100% { opacity: 0.04; }
-      50% { opacity: 0.08; }
-    }
-    @keyframes scan-laser {
-      0% { transform: translateY(0px); opacity: 0.15; }
-      50% { opacity: 0.35; }
-      100% { transform: translateY(420px); opacity: 0.15; }
-    }
-    @keyframes branch-flow {
-      0% { stroke-dashoffset: 60; }
-      100% { stroke-dashoffset: 0; }
-    }
-    @keyframes float-subtle {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-4px); }
-    }
-
-    .mono { font-family: 'JetBrains Mono', monospace; }
-    .sans { font-family: 'Inter', -apple-system, sans-serif; }
-
-    .pulse { animation: pulse-dot 2s ease-in-out infinite; transform-origin: center; }
-    .cursor { animation: cursor-blink 0.85s step-end infinite; }
-    .grid { animation: grid-glow 4s ease-in-out infinite; }
-    .scanline { animation: scan-laser 5s linear infinite; }
-    .git-branch { stroke-dasharray: 6 6; animation: branch-flow 10s linear infinite; }
-    .floating-card { animation: float-subtle 4s ease-in-out infinite; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .pulse, .cursor, .grid, .scanline, .git-branch, .floating-card { animation: none; }
-      .cursor { opacity: 1; }
-    }
-  </style>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360">
   <defs>
-    <!-- Background Canvas Gradient -->
-    <linearGradient id="charcoal-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080a10"/>
-      <stop offset="50%" stop-color="#0b0e17"/>
-      <stop offset="100%" stop-color="#06070a"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;900&amp;display=swap');
+      text { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+
+      /* ── Animations ── */
+      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+      .cursor { animation: blink 1s step-end infinite; }
+
+      @keyframes pulseSlow { 0%,100%{opacity:.45; transform:scale(1);} 50%{opacity:1; transform:scale(1.15);} }
+      .led-g1 { animation: pulseSlow 2.4s ease-in-out infinite; transform-origin: 885px 105px; }
+      .led-g2 { animation: pulseSlow 2.4s ease-in-out infinite .35s; transform-origin: 885px 129px; }
+      .led-c1 { animation: pulseSlow 2.4s ease-in-out infinite .7s; transform-origin: 885px 153px; }
+      .led-m1 { animation: pulseSlow 2.4s ease-in-out infinite 1.05s; transform-origin: 885px 177px; }
+      .led-g3 { animation: pulseSlow 2.4s ease-in-out infinite 1.4s; transform-origin: 885px 201px; }
+      .led-c2 { animation: pulseSlow 2.4s ease-in-out infinite 1.75s; transform-origin: 885px 225px; }
+
+      @keyframes floatTerminal { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-3.5px)} }
+      .terminal-float { animation: floatTerminal 7s ease-in-out infinite; }
+
+      @keyframes floatStatus { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-2.5px)} }
+      .status-float { animation: floatStatus 8.5s ease-in-out infinite 1s; }
+
+      @keyframes scanSweep { 0%{transform:translateY(28px); opacity:0;} 15%{opacity:1;} 85%{opacity:1;} 100%{transform:translateY(350px); opacity:0;} }
+      .scanline { animation: scanSweep 7s linear infinite; }
+
+      @keyframes gitNodePulse { 0%,100%{r:4; opacity:.75;} 50%{r:5.8; opacity:1;} }
+      .gn1 { animation: gitNodePulse 3.2s ease-in-out infinite; }
+      .gn2 { animation: gitNodePulse 3.2s ease-in-out infinite .5s; }
+      .gn3 { animation: gitNodePulse 3.2s ease-in-out infinite 1s; }
+      .gn4 { animation: gitNodePulse 3.2s ease-in-out infinite 1.5s; }
+
+      @keyframes packetFlow {
+        0% { offset-distance: 0%; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { offset-distance: 100%; opacity: 0; }
+      }
+      .packet-1 { offset-path: path('M 380 238 L 680 238'); animation: packetFlow 4s linear infinite; }
+      .packet-2 { offset-path: path('M 480 238 Q 510 262 540 262 L 600 262'); animation: packetFlow 5s linear infinite 1.5s; }
+
+      @keyframes driftParticle { 0%{transform:translate(0,0);opacity:.2} 50%{opacity:.6} 100%{transform:translate(8px,-14px);opacity:.1} }
+
+      @keyframes orbitalSpin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+      .orbit-1 { transform-origin: 530px 170px; animation: orbitalSpin 45s linear infinite; }
+      .orbit-2 { transform-origin: 530px 170px; animation: orbitalSpin 65s linear infinite reverse; }
+    </style>
+
+    <!-- ── Glow Filters ── -->
+    <filter id="glow-violet" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feFlood flood-color="#8b5cf6" flood-opacity=".45"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="glow-magenta" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#ec4899" flood-opacity=".4"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feFlood flood-color="#06b6d4" flood-opacity=".4"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="glow-green" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#22c55e" flood-opacity=".45"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="depth-shadow" x="-10%" y="-10%" width="125%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity=".65"/>
+    </filter>
+
+    <!-- ── Gradients ── -->
+    <linearGradient id="hero-name-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="25%" stop-color="#c4b5fd"/>
+      <stop offset="55%" stop-color="#8b5cf6"/>
+      <stop offset="80%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
 
-    <!-- Terminal Panel Gradient -->
-    <linearGradient id="terminal-surface" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0e121d"/>
-      <stop offset="100%" stop-color="#090c14"/>
+    <linearGradient id="rose-cyan-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".8"/>
+      <stop offset="50%" stop-color="#ec4899" stop-opacity=".7"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity=".8"/>
     </linearGradient>
 
-    <!-- Subtle Cyan-Green Border -->
-    <linearGradient id="border-laser" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.8"/>
+    <linearGradient id="panel-header-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".6"/>
+      <stop offset="50%" stop-color="#ec4899" stop-opacity=".6"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity=".6"/>
     </linearGradient>
 
-    <!-- Title Gradient -->
-    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="60%" stop-color="#f1f5f9"/>
-      <stop offset="100%" stop-color="#cbd5e1"/>
-    </linearGradient>
+    <radialGradient id="amb-violet" cx="28%" cy="45%" r="42%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".07"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
 
-    <clipPath id="hero-bound">
-      <rect width="1200" height="420" rx="8"/>
-    </clipPath>
+    <radialGradient id="amb-magenta" cx="54%" cy="35%" r="35%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity=".045"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="amb-cyan" cx="82%" cy="45%" r="40%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity=".05"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ── Patterns ── -->
+    <pattern id="tech-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22" fill="none" stroke="rgba(139,92,246,.03)" stroke-width=".5"/>
+    </pattern>
+
+    <pattern id="pcb-traces" width="88" height="88" patternUnits="userSpaceOnUse">
+      <path d="M 0 44 L 22 44 L 34 32 L 60 32 L 72 44 L 88 44" fill="none" stroke="rgba(139,92,246,.025)" stroke-width=".6"/>
+      <circle cx="60" cy="32" r="1.2" fill="rgba(236,72,153,.03)"/>
+      <circle cx="34" cy="32" r="1.2" fill="rgba(6,182,212,.03)"/>
+    </pattern>
   </defs>
 
-  <!-- Base Canvas -->
-  <rect width="1200" height="420" rx="8" fill="url(#charcoal-bg)" stroke="#1a2233" stroke-width="1.2"/>
+  <!-- ═══════════════════ BACKGROUND ENVIRONMENT ═══════════════════ -->
+  <!-- Obsidian Base -->
+  <rect width="1000" height="360" fill="#07070c"/>
+  <rect width="1000" height="360" fill="url(#tech-grid)"/>
+  <rect width="1000" height="360" fill="url(#pcb-traces)"/>
+  <rect width="1000" height="360" fill="url(#amb-violet)"/>
+  <rect width="1000" height="360" fill="url(#amb-magenta)"/>
+  <rect width="1000" height="360" fill="url(#amb-cyan)"/>
 
-  <!-- Background Technical Grid -->
-  <g class="grid" clip-path="url(#hero-bound)" stroke="#06b6d4" stroke-width="0.75">
-    <line x1="0" y1="70" x2="1200" y2="70"/>
-    <line x1="0" y1="140" x2="1200" y2="140"/>
-    <line x1="0" y1="210" x2="1200" y2="210"/>
-    <line x1="0" y1="280" x2="1200" y2="280"/>
-    <line x1="0" y1="350" x2="1200" y2="350"/>
-
-    <line x1="120" y1="0" x2="120" y2="420"/>
-    <line x1="240" y1="0" x2="240" y2="420"/>
-    <line x1="360" y1="0" x2="360" y2="420"/>
-    <line x1="480" y1="0" x2="480" y2="420"/>
-    <line x1="600" y1="0" x2="600" y2="420"/>
-    <line x1="720" y1="0" x2="720" y2="420"/>
-    <line x1="840" y1="0" x2="840" y2="420"/>
-    <line x1="960" y1="0" x2="960" y2="420"/>
-    <line x1="1080" y1="0" x2="1080" y2="420"/>
+  <!-- Perspective 3D Grid Floor Lines -->
+  <g opacity=".035">
+    <line x1="260" y1="360" x2="490" y2="190" stroke="#8b5cf6" stroke-width=".5"/>
+    <line x1="360" y1="360" x2="510" y2="190" stroke="#8b5cf6" stroke-width=".5"/>
+    <line x1="460" y1="360" x2="525" y2="190" stroke="#ec4899" stroke-width=".5"/>
+    <line x1="560" y1="360" x2="535" y2="190" stroke="#ec4899" stroke-width=".5"/>
+    <line x1="660" y1="360" x2="550" y2="190" stroke="#06b6d4" stroke-width=".5"/>
+    <line x1="760" y1="360" x2="570" y2="190" stroke="#06b6d4" stroke-width=".5"/>
+    <line x1="300" y1="300" x2="720" y2="300" stroke="#8b5cf6" stroke-width=".4"/>
+    <line x1="360" y1="260" x2="680" y2="260" stroke="#ec4899" stroke-width=".4"/>
+    <line x1="420" y1="225" x2="640" y2="225" stroke="#06b6d4" stroke-width=".4"/>
   </g>
 
-  <!-- Ambient Glow Orbs -->
-  <circle cx="150" cy="180" r="140" fill="#22c55e" opacity="0.04" filter="blur(30px)"/>
-  <circle cx="980" cy="200" r="160" fill="#06b6d4" opacity="0.04" filter="blur(35px)"/>
-
-  <!-- Scanline Laser -->
-  <g clip-path="url(#hero-bound)">
-    <rect class="scanline" x="0" y="0" width="1200" height="2" fill="#06b6d4"/>
+  <!-- 3D Orbital Rings -->
+  <g class="orbit-1" opacity=".04">
+    <ellipse cx="530" cy="170" rx="270" ry="85" fill="none" stroke="#8b5cf6" stroke-width=".7" stroke-dasharray="6 10"/>
+    <circle cx="800" cy="170" r="2.5" fill="#8b5cf6"/>
+  </g>
+  <g class="orbit-2" opacity=".035">
+    <ellipse cx="530" cy="170" rx="330" ry="105" fill="none" stroke="#06b6d4" stroke-width=".6" stroke-dasharray="4 14"/>
+    <circle cx="200" cy="170" r="2" fill="#06b6d4"/>
   </g>
 
-  <!-- Top System Header Bar -->
-  <rect x="0" y="0" width="1200" height="34" rx="8" fill="#0b0e17" stroke="#1a2233" stroke-width="1"/>
-  <rect x="0" y="24" width="1200" height="10" fill="#0b0e17"/>
-  
-  <!-- Left Window Indicators -->
-  <circle cx="20" cy="17" r="4.5" fill="#ef4444"/>
-  <circle cx="36" cy="17" r="4.5" fill="#f59e0b"/>
-  <circle cx="52" cy="17" r="4.5" fill="#22c55e"/>
+  <!-- Ambient Floating Particles -->
+  <circle cx="95" cy="80" r="1.1" fill="#8b5cf6" opacity=".35" style="animation:driftParticle 9s linear infinite"/>
+  <circle cx="365" cy="50" r=".9" fill="#ec4899" opacity=".3" style="animation:driftParticle 11s linear infinite 2s"/>
+  <circle cx="725" cy="65" r="1" fill="#06b6d4" opacity=".3" style="animation:driftParticle 10s linear infinite 4s"/>
+  <circle cx="670" cy="325" r=".8" fill="#c4b5fd" opacity=".25" style="animation:driftParticle 12s linear infinite 1s"/>
+  <circle cx="240" cy="335" r=".9" fill="#fb7185" opacity=".25" style="animation:driftParticle 8s linear infinite 3s"/>
+  <circle cx="910" cy="310" r=".8" fill="#22c55e" opacity=".25" style="animation:driftParticle 13s linear infinite 5s"/>
 
-  <text x="76" y="21" class="mono" font-size="11" fill="#64748b" font-weight="600">SUMANTH@ENGINEERING-STATION: ~/workspace (linux-x86_64)</text>
-  
-  <!-- Right Micro-Pills -->
-  <g transform="translate(860, 9)">
-    <rect width="90" height="16" rx="3" fill="#131b2c" stroke="#1e293b" stroke-width="0.8"/>
-    <circle cx="10" cy="8" r="2.5" fill="#22c55e" class="pulse"/>
-    <text x="18" y="11.5" class="mono" font-size="9" fill="#22c55e" font-weight="700">KERNEL: OK</text>
+  <!-- Scanning Sweep Beam -->
+  <rect class="scanline" x="0" y="0" width="1000" height="1.5" fill="url(#rose-cyan-beam)"/>
 
-    <rect x="100" width="110" height="16" rx="3" fill="#131b2c" stroke="#1e293b" stroke-width="0.8"/>
-    <text x="108" y="11.5" class="mono" font-size="9" fill="#06b6d4" font-weight="700">BRANCH: main*</text>
+  <!-- ═══════════════════ TOP COMMAND BAR ═══════════════════ -->
+  <rect x="0" y="0" width="1000" height="28" fill="rgba(12,8,24,.88)" stroke="rgba(139,92,246,.15)" stroke-width=".5"/>
+  <circle cx="18" cy="14" r="5" fill="#ff5f57"/>
+  <circle cx="34" cy="14" r="5" fill="#febc2e"/>
+  <circle cx="50" cy="14" r="5" fill="#28c840"/>
+  <text x="68" y="18" font-size="9.5" fill="#94a3b8" font-weight="700">developer@github:~$ // SOFTWARE_ENGINEERING_COMMAND_CENTER</text>
 
-    <rect x="220" width="100" height="16" rx="3" fill="#131b2c" stroke="#1e293b" stroke-width="0.8"/>
-    <text x="228" y="11.5" class="mono" font-size="9" fill="#a855f7" font-weight="700">BUILD: PASSING</text>
-  </g>
+  <!-- Telemetry Badges -->
+  <rect x="685" y="5" width="94" height="18" rx="3" fill="rgba(34,197,94,.08)" stroke="rgba(34,197,94,.3)" stroke-width=".6"/>
+  <circle cx="697" cy="14" r="2.5" fill="#22c55e" filter="url(#glow-green)"/>
+  <text x="706" y="17.5" font-size="7.8" fill="#22c55e" font-weight="700">KERNEL: OK</text>
 
-  <!-- ==================== LEFT: INTERACTIVE TERMINAL WINDOW ==================== -->
-  <g transform="translate(45, 60)">
-    <!-- Terminal Chassis -->
-    <rect width="520" height="325" rx="6" fill="url(#terminal-surface)" stroke="#1e293b" stroke-width="1.2"/>
-    
-    <!-- Titlebar -->
-    <rect width="520" height="28" rx="6" fill="#111624"/>
-    <rect y="22" width="520" height="6" fill="#111624"/>
-    <text x="16" y="18" class="mono" font-size="10.5" fill="#94a3b8" font-weight="600">┌─ session: dev_environment [zsh] ────────────────┐</text>
-    
-    <!-- Terminal Lines -->
-    <!-- Line 1: whoami -->
-    <text x="18" y="55" class="mono" font-size="11.5" fill="#64748b">$ <tspan fill="#06b6d4">whoami</tspan></text>
-    <text x="18" y="75" class="mono" font-size="11.5" fill="#f8fafc" font-weight="600">sumanth <tspan fill="#64748b">// Peddi Sai Venkat Sumanth</tspan></text>
+  <rect x="787" y="5" width="98" height="18" rx="3" fill="rgba(139,92,246,.08)" stroke="rgba(139,92,246,.3)" stroke-width=".6"/>
+  <circle cx="799" cy="14" r="2.5" fill="#8b5cf6" filter="url(#glow-violet)"/>
+  <text x="808" y="17.5" font-size="7.8" fill="#c4b5fd" font-weight="700">BRANCH: main</text>
 
-    <!-- Line 2: cat role.txt -->
-    <text x="18" y="105" class="mono" font-size="11.5" fill="#64748b">$ <tspan fill="#06b6d4">cat</tspan> role.txt</text>
-    <text x="18" y="125" class="mono" font-size="11.5" fill="#22c55e" font-weight="600">Software Engineer &amp; AI Systems Builder</text>
+  <rect x="893" y="5" width="95" height="18" rx="3" fill="rgba(6,182,212,.08)" stroke="rgba(6,182,212,.3)" stroke-width=".6"/>
+  <circle cx="905" cy="14" r="2.5" fill="#06b6d4" filter="url(#glow-cyan)"/>
+  <text x="914" y="17.5" font-size="7.8" fill="#06b6d4" font-weight="700">BUILD: PASSING</text>
 
-    <!-- Line 3: systemctl status -->
-    <text x="18" y="155" class="mono" font-size="11.5" fill="#64748b">$ <tspan fill="#06b6d4">systemctl status</tspan> engineer.service</text>
-    <circle cx="23" cy="172" r="3.5" fill="#22c55e" class="pulse"/>
-    <text x="32" y="176" class="mono" font-size="11" fill="#22c55e" font-weight="700">● ACTIVE (running)</text>
-    <text x="160" y="176" class="mono" font-size="10.5" fill="#94a3b8">uptime: 2023 - 2027 [B.Tech CSE]</text>
 
-    <!-- Line 4: git log -->
-    <text x="18" y="206" class="mono" font-size="11.5" fill="#64748b">$ <tspan fill="#06b6d4">git log --oneline -n 3</tspan></text>
-    <text x="18" y="226" class="mono" font-size="10.5" fill="#a855f7">e8ffc8f <tspan fill="#e2e8f0">feat(benefitx): deploy 5-engine decision platform</tspan></text>
-    <text x="18" y="244" class="mono" font-size="10.5" fill="#a855f7">7b210ac <tspan fill="#e2e8f0">feat(handscape): 21-landmark MediaPipe 60fps 3D engine</tspan></text>
-    <text x="18" y="262" class="mono" font-size="10.5" fill="#a855f7">9104f3d <tspan fill="#e2e8f0">feat(agent): autonomous ReAct multi-tool loop</tspan></text>
+  <!-- ═══════════════════ LEFT: DEVELOPER TERMINAL ═══════════════════ -->
+  <g class="terminal-float" filter="url(#depth-shadow)">
+    <!-- Terminal Outer Frame with 3D illusion border -->
+    <rect x="22" y="44" width="316" height="294" rx="8" fill="rgba(10,7,20,.92)" stroke="rgba(139,92,246,.25)" stroke-width=".8"/>
+    <rect x="23" y="45" width="314" height="292" rx="7" fill="none" stroke="rgba(236,72,153,.08)" stroke-width=".5"/>
 
-    <!-- Line 5: active prompt -->
-    <text x="18" y="296" class="mono" font-size="11.5" fill="#64748b">sumanth@dev:<tspan fill="#06b6d4">~/projects</tspan>$ <tspan fill="#f8fafc">./run_pipeline.sh</tspan> <tspan class="cursor" fill="#22c55e">█</tspan></text>
-    
-    <!-- Footer statusline -->
-    <line x1="0" y1="307" x2="520" y2="307" stroke="#1a2233" stroke-width="1"/>
-    <text x="16" y="319" class="mono" font-size="9" fill="#475569">UTF-8 · LF · ZSH 5.9 · MEM: 14% · CPU: 0.12 LOAD</text>
-  </g>
+    <!-- Terminal Title Bar -->
+    <rect x="22" y="44" width="316" height="24" rx="8" fill="rgba(18,12,32,.95)"/>
+    <rect x="22" y="60" width="316" height="8" fill="rgba(18,12,32,.95)"/>
+    <line x1="22" y1="68" x2="338" y2="68" stroke="rgba(139,92,246,.18)" stroke-width=".6"/>
 
-  <!-- ==================== RIGHT: COMMAND BRANDING & METRICS ==================== -->
-  <g transform="translate(605, 60)">
-    <!-- Main Big Typography -->
-    <text x="0" y="42" class="sans" font-size="44" font-weight="900" fill="url(#title-grad)" letter-spacing="-0.5">
-      SUMANTH
-    </text>
+    <!-- Terminal Tab -->
+    <rect x="30" y="48" width="160" height="16" rx="3" fill="rgba(139,92,246,.1)" stroke="rgba(139,92,246,.2)" stroke-width=".5"/>
+    <circle cx="39" cy="56" r="2" fill="#22c55e"/>
+    <text x="46" y="59" font-size="8" fill="#c4b5fd" font-weight="700">developer@github:~$</text>
 
-    <text x="0" y="66" class="mono" font-size="12" fill="#06b6d4" font-weight="700" letter-spacing="2.5">
-      PEDDI SAI VENKAT SUMANTH // SDE
-    </text>
+    <!-- Terminal Window Controls -->
+    <circle cx="308" cy="56" r="3.2" fill="none" stroke="#64748b" stroke-width=".8"/>
+    <circle cx="318" cy="56" r="3.2" fill="none" stroke="#64748b" stroke-width=".8"/>
+    <circle cx="328" cy="56" r="3.2" fill="none" stroke="#64748b" stroke-width=".8"/>
 
-    <text x="0" y="92" class="mono" font-size="12.5" fill="#94a3b8" font-weight="500">
-      Software Development <tspan fill="#22c55e">◆</tspan> Agentic AI <tspan fill="#06b6d4">◆</tspan> Cloud &amp; Vision Systems
-    </text>
+    <!-- Terminal Body Text -->
+    <g transform="translate(34, 88)">
+      <!-- Command 1: whoami -->
+      <text y="0" font-size="9" fill="#64748b">$ <tspan fill="#c4b5fd">whoami</tspan></text>
+      <text y="14" font-size="9.5" fill="#f8fafc" font-weight="700">SUMANTH</text>
 
-    <!-- Subtle Git Branch Diagram in SVG -->
-    <g transform="translate(0, 115)">
-      <rect width="550" height="90" rx="6" fill="#0c101b" stroke="#1e293b" stroke-width="1"/>
-      <text x="14" y="20" class="mono" font-size="9.5" fill="#64748b" font-weight="700" letter-spacing="1">GIT ORCHESTRATION PIPELINE</text>
-      
-      <!-- Branch Lines -->
-      <line x1="20" y1="52" x2="530" y2="52" stroke="#22c55e" stroke-width="2" class="git-branch"/>
-      <path d="M 120 52 C 160 52, 170 72, 210 72 L 400 72 C 430 72, 440 52, 470 52" stroke="#06b6d4" stroke-width="1.8" fill="none"/>
-      
-      <!-- Commit Nodes -->
-      <circle cx="60" cy="52" r="5" fill="#22c55e"/>
-      <text x="50" y="40" class="mono" font-size="8.5" fill="#94a3b8">v1.0</text>
+      <!-- Command 2: cat role.txt -->
+      <text y="34" font-size="9" fill="#64748b">$ <tspan fill="#c4b5fd">cat</tspan> role.txt</text>
+      <text y="48" font-size="9" fill="#ec4899" font-weight="600">Software Engineer</text>
+      <text y="60" font-size="9" fill="#06b6d4" font-weight="600">AI Builder</text>
 
-      <circle cx="150" cy="52" r="5" fill="#22c55e"/>
-      <circle cx="210" cy="72" r="4.5" fill="#06b6d4"/>
-      <text x="220" y="75" class="mono" font-size="8.5" fill="#06b6d4">feat/vision-ai</text>
+      <!-- Command 3: ./initialize -->
+      <text y="80" font-size="9" fill="#64748b">$ <tspan fill="#c4b5fd">./initialize</tspan></text>
+      <text y="94" font-size="8.2" fill="#94a3b8">AI ENGINE       <tspan fill="#22c55e" font-weight="700">ONLINE</tspan></text>
+      <text y="106" font-size="8.2" fill="#94a3b8">SOFTWARE        <tspan fill="#22c55e" font-weight="700">ONLINE</tspan></text>
+      <text y="118" font-size="8.2" fill="#94a3b8">CLOUD           <tspan fill="#06b6d4" font-weight="700">READY</tspan></text>
+      <text y="130" font-size="8.2" fill="#94a3b8">SECURITY        <tspan fill="#22c55e" font-weight="700">ENABLED</tspan></text>
 
-      <circle cx="320" cy="72" r="4.5" fill="#06b6d4"/>
-      <circle cx="390" cy="72" r="4.5" fill="#06b6d4"/>
+      <!-- Command 4: git status -->
+      <text y="150" font-size="9" fill="#64748b">$ <tspan fill="#c4b5fd">git</tspan> status</text>
+      <text y="164" font-size="8.2"><tspan fill="#22c55e">●</tspan><tspan fill="#22c55e" font-weight="700"> CLEAN</tspan></text>
+      <text y="176" font-size="8.2"><tspan fill="#06b6d4">●</tspan><tspan fill="#06b6d4" font-weight="700"> CONNECTED</tspan></text>
 
-      <circle cx="470" cy="52" r="5" fill="#8b5cf6"/>
-      <text x="450" y="40" class="mono" font-size="8.5" fill="#8b5cf6">merge/prod</text>
+      <!-- Prompt Line with Cursor -->
+      <text y="200" font-size="9"><tspan fill="#94a3b8">developer@github</tspan><tspan fill="#64748b">:~$ </tspan></text>
+      <rect class="cursor" x="142" y="191" width="7" height="12" fill="#8b5cf6" opacity=".95"/>
 
-      <circle cx="510" cy="52" r="5" fill="#22c55e"/>
-    </g>
-
-    <!-- Floating System Telemetry Chips (2x2 Grid) -->
-    <g transform="translate(0, 220)">
-      <!-- Chip 1 -->
-      <g>
-        <rect width="265" height="46" rx="5" fill="#0d111c" stroke="#1e293b" stroke-width="1"/>
-        <text x="14" y="20" class="mono" font-size="9" fill="#64748b">CORE ARCHITECTURE</text>
-        <text x="14" y="36" class="mono" font-size="11" fill="#f8fafc" font-weight="700">React 19 · FastAPI · Nitro</text>
-      </g>
-
-      <!-- Chip 2 -->
-      <g transform="translate(285, 0)">
-        <rect width="265" height="46" rx="5" fill="#0d111c" stroke="#1e293b" stroke-width="1"/>
-        <text x="14" y="20" class="mono" font-size="9" fill="#64748b">AGENTIC AI &amp; VISION</text>
-        <text x="14" y="36" class="mono" font-size="11" fill="#22c55e" font-weight="700">ReAct Loop · MediaPipe 3D</text>
-      </g>
-
-      <!-- Chip 3 -->
-      <g transform="translate(0, 56)">
-        <rect width="265" height="46" rx="5" fill="#0d111c" stroke="#1e293b" stroke-width="1"/>
-        <text x="14" y="20" class="mono" font-size="9" fill="#64748b">TEST COVERAGE &amp; QA</text>
-        <text x="14" y="36" class="mono" font-size="11" fill="#06b6d4" font-weight="700">100% Passing (Vitest)</text>
-      </g>
-
-      <!-- Chip 4 -->
-      <g transform="translate(285, 56)">
-        <rect width="265" height="46" rx="5" fill="#0d111c" stroke="#1e293b" stroke-width="1"/>
-        <text x="14" y="20" class="mono" font-size="9" fill="#64748b">DEPLOYMENT STATUS</text>
-        <text x="14" y="36" class="mono" font-size="11" fill="#a855f7" font-weight="700">Vercel · AWS · Supabase</text>
-      </g>
+      <!-- Footer Micro Readout -->
+      <line x1="-4" y1="218" x2="294" y2="218" stroke="rgba(139,92,246,.12)" stroke-width=".5"/>
+      <text y="230" font-size="7" fill="#4a4458">UTF-8 · LF · ZSH 5.9 · TLS 1.3 · BUFFER: READY</text>
     </g>
   </g>
+  <!-- Terminal Glow Halo -->
+  <rect x="22" y="44" width="316" height="294" rx="8" fill="none" stroke="rgba(139,92,246,.1)" stroke-width="2" filter="url(#glow-violet)"/>
+
+
+  <!-- ═══════════════════ CENTER: MAIN IDENTITY FOCAL POINT ═══════════════════ -->
+  <!-- Subtle Background AI System Visualization behind identity -->
+  <g opacity=".16">
+    <circle cx="530" cy="46" r="2.2" fill="#8b5cf6"/>
+    <text x="536" y="49" font-size="5.5" fill="#c4b5fd">INPUT</text>
+    <line x1="530" y1="50" x2="530" y2="57" stroke="#8b5cf6" stroke-width=".4" stroke-dasharray="1.5 1.5"/>
+    <circle cx="530" cy="60" r="2.2" fill="#ec4899"/>
+    <text x="536" y="63" font-size="5.5" fill="#ec4899">DATA</text>
+    <line x1="530" y1="64" x2="530" y2="71" stroke="#ec4899" stroke-width=".4" stroke-dasharray="1.5 1.5"/>
+    <circle cx="530" cy="74" r="2.2" fill="#06b6d4"/>
+    <text x="536" y="77" font-size="5.5" fill="#06b6d4">AI ENGINE</text>
+  </g>
+
+  <!-- Developer Name (SUMANTH) - Clean Modern Typography, Bold Contrast -->
+  <text x="535" y="116" text-anchor="middle" font-size="50" font-weight="900" fill="url(#hero-name-grad)" letter-spacing="5" filter="url(#glow-violet)" opacity=".18">SUMANTH</text>
+  <text x="535" y="116" text-anchor="middle" font-size="50" font-weight="900" fill="url(#hero-name-grad)" letter-spacing="5">SUMANTH</text>
+
+  <!-- Full Name & Title -->
+  <text x="535" y="136" text-anchor="middle" font-size="9.5" fill="#ec4899" font-weight="700" letter-spacing="2.5">PEDDI SAI VENKAT SUMANTH</text>
+
+  <!-- Three Core Disciplines -->
+  <g transform="translate(535, 156)">
+    <text text-anchor="middle" font-size="9.2" font-weight="600" letter-spacing="1">
+      <tspan fill="#f1f5f9">SOFTWARE ENGINEER</tspan>
+      <tspan fill="#8b5cf6"> • </tspan>
+      <tspan fill="#c4b5fd">AI BUILDER</tspan>
+      <tspan fill="#ec4899"> • </tspan>
+      <tspan fill="#06b6d4">FULL STACK DEVELOPER</tspan>
+    </text>
+  </g>
+
+  <!-- Small Technical Identity Line -->
+  <rect x="390" y="170" width="290" height="18" rx="9" fill="rgba(139,92,246,.06)" stroke="rgba(139,92,246,.18)" stroke-width=".5"/>
+  <text x="535" y="182.5" text-anchor="middle" font-size="8.2" fill="#cbd5e1" font-weight="500" letter-spacing="1.2">
+    <tspan fill="#8b5cf6">AI</tspan> × <tspan fill="#ec4899">SOFTWARE</tspan> × <tspan fill="#06b6d4">CLOUD</tspan> × <tspan fill="#fb7185">DATA</tspan> × <tspan fill="#22c55e">SECURITY</tspan>
+  </text>
+
+  <!-- ── Git / Software Branch Visual ── -->
+  <g transform="translate(0, 10)">
+    <text x="375" y="210" font-size="7.5" fill="#64748b" letter-spacing="1.5">VERSION CONTROL &amp; BUILD ORCHESTRATION</text>
+    <text x="668" y="210" font-size="6.5" fill="#4a4458">v3.0.1-prod</text>
+
+    <!-- Main Git Branch Line -->
+    <line x1="375" y1="228" x2="695" y2="228" stroke="rgba(139,92,246,.35)" stroke-width="1.8"/>
+    <text x="350" y="231" font-size="7.5" fill="#8b5cf6" font-weight="700">main</text>
+
+    <!-- Animated Data Packet on Main -->
+    <circle class="packet-1" r="2.2" fill="#ec4899" filter="url(#glow-magenta)"/>
+
+    <!-- Main Branch Nodes -->
+    <circle class="gn1" cx="420" cy="228" r="4.2" fill="#8b5cf6" filter="url(#glow-violet)"/>
+    <circle class="gn2" cx="505" cy="228" r="4.2" fill="#06b6d4" filter="url(#glow-cyan)"/>
+    <circle class="gn3" cx="590" cy="228" r="4.2" fill="#ec4899" filter="url(#glow-magenta)"/>
+    <circle class="gn4" cx="675" cy="228" r="4.8" fill="#22c55e" filter="url(#glow-green)"/>
+    <text x="670" y="242" font-size="6" fill="#22c55e" font-weight="700">HEAD</text>
+
+    <!-- Feature Branch 1: feat -->
+    <path d="M 420 228 Q 440 252 465 252 L 530 252" fill="none" stroke="rgba(6,182,212,.3)" stroke-width="1.2" stroke-dasharray="2 2"/>
+    <circle cx="495" cy="252" r="2.8" fill="#06b6d4" opacity=".8"/>
+    <text x="502" y="255" font-size="6.5" fill="#06b6d4">feat/ai-engine</text>
+
+    <!-- Feature Branch 2: build -->
+    <path d="M 505 228 Q 525 252 550 252 L 615 252" fill="none" stroke="rgba(236,72,153,.3)" stroke-width="1.2" stroke-dasharray="2 2"/>
+    <circle cx="580" cy="252" r="2.8" fill="#ec4899" opacity=".8"/>
+    <text x="587" y="255" font-size="6.5" fill="#ec4899">build/deploy</text>
+
+    <!-- Animated Data Packet on Branch -->
+    <circle class="packet-2" r="1.8" fill="#06b6d4"/>
+
+    <!-- Architecture & Capability Tags -->
+    <g transform="translate(370, 276)">
+      <rect x="0" y="0" width="155" height="34" rx="4" fill="rgba(139,92,246,.05)" stroke="rgba(139,92,246,.15)" stroke-width=".5"/>
+      <text x="8" y="13" font-size="6.8" fill="#64748b" letter-spacing="1">FULL STACK &amp; CLOUD</text>
+      <text x="8" y="26" font-size="8" fill="#f8fafc" font-weight="600">React 19 · FastAPI · Nitro</text>
+
+      <rect x="170" y="0" width="155" height="34" rx="4" fill="rgba(6,182,212,.05)" stroke="rgba(6,182,212,.15)" stroke-width=".5"/>
+      <text x="178" y="13" font-size="6.8" fill="#64748b" letter-spacing="1">AI &amp; COMPUTER VISION</text>
+      <text x="178" y="26" font-size="8" fill="#06b6d4" font-weight="600">MediaPipe · ReAct · RAG</text>
+    </g>
+  </g>
+
+
+  <!-- ═══════════════════ RIGHT: ENGINEERING SYSTEM STATUS ═══════════════════ -->
+  <g class="status-float" filter="url(#depth-shadow)">
+    <!-- Diagnostics Panel Frame -->
+    <rect x="740" y="44" width="238" height="294" rx="8" fill="rgba(10,7,20,.85)" stroke="rgba(139,92,246,.25)" stroke-width=".8"/>
+    <rect x="741" y="45" width="236" height="292" rx="7" fill="none" stroke="rgba(6,182,212,.08)" stroke-width=".5"/>
+
+    <!-- Top Accent Bar -->
+    <rect x="740" y="44" width="238" height="2" rx="1" fill="url(#panel-header-line)"/>
+
+    <!-- Header Box -->
+    <rect x="740" y="46" width="238" height="26" fill="rgba(18,12,32,.9)"/>
+    <line x1="740" y1="72" x2="978" y2="72" stroke="rgba(139,92,246,.18)" stroke-width=".6"/>
+    <text x="752" y="63" font-size="8.5" fill="#c4b5fd" font-weight="700" letter-spacing="1">SYSTEM DIAGNOSTICS</text>
+    <rect x="918" y="52" width="48" height="14" rx="2" fill="rgba(34,197,94,.1)" stroke="rgba(34,197,94,.3)" stroke-width=".4"/>
+    <text x="926" y="62" font-size="7" fill="#22c55e" font-weight="700">ONLINE</text>
+
+    <!-- Diagnostics Items -->
+    <g transform="translate(754, 102)">
+      <!-- Row 1: AI Engine -->
+      <text y="0" font-size="8.5" fill="#94a3b8">AI ENGINE</text>
+      <circle class="led-g1" cx="132" cy="-3" r="2.8" fill="#22c55e" filter="url(#glow-green)"/>
+      <text x="142" y="0" font-size="8" fill="#22c55e" font-weight="700">ONLINE</text>
+      <line x1="0" y1="11" x2="210" y2="11" stroke="rgba(139,92,246,.08)" stroke-width=".4"/>
+
+      <!-- Row 2: Software -->
+      <text y="24" font-size="8.5" fill="#94a3b8">SOFTWARE</text>
+      <circle class="led-g2" cx="132" cy="21" r="2.8" fill="#22c55e" filter="url(#glow-green)"/>
+      <text x="142" y="24" font-size="8" fill="#22c55e" font-weight="700">ACTIVE</text>
+      <line x1="0" y1="35" x2="210" y2="35" stroke="rgba(139,92,246,.08)" stroke-width=".4"/>
+
+      <!-- Row 3: Cloud -->
+      <text y="48" font-size="8.5" fill="#94a3b8">CLOUD</text>
+      <circle class="led-c1" cx="132" cy="45" r="2.8" fill="#06b6d4" filter="url(#glow-cyan)"/>
+      <text x="142" y="48" font-size="8" fill="#06b6d4" font-weight="700">READY</text>
+      <line x1="0" y1="59" x2="210" y2="59" stroke="rgba(139,92,246,.08)" stroke-width=".4"/>
+
+      <!-- Row 4: Data -->
+      <text y="72" font-size="8.5" fill="#94a3b8">DATA</text>
+      <circle class="led-m1" cx="132" cy="69" r="2.8" fill="#ec4899" filter="url(#glow-magenta)"/>
+      <text x="142" y="72" font-size="8" fill="#ec4899" font-weight="700">STREAMING</text>
+      <line x1="0" y1="83" x2="210" y2="83" stroke="rgba(139,92,246,.08)" stroke-width=".4"/>
+
+      <!-- Row 5: Security -->
+      <text y="96" font-size="8.5" fill="#94a3b8">SECURITY</text>
+      <circle class="led-g3" cx="132" cy="93" r="2.8" fill="#22c55e" filter="url(#glow-green)"/>
+      <text x="142" y="96" font-size="8" fill="#22c55e" font-weight="700">ENABLED</text>
+      <line x1="0" y1="107" x2="210" y2="107" stroke="rgba(139,92,246,.08)" stroke-width=".4"/>
+
+      <!-- Row 6: Git -->
+      <text y="120" font-size="8.5" fill="#94a3b8">GIT</text>
+      <circle class="led-c2" cx="132" cy="117" r="2.8" fill="#06b6d4" filter="url(#glow-cyan)"/>
+      <text x="142" y="120" font-size="8" fill="#06b6d4" font-weight="700">CONNECTED</text>
+    </g>
+
+    <!-- Security & Clearance Telemetry Readout -->
+    <g transform="translate(754, 252)">
+      <rect x="0" y="0" width="210" height="66" rx="4" fill="rgba(34,197,94,.04)" stroke="rgba(34,197,94,.2)" stroke-width=".5"/>
+      <text x="10" y="16" font-size="7.2" fill="#22c55e" font-weight="700" letter-spacing=".5">SECURE CHANNEL</text>
+      <text x="10" y="29" font-size="7.2" fill="#94a3b8">AUTH: <tspan fill="#22c55e">VERIFIED [SHA-256]</tspan></text>
+      <text x="10" y="42" font-size="7.2" fill="#94a3b8">ACCESS: <tspan fill="#06b6d4">DEVELOPER</tspan></text>
+      <text x="10" y="55" font-size="7.2" fill="#94a3b8">STATUS: <tspan fill="#22c55e">PRODUCTION READY</tspan></text>
+    </g>
+  </g>
+  <!-- Diagnostics Panel Glow Halo -->
+  <rect x="740" y="44" width="238" height="294" rx="8" fill="none" stroke="rgba(6,182,212,.08)" stroke-width="2" filter="url(#glow-cyan)"/>
+
+
+  <!-- ═══════════════════ MICRO TECHNICAL DETAILS ═══════════════════ -->
+  <text x="24" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">SYS://01</text>
+  <text x="98" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[AI]</text>
+  <text x="135" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[GIT]</text>
+  <text x="175" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[API]</text>
+  <text x="215" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[DB]</text>
+  <text x="250" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[CLOUD]</text>
+  <text x="300" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[SEC]</text>
+
+  <text x="440" y="352" font-size="6.5" fill="rgba(100,116,139,.3)">ENV://PROD</text>
+  <text x="535" y="352" text-anchor="middle" font-size="6.5" fill="rgba(100,116,139,.3)">BUILD://PASS</text>
+  <text x="630" y="352" font-size="6.5" fill="rgba(100,116,139,.3)">GIT://MAIN</text>
+
+  <text x="890" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">NODE://AI-SDE</text>
+  <text x="965" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">2027</text>
+
+  <!-- Bottom Border Highlight -->
+  <line x1="0" y1="359" x2="1000" y2="359" stroke="rgba(139,92,246,.12)" stroke-width=".5"/>
 </svg>
