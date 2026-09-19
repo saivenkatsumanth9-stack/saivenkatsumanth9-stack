@@ -1,419 +1,618 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360">
-  <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;900&amp;display=swap');
-      text { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+<defs>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;900&amp;display=swap');
+text{font-family:'JetBrains Mono','Fira Code',Consolas,monospace}
 
-      /* ── Animations ── */
-      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-      .cursor { animation: blink 1s step-end infinite; }
+/* ── Core Animations ── */
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes codeScroll{0%{transform:translateY(0)}100%{transform:translateY(-50px)}}
+@keyframes barPulse1{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+@keyframes barPulse2{0%,100%{transform:scaleY(.7)}50%{transform:scaleY(.4)}}
+@keyframes barPulse3{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(.85)}}
+@keyframes barPulse4{0%,100%{transform:scaleY(.8)}50%{transform:scaleY(.5)}}
+@keyframes lineDraw{0%,100%{stroke-dashoffset:80}50%{stroke-dashoffset:0}}
+@keyframes dataDot{0%{offset-distance:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{offset-distance:100%;opacity:0}}
+@keyframes nodePulse{0%,100%{r:2.5;opacity:.4}50%{r:3.5;opacity:1}}
+@keyframes screenGlow{0%,100%{opacity:.2}50%{opacity:.4}}
+@keyframes lampGlow{0%,100%{opacity:.55}50%{opacity:.8}}
+@keyframes starTwinkle{0%,100%{opacity:.15}50%{opacity:.7}}
+@keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes progressBar{0%,100%{width:60px}50%{width:85px}}
+@keyframes metricPulse{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes contribPulse{0%,100%{opacity:.3}50%{opacity:.7}}
+@keyframes neonPulse{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes particleDrift{0%{transform:translate(0,0);opacity:.2}50%{opacity:.5}100%{transform:translate(5px,-8px);opacity:.1}}
+@keyframes pipeFlow{0%{stroke-dashoffset:20}100%{stroke-dashoffset:0}}
 
-      @keyframes pulseSlow { 0%,100%{opacity:.45; transform:scale(1);} 50%{opacity:1; transform:scale(1.15);} }
-      .led-g1 { animation: pulseSlow 2.4s ease-in-out infinite; transform-origin: 885px 105px; }
-      .led-g2 { animation: pulseSlow 2.4s ease-in-out infinite .35s; transform-origin: 885px 129px; }
-      .led-c1 { animation: pulseSlow 2.4s ease-in-out infinite .7s; transform-origin: 885px 153px; }
-      .led-m1 { animation: pulseSlow 2.4s ease-in-out infinite 1.05s; transform-origin: 885px 177px; }
-      .led-g3 { animation: pulseSlow 2.4s ease-in-out infinite 1.4s; transform-origin: 885px 201px; }
-      .led-c2 { animation: pulseSlow 2.4s ease-in-out infinite 1.75s; transform-origin: 885px 225px; }
+.cursor{animation:blink 1s step-end infinite}
+.code-scroll{animation:codeScroll 10s linear infinite}
+.b1{animation:barPulse1 3.5s ease-in-out infinite;transform-origin:center bottom}
+.b2{animation:barPulse2 4s ease-in-out infinite .4s;transform-origin:center bottom}
+.b3{animation:barPulse3 3s ease-in-out infinite .8s;transform-origin:center bottom}
+.b4{animation:barPulse4 3.5s ease-in-out infinite 1.2s;transform-origin:center bottom}
+.b5{animation:barPulse1 4.5s ease-in-out infinite 1.6s;transform-origin:center bottom}
+.line-draw{stroke-dasharray:80;animation:lineDraw 4s ease-in-out infinite}
+.nn1{animation:nodePulse 2.8s ease-in-out infinite}
+.nn2{animation:nodePulse 2.8s ease-in-out infinite .5s}
+.nn3{animation:nodePulse 2.8s ease-in-out infinite 1s}
+.nn4{animation:nodePulse 2.8s ease-in-out infinite 1.5s}
+.sg{animation:screenGlow 5s ease-in-out infinite}
+.lg{animation:lampGlow 6s ease-in-out infinite}
+.st{animation:starTwinkle 3s ease-in-out infinite}
+.fl{animation:floatSlow 6s ease-in-out infinite}
+.mp{animation:metricPulse 2s ease-in-out infinite}
+.cp{animation:contribPulse 3s ease-in-out infinite}
+.np{animation:neonPulse 3s ease-in-out infinite}
+.pd{animation:particleDrift 8s linear infinite}
+.pf{stroke-dasharray:4 4;animation:pipeFlow 2s linear infinite}
+</style>
 
-      @keyframes floatTerminal { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-3.5px)} }
-      .terminal-float { animation: floatTerminal 7s ease-in-out infinite; }
+<!-- Filters -->
+<filter id="glow-b" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/><feFlood flood-color="#3b82f6" flood-opacity=".4"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="glow-w" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="8"/><feFlood flood-color="#f59e0b" flood-opacity=".25"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="glow-c" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/><feFlood flood-color="#06b6d4" flood-opacity=".3"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="glow-g" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3"/><feFlood flood-color="#22c55e" flood-opacity=".35"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="sh" x="-5%" y="-5%" width="115%" height="120%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity=".5"/></filter>
+<filter id="sh-sm" x="-5%" y="-5%" width="112%" height="115%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".35"/></filter>
 
-      @keyframes floatStatus { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-2.5px)} }
-      .status-float { animation: floatStatus 8.5s ease-in-out infinite 1s; }
+<!-- Gradients -->
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#050810"/><stop offset="60%" stop-color="#0a1025"/><stop offset="100%" stop-color="#0f1630"/></linearGradient>
+<linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#101830"/><stop offset="100%" stop-color="#0c1225"/></linearGradient>
+<linearGradient id="desk-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1c1812"/><stop offset="100%" stop-color="#100e08"/></linearGradient>
+<linearGradient id="scr" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0d1117"/><stop offset="100%" stop-color="#161b22"/></linearGradient>
+<linearGradient id="rgb-kb" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%" stop-color="#3b82f6"><animate attributeName="stop-color" values="#3b82f6;#8b5cf6;#06b6d4;#3b82f6" dur="5s" repeatCount="indefinite"/></stop>
+  <stop offset="50%" stop-color="#06b6d4"><animate attributeName="stop-color" values="#06b6d4;#3b82f6;#8b5cf6;#06b6d4" dur="5s" repeatCount="indefinite"/></stop>
+  <stop offset="100%" stop-color="#8b5cf6"><animate attributeName="stop-color" values="#8b5cf6;#06b6d4;#3b82f6;#8b5cf6" dur="5s" repeatCount="indefinite"/></stop>
+</linearGradient>
+<radialGradient id="lamp-r" cx="50%" cy="0%" r="80%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".12"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></radialGradient>
+<radialGradient id="scr-glow-1" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".08"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+<radialGradient id="scr-glow-2" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#06b6d4" stop-opacity=".06"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/></radialGradient>
+<radialGradient id="scr-glow-3" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".06"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
 
-      @keyframes scanSweep { 0%{transform:translateY(28px); opacity:0;} 15%{opacity:1;} 85%{opacity:1;} 100%{transform:translateY(350px); opacity:0;} }
-      .scanline { animation: scanSweep 7s linear infinite; }
+<!-- Clip paths for monitor screens -->
+<clipPath id="clip-m1"><rect x="92" y="168" width="258" height="168" rx="2"/></clipPath>
+<clipPath id="clip-m2"><rect x="405" y="148" width="338" height="198" rx="2"/></clipPath>
+<clipPath id="clip-m3"><rect x="798" y="168" width="258" height="168" rx="2"/></clipPath>
+</defs>
 
-      @keyframes gitNodePulse { 0%,100%{r:4; opacity:.75;} 50%{r:5.8; opacity:1;} }
-      .gn1 { animation: gitNodePulse 3.2s ease-in-out infinite; }
-      .gn2 { animation: gitNodePulse 3.2s ease-in-out infinite .5s; }
-      .gn3 { animation: gitNodePulse 3.2s ease-in-out infinite 1s; }
-      .gn4 { animation: gitNodePulse 3.2s ease-in-out infinite 1.5s; }
+<!-- ═══════════════════ BACKGROUND: SKY + CITY ═══════════════════ -->
+<rect width="1200" height="520" fill="url(#sky)"/>
 
-      @keyframes packetFlow {
-        0% { offset-distance: 0%; opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { offset-distance: 100%; opacity: 0; }
-      }
-      .packet-1 { offset-path: path('M 380 238 L 680 238'); animation: packetFlow 4s linear infinite; }
-      .packet-2 { offset-path: path('M 480 238 Q 510 262 540 262 L 600 262'); animation: packetFlow 5s linear infinite 1.5s; }
+<!-- Stars -->
+<circle cx="50" cy="18" r=".8" fill="#e2e8f0" class="st"/><circle cx="145" cy="35" r=".6" fill="#e2e8f0" class="st" style="animation-delay:1s"/>
+<circle cx="280" cy="12" r=".7" fill="#e2e8f0" class="st" style="animation-delay:.5s"/><circle cx="420" cy="25" r=".5" fill="#e2e8f0" class="st" style="animation-delay:2s"/>
+<circle cx="580" cy="8" r=".8" fill="#e2e8f0" class="st" style="animation-delay:1.5s"/><circle cx="750" cy="30" r=".6" fill="#e2e8f0" class="st" style="animation-delay:.8s"/>
+<circle cx="900" cy="15" r=".7" fill="#e2e8f0" class="st" style="animation-delay:2.5s"/><circle cx="1050" cy="22" r=".5" fill="#e2e8f0" class="st" style="animation-delay:1.2s"/>
+<circle cx="1150" cy="10" r=".6" fill="#e2e8f0" class="st" style="animation-delay:3s"/>
 
-      @keyframes driftParticle { 0%{transform:translate(0,0);opacity:.2} 50%{opacity:.6} 100%{transform:translate(8px,-14px);opacity:.1} }
+<!-- City Skyline Silhouette -->
+<g opacity=".12">
+  <rect x="0" y="55" width="22" height="50" fill="#1e293b" rx="1"/><rect x="26" y="40" width="14" height="65" fill="#1e293b" rx="1"/>
+  <rect x="44" y="48" width="24" height="57" fill="#1e293b" rx="1"/><rect x="72" y="35" width="16" height="70" fill="#1e293b" rx="1"/>
+  <rect x="92" y="52" width="20" height="53" fill="#1e293b" rx="1"/><rect x="116" y="30" width="12" height="75" fill="#1e293b" rx="1"/>
+  <rect x="132" y="45" width="28" height="60" fill="#1e293b" rx="1"/><rect x="164" y="58" width="18" height="47" fill="#1e293b" rx="1"/>
+  <rect x="1020" y="42" width="20" height="63" fill="#1e293b" rx="1"/><rect x="1044" y="55" width="14" height="50" fill="#1e293b" rx="1"/>
+  <rect x="1062" y="35" width="26" height="70" fill="#1e293b" rx="1"/><rect x="1092" y="48" width="18" height="57" fill="#1e293b" rx="1"/>
+  <rect x="1114" y="30" width="12" height="75" fill="#1e293b" rx="1"/><rect x="1130" y="50" width="28" height="55" fill="#1e293b" rx="1"/>
+  <rect x="1162" y="38" width="22" height="67" fill="#1e293b" rx="1"/><rect x="1188" y="55" width="12" height="50" fill="#1e293b" rx="1"/>
+  <!-- Small window lights -->
+  <rect x="48" y="55" width="2" height="2" fill="#f59e0b" opacity=".5"/><rect x="55" y="60" width="2" height="2" fill="#3b82f6" opacity=".4"/>
+  <rect x="78" y="42" width="2" height="2" fill="#f59e0b" opacity=".4"/><rect x="1070" y="45" width="2" height="2" fill="#f59e0b" opacity=".5"/>
+  <rect x="1140" y="58" width="2" height="2" fill="#3b82f6" opacity=".4"/>
+</g>
 
-      @keyframes orbitalSpin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
-      .orbit-1 { transform-origin: 530px 170px; animation: orbitalSpin 45s linear infinite; }
-      .orbit-2 { transform-origin: 530px 170px; animation: orbitalSpin 65s linear infinite reverse; }
-    </style>
+<!-- Floating Particles -->
+<circle cx="200" cy="120" r="1" fill="#3b82f6" class="pd"/><circle cx="600" cy="80" r=".8" fill="#06b6d4" class="pd" style="animation-delay:3s"/>
+<circle cx="950" cy="100" r="1" fill="#8b5cf6" class="pd" style="animation-delay:5s"/><circle cx="400" cy="400" r=".7" fill="#f59e0b" class="pd" style="animation-delay:2s"/>
 
-    <!-- ── Glow Filters ── -->
-    <filter id="glow-violet" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4.5" result="blur"/>
-      <feFlood flood-color="#8b5cf6" flood-opacity=".45"/>
-      <feComposite in2="blur" operator="in"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+<!-- ═══════════════════ WALL SURFACE ═══════════════════ -->
+<rect x="0" y="100" width="1200" height="280" fill="url(#wall)" opacity=".7"/>
 
-    <filter id="glow-magenta" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feFlood flood-color="#ec4899" flood-opacity=".4"/>
-      <feComposite in2="blur" operator="in"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+<!-- ═══════════════════ WALL DECORATION: LEFT POSTER ═══════════════════ -->
+<g filter="url(#sh-sm)">
+  <rect x="14" y="25" width="115" height="90" rx="4" fill="#0c1020" stroke="rgba(59,130,246,.25)" stroke-width=".8"/>
+  <text x="72" y="48" text-anchor="middle" font-size="8.5" fill="#e2e8f0" font-weight="900">DISCIPLINE</text>
+  <text x="72" y="59" text-anchor="middle" font-size="8.5" fill="#e2e8f0" font-weight="900">TODAY</text>
+  <text x="72" y="70" text-anchor="middle" font-size="8.5" fill="#06b6d4" font-weight="900">CREATES</text>
+  <text x="72" y="81" text-anchor="middle" font-size="8.5" fill="#e2e8f0" font-weight="900">FREEDOM</text>
+  <text x="72" y="92" text-anchor="middle" font-size="8.5" fill="#f59e0b" font-weight="900">TOMORROW</text>
+  <text x="72" y="108" text-anchor="middle" font-size="5.5" fill="#64748b" font-weight="400">— SUMANTH</text>
+</g>
 
-    <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3.5" result="blur"/>
-      <feFlood flood-color="#06b6d4" flood-opacity=".4"/>
-      <feComposite in2="blur" operator="in"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+<!-- ═══════════════════ TECH SKILL BADGES ═══════════════════ -->
+<g>
+  <!-- Row 1 -->
+  <rect x="148" y="28" width="52" height="14" rx="3" fill="rgba(59,130,246,.12)" stroke="rgba(59,130,246,.35)" stroke-width=".5"/>
+  <text x="174" y="38" text-anchor="middle" font-size="7" fill="#3b82f6" font-weight="700">Python</text>
+  <rect x="206" y="28" width="40" height="14" rx="3" fill="rgba(248,113,113,.12)" stroke="rgba(248,113,113,.35)" stroke-width=".5"/>
+  <text x="226" y="38" text-anchor="middle" font-size="7" fill="#f87171" font-weight="700">Java</text>
+  <!-- Row 2 -->
+  <rect x="148" y="48" width="138" height="14" rx="3" fill="rgba(6,182,212,.1)" stroke="rgba(6,182,212,.3)" stroke-width=".5"/>
+  <text x="217" y="58" text-anchor="middle" font-size="7" fill="#06b6d4" font-weight="600">Data Structures &amp; Algorithms</text>
+  <!-- Row 3 -->
+  <rect x="148" y="68" width="95" height="14" rx="3" fill="rgba(34,197,94,.1)" stroke="rgba(34,197,94,.3)" stroke-width=".5"/>
+  <text x="196" y="78" text-anchor="middle" font-size="7" fill="#22c55e" font-weight="600">Web Development</text>
+  <rect x="250" y="68" width="88" height="14" rx="3" fill="rgba(168,85,247,.1)" stroke="rgba(168,85,247,.3)" stroke-width=".5"/>
+  <text x="294" y="78" text-anchor="middle" font-size="7" fill="#a855f7" font-weight="600">Machine Learning</text>
+  <!-- Row 4 -->
+  <rect x="148" y="88" width="68" height="14" rx="3" fill="rgba(251,146,60,.1)" stroke="rgba(251,146,60,.3)" stroke-width=".5"/>
+  <text x="182" y="98" text-anchor="middle" font-size="7" fill="#fb923c" font-weight="600">Cloud (AWS)</text>
+  <rect x="222" y="88" width="120" height="14" rx="3" fill="rgba(139,92,246,.1)" stroke="rgba(139,92,246,.3)" stroke-width=".5"/>
+  <text x="282" y="98" text-anchor="middle" font-size="7" fill="#c4b5fd" font-weight="600">Unity Game Development</text>
+  <!-- Row 5 -->
+  <rect x="148" y="108" width="82" height="14" rx="3" fill="rgba(100,116,139,.1)" stroke="rgba(100,116,139,.3)" stroke-width=".5"/>
+  <text x="189" y="118" text-anchor="middle" font-size="7" fill="#94a3b8" font-weight="600">System Design</text>
+  <rect x="236" y="108" width="78" height="14" rx="3" fill="rgba(59,130,246,.1)" stroke="rgba(59,130,246,.3)" stroke-width=".5"/>
+  <text x="275" y="118" text-anchor="middle" font-size="7" fill="#60a5fa" font-weight="600">SQL &amp; Databases</text>
+</g>
 
-    <filter id="glow-green" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feFlood flood-color="#22c55e" flood-opacity=".45"/>
-      <feComposite in2="blur" operator="in"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+<!-- ═══════════════════ CENTER WALL PLAQUE: SUMANTH ═══════════════════ -->
+<g filter="url(#sh-sm)">
+  <rect x="420" y="15" width="310" height="120" rx="6" fill="#0a0e1c" stroke="rgba(59,130,246,.3)" stroke-width="1"/>
+  <rect x="420" y="15" width="310" height="1.5" rx="1" fill="url(#rgb-kb)" opacity=".5"/>
+  <!-- Name -->
+  <text x="575" y="50" text-anchor="middle" font-size="22" fill="#f8fafc" font-weight="900" letter-spacing="3">SUMANTH</text>
+  <!-- Education -->
+  <text x="575" y="66" text-anchor="middle" font-size="8.5" fill="#94a3b8">B.Tech CSE  |  2027</text>
+  <!-- Institution -->
+  <text x="575" y="82" text-anchor="middle" font-size="7" fill="#64748b">Nalla Narasimha Reddy Group of Institutions</text>
+  <text x="575" y="93" text-anchor="middle" font-size="7" fill="#64748b">Hyderabad, Telangana</text>
+  <!-- Identity Tags -->
+  <text x="575" y="112" text-anchor="middle" font-size="6.5" fill="#06b6d4" font-weight="600" letter-spacing="1">AI ENGINEERING · DATA SCIENCE · SOFTWARE DEVELOPMENT</text>
+  <text x="575" y="124" text-anchor="middle" font-size="6.5" fill="#8b5cf6" font-weight="600" letter-spacing="1">CLOUD · GAME DEV · MACHINE LEARNING · DSA</text>
+</g>
 
-    <filter id="depth-shadow" x="-10%" y="-10%" width="125%" height="130%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity=".65"/>
-    </filter>
+<!-- ═══════════════════ RIGHT WALL: GOALS + NEON ═══════════════════ -->
+<!-- Goals List -->
+<g filter="url(#sh-sm)">
+  <rect x="780" y="20" width="140" height="110" rx="4" fill="#0a0e1c" stroke="rgba(251,146,60,.25)" stroke-width=".8"/>
+  <text x="850" y="37" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="900" letter-spacing="1">GOALS</text>
+  <line x1="792" y1="42" x2="908" y2="42" stroke="rgba(251,146,60,.2)" stroke-width=".5"/>
+  <text x="798" y="56" font-size="7" fill="#94a3b8"><tspan fill="#22c55e">✓</tspan> Master Python &amp; DSA</text>
+  <text x="798" y="68" font-size="7" fill="#94a3b8"><tspan fill="#22c55e">✓</tspan> Build Real Projects</text>
+  <text x="798" y="80" font-size="7" fill="#94a3b8"><tspan fill="#22c55e">✓</tspan> Explore AI &amp; Data</text>
+  <text x="798" y="92" font-size="7" fill="#94a3b8"><tspan fill="#06b6d4">◻</tspan> Get Placed (2027)</text>
+  <text x="798" y="104" font-size="7" fill="#94a3b8"><tspan fill="#06b6d4">◻</tspan> Continuous Learning</text>
+  <text x="798" y="116" font-size="7" fill="#94a3b8"><tspan fill="#06b6d4">◻</tspan> Make Impact</text>
+</g>
 
-    <!-- ── Gradients ── -->
-    <linearGradient id="hero-name-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="25%" stop-color="#c4b5fd"/>
-      <stop offset="55%" stop-color="#8b5cf6"/>
-      <stop offset="80%" stop-color="#ec4899"/>
-      <stop offset="100%" stop-color="#06b6d4"/>
-    </linearGradient>
+<!-- Neon Signs (Right side) -->
+<text x="950" y="40" font-size="9" fill="#22c55e" font-weight="700" class="np" filter="url(#glow-g)">Good</text>
+<text x="950" y="52" font-size="9" fill="#3b82f6" font-weight="700" class="np" style="animation-delay:.5s" filter="url(#glow-b)">Code</text>
+<text x="950" y="64" font-size="9" fill="#f59e0b" font-weight="700" class="np" style="animation-delay:1s" filter="url(#glow-w)">Good</text>
+<text x="950" y="76" font-size="9" fill="#06b6d4" font-weight="700" class="np" style="animation-delay:1.5s" filter="url(#glow-c)">Health</text>
+<text x="950" y="88" font-size="9" fill="#22c55e" font-weight="700" class="np" style="animation-delay:2s" filter="url(#glow-g)">Good</text>
+<text x="950" y="100" font-size="9" fill="#f59e0b" font-weight="700" class="np" style="animation-delay:2.5s" filter="url(#glow-w)">Life</text>
 
-    <linearGradient id="rose-cyan-beam" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".8"/>
-      <stop offset="50%" stop-color="#ec4899" stop-opacity=".7"/>
-      <stop offset="100%" stop-color="#06b6d4" stop-opacity=".8"/>
-    </linearGradient>
+<!-- Right neon: Dream Learn Build Grow -->
+<g transform="translate(1088,30)">
+  <text y="0" font-size="9" fill="#ec4899" font-weight="700" font-style="italic" class="np">Dream</text>
+  <text y="14" font-size="9" fill="#8b5cf6" font-weight="700" font-style="italic" class="np" style="animation-delay:.6s">Learn</text>
+  <text y="28" font-size="9" fill="#3b82f6" font-weight="700" font-style="italic" class="np" style="animation-delay:1.2s">Build</text>
+  <text y="42" font-size="9" fill="#06b6d4" font-weight="700" font-style="italic" class="np" style="animation-delay:1.8s">Grow</text>
+  <text y="58" font-size="7" fill="#64748b" font-style="italic">Sumanth</text>
+</g>
 
-    <linearGradient id="panel-header-line" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".6"/>
-      <stop offset="50%" stop-color="#ec4899" stop-opacity=".6"/>
-      <stop offset="100%" stop-color="#06b6d4" stop-opacity=".6"/>
-    </linearGradient>
+<!-- ═══════════════════ SHELF ═══════════════════ -->
+<rect x="135" y="130" width="210" height="4" rx="1" fill="#1a1510" filter="url(#sh-sm)"/>
+<!-- Books on shelf -->
+<rect x="140" y="105" width="8" height="25" rx="1" fill="#3b82f6"/><text x="144" y="120" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,144,120)">PYTHON</text>
+<rect x="150" y="108" width="8" height="22" rx="1" fill="#22c55e"/><text x="154" y="120" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,154,120)">DSA</text>
+<rect x="160" y="106" width="10" height="24" rx="1" fill="#f59e0b"/><text x="165" y="120" font-size="3.5" fill="#0f172a" transform="rotate(-90,165,120)">ML</text>
+<rect x="172" y="110" width="8" height="20" rx="1" fill="#ec4899"/><text x="176" y="122" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,176,122)">DATA</text>
+<rect x="182" y="107" width="8" height="23" rx="1" fill="#8b5cf6"/><text x="186" y="120" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,186,120)">SQL</text>
+<rect x="192" y="109" width="10" height="21" rx="1" fill="#06b6d4"/><text x="197" y="122" font-size="3.5" fill="#0f172a" transform="rotate(-90,197,122)">CLOUD</text>
 
-    <radialGradient id="amb-violet" cx="28%" cy="45%" r="42%">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".07"/>
-      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
-    </radialGradient>
+<!-- Small figurine on shelf -->
+<circle cx="225" cy="118" r="5" fill="#1e40af" opacity=".7"/>
+<rect x="222" y="123" width="6" height="7" rx="1" fill="#1e40af" opacity=".7"/>
 
-    <radialGradient id="amb-magenta" cx="54%" cy="35%" r="35%">
-      <stop offset="0%" stop-color="#ec4899" stop-opacity=".045"/>
-      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
-    </radialGradient>
+<!-- Plant on left shelf edge -->
+<circle cx="320" cy="118" r="8" fill="#166534" opacity=".55"/>
+<circle cx="316" cy="114" r="6" fill="#15803d" opacity=".55"/>
+<circle cx="324" cy="112" r="5" fill="#22c55e" opacity=".4"/>
+<rect x="318" y="120" width="4" height="10" fill="#78350f" opacity=".6"/>
 
-    <radialGradient id="amb-cyan" cx="82%" cy="45%" r="40%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity=".05"/>
-      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- ── Patterns ── -->
-    <pattern id="tech-grid" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22" fill="none" stroke="rgba(139,92,246,.03)" stroke-width=".5"/>
-    </pattern>
-
-    <pattern id="pcb-traces" width="88" height="88" patternUnits="userSpaceOnUse">
-      <path d="M 0 44 L 22 44 L 34 32 L 60 32 L 72 44 L 88 44" fill="none" stroke="rgba(139,92,246,.025)" stroke-width=".6"/>
-      <circle cx="60" cy="32" r="1.2" fill="rgba(236,72,153,.03)"/>
-      <circle cx="34" cy="32" r="1.2" fill="rgba(6,182,212,.03)"/>
-    </pattern>
-  </defs>
-
-  <!-- ═══════════════════ BACKGROUND ENVIRONMENT ═══════════════════ -->
-  <!-- Obsidian Base -->
-  <rect width="1000" height="360" fill="#07070c"/>
-  <rect width="1000" height="360" fill="url(#tech-grid)"/>
-  <rect width="1000" height="360" fill="url(#pcb-traces)"/>
-  <rect width="1000" height="360" fill="url(#amb-violet)"/>
-  <rect width="1000" height="360" fill="url(#amb-magenta)"/>
-  <rect width="1000" height="360" fill="url(#amb-cyan)"/>
-
-  <!-- Perspective 3D Grid Floor Lines -->
-  <g opacity=".035">
-    <line x1="260" y1="360" x2="490" y2="190" stroke="#8b5cf6" stroke-width=".5"/>
-    <line x1="360" y1="360" x2="510" y2="190" stroke="#8b5cf6" stroke-width=".5"/>
-    <line x1="460" y1="360" x2="525" y2="190" stroke="#ec4899" stroke-width=".5"/>
-    <line x1="560" y1="360" x2="535" y2="190" stroke="#ec4899" stroke-width=".5"/>
-    <line x1="660" y1="360" x2="550" y2="190" stroke="#06b6d4" stroke-width=".5"/>
-    <line x1="760" y1="360" x2="570" y2="190" stroke="#06b6d4" stroke-width=".5"/>
-    <line x1="300" y1="300" x2="720" y2="300" stroke="#8b5cf6" stroke-width=".4"/>
-    <line x1="360" y1="260" x2="680" y2="260" stroke="#ec4899" stroke-width=".4"/>
-    <line x1="420" y1="225" x2="640" y2="225" stroke="#06b6d4" stroke-width=".4"/>
-  </g>
-
-  <!-- 3D Orbital Rings -->
-  <g class="orbit-1" opacity=".04">
-    <ellipse cx="530" cy="170" rx="270" ry="85" fill="none" stroke="#8b5cf6" stroke-width=".7" stroke-dasharray="6 10"/>
-    <circle cx="800" cy="170" r="2.5" fill="#8b5cf6"/>
-  </g>
-  <g class="orbit-2" opacity=".035">
-    <ellipse cx="530" cy="170" rx="330" ry="105" fill="none" stroke="#06b6d4" stroke-width=".6" stroke-dasharray="4 14"/>
-    <circle cx="200" cy="170" r="2" fill="#06b6d4"/>
-  </g>
-
-  <!-- Ambient Floating Particles -->
-  <circle cx="95" cy="80" r="1.1" fill="#8b5cf6" opacity=".35" style="animation:driftParticle 9s linear infinite"/>
-  <circle cx="365" cy="50" r=".9" fill="#ec4899" opacity=".3" style="animation:driftParticle 11s linear infinite 2s"/>
-  <circle cx="725" cy="65" r="1" fill="#06b6d4" opacity=".3" style="animation:driftParticle 10s linear infinite 4s"/>
-  <circle cx="670" cy="325" r=".8" fill="#c4b5fd" opacity=".25" style="animation:driftParticle 12s linear infinite 1s"/>
-  <circle cx="240" cy="335" r=".9" fill="#fb7185" opacity=".25" style="animation:driftParticle 8s linear infinite 3s"/>
-  <circle cx="910" cy="310" r=".8" fill="#22c55e" opacity=".25" style="animation:driftParticle 13s linear infinite 5s"/>
-
-  <!-- Scanning Sweep Beam -->
-  <rect class="scanline" x="0" y="0" width="1000" height="1.5" fill="url(#rose-cyan-beam)"/>
-
-  <!-- ═══════════════════ TOP COMMAND BAR ═══════════════════ -->
-  <rect x="0" y="0" width="1000" height="28" fill="rgba(12,8,24,.88)" stroke="rgba(139,92,246,.15)" stroke-width=".5"/>
-  <circle cx="18" cy="14" r="5" fill="#ff5f57"/>
-  <circle cx="34" cy="14" r="5" fill="#febc2e"/>
-  <circle cx="50" cy="14" r="5" fill="#28c840"/>
-  <text x="68" y="18" font-size="9.5" fill="#94a3b8" font-weight="700">developer@github:~$ // SOFTWARE_ENGINEERING_COMMAND_CENTER</text>
-
-  <!-- Telemetry Badges -->
-  <rect x="685" y="5" width="94" height="18" rx="3" fill="rgba(34,197,94,.08)" stroke="rgba(34,197,94,.3)" stroke-width=".6"/>
-  <circle cx="697" cy="14" r="2.5" fill="#22c55e" filter="url(#glow-green)"/>
-  <text x="706" y="17.5" font-size="7.8" fill="#22c55e" font-weight="700">KERNEL: OK</text>
-
-  <rect x="787" y="5" width="98" height="18" rx="3" fill="rgba(139,92,246,.08)" stroke="rgba(139,92,246,.3)" stroke-width=".6"/>
-  <circle cx="799" cy="14" r="2.5" fill="#8b5cf6" filter="url(#glow-violet)"/>
-  <text x="808" y="17.5" font-size="7.8" fill="#c4b5fd" font-weight="700">BRANCH: main</text>
-
-  <rect x="893" y="5" width="95" height="18" rx="3" fill="rgba(6,182,212,.08)" stroke="rgba(6,182,212,.3)" stroke-width=".6"/>
-  <circle cx="905" cy="14" r="2.5" fill="#06b6d4" filter="url(#glow-cyan)"/>
-  <text x="914" y="17.5" font-size="7.8" fill="#06b6d4" font-weight="700">BUILD: PASSING</text>
+<!-- Right shelf -->
+<rect x="940" y="115" width="140" height="4" rx="1" fill="#1a1510" filter="url(#sh-sm)"/>
+<!-- Items on right shelf -->
+<rect x="945" y="100" width="8" height="15" rx="1" fill="#ef4444"/>
+<rect x="955" y="98" width="8" height="17" rx="1" fill="#3b82f6"/>
+<rect x="965" y="101" width="8" height="14" rx="1" fill="#f59e0b"/>
+<!-- Small plant right -->
+<circle cx="1060" cy="103" r="7" fill="#166534" opacity=".5"/>
+<circle cx="1056" cy="100" r="5" fill="#22c55e" opacity=".4"/>
+<rect x="1058" y="105" width="3" height="10" fill="#78350f" opacity=".5"/>
 
 
-  <!-- ═══════════════════ LEFT: DEVELOPER TERMINAL ═══════════════════ -->
-  <g class="terminal-float" filter="url(#depth-shadow)">
-    <!-- Terminal Outer Frame with 3D illusion border -->
-    <rect x="22" y="44" width="316" height="294" rx="8" fill="rgba(10,7,20,.92)" stroke="rgba(139,92,246,.25)" stroke-width=".8"/>
-    <rect x="23" y="45" width="314" height="292" rx="7" fill="none" stroke="rgba(236,72,153,.08)" stroke-width=".5"/>
+<!-- ═══════════════════ DESK LAMP (LEFT) ═══════════════════ -->
+<g class="lg">
+  <rect x="42" y="250" width="3" height="120" fill="#374151" rx="1"/>
+  <rect x="28" y="240" width="30" height="14" rx="4" fill="#374151"/>
+  <ellipse cx="43" cy="380" rx="20" ry="5" fill="#374151"/>
+  <!-- Lamp light cone -->
+  <rect x="20" y="255" width="46" height="120" rx="0" fill="url(#lamp-r)" class="lg"/>
+</g>
 
-    <!-- Terminal Title Bar -->
-    <rect x="22" y="44" width="316" height="24" rx="8" fill="rgba(18,12,32,.95)"/>
-    <rect x="22" y="60" width="316" height="8" fill="rgba(18,12,32,.95)"/>
-    <line x1="22" y1="68" x2="338" y2="68" stroke="rgba(139,92,246,.18)" stroke-width=".6"/>
 
-    <!-- Terminal Tab -->
-    <rect x="30" y="48" width="160" height="16" rx="3" fill="rgba(139,92,246,.1)" stroke="rgba(139,92,246,.2)" stroke-width=".5"/>
-    <circle cx="39" cy="56" r="2" fill="#22c55e"/>
-    <text x="46" y="59" font-size="8" fill="#c4b5fd" font-weight="700">developer@github:~$</text>
-
-    <!-- Terminal Window Controls -->
-    <circle cx="308" cy="56" r="3.2" fill="none" stroke="#64748b" stroke-width=".8"/>
-    <circle cx="318" cy="56" r="3.2" fill="none" stroke="#64748b" stroke-width=".8"/>
-    <circle cx="328" cy="56" r="3.2" fill="none" stroke="#64748b" stroke-width=".8"/>
-
-    <!-- Terminal Body Text -->
-    <g transform="translate(34, 88)">
-      <!-- Command 1: whoami -->
-      <text y="0" font-size="9" fill="#64748b">$ <tspan fill="#c4b5fd">whoami</tspan></text>
-      <text y="14" font-size="9.5" fill="#f8fafc" font-weight="700">SUMANTH</text>
-
-      <!-- Command 2: cat role.txt -->
-      <text y="34" font-size="9" fill="#64748b">$ <tspan fill="#c4b5fd">cat</tspan> role.txt</text>
-      <text y="48" font-size="9" fill="#ec4899" font-weight="600">Software Engineer</text>
-      <text y="60" font-size="9" fill="#06b6d4" font-weight="600">AI Builder</text>
-
-      <!-- Command 3: ./initialize -->
-      <text y="80" font-size="9" fill="#64748b">$ <tspan fill="#c4b5fd">./initialize</tspan></text>
-      <text y="94" font-size="8.2" fill="#94a3b8">AI ENGINE       <tspan fill="#22c55e" font-weight="700">ONLINE</tspan></text>
-      <text y="106" font-size="8.2" fill="#94a3b8">SOFTWARE        <tspan fill="#22c55e" font-weight="700">ONLINE</tspan></text>
-      <text y="118" font-size="8.2" fill="#94a3b8">CLOUD           <tspan fill="#06b6d4" font-weight="700">READY</tspan></text>
-      <text y="130" font-size="8.2" fill="#94a3b8">SECURITY        <tspan fill="#22c55e" font-weight="700">ENABLED</tspan></text>
-
-      <!-- Command 4: git status -->
-      <text y="150" font-size="9" fill="#64748b">$ <tspan fill="#c4b5fd">git</tspan> status</text>
-      <text y="164" font-size="8.2"><tspan fill="#22c55e">●</tspan><tspan fill="#22c55e" font-weight="700"> CLEAN</tspan></text>
-      <text y="176" font-size="8.2"><tspan fill="#06b6d4">●</tspan><tspan fill="#06b6d4" font-weight="700"> CONNECTED</tspan></text>
-
-      <!-- Prompt Line with Cursor -->
-      <text y="200" font-size="9"><tspan fill="#94a3b8">developer@github</tspan><tspan fill="#64748b">:~$ </tspan></text>
-      <rect class="cursor" x="142" y="191" width="7" height="12" fill="#8b5cf6" opacity=".95"/>
-
-      <!-- Footer Micro Readout -->
-      <line x1="-4" y1="218" x2="294" y2="218" stroke="rgba(139,92,246,.12)" stroke-width=".5"/>
-      <text y="230" font-size="7" fill="#4a4458">UTF-8 · LF · ZSH 5.9 · TLS 1.3 · BUFFER: READY</text>
+<!-- ═══════════════════ MONITOR 1: AI / SOFTWARE DEVELOPMENT ═══════════════════ -->
+<g filter="url(#sh)">
+  <!-- Bezel -->
+  <rect x="88" y="164" width="266" height="180" rx="6" fill="#111111"/>
+  <!-- Screen -->
+  <rect x="92" y="168" width="258" height="168" rx="3" fill="url(#scr)"/>
+  <!-- Stand -->
+  <rect x="208" y="344" width="26" height="16" fill="#1a1a1a"/><rect x="195" y="360" width="52" height="6" rx="2" fill="#222"/>
+  <!-- Screen content (clipped) -->
+  <g clip-path="url(#clip-m1)">
+    <!-- Sidebar -->
+    <rect x="92" y="168" width="50" height="168" fill="rgba(0,0,0,.4)"/>
+    <text x="98" y="180" font-size="5" fill="#64748b">EXPLORER</text>
+    <text x="100" y="190" font-size="5.5" fill="#e2e8f0">📁 Projects</text>
+    <text x="106" y="199" font-size="5" fill="#94a3b8">📄 main.py</text>
+    <text x="106" y="208" font-size="5" fill="#94a3b8">📄 model.py</text>
+    <text x="106" y="217" font-size="5" fill="#94a3b8">📄 train.py</text>
+    <text x="100" y="228" font-size="5.5" fill="#e2e8f0">📁 data</text>
+    <text x="100" y="239" font-size="5.5" fill="#e2e8f0">📁 models</text>
+    <text x="100" y="250" font-size="5" fill="#64748b">📄 README.md</text>
+    <!-- Tab bar -->
+    <rect x="142" y="168" width="55" height="11" fill="rgba(13,17,23,.9)" stroke="rgba(59,130,246,.3)" stroke-width=".5"/>
+    <text x="148" y="176" font-size="5" fill="#e2e8f0">main.py</text>
+    <rect x="197" y="168" width="55" height="11" fill="rgba(0,0,0,.3)"/>
+    <text x="203" y="176" font-size="5" fill="#64748b">model.py</text>
+    <!-- Code Area (scrolling) -->
+    <g class="code-scroll" transform="translate(148, 186)">
+      <text y="0" font-size="5.5"><tspan fill="#c084fc">def</tspan><tspan fill="#e2e8f0"> calculate_bmi(weight, height):</tspan></text>
+      <text y="9" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">return</tspan><tspan fill="#e2e8f0"> weight / (height ** 2)</tspan></text>
+      <text y="21" font-size="5.5"><tspan fill="#c084fc">def</tspan><tspan fill="#e2e8f0"> calculate_bmr(wt, ht, age, gender):</tspan></text>
+      <text y="30" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">if</tspan><tspan fill="#e2e8f0"> gender == </tspan><tspan fill="#22c55e">"male"</tspan><tspan fill="#e2e8f0">:</tspan></text>
+      <text y="39" font-size="5.5"><tspan fill="#64748b">        </tspan><tspan fill="#c084fc">return</tspan><tspan fill="#06b6d4"> 10</tspan><tspan fill="#e2e8f0">*wt + </tspan><tspan fill="#06b6d4">6.25</tspan><tspan fill="#e2e8f0">*ht*</tspan><tspan fill="#06b6d4">100</tspan></text>
+      <text y="48" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">return</tspan><tspan fill="#06b6d4"> 10</tspan><tspan fill="#e2e8f0">*wt + </tspan><tspan fill="#06b6d4">6.25</tspan><tspan fill="#e2e8f0">*ht - 161</tspan></text>
+      <text y="60" font-size="5.5"><tspan fill="#c084fc">class</tspan><tspan fill="#f59e0b"> NeuralNetwork</tspan><tspan fill="#e2e8f0">:</tspan></text>
+      <text y="69" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">def</tspan><tspan fill="#e2e8f0"> __init__(self, layers):</tspan></text>
+      <text y="78" font-size="5.5"><tspan fill="#64748b">        </tspan><tspan fill="#e2e8f0">self.layers = layers</tspan></text>
+      <text y="87" font-size="5.5"><tspan fill="#64748b">        </tspan><tspan fill="#e2e8f0">self.weights = []</tspan></text>
+      <!-- Duplicate for seamless scrolling -->
+      <text y="100" font-size="5.5"><tspan fill="#c084fc">def</tspan><tspan fill="#e2e8f0"> calculate_bmi(weight, height):</tspan></text>
+      <text y="109" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">return</tspan><tspan fill="#e2e8f0"> weight / (height ** 2)</tspan></text>
     </g>
+    <!-- Terminal strip at bottom -->
+    <rect x="92" y="315" width="258" height="21" fill="rgba(0,0,0,.6)"/>
+    <text x="98" y="328" font-size="5.5"><tspan fill="#22c55e">$</tspan><tspan fill="#94a3b8"> python train_model.py --epochs 50</tspan></text>
+    <rect class="cursor" x="282" y="321" width="5" height="8" fill="#22c55e"/>
+    <!-- Label overlays -->
+    <text x="260" y="180" font-size="4.5" fill="rgba(59,130,246,.4)" text-anchor="end">AI ENGINEERING</text>
   </g>
-  <!-- Terminal Glow Halo -->
-  <rect x="22" y="44" width="316" height="294" rx="8" fill="none" stroke="rgba(139,92,246,.1)" stroke-width="2" filter="url(#glow-violet)"/>
+  <!-- Screen reflection shimmer -->
+  <rect x="92" y="168" width="258" height="168" rx="3" fill="url(#scr-glow-1)" class="sg"/>
+</g>
 
 
-  <!-- ═══════════════════ CENTER: MAIN IDENTITY FOCAL POINT ═══════════════════ -->
-  <!-- Subtle Background AI System Visualization behind identity -->
-  <g opacity=".16">
-    <circle cx="530" cy="46" r="2.2" fill="#8b5cf6"/>
-    <text x="536" y="49" font-size="5.5" fill="#c4b5fd">INPUT</text>
-    <line x1="530" y1="50" x2="530" y2="57" stroke="#8b5cf6" stroke-width=".4" stroke-dasharray="1.5 1.5"/>
-    <circle cx="530" cy="60" r="2.2" fill="#ec4899"/>
-    <text x="536" y="63" font-size="5.5" fill="#ec4899">DATA</text>
-    <line x1="530" y1="64" x2="530" y2="71" stroke="#ec4899" stroke-width=".4" stroke-dasharray="1.5 1.5"/>
-    <circle cx="530" cy="74" r="2.2" fill="#06b6d4"/>
-    <text x="536" y="77" font-size="5.5" fill="#06b6d4">AI ENGINE</text>
-  </g>
+<!-- ═══════════════════ MONITOR 2: DATA SCIENCE / DASHBOARD ═══════════════════ -->
+<g filter="url(#sh)">
+  <!-- Bezel (larger, center) -->
+  <rect x="400" y="142" width="348" height="210" rx="6" fill="#111111"/>
+  <!-- Screen -->
+  <rect x="405" y="148" width="338" height="198" rx="3" fill="url(#scr)"/>
+  <!-- Stand -->
+  <rect x="560" y="352" width="28" height="14" fill="#1a1a1a"/><rect x="548" y="366" width="52" height="6" rx="2" fill="#222"/>
+  <!-- Screen content (clipped) -->
+  <g clip-path="url(#clip-m2)">
+    <!-- Header bar -->
+    <rect x="405" y="148" width="338" height="20" fill="rgba(0,0,0,.35)"/>
+    <text x="418" y="161" font-size="7" fill="#94a3b8">Good Morning,</text>
+    <text x="418" y="161" font-size="7"><tspan fill="#94a3b8">Good Morning, </tspan><tspan fill="#e2e8f0" font-weight="700">Sumanth</tspan><tspan fill="#e2e8f0"> 👋</tspan></text>
+    <text x="690" y="161" font-size="7" fill="#64748b" text-anchor="end">09:45 AM</text>
+    <!-- Motivational text -->
+    <text x="575" y="180" text-anchor="middle" font-size="6.5" fill="#06b6d4" font-style="italic">"Small Steps, Big Changes"</text>
 
-  <!-- Developer Name (SUMANTH) - Clean Modern Typography, Bold Contrast -->
-  <text x="535" y="116" text-anchor="middle" font-size="50" font-weight="900" fill="url(#hero-name-grad)" letter-spacing="5" filter="url(#glow-violet)" opacity=".18">SUMANTH</text>
-  <text x="535" y="116" text-anchor="middle" font-size="50" font-weight="900" fill="url(#hero-name-grad)" letter-spacing="5">SUMANTH</text>
-
-  <!-- Full Name & Title -->
-  <text x="535" y="136" text-anchor="middle" font-size="9.5" fill="#ec4899" font-weight="700" letter-spacing="2.5">PEDDI SAI VENKAT SUMANTH</text>
-
-  <!-- Three Core Disciplines -->
-  <g transform="translate(535, 156)">
-    <text text-anchor="middle" font-size="9.2" font-weight="600" letter-spacing="1">
-      <tspan fill="#f1f5f9">SOFTWARE ENGINEER</tspan>
-      <tspan fill="#8b5cf6"> • </tspan>
-      <tspan fill="#c4b5fd">AI BUILDER</tspan>
-      <tspan fill="#ec4899"> • </tspan>
-      <tspan fill="#06b6d4">FULL STACK DEVELOPER</tspan>
-    </text>
-  </g>
-
-  <!-- Small Technical Identity Line -->
-  <rect x="390" y="170" width="290" height="18" rx="9" fill="rgba(139,92,246,.06)" stroke="rgba(139,92,246,.18)" stroke-width=".5"/>
-  <text x="535" y="182.5" text-anchor="middle" font-size="8.2" fill="#cbd5e1" font-weight="500" letter-spacing="1.2">
-    <tspan fill="#8b5cf6">AI</tspan> × <tspan fill="#ec4899">SOFTWARE</tspan> × <tspan fill="#06b6d4">CLOUD</tspan> × <tspan fill="#fb7185">DATA</tspan> × <tspan fill="#22c55e">SECURITY</tspan>
-  </text>
-
-  <!-- ── Git / Software Branch Visual ── -->
-  <g transform="translate(0, 10)">
-    <text x="375" y="210" font-size="7.5" fill="#64748b" letter-spacing="1.5">VERSION CONTROL &amp; BUILD ORCHESTRATION</text>
-    <text x="668" y="210" font-size="6.5" fill="#4a4458">v3.0.1-prod</text>
-
-    <!-- Main Git Branch Line -->
-    <line x1="375" y1="228" x2="695" y2="228" stroke="rgba(139,92,246,.35)" stroke-width="1.8"/>
-    <text x="350" y="231" font-size="7.5" fill="#8b5cf6" font-weight="700">main</text>
-
-    <!-- Animated Data Packet on Main -->
-    <circle class="packet-1" r="2.2" fill="#ec4899" filter="url(#glow-magenta)"/>
-
-    <!-- Main Branch Nodes -->
-    <circle class="gn1" cx="420" cy="228" r="4.2" fill="#8b5cf6" filter="url(#glow-violet)"/>
-    <circle class="gn2" cx="505" cy="228" r="4.2" fill="#06b6d4" filter="url(#glow-cyan)"/>
-    <circle class="gn3" cx="590" cy="228" r="4.2" fill="#ec4899" filter="url(#glow-magenta)"/>
-    <circle class="gn4" cx="675" cy="228" r="4.8" fill="#22c55e" filter="url(#glow-green)"/>
-    <text x="670" y="242" font-size="6" fill="#22c55e" font-weight="700">HEAD</text>
-
-    <!-- Feature Branch 1: feat -->
-    <path d="M 420 228 Q 440 252 465 252 L 530 252" fill="none" stroke="rgba(6,182,212,.3)" stroke-width="1.2" stroke-dasharray="2 2"/>
-    <circle cx="495" cy="252" r="2.8" fill="#06b6d4" opacity=".8"/>
-    <text x="502" y="255" font-size="6.5" fill="#06b6d4">feat/ai-engine</text>
-
-    <!-- Feature Branch 2: build -->
-    <path d="M 505 228 Q 525 252 550 252 L 615 252" fill="none" stroke="rgba(236,72,153,.3)" stroke-width="1.2" stroke-dasharray="2 2"/>
-    <circle cx="580" cy="252" r="2.8" fill="#ec4899" opacity=".8"/>
-    <text x="587" y="255" font-size="6.5" fill="#ec4899">build/deploy</text>
-
-    <!-- Animated Data Packet on Branch -->
-    <circle class="packet-2" r="1.8" fill="#06b6d4"/>
-
-    <!-- Architecture & Capability Tags -->
-    <g transform="translate(370, 276)">
-      <rect x="0" y="0" width="155" height="34" rx="4" fill="rgba(139,92,246,.05)" stroke="rgba(139,92,246,.15)" stroke-width=".5"/>
-      <text x="8" y="13" font-size="6.8" fill="#64748b" letter-spacing="1">FULL STACK &amp; CLOUD</text>
-      <text x="8" y="26" font-size="8" fill="#f8fafc" font-weight="600">React 19 · FastAPI · Nitro</text>
-
-      <rect x="170" y="0" width="155" height="34" rx="4" fill="rgba(6,182,212,.05)" stroke="rgba(6,182,212,.15)" stroke-width=".5"/>
-      <text x="178" y="13" font-size="6.8" fill="#64748b" letter-spacing="1">AI &amp; COMPUTER VISION</text>
-      <text x="178" y="26" font-size="8" fill="#06b6d4" font-weight="600">MediaPipe · ReAct · RAG</text>
-    </g>
-  </g>
-
-
-  <!-- ═══════════════════ RIGHT: ENGINEERING SYSTEM STATUS ═══════════════════ -->
-  <g class="status-float" filter="url(#depth-shadow)">
-    <!-- Diagnostics Panel Frame -->
-    <rect x="740" y="44" width="238" height="294" rx="8" fill="rgba(10,7,20,.85)" stroke="rgba(139,92,246,.25)" stroke-width=".8"/>
-    <rect x="741" y="45" width="236" height="292" rx="7" fill="none" stroke="rgba(6,182,212,.08)" stroke-width=".5"/>
-
-    <!-- Top Accent Bar -->
-    <rect x="740" y="44" width="238" height="2" rx="1" fill="url(#panel-header-line)"/>
-
-    <!-- Header Box -->
-    <rect x="740" y="46" width="238" height="26" fill="rgba(18,12,32,.9)"/>
-    <line x1="740" y1="72" x2="978" y2="72" stroke="rgba(139,92,246,.18)" stroke-width=".6"/>
-    <text x="752" y="63" font-size="8.5" fill="#c4b5fd" font-weight="700" letter-spacing="1">SYSTEM DIAGNOSTICS</text>
-    <rect x="918" y="52" width="48" height="14" rx="2" fill="rgba(34,197,94,.1)" stroke="rgba(34,197,94,.3)" stroke-width=".4"/>
-    <text x="926" y="62" font-size="7" fill="#22c55e" font-weight="700">ONLINE</text>
-
-    <!-- Diagnostics Items -->
-    <g transform="translate(754, 102)">
-      <!-- Row 1: AI Engine -->
-      <text y="0" font-size="8.5" fill="#94a3b8">AI ENGINE</text>
-      <circle class="led-g1" cx="132" cy="-3" r="2.8" fill="#22c55e" filter="url(#glow-green)"/>
-      <text x="142" y="0" font-size="8" fill="#22c55e" font-weight="700">ONLINE</text>
-      <line x1="0" y1="11" x2="210" y2="11" stroke="rgba(139,92,246,.08)" stroke-width=".4"/>
-
-      <!-- Row 2: Software -->
-      <text y="24" font-size="8.5" fill="#94a3b8">SOFTWARE</text>
-      <circle class="led-g2" cx="132" cy="21" r="2.8" fill="#22c55e" filter="url(#glow-green)"/>
-      <text x="142" y="24" font-size="8" fill="#22c55e" font-weight="700">ACTIVE</text>
-      <line x1="0" y1="35" x2="210" y2="35" stroke="rgba(139,92,246,.08)" stroke-width=".4"/>
-
-      <!-- Row 3: Cloud -->
-      <text y="48" font-size="8.5" fill="#94a3b8">CLOUD</text>
-      <circle class="led-c1" cx="132" cy="45" r="2.8" fill="#06b6d4" filter="url(#glow-cyan)"/>
-      <text x="142" y="48" font-size="8" fill="#06b6d4" font-weight="700">READY</text>
-      <line x1="0" y1="59" x2="210" y2="59" stroke="rgba(139,92,246,.08)" stroke-width=".4"/>
-
-      <!-- Row 4: Data -->
-      <text y="72" font-size="8.5" fill="#94a3b8">DATA</text>
-      <circle class="led-m1" cx="132" cy="69" r="2.8" fill="#ec4899" filter="url(#glow-magenta)"/>
-      <text x="142" y="72" font-size="8" fill="#ec4899" font-weight="700">STREAMING</text>
-      <line x1="0" y1="83" x2="210" y2="83" stroke="rgba(139,92,246,.08)" stroke-width=".4"/>
-
-      <!-- Row 5: Security -->
-      <text y="96" font-size="8.5" fill="#94a3b8">SECURITY</text>
-      <circle class="led-g3" cx="132" cy="93" r="2.8" fill="#22c55e" filter="url(#glow-green)"/>
-      <text x="142" y="96" font-size="8" fill="#22c55e" font-weight="700">ENABLED</text>
-      <line x1="0" y1="107" x2="210" y2="107" stroke="rgba(139,92,246,.08)" stroke-width=".4"/>
-
-      <!-- Row 6: Git -->
-      <text y="120" font-size="8.5" fill="#94a3b8">GIT</text>
-      <circle class="led-c2" cx="132" cy="117" r="2.8" fill="#06b6d4" filter="url(#glow-cyan)"/>
-      <text x="142" y="120" font-size="8" fill="#06b6d4" font-weight="700">CONNECTED</text>
+    <!-- Stat Cards Row -->
+    <g transform="translate(415, 188)">
+      <!-- Card 1: Code -->
+      <rect x="0" y="0" width="60" height="35" rx="3" fill="rgba(59,130,246,.1)" stroke="rgba(59,130,246,.2)" stroke-width=".5"/>
+      <text x="30" y="12" text-anchor="middle" font-size="5" fill="#64748b">CODE</text>
+      <text x="30" y="25" text-anchor="middle" font-size="10" fill="#3b82f6" font-weight="700">▶</text>
+      <!-- Card 2: Learn -->
+      <rect x="66" y="0" width="60" height="35" rx="3" fill="rgba(6,182,212,.1)" stroke="rgba(6,182,212,.2)" stroke-width=".5"/>
+      <text x="96" y="12" text-anchor="middle" font-size="5" fill="#64748b">LEARN</text>
+      <text x="96" y="25" text-anchor="middle" font-size="10" fill="#06b6d4" font-weight="700">📚</text>
+      <!-- Card 3: Build -->
+      <rect x="132" y="0" width="60" height="35" rx="3" fill="rgba(34,197,94,.1)" stroke="rgba(34,197,94,.2)" stroke-width=".5"/>
+      <text x="162" y="12" text-anchor="middle" font-size="5" fill="#64748b">BUILD</text>
+      <text x="162" y="25" text-anchor="middle" font-size="10" fill="#22c55e" font-weight="700">🚀</text>
+      <!-- Card 4: Data -->
+      <rect x="198" y="0" width="60" height="35" rx="3" fill="rgba(168,85,247,.1)" stroke="rgba(168,85,247,.2)" stroke-width=".5"/>
+      <text x="228" y="12" text-anchor="middle" font-size="5" fill="#64748b">DATA</text>
+      <text x="228" y="25" text-anchor="middle" font-size="10" fill="#a855f7" font-weight="700">📊</text>
+      <!-- Card 5: Achieve -->
+      <rect x="264" y="0" width="60" height="35" rx="3" fill="rgba(251,146,60,.1)" stroke="rgba(251,146,60,.2)" stroke-width=".5"/>
+      <text x="294" y="12" text-anchor="middle" font-size="5" fill="#64748b">ACHIEVE</text>
+      <text x="294" y="25" text-anchor="middle" font-size="10" fill="#fb923c" font-weight="700">🏆</text>
     </g>
 
-    <!-- Security & Clearance Telemetry Readout -->
-    <g transform="translate(754, 252)">
-      <rect x="0" y="0" width="210" height="66" rx="4" fill="rgba(34,197,94,.04)" stroke="rgba(34,197,94,.2)" stroke-width=".5"/>
-      <text x="10" y="16" font-size="7.2" fill="#22c55e" font-weight="700" letter-spacing=".5">SECURE CHANNEL</text>
-      <text x="10" y="29" font-size="7.2" fill="#94a3b8">AUTH: <tspan fill="#22c55e">VERIFIED [SHA-256]</tspan></text>
-      <text x="10" y="42" font-size="7.2" fill="#94a3b8">ACCESS: <tspan fill="#06b6d4">DEVELOPER</tspan></text>
-      <text x="10" y="55" font-size="7.2" fill="#94a3b8">STATUS: <tspan fill="#22c55e">PRODUCTION READY</tspan></text>
+    <!-- Data Visualization: Bar Chart -->
+    <g transform="translate(420, 230)">
+      <text y="0" font-size="5" fill="#64748b">DATA PIPELINE THROUGHPUT</text>
+      <rect class="b1" x="5" y="8" width="14" height="38" rx="1" fill="#3b82f6" opacity=".8"/>
+      <rect class="b2" x="24" y="8" width="14" height="38" rx="1" fill="#06b6d4" opacity=".8"/>
+      <rect class="b3" x="43" y="8" width="14" height="38" rx="1" fill="#22c55e" opacity=".8"/>
+      <rect class="b4" x="62" y="8" width="14" height="38" rx="1" fill="#f59e0b" opacity=".8"/>
+      <rect class="b5" x="81" y="8" width="14" height="38" rx="1" fill="#8b5cf6" opacity=".8"/>
+      <text x="12" y="52" text-anchor="middle" font-size="4" fill="#64748b">ETL</text>
+      <text x="31" y="52" text-anchor="middle" font-size="4" fill="#64748b">SQL</text>
+      <text x="50" y="52" text-anchor="middle" font-size="4" fill="#64748b">API</text>
+      <text x="69" y="52" text-anchor="middle" font-size="4" fill="#64748b">ML</text>
+      <text x="88" y="52" text-anchor="middle" font-size="4" fill="#64748b">DB</text>
     </g>
+
+    <!-- Line Chart / Data Flow -->
+    <g transform="translate(530, 230)">
+      <text y="0" font-size="5" fill="#64748b">CLOUD DATA STREAM</text>
+      <polyline points="0,40 15,32 30,35 45,22 60,28 75,15 90,20 105,10 120,18 135,8 150,14 165,5" fill="none" stroke="#06b6d4" stroke-width="1.2" class="line-draw"/>
+      <polyline points="0,42 15,38 30,40 45,30 60,35 75,25 90,28 105,20 120,25 135,18 150,22 165,15" fill="none" stroke="#3b82f6" stroke-width=".8" opacity=".5"/>
+      <!-- AWS / Cloud labels -->
+      <text x="170" y="12" font-size="4.5" fill="#fb923c" font-weight="600">AWS</text>
+      <text x="170" y="20" font-size="4" fill="#64748b">Lambda</text>
+      <text x="170" y="28" font-size="4" fill="#64748b">DynamoDB</text>
+      <text x="170" y="36" font-size="4" fill="#64748b">S3</text>
+    </g>
+
+    <!-- GitHub Contribution Grid -->
+    <g transform="translate(415, 296)">
+      <text y="0" font-size="4.5" fill="#64748b">CONTRIBUTION ACTIVITY</text>
+      <g transform="translate(0,5)">
+        <!-- Row of contribution squares (simplified) -->
+        <rect x="0" y="0" width="4" height="4" rx=".5" fill="#0e4429" class="cp"/><rect x="5" y="0" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:.1s"/>
+        <rect x="10" y="0" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:.2s"/><rect x="15" y="0" width="4" height="4" rx=".5" fill="#26a641" class="cp" style="animation-delay:.3s"/>
+        <rect x="20" y="0" width="4" height="4" rx=".5" fill="#39d353" class="cp" style="animation-delay:.4s"/><rect x="25" y="0" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:.5s"/>
+        <rect x="30" y="0" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:.6s"/><rect x="35" y="0" width="4" height="4" rx=".5" fill="#26a641" class="cp" style="animation-delay:.7s"/>
+        <rect x="40" y="0" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:.8s"/><rect x="45" y="0" width="4" height="4" rx=".5" fill="#39d353" class="cp" style="animation-delay:.9s"/>
+        <rect x="50" y="0" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:1s"/><rect x="55" y="0" width="4" height="4" rx=".5" fill="#26a641" class="cp" style="animation-delay:1.1s"/>
+        <rect x="60" y="0" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:1.2s"/><rect x="65" y="0" width="4" height="4" rx=".5" fill="#39d353" class="cp" style="animation-delay:1.3s"/>
+        <!-- Row 2 -->
+        <rect x="0" y="5" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:1.4s"/><rect x="5" y="5" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:1.5s"/>
+        <rect x="10" y="5" width="4" height="4" rx=".5" fill="#26a641" class="cp" style="animation-delay:1.6s"/><rect x="15" y="5" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:1.7s"/>
+        <rect x="20" y="5" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:1.8s"/><rect x="25" y="5" width="4" height="4" rx=".5" fill="#39d353" class="cp" style="animation-delay:1.9s"/>
+        <rect x="30" y="5" width="4" height="4" rx=".5" fill="#26a641" class="cp" style="animation-delay:2s"/><rect x="35" y="5" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:2.1s"/>
+        <rect x="40" y="5" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:2.2s"/><rect x="45" y="5" width="4" height="4" rx=".5" fill="#26a641" class="cp" style="animation-delay:2.3s"/>
+        <rect x="50" y="5" width="4" height="4" rx=".5" fill="#39d353" class="cp" style="animation-delay:2.4s"/><rect x="55" y="5" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:2.5s"/>
+        <rect x="60" y="5" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:2.6s"/><rect x="65" y="5" width="4" height="4" rx=".5" fill="#26a641" class="cp" style="animation-delay:2.7s"/>
+      </g>
+    </g>
+
+    <!-- Bottom motto -->
+    <text x="575" y="340" text-anchor="middle" font-size="6" fill="#64748b" font-style="italic">"Discipline Today, A Better Tomorrow"</text>
   </g>
-  <!-- Diagnostics Panel Glow Halo -->
-  <rect x="740" y="44" width="238" height="294" rx="8" fill="none" stroke="rgba(6,182,212,.08)" stroke-width="2" filter="url(#glow-cyan)"/>
+  <!-- Screen glow -->
+  <rect x="405" y="148" width="338" height="198" rx="3" fill="url(#scr-glow-2)" class="sg"/>
+</g>
 
 
-  <!-- ═══════════════════ MICRO TECHNICAL DETAILS ═══════════════════ -->
-  <text x="24" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">SYS://01</text>
-  <text x="98" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[AI]</text>
-  <text x="135" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[GIT]</text>
-  <text x="175" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[API]</text>
-  <text x="215" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[DB]</text>
-  <text x="250" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[CLOUD]</text>
-  <text x="300" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">[SEC]</text>
+<!-- ═══════════════════ MONITOR 3: BODY IQ PROJECT ═══════════════════ -->
+<g filter="url(#sh)">
+  <!-- Bezel -->
+  <rect x="794" y="164" width="266" height="180" rx="6" fill="#111111"/>
+  <!-- Screen -->
+  <rect x="798" y="168" width="258" height="168" rx="3" fill="url(#scr)"/>
+  <!-- Stand -->
+  <rect x="914" y="344" width="26" height="16" fill="#1a1a1a"/><rect x="901" y="360" width="52" height="6" rx="2" fill="#222"/>
+  <!-- Screen content (clipped) -->
+  <g clip-path="url(#clip-m3)">
+    <!-- Header -->
+    <rect x="798" y="168" width="258" height="18" fill="rgba(139,92,246,.08)"/>
+    <text x="812" y="180" font-size="8" fill="#c4b5fd" font-weight="900">Body IQ</text>
+    <text x="976" y="180" font-size="5" fill="#64748b" text-anchor="end">Health Analysis</text>
+    <!-- Body IQ Subtitle -->
+    <text x="812" y="195" font-size="4.5" fill="#94a3b8">Personalized Fitness, Nutrition and</text>
+    <text x="812" y="202" font-size="4.5" fill="#94a3b8">Transformation Optimization Through</text>
+    <text x="812" y="209" font-size="4.5" fill="#94a3b8">Integrated Health Analysis</text>
 
-  <text x="440" y="352" font-size="6.5" fill="rgba(100,116,139,.3)">ENV://PROD</text>
-  <text x="535" y="352" text-anchor="middle" font-size="6.5" fill="rgba(100,116,139,.3)">BUILD://PASS</text>
-  <text x="630" y="352" font-size="6.5" fill="rgba(100,116,139,.3)">GIT://MAIN</text>
+    <!-- Body silhouette (simplified) -->
+    <g transform="translate(830, 218)" opacity=".4">
+      <circle cx="12" cy="0" r="5" fill="none" stroke="#06b6d4" stroke-width=".8"/>
+      <line x1="12" y1="5" x2="12" y2="28" stroke="#06b6d4" stroke-width=".8"/>
+      <line x1="12" y1="10" x2="2" y2="20" stroke="#06b6d4" stroke-width=".8"/>
+      <line x1="12" y1="10" x2="22" y2="20" stroke="#06b6d4" stroke-width=".8"/>
+      <line x1="12" y1="28" x2="4" y2="42" stroke="#06b6d4" stroke-width=".8"/>
+      <line x1="12" y1="28" x2="20" y2="42" stroke="#06b6d4" stroke-width=".8"/>
+      <!-- Scan lines -->
+      <line x1="-5" y1="5" x2="28" y2="5" stroke="#06b6d4" stroke-width=".3" stroke-dasharray="2 2" class="pf"/>
+      <line x1="-5" y1="18" x2="28" y2="18" stroke="#06b6d4" stroke-width=".3" stroke-dasharray="2 2" class="pf"/>
+      <line x1="-5" y1="32" x2="28" y2="32" stroke="#06b6d4" stroke-width=".3" stroke-dasharray="2 2" class="pf"/>
+    </g>
 
-  <text x="890" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">NODE://AI-SDE</text>
-  <text x="965" y="352" font-size="6.5" fill="rgba(100,116,139,.35)">2027</text>
+    <!-- Metric Cards -->
+    <g transform="translate(880, 218)">
+      <!-- BMI -->
+      <rect x="0" y="0" width="68" height="18" rx="2" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.2)" stroke-width=".4"/>
+      <text x="5" y="8" font-size="4.5" fill="#64748b">BMI</text><text x="60" y="8" font-size="5.5" fill="#3b82f6" font-weight="700" text-anchor="end" class="mp">24.3</text>
+      <rect x="5" y="11" width="40" height="3" rx="1" fill="rgba(59,130,246,.15)"/><rect x="5" y="11" width="28" height="3" rx="1" fill="#3b82f6" opacity=".6"/>
+      <!-- BMR -->
+      <rect x="0" y="22" width="68" height="18" rx="2" fill="rgba(6,182,212,.08)" stroke="rgba(6,182,212,.2)" stroke-width=".4"/>
+      <text x="5" y="30" font-size="4.5" fill="#64748b">BMR</text><text x="60" y="30" font-size="5.5" fill="#06b6d4" font-weight="700" text-anchor="end" class="mp" style="animation-delay:.3s">1780</text>
+      <text x="64" y="30" font-size="3.5" fill="#64748b">kcal</text>
+      <!-- TDEE -->
+      <rect x="0" y="44" width="68" height="18" rx="2" fill="rgba(34,197,94,.08)" stroke="rgba(34,197,94,.2)" stroke-width=".4"/>
+      <text x="5" y="52" font-size="4.5" fill="#64748b">TDEE</text><text x="60" y="52" font-size="5.5" fill="#22c55e" font-weight="700" text-anchor="end" class="mp" style="animation-delay:.6s">2450</text>
+      <text x="64" y="52" font-size="3.5" fill="#64748b">kcal</text>
+      <!-- Body Fat -->
+      <rect x="0" y="66" width="68" height="18" rx="2" fill="rgba(251,146,60,.08)" stroke="rgba(251,146,60,.2)" stroke-width=".4"/>
+      <text x="5" y="74" font-size="4.5" fill="#64748b">Body Fat</text><text x="60" y="74" font-size="5.5" fill="#fb923c" font-weight="700" text-anchor="end" class="mp" style="animation-delay:.9s">18.6</text>
+      <text x="64" y="74" font-size="3.5" fill="#64748b">%</text>
+    </g>
 
-  <!-- Bottom Border Highlight -->
-  <line x1="0" y1="359" x2="1000" y2="359" stroke="rgba(139,92,246,.12)" stroke-width=".5"/>
+    <!-- Feature tags -->
+    <g transform="translate(812, 280)">
+      <rect x="0" y="0" width="45" height="10" rx="2" fill="rgba(139,92,246,.1)"/><text x="22" y="7.5" text-anchor="middle" font-size="4" fill="#c4b5fd">Fitness</text>
+      <rect x="48" y="0" width="50" height="10" rx="2" fill="rgba(6,182,212,.1)"/><text x="73" y="7.5" text-anchor="middle" font-size="4" fill="#06b6d4">Nutrition</text>
+      <rect x="101" y="0" width="55" height="10" rx="2" fill="rgba(34,197,94,.1)"/><text x="128" y="7.5" text-anchor="middle" font-size="4" fill="#22c55e">Progress</text>
+      <rect x="159" y="0" width="55" height="10" rx="2" fill="rgba(251,146,60,.1)"/><text x="186" y="7.5" text-anchor="middle" font-size="4" fill="#fb923c">AI Assistant</text>
+    </g>
+
+    <!-- Neural Network Nodes (subtle behind body) -->
+    <g transform="translate(815, 250)" opacity=".25">
+      <circle class="nn1" cx="0" cy="0" r="2.5" fill="#8b5cf6"/>
+      <circle class="nn2" cx="15" cy="-8" r="2.5" fill="#06b6d4"/>
+      <circle class="nn3" cx="15" cy="8" r="2.5" fill="#3b82f6"/>
+      <circle class="nn4" cx="30" cy="0" r="2.5" fill="#22c55e"/>
+      <line x1="2" y1="0" x2="13" y2="-7" stroke="#8b5cf6" stroke-width=".4"/>
+      <line x1="2" y1="0" x2="13" y2="7" stroke="#8b5cf6" stroke-width=".4"/>
+      <line x1="17" y1="-7" x2="28" y2="0" stroke="#06b6d4" stroke-width=".4"/>
+      <line x1="17" y1="7" x2="28" y2="0" stroke="#3b82f6" stroke-width=".4"/>
+    </g>
+
+    <!-- Bottom text -->
+    <text x="927" y="325" text-anchor="middle" font-size="5" fill="#64748b" font-style="italic">"A Healthier You, A Brighter Tomorrow"</text>
+  </g>
+  <!-- Screen glow -->
+  <rect x="798" y="168" width="258" height="168" rx="3" fill="url(#scr-glow-3)" class="sg"/>
+</g>
+
+
+<!-- ═══════════════════ DESK SURFACE ═══════════════════ -->
+<rect x="0" y="375" width="1200" height="145" fill="url(#desk-g)"/>
+<line x1="0" y1="375" x2="1200" y2="375" stroke="rgba(139,92,246,.08)" stroke-width=".5"/>
+
+<!-- ═══════════════════ KEYBOARD ═══════════════════ -->
+<g filter="url(#sh-sm)">
+  <rect x="435" y="395" width="280" height="75" rx="6" fill="#1a1a1a"/>
+  <!-- RGB underglow -->
+  <rect x="435" y="466" width="280" height="4" rx="2" fill="url(#rgb-kb)" opacity=".5"/>
+  <!-- Key rows (simplified) -->
+  <g opacity=".6">
+    <!-- Row 1 -->
+    <rect x="445" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="460" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="475" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="490" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="505" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="520" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="535" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="550" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="565" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="580" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="595" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="610" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="625" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="640" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="655" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="670" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="685" y="400" width="20" height="10" rx="1.5" fill="#2a2a2a"/>
+    <!-- Row 2 -->
+    <rect x="448" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="463" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="478" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="493" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="508" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="523" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="538" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="553" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="568" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="583" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="598" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="613" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="628" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="643" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="658" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="673" y="413" width="30" height="10" rx="1.5" fill="#2a2a2a"/>
+    <!-- Row 3 (spacebar row) -->
+    <rect x="448" y="426" width="18" height="10" rx="1.5" fill="#2a2a2a"/><rect x="469" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="484" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="499" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="514" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="529" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="544" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="559" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="574" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="589" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="604" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="619" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="634" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="649" y="426" width="55" height="10" rx="1.5" fill="#2a2a2a"/>
+    <!-- Row 4: spacebar -->
+    <rect x="448" y="439" width="25" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="476" y="439" width="15" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="494" y="439" width="15" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="512" y="439" width="120" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="635" y="439" width="15" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="653" y="439" width="15" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="671" y="439" width="15" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="689" y="439" width="15" height="10" rx="1.5" fill="#2a2a2a"/>
+  </g>
+</g>
+
+<!-- Mouse -->
+<g filter="url(#sh-sm)">
+  <rect x="735" y="410" width="35" height="50" rx="12" fill="#1a1a1a" stroke="rgba(59,130,246,.15)" stroke-width=".5"/>
+  <line x1="752" y1="415" x2="752" y2="430" stroke="rgba(59,130,246,.2)" stroke-width=".5"/>
+  <rect x="749" y="418" width="7" height="8" rx="2" fill="rgba(59,130,246,.15)"/>
+</g>
+
+<!-- Coffee Mug -->
+<g transform="translate(390, 420)">
+  <rect x="0" y="5" width="22" height="25" rx="3" fill="#374151" stroke="rgba(139,92,246,.2)" stroke-width=".5"/>
+  <path d="M 22 12 Q 32 12 32 20 Q 32 28 22 28" fill="none" stroke="#374151" stroke-width="2"/>
+  <rect x="3" y="8" width="16" height="4" rx="1" fill="#1e40af" opacity=".4"/>
+</g>
+
+<!-- ═══════════════════ LEFT BOTTOM: IDENTITY CARD ═══════════════════ -->
+<g transform="translate(15, 460)">
+  <text y="0" font-size="14" fill="#f8fafc" font-weight="900" letter-spacing="2">SUMANTH</text>
+  <text y="14" font-size="7" fill="#94a3b8">B.Tech CSE  |  2027</text>
+  <text y="26" font-size="6" fill="#06b6d4" letter-spacing="1">LEARN • BUILD • GROW</text>
+</g>
+
+<!-- ═══════════════════ BOTTOM CENTER: TASKBAR ═══════════════════ -->
+<g transform="translate(475, 482)">
+  <rect x="0" y="0" width="200" height="22" rx="8" fill="rgba(17,17,17,.8)" stroke="rgba(59,130,246,.15)" stroke-width=".5"/>
+  <!-- Icons -->
+  <circle cx="25" cy="11" r="4" fill="rgba(59,130,246,.3)"/><text x="25" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">💻</text>
+  <circle cx="50" cy="11" r="4" fill="rgba(6,182,212,.3)"/><text x="50" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">📊</text>
+  <circle cx="75" cy="11" r="4" fill="rgba(34,197,94,.3)"/><text x="75" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">🔬</text>
+  <circle cx="100" cy="11" r="4" fill="rgba(139,92,246,.3)"/><text x="100" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">🎮</text>
+  <circle cx="125" cy="11" r="4" fill="rgba(251,146,60,.3)"/><text x="125" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">☁️</text>
+  <circle cx="150" cy="11" r="4" fill="rgba(236,72,153,.3)"/><text x="150" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">🏋️</text>
+  <circle cx="175" cy="11" r="4" fill="rgba(248,113,113,.3)"/><text x="175" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">📁</text>
+</g>
+
+<!-- ═══════════════════ BOTTOM RIGHT: MOTIVATIONAL ═══════════════════ -->
+<g transform="translate(1050, 430)">
+  <text y="0" font-size="11" fill="#8b5cf6" font-style="italic" font-weight="700" opacity=".5">Progress</text>
+  <text y="16" font-size="11" fill="#06b6d4" font-style="italic" font-weight="700" opacity=".5">Over</text>
+  <text y="32" font-size="11" fill="#f59e0b" font-style="italic" font-weight="700" opacity=".5">Perfection</text>
+</g>
+
+<!-- Backpack silhouette (bottom left) -->
+<g transform="translate(20, 395)" opacity=".25">
+  <rect x="0" y="15" width="40" height="55" rx="6" fill="#1e293b" stroke="rgba(59,130,246,.15)" stroke-width=".5"/>
+  <rect x="8" y="20" width="24" height="12" rx="2" fill="rgba(59,130,246,.08)"/>
+  <rect x="12" y="35" width="16" height="8" rx="1.5" fill="rgba(59,130,246,.05)"/>
+</g>
+
+<!-- Right side small laptop/tablet -->
+<g transform="translate(1100, 380)" opacity=".35">
+  <rect x="0" y="0" width="70" height="45" rx="3" fill="#111" stroke="rgba(139,92,246,.2)" stroke-width=".5"/>
+  <rect x="3" y="3" width="64" height="36" rx="2" fill="#0d1117"/>
+  <text x="35" y="18" text-anchor="middle" font-size="4.5" fill="#64748b">Same</text>
+  <text x="35" y="26" text-anchor="middle" font-size="4.5" fill="#64748b">Guy</text>
+  <text x="35" y="34" text-anchor="middle" font-size="4.5" fill="#f59e0b" font-weight="700">Bigger</text>
+  <text x="35" y="42" text-anchor="middle" font-size="4.5" fill="#f59e0b" font-weight="700">Goals</text>
+  <rect x="0" y="45" width="70" height="4" rx="1" fill="#222"/>
+</g>
+
+<!-- ═══════════════════ HOLOGRAPHIC FLOATING PANELS ═══════════════════ -->
+<!-- Left: small floating AI panel -->
+<g class="fl" opacity=".35" transform="translate(48, 155)">
+  <rect x="0" y="0" width="35" height="40" rx="3" fill="rgba(10,10,20,.6)" stroke="rgba(59,130,246,.25)" stroke-width=".5"/>
+  <text x="17" y="12" text-anchor="middle" font-size="4.5" fill="#3b82f6" font-weight="700">[AI]</text>
+  <circle class="nn1" cx="10" cy="22" r="2" fill="#3b82f6"/>
+  <circle class="nn2" cx="24" cy="22" r="2" fill="#06b6d4"/>
+  <circle class="nn3" cx="17" cy="32" r="2" fill="#22c55e"/>
+  <line x1="10" y1="22" x2="17" y2="32" stroke="#3b82f6" stroke-width=".3"/><line x1="24" y1="22" x2="17" y2="32" stroke="#06b6d4" stroke-width=".3"/>
+</g>
+
+<!-- Right: small floating CLOUD panel -->
+<g class="fl" style="animation-delay:2s" opacity=".3" transform="translate(1090, 150)">
+  <rect x="0" y="0" width="35" height="35" rx="3" fill="rgba(10,10,20,.6)" stroke="rgba(251,146,60,.25)" stroke-width=".5"/>
+  <text x="17" y="12" text-anchor="middle" font-size="4.5" fill="#fb923c" font-weight="700">[CLOUD]</text>
+  <text x="17" y="22" text-anchor="middle" font-size="3.5" fill="#64748b">AWS</text>
+  <text x="17" y="30" text-anchor="middle" font-size="3.5" fill="#64748b">Lambda</text>
+</g>
+
+<!-- Small game icon float -->
+<g class="fl" style="animation-delay:3s" opacity=".3" transform="translate(1070, 100)">
+  <rect x="0" y="0" width="35" height="28" rx="3" fill="rgba(10,10,20,.6)" stroke="rgba(139,92,246,.25)" stroke-width=".5"/>
+  <text x="17" y="12" text-anchor="middle" font-size="4.5" fill="#c4b5fd" font-weight="700">[GAME]</text>
+  <text x="17" y="22" text-anchor="middle" font-size="3.5" fill="#64748b">Unity · C#</text>
+</g>
+
+<!-- ═══════════════════ SCREEN AMBIENT LIGHT EFFECTS ═══════════════════ -->
+<!-- Monitor 1 light on wall -->
+<ellipse cx="221" cy="160" rx="100" ry="50" fill="url(#scr-glow-1)" opacity=".4" class="sg"/>
+<!-- Monitor 2 light on wall -->
+<ellipse cx="574" cy="140" rx="120" ry="55" fill="url(#scr-glow-2)" opacity=".4" class="sg" style="animation-delay:1s"/>
+<!-- Monitor 3 light on wall -->
+<ellipse cx="927" cy="160" rx="100" ry="50" fill="url(#scr-glow-3)" opacity=".35" class="sg" style="animation-delay:2s"/>
+
 </svg>
