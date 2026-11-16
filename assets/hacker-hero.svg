@@ -6,32 +6,43 @@ text{font-family:'JetBrains Mono','Fira Code',Consolas,monospace}
 
 /* ── Core Animations ── */
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-@keyframes codeScroll{0%{transform:translateY(0)}100%{transform:translateY(-50px)}}
-@keyframes barPulse1{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
-@keyframes barPulse2{0%,100%{transform:scaleY(.7)}50%{transform:scaleY(.4)}}
-@keyframes barPulse3{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(.85)}}
-@keyframes barPulse4{0%,100%{transform:scaleY(.8)}50%{transform:scaleY(.5)}}
+@keyframes codeScroll{0%{transform:translateY(0)}100%{transform:translateY(-60px)}}
+@keyframes barPulse1{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1)}}
+@keyframes barPulse2{0%,100%{transform:scaleY(.7)}50%{transform:scaleY(.35)}}
+@keyframes barPulse3{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(.9)}}
+@keyframes barPulse4{0%,100%{transform:scaleY(.85)}50%{transform:scaleY(.45)}}
+@keyframes barPulse5{0%,100%{transform:scaleY(.6)}50%{transform:scaleY(.95)}}
 @keyframes lineDraw{0%,100%{stroke-dashoffset:80}50%{stroke-dashoffset:0}}
-@keyframes dataDot{0%{offset-distance:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{offset-distance:100%;opacity:0}}
-@keyframes nodePulse{0%,100%{r:2.5;opacity:.4}50%{r:3.5;opacity:1}}
-@keyframes screenGlow{0%,100%{opacity:.2}50%{opacity:.4}}
-@keyframes lampGlow{0%,100%{opacity:.55}50%{opacity:.8}}
-@keyframes starTwinkle{0%,100%{opacity:.15}50%{opacity:.7}}
-@keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
-@keyframes progressBar{0%,100%{width:60px}50%{width:85px}}
-@keyframes metricPulse{0%,100%{opacity:.7}50%{opacity:1}}
-@keyframes contribPulse{0%,100%{opacity:.3}50%{opacity:.7}}
-@keyframes neonPulse{0%,100%{opacity:.6}50%{opacity:1}}
-@keyframes particleDrift{0%{transform:translate(0,0);opacity:.2}50%{opacity:.5}100%{transform:translate(5px,-8px);opacity:.1}}
+@keyframes nodePulse{0%,100%{r:2.5;opacity:.4}50%{r:4;opacity:1}}
+@keyframes screenGlow{0%,100%{opacity:.15}50%{opacity:.4}}
+@keyframes lampGlow{0%,100%{opacity:.5}50%{opacity:.85}}
+@keyframes starTwinkle{0%,100%{opacity:.1}50%{opacity:.8}}
+@keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes metricPulse{0%,100%{opacity:.65}50%{opacity:1}}
+@keyframes contribPulse{0%,100%{opacity:.25}50%{opacity:.75}}
+@keyframes neonPulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes particleDrift{0%{transform:translate(0,0);opacity:.15}50%{opacity:.5}100%{transform:translate(6px,-10px);opacity:.08}}
 @keyframes pipeFlow{0%{stroke-dashoffset:20}100%{stroke-dashoffset:0}}
+@keyframes aurora{0%{transform:translateX(-200px);opacity:.08}50%{opacity:.18}100%{transform:translateX(200px);opacity:.05}}
+@keyframes holoShimmer{0%{opacity:.3}25%{opacity:.6}50%{opacity:.3}75%{opacity:.7}100%{opacity:.3}}
+@keyframes borderGlow{0%{stroke-opacity:.2}50%{stroke-opacity:.7}100%{stroke-opacity:.2}}
+@keyframes dataStream{0%{transform:translateY(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(40px);opacity:0}}
+@keyframes scanLine{0%{transform:translateY(-170px)}100%{transform:translateY(170px)}}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+@keyframes steamRise{0%{transform:translateY(0) scaleX(1);opacity:.3}50%{transform:translateY(-8px) scaleX(1.3);opacity:.15}100%{transform:translateY(-16px) scaleX(.8);opacity:0}}
+@keyframes statusBlink{0%,60%{fill:#22c55e}61%,100%{fill:#22c55e;opacity:.4}}
+@keyframes rotateHue{0%{stop-color:#3b82f6}33%{stop-color:#8b5cf6}66%{stop-color:#06b6d4}100%{stop-color:#3b82f6}}
+@keyframes progressFill{0%,100%{width:55px}50%{width:80px}}
+@keyframes typeChar{0%,100%{opacity:1}50%{opacity:0}}
 
 .cursor{animation:blink 1s step-end infinite}
-.code-scroll{animation:codeScroll 10s linear infinite}
+.code-scroll{animation:codeScroll 12s linear infinite}
 .b1{animation:barPulse1 3.5s ease-in-out infinite;transform-origin:center bottom}
 .b2{animation:barPulse2 4s ease-in-out infinite .4s;transform-origin:center bottom}
 .b3{animation:barPulse3 3s ease-in-out infinite .8s;transform-origin:center bottom}
 .b4{animation:barPulse4 3.5s ease-in-out infinite 1.2s;transform-origin:center bottom}
-.b5{animation:barPulse1 4.5s ease-in-out infinite 1.6s;transform-origin:center bottom}
+.b5{animation:barPulse5 4.2s ease-in-out infinite 1.6s;transform-origin:center bottom}
+.b6{animation:barPulse1 3.8s ease-in-out infinite 2s;transform-origin:center bottom}
 .line-draw{stroke-dasharray:80;animation:lineDraw 4s ease-in-out infinite}
 .nn1{animation:nodePulse 2.8s ease-in-out infinite}
 .nn2{animation:nodePulse 2.8s ease-in-out infinite .5s}
@@ -46,324 +57,379 @@ text{font-family:'JetBrains Mono','Fira Code',Consolas,monospace}
 .np{animation:neonPulse 3s ease-in-out infinite}
 .pd{animation:particleDrift 8s linear infinite}
 .pf{stroke-dasharray:4 4;animation:pipeFlow 2s linear infinite}
+.au{animation:aurora 12s ease-in-out infinite alternate}
+.hs{animation:holoShimmer 4s ease-in-out infinite}
+.bg{animation:borderGlow 3s ease-in-out infinite}
+.ds{animation:dataStream 3s linear infinite}
+.sl{animation:scanLine 4s linear infinite;opacity:.06}
+.br{animation:breathe 6s ease-in-out infinite}
+.sr{animation:steamRise 3s ease-in-out infinite}
+.sb{animation:statusBlink 2s ease-in-out infinite}
 </style>
 
 <!-- Filters -->
-<filter id="glow-b" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/><feFlood flood-color="#3b82f6" flood-opacity=".4"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<filter id="glow-w" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="8"/><feFlood flood-color="#f59e0b" flood-opacity=".25"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<filter id="glow-c" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/><feFlood flood-color="#06b6d4" flood-opacity=".3"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<filter id="glow-g" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3"/><feFlood flood-color="#22c55e" flood-opacity=".35"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<filter id="sh" x="-5%" y="-5%" width="115%" height="120%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity=".5"/></filter>
-<filter id="sh-sm" x="-5%" y="-5%" width="112%" height="115%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".35"/></filter>
+<filter id="glow-b" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/><feFlood flood-color="#3b82f6" flood-opacity=".45"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="glow-w" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="8"/><feFlood flood-color="#f59e0b" flood-opacity=".3"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="glow-c" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/><feFlood flood-color="#06b6d4" flood-opacity=".35"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="glow-g" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/><feFlood flood-color="#22c55e" flood-opacity=".4"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="glow-v" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/><feFlood flood-color="#8b5cf6" flood-opacity=".35"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="sh" x="-5%" y="-5%" width="115%" height="120%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-opacity=".55"/></filter>
+<filter id="sh-sm" x="-5%" y="-5%" width="112%" height="115%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity=".4"/></filter>
+<filter id="blur-soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="12"/></filter>
+<filter id="glow-name" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/><feFlood flood-color="#e2e8f0" flood-opacity=".15"/><feComposite in2="blur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 
 <!-- Gradients -->
-<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#050810"/><stop offset="60%" stop-color="#0a1025"/><stop offset="100%" stop-color="#0f1630"/></linearGradient>
-<linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#101830"/><stop offset="100%" stop-color="#0c1225"/></linearGradient>
-<linearGradient id="desk-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1c1812"/><stop offset="100%" stop-color="#100e08"/></linearGradient>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#020515"/><stop offset="40%" stop-color="#070c20"/><stop offset="100%" stop-color="#0d1430"/></linearGradient>
+<linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e1528"/><stop offset="100%" stop-color="#0a0f20"/></linearGradient>
+<linearGradient id="desk-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1610"/><stop offset="50%" stop-color="#12100a"/><stop offset="100%" stop-color="#0c0a06"/></linearGradient>
 <linearGradient id="scr" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0d1117"/><stop offset="100%" stop-color="#161b22"/></linearGradient>
 <linearGradient id="rgb-kb" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0%" stop-color="#3b82f6"><animate attributeName="stop-color" values="#3b82f6;#8b5cf6;#06b6d4;#3b82f6" dur="5s" repeatCount="indefinite"/></stop>
-  <stop offset="50%" stop-color="#06b6d4"><animate attributeName="stop-color" values="#06b6d4;#3b82f6;#8b5cf6;#06b6d4" dur="5s" repeatCount="indefinite"/></stop>
-  <stop offset="100%" stop-color="#8b5cf6"><animate attributeName="stop-color" values="#8b5cf6;#06b6d4;#3b82f6;#8b5cf6" dur="5s" repeatCount="indefinite"/></stop>
+  <stop offset="0%" stop-color="#3b82f6"><animate attributeName="stop-color" values="#3b82f6;#8b5cf6;#ec4899;#06b6d4;#3b82f6" dur="6s" repeatCount="indefinite"/></stop>
+  <stop offset="33%" stop-color="#06b6d4"><animate attributeName="stop-color" values="#06b6d4;#3b82f6;#8b5cf6;#22c55e;#06b6d4" dur="6s" repeatCount="indefinite"/></stop>
+  <stop offset="66%" stop-color="#8b5cf6"><animate attributeName="stop-color" values="#8b5cf6;#ec4899;#f59e0b;#3b82f6;#8b5cf6" dur="6s" repeatCount="indefinite"/></stop>
+  <stop offset="100%" stop-color="#ec4899"><animate attributeName="stop-color" values="#ec4899;#06b6d4;#3b82f6;#8b5cf6;#ec4899" dur="6s" repeatCount="indefinite"/></stop>
 </linearGradient>
-<radialGradient id="lamp-r" cx="50%" cy="0%" r="80%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".12"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></radialGradient>
-<radialGradient id="scr-glow-1" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".08"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
-<radialGradient id="scr-glow-2" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#06b6d4" stop-opacity=".06"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/></radialGradient>
-<radialGradient id="scr-glow-3" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".06"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+<linearGradient id="holo-border" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#3b82f6"><animate attributeName="stop-color" values="#3b82f6;#06b6d4;#8b5cf6;#3b82f6" dur="4s" repeatCount="indefinite"/></stop>
+  <stop offset="50%" stop-color="#8b5cf6"><animate attributeName="stop-color" values="#8b5cf6;#3b82f6;#06b6d4;#8b5cf6" dur="4s" repeatCount="indefinite"/></stop>
+  <stop offset="100%" stop-color="#06b6d4"><animate attributeName="stop-color" values="#06b6d4;#8b5cf6;#3b82f6;#06b6d4" dur="4s" repeatCount="indefinite"/></stop>
+</linearGradient>
+<radialGradient id="lamp-r" cx="50%" cy="0%" r="80%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".14"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></radialGradient>
+<radialGradient id="scr-glow-1" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".1"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+<radialGradient id="scr-glow-2" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#06b6d4" stop-opacity=".08"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/></radialGradient>
+<radialGradient id="scr-glow-3" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".08"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+<radialGradient id="aurora-g1" cx="30%" cy="50%" r="50%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".06"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+<radialGradient id="aurora-g2" cx="70%" cy="40%" r="50%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".05"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
 
-<!-- Clip paths for monitor screens -->
+<!-- Clip paths -->
 <clipPath id="clip-m1"><rect x="92" y="168" width="258" height="168" rx="2"/></clipPath>
 <clipPath id="clip-m2"><rect x="405" y="148" width="338" height="198" rx="2"/></clipPath>
 <clipPath id="clip-m3"><rect x="798" y="168" width="258" height="168" rx="2"/></clipPath>
 </defs>
 
-<!-- ═══════════════════ BACKGROUND: SKY + CITY ═══════════════════ -->
+<!-- ═══════════════════ BACKGROUND: DEEP SKY + AURORA ═══════════════════ -->
 <rect width="1200" height="520" fill="url(#sky)"/>
 
-<!-- Stars -->
-<circle cx="50" cy="18" r=".8" fill="#e2e8f0" class="st"/><circle cx="145" cy="35" r=".6" fill="#e2e8f0" class="st" style="animation-delay:1s"/>
-<circle cx="280" cy="12" r=".7" fill="#e2e8f0" class="st" style="animation-delay:.5s"/><circle cx="420" cy="25" r=".5" fill="#e2e8f0" class="st" style="animation-delay:2s"/>
-<circle cx="580" cy="8" r=".8" fill="#e2e8f0" class="st" style="animation-delay:1.5s"/><circle cx="750" cy="30" r=".6" fill="#e2e8f0" class="st" style="animation-delay:.8s"/>
-<circle cx="900" cy="15" r=".7" fill="#e2e8f0" class="st" style="animation-delay:2.5s"/><circle cx="1050" cy="22" r=".5" fill="#e2e8f0" class="st" style="animation-delay:1.2s"/>
-<circle cx="1150" cy="10" r=".6" fill="#e2e8f0" class="st" style="animation-delay:3s"/>
+<!-- Aurora ambient lights -->
+<ellipse cx="300" cy="60" rx="300" ry="80" fill="url(#aurora-g1)" class="au"/>
+<ellipse cx="900" cy="50" rx="280" ry="70" fill="url(#aurora-g2)" class="au" style="animation-delay:6s;animation-direction:reverse"/>
 
-<!-- City Skyline Silhouette -->
-<g opacity=".12">
-  <rect x="0" y="55" width="22" height="50" fill="#1e293b" rx="1"/><rect x="26" y="40" width="14" height="65" fill="#1e293b" rx="1"/>
-  <rect x="44" y="48" width="24" height="57" fill="#1e293b" rx="1"/><rect x="72" y="35" width="16" height="70" fill="#1e293b" rx="1"/>
-  <rect x="92" y="52" width="20" height="53" fill="#1e293b" rx="1"/><rect x="116" y="30" width="12" height="75" fill="#1e293b" rx="1"/>
-  <rect x="132" y="45" width="28" height="60" fill="#1e293b" rx="1"/><rect x="164" y="58" width="18" height="47" fill="#1e293b" rx="1"/>
-  <rect x="1020" y="42" width="20" height="63" fill="#1e293b" rx="1"/><rect x="1044" y="55" width="14" height="50" fill="#1e293b" rx="1"/>
-  <rect x="1062" y="35" width="26" height="70" fill="#1e293b" rx="1"/><rect x="1092" y="48" width="18" height="57" fill="#1e293b" rx="1"/>
-  <rect x="1114" y="30" width="12" height="75" fill="#1e293b" rx="1"/><rect x="1130" y="50" width="28" height="55" fill="#1e293b" rx="1"/>
-  <rect x="1162" y="38" width="22" height="67" fill="#1e293b" rx="1"/><rect x="1188" y="55" width="12" height="50" fill="#1e293b" rx="1"/>
-  <!-- Small window lights -->
-  <rect x="48" y="55" width="2" height="2" fill="#f59e0b" opacity=".5"/><rect x="55" y="60" width="2" height="2" fill="#3b82f6" opacity=".4"/>
-  <rect x="78" y="42" width="2" height="2" fill="#f59e0b" opacity=".4"/><rect x="1070" y="45" width="2" height="2" fill="#f59e0b" opacity=".5"/>
-  <rect x="1140" y="58" width="2" height="2" fill="#3b82f6" opacity=".4"/>
+<!-- Stars (more, varied) -->
+<circle cx="35" cy="12" r=".9" fill="#e2e8f0" class="st"/>
+<circle cx="95" cy="28" r=".5" fill="#c4b5fd" class="st" style="animation-delay:.8s"/>
+<circle cx="145" cy="8" r=".7" fill="#e2e8f0" class="st" style="animation-delay:1s"/>
+<circle cx="220" cy="35" r=".4" fill="#bfdbfe" class="st" style="animation-delay:2.2s"/>
+<circle cx="280" cy="12" r=".8" fill="#e2e8f0" class="st" style="animation-delay:.5s"/>
+<circle cx="370" cy="20" r=".5" fill="#c4b5fd" class="st" style="animation-delay:3s"/>
+<circle cx="420" cy="25" r=".6" fill="#e2e8f0" class="st" style="animation-delay:2s"/>
+<circle cx="520" cy="6" r=".7" fill="#bfdbfe" class="st" style="animation-delay:1.3s"/>
+<circle cx="580" cy="8" r=".9" fill="#e2e8f0" class="st" style="animation-delay:1.5s"/>
+<circle cx="650" cy="18" r=".4" fill="#c4b5fd" class="st" style="animation-delay:2.8s"/>
+<circle cx="750" cy="30" r=".7" fill="#e2e8f0" class="st" style="animation-delay:.8s"/>
+<circle cx="830" cy="10" r=".5" fill="#bfdbfe" class="st" style="animation-delay:3.2s"/>
+<circle cx="900" cy="15" r=".8" fill="#e2e8f0" class="st" style="animation-delay:2.5s"/>
+<circle cx="980" cy="28" r=".4" fill="#c4b5fd" class="st" style="animation-delay:1.7s"/>
+<circle cx="1050" cy="22" r=".6" fill="#e2e8f0" class="st" style="animation-delay:1.2s"/>
+<circle cx="1150" cy="10" r=".7" fill="#e2e8f0" class="st" style="animation-delay:3s"/>
+<circle cx="1100" cy="35" r=".3" fill="#bfdbfe" class="st" style="animation-delay:2.1s"/>
+
+<!-- City Skyline (enhanced depth) -->
+<g opacity=".1">
+  <rect x="0" y="50" width="24" height="55" fill="#1e293b" rx="1"/><rect x="28" y="35" width="16" height="70" fill="#1e293b" rx="1"/>
+  <rect x="48" y="42" width="26" height="63" fill="#1e293b" rx="1"/><rect x="78" y="30" width="18" height="75" fill="#1e293b" rx="1"/>
+  <rect x="100" y="48" width="22" height="57" fill="#1e293b" rx="1"/><rect x="126" y="25" width="14" height="80" fill="#1e293b" rx="1"/>
+  <rect x="144" y="40" width="30" height="65" fill="#1e293b" rx="1"/><rect x="178" y="52" width="20" height="53" fill="#1e293b" rx="1"/>
+  <rect x="202" y="60" width="12" height="45" fill="#1e293b" rx="1"/>
+  <rect x="990" y="38" width="16" height="67" fill="#1e293b" rx="1"/><rect x="1010" y="48" width="22" height="57" fill="#1e293b" rx="1"/>
+  <rect x="1036" y="32" width="14" height="73" fill="#1e293b" rx="1"/><rect x="1054" y="50" width="28" height="55" fill="#1e293b" rx="1"/>
+  <rect x="1086" y="35" width="18" height="70" fill="#1e293b" rx="1"/><rect x="1108" y="28" width="14" height="77" fill="#1e293b" rx="1"/>
+  <rect x="1126" y="45" width="30" height="60" fill="#1e293b" rx="1"/><rect x="1160" y="35" width="22" height="70" fill="#1e293b" rx="1"/>
+  <rect x="1186" y="50" width="14" height="55" fill="#1e293b" rx="1"/>
+  <!-- Window lights -->
+  <rect x="55" y="50" width="2" height="2" fill="#f59e0b" opacity=".6"/><rect x="60" y="56" width="2" height="2" fill="#3b82f6" opacity=".5"/>
+  <rect x="85" y="38" width="2" height="2" fill="#f59e0b" opacity=".5"/><rect x="135" y="34" width="2" height="2" fill="#06b6d4" opacity=".4"/>
+  <rect x="1020" y="55" width="2" height="2" fill="#f59e0b" opacity=".6"/><rect x="1065" y="58" width="2" height="2" fill="#3b82f6" opacity=".4"/>
+  <rect x="1095" y="42" width="2" height="2" fill="#8b5cf6" opacity=".4"/><rect x="1140" y="55" width="2" height="2" fill="#f59e0b" opacity=".5"/>
 </g>
 
-<!-- Floating Particles -->
-<circle cx="200" cy="120" r="1" fill="#3b82f6" class="pd"/><circle cx="600" cy="80" r=".8" fill="#06b6d4" class="pd" style="animation-delay:3s"/>
-<circle cx="950" cy="100" r="1" fill="#8b5cf6" class="pd" style="animation-delay:5s"/><circle cx="400" cy="400" r=".7" fill="#f59e0b" class="pd" style="animation-delay:2s"/>
+<!-- Floating Particles (more) -->
+<circle cx="120" cy="130" r="1" fill="#3b82f6" class="pd"/><circle cx="350" cy="90" r=".7" fill="#8b5cf6" class="pd" style="animation-delay:2s"/>
+<circle cx="600" cy="75" r=".9" fill="#06b6d4" class="pd" style="animation-delay:3s"/><circle cx="850" cy="110" r="1" fill="#8b5cf6" class="pd" style="animation-delay:5s"/>
+<circle cx="950" cy="85" r=".6" fill="#3b82f6" class="pd" style="animation-delay:4s"/><circle cx="200" cy="400" r=".8" fill="#f59e0b" class="pd" style="animation-delay:6s"/>
+<circle cx="1000" cy="400" r=".7" fill="#ec4899" class="pd" style="animation-delay:7s"/>
 
-<!-- ═══════════════════ WALL SURFACE ═══════════════════ -->
-<rect x="0" y="100" width="1200" height="280" fill="url(#wall)" opacity=".7"/>
+<!-- ═══════════════════ WALL ═══════════════════ -->
+<rect x="0" y="100" width="1200" height="280" fill="url(#wall)" opacity=".75"/>
 
 <!-- ═══════════════════ WALL DECORATION: LEFT POSTER ═══════════════════ -->
 <g filter="url(#sh-sm)">
-  <rect x="14" y="25" width="115" height="90" rx="4" fill="#0c1020" stroke="rgba(59,130,246,.25)" stroke-width=".8"/>
-  <text x="72" y="48" text-anchor="middle" font-size="8.5" fill="#e2e8f0" font-weight="900">DISCIPLINE</text>
-  <text x="72" y="59" text-anchor="middle" font-size="8.5" fill="#e2e8f0" font-weight="900">TODAY</text>
-  <text x="72" y="70" text-anchor="middle" font-size="8.5" fill="#06b6d4" font-weight="900">CREATES</text>
-  <text x="72" y="81" text-anchor="middle" font-size="8.5" fill="#e2e8f0" font-weight="900">FREEDOM</text>
-  <text x="72" y="92" text-anchor="middle" font-size="8.5" fill="#f59e0b" font-weight="900">TOMORROW</text>
-  <text x="72" y="108" text-anchor="middle" font-size="5.5" fill="#64748b" font-weight="400">— SUMANTH</text>
+  <rect x="14" y="22" width="120" height="95" rx="5" fill="#080c18" stroke="rgba(59,130,246,.3)" stroke-width="1"/>
+  <rect x="14" y="22" width="120" height="2" rx="1" fill="url(#holo-border)" opacity=".4" class="hs"/>
+  <text x="74" y="46" text-anchor="middle" font-size="9" fill="#f8fafc" font-weight="900" letter-spacing=".5">DISCIPLINE</text>
+  <text x="74" y="58" text-anchor="middle" font-size="9" fill="#f8fafc" font-weight="900" letter-spacing=".5">TODAY</text>
+  <text x="74" y="70" text-anchor="middle" font-size="9" fill="#06b6d4" font-weight="900" letter-spacing=".5">CREATES</text>
+  <text x="74" y="82" text-anchor="middle" font-size="9" fill="#f8fafc" font-weight="900" letter-spacing=".5">FREEDOM</text>
+  <text x="74" y="94" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="900" letter-spacing=".5">TOMORROW</text>
+  <text x="74" y="110" text-anchor="middle" font-size="5.5" fill="#64748b" font-weight="400">— SUMANTH</text>
 </g>
 
-<!-- ═══════════════════ TECH SKILL BADGES ═══════════════════ -->
+<!-- ═══════════════════ TECH SKILL BADGES (Enhanced) ═══════════════════ -->
 <g>
   <!-- Row 1 -->
-  <rect x="148" y="28" width="52" height="14" rx="3" fill="rgba(59,130,246,.12)" stroke="rgba(59,130,246,.35)" stroke-width=".5"/>
-  <text x="174" y="38" text-anchor="middle" font-size="7" fill="#3b82f6" font-weight="700">Python</text>
-  <rect x="206" y="28" width="40" height="14" rx="3" fill="rgba(248,113,113,.12)" stroke="rgba(248,113,113,.35)" stroke-width=".5"/>
-  <text x="226" y="38" text-anchor="middle" font-size="7" fill="#f87171" font-weight="700">Java</text>
+  <rect x="150" y="25" width="55" height="15" rx="4" fill="rgba(59,130,246,.12)" stroke="rgba(59,130,246,.4)" stroke-width=".6"/>
+  <text x="177" y="36" text-anchor="middle" font-size="7" fill="#3b82f6" font-weight="700">Python</text>
+  <rect x="210" y="25" width="42" height="15" rx="4" fill="rgba(248,113,113,.12)" stroke="rgba(248,113,113,.4)" stroke-width=".6"/>
+  <text x="231" y="36" text-anchor="middle" font-size="7" fill="#f87171" font-weight="700">Java</text>
+  <rect x="258" y="25" width="42" height="15" rx="4" fill="rgba(34,197,94,.12)" stroke="rgba(34,197,94,.4)" stroke-width=".6"/>
+  <text x="279" y="36" text-anchor="middle" font-size="7" fill="#22c55e" font-weight="700">C/C++</text>
   <!-- Row 2 -->
-  <rect x="148" y="48" width="138" height="14" rx="3" fill="rgba(6,182,212,.1)" stroke="rgba(6,182,212,.3)" stroke-width=".5"/>
-  <text x="217" y="58" text-anchor="middle" font-size="7" fill="#06b6d4" font-weight="600">Data Structures &amp; Algorithms</text>
+  <rect x="150" y="45" width="145" height="15" rx="4" fill="rgba(6,182,212,.08)" stroke="rgba(6,182,212,.3)" stroke-width=".6"/>
+  <text x="222" y="56" text-anchor="middle" font-size="7" fill="#06b6d4" font-weight="600">Data Structures &amp; Algorithms</text>
   <!-- Row 3 -->
-  <rect x="148" y="68" width="95" height="14" rx="3" fill="rgba(34,197,94,.1)" stroke="rgba(34,197,94,.3)" stroke-width=".5"/>
-  <text x="196" y="78" text-anchor="middle" font-size="7" fill="#22c55e" font-weight="600">Web Development</text>
-  <rect x="250" y="68" width="88" height="14" rx="3" fill="rgba(168,85,247,.1)" stroke="rgba(168,85,247,.3)" stroke-width=".5"/>
-  <text x="294" y="78" text-anchor="middle" font-size="7" fill="#a855f7" font-weight="600">Machine Learning</text>
+  <rect x="150" y="65" width="100" height="15" rx="4" fill="rgba(34,197,94,.08)" stroke="rgba(34,197,94,.3)" stroke-width=".6"/>
+  <text x="200" y="76" text-anchor="middle" font-size="7" fill="#22c55e" font-weight="600">Web Development</text>
+  <rect x="256" y="65" width="92" height="15" rx="4" fill="rgba(168,85,247,.08)" stroke="rgba(168,85,247,.3)" stroke-width=".6"/>
+  <text x="302" y="76" text-anchor="middle" font-size="7" fill="#a855f7" font-weight="600">Machine Learning</text>
   <!-- Row 4 -->
-  <rect x="148" y="88" width="68" height="14" rx="3" fill="rgba(251,146,60,.1)" stroke="rgba(251,146,60,.3)" stroke-width=".5"/>
-  <text x="182" y="98" text-anchor="middle" font-size="7" fill="#fb923c" font-weight="600">Cloud (AWS)</text>
-  <rect x="222" y="88" width="120" height="14" rx="3" fill="rgba(139,92,246,.1)" stroke="rgba(139,92,246,.3)" stroke-width=".5"/>
-  <text x="282" y="98" text-anchor="middle" font-size="7" fill="#c4b5fd" font-weight="600">Unity Game Development</text>
+  <rect x="150" y="85" width="70" height="15" rx="4" fill="rgba(251,146,60,.08)" stroke="rgba(251,146,60,.3)" stroke-width=".6"/>
+  <text x="185" y="96" text-anchor="middle" font-size="7" fill="#fb923c" font-weight="600">Cloud (AWS)</text>
+  <rect x="226" y="85" width="125" height="15" rx="4" fill="rgba(139,92,246,.08)" stroke="rgba(139,92,246,.3)" stroke-width=".6"/>
+  <text x="288" y="96" text-anchor="middle" font-size="7" fill="#c4b5fd" font-weight="600">Unity Game Development</text>
   <!-- Row 5 -->
-  <rect x="148" y="108" width="82" height="14" rx="3" fill="rgba(100,116,139,.1)" stroke="rgba(100,116,139,.3)" stroke-width=".5"/>
-  <text x="189" y="118" text-anchor="middle" font-size="7" fill="#94a3b8" font-weight="600">System Design</text>
-  <rect x="236" y="108" width="78" height="14" rx="3" fill="rgba(59,130,246,.1)" stroke="rgba(59,130,246,.3)" stroke-width=".5"/>
-  <text x="275" y="118" text-anchor="middle" font-size="7" fill="#60a5fa" font-weight="600">SQL &amp; Databases</text>
+  <rect x="150" y="105" width="86" height="15" rx="4" fill="rgba(100,116,139,.08)" stroke="rgba(100,116,139,.3)" stroke-width=".6"/>
+  <text x="193" y="116" text-anchor="middle" font-size="7" fill="#94a3b8" font-weight="600">System Design</text>
+  <rect x="242" y="105" width="82" height="15" rx="4" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.3)" stroke-width=".6"/>
+  <text x="283" y="116" text-anchor="middle" font-size="7" fill="#60a5fa" font-weight="600">SQL &amp; Databases</text>
 </g>
 
-<!-- ═══════════════════ CENTER WALL PLAQUE: SUMANTH ═══════════════════ -->
-<g filter="url(#sh-sm)">
-  <rect x="420" y="15" width="310" height="120" rx="6" fill="#0a0e1c" stroke="rgba(59,130,246,.3)" stroke-width="1"/>
-  <rect x="420" y="15" width="310" height="1.5" rx="1" fill="url(#rgb-kb)" opacity=".5"/>
+<!-- ═══════════════════ CENTER WALL PLAQUE: SUMANTH (PREMIUM) ═══════════════════ -->
+<g filter="url(#sh)">
+  <!-- Outer glow backdrop -->
+  <rect x="415" y="10" width="320" height="128" rx="8" fill="#060a16" filter="url(#blur-soft)" opacity=".5"/>
+  <!-- Main card -->
+  <rect x="418" y="12" width="314" height="124" rx="7" fill="#080c1a" stroke="url(#holo-border)" stroke-width="1.2" class="bg"/>
+  <!-- Top accent bar -->
+  <rect x="418" y="12" width="314" height="2" rx="1" fill="url(#rgb-kb)" opacity=".6"/>
+  <!-- Bottom accent bar -->
+  <rect x="418" y="134" width="314" height="1.5" rx="1" fill="url(#rgb-kb)" opacity=".35"/>
+  <!-- Corner accents -->
+  <rect x="420" y="14" width="16" height="1" fill="rgba(59,130,246,.4)" class="hs"/>
+  <rect x="420" y="14" width="1" height="16" fill="rgba(59,130,246,.4)" class="hs"/>
+  <rect x="714" y="14" width="16" height="1" fill="rgba(6,182,212,.4)" class="hs" style="animation-delay:1s"/>
+  <rect x="730" y="14" width="1" height="16" fill="rgba(6,182,212,.4)" class="hs" style="animation-delay:1s"/>
+  <rect x="420" y="130" width="16" height="1" fill="rgba(139,92,246,.4)" class="hs" style="animation-delay:2s"/>
+  <rect x="420" y="120" width="1" height="16" fill="rgba(139,92,246,.4)" class="hs" style="animation-delay:2s"/>
+  <rect x="714" y="130" width="16" height="1" fill="rgba(6,182,212,.4)" class="hs" style="animation-delay:3s"/>
+  <rect x="730" y="120" width="1" height="16" fill="rgba(6,182,212,.4)" class="hs" style="animation-delay:3s"/>
+  <!-- Status indicator -->
+  <circle cx="440" cy="28" r="3" class="sb"/>
+  <text x="448" y="31" font-size="5.5" fill="#22c55e" font-weight="600">ONLINE</text>
+  <!-- Timestamp -->
+  <text x="710" y="31" font-size="5" fill="#475569" text-anchor="end">v2027.dev</text>
   <!-- Name -->
-  <text x="575" y="50" text-anchor="middle" font-size="22" fill="#f8fafc" font-weight="900" letter-spacing="3">SUMANTH</text>
+  <text x="575" y="55" text-anchor="middle" font-size="24" fill="#f8fafc" font-weight="900" letter-spacing="4" filter="url(#glow-name)">SUMANTH</text>
+  <!-- Subtle name underline -->
+  <line x1="500" y1="60" x2="650" y2="60" stroke="url(#holo-border)" stroke-width=".5" opacity=".3"/>
   <!-- Education -->
-  <text x="575" y="66" text-anchor="middle" font-size="8.5" fill="#94a3b8">B.Tech CSE  |  2027</text>
+  <text x="575" y="74" text-anchor="middle" font-size="8.5" fill="#94a3b8" font-weight="500">B.Tech CSE  |  2027</text>
   <!-- Institution -->
-  <text x="575" y="82" text-anchor="middle" font-size="7" fill="#64748b">Nalla Narasimha Reddy Group of Institutions</text>
-  <text x="575" y="93" text-anchor="middle" font-size="7" fill="#64748b">Hyderabad, Telangana</text>
-  <!-- Identity Tags -->
-  <text x="575" y="112" text-anchor="middle" font-size="6.5" fill="#06b6d4" font-weight="600" letter-spacing="1">AI ENGINEERING · DATA SCIENCE · SOFTWARE DEVELOPMENT</text>
-  <text x="575" y="124" text-anchor="middle" font-size="6.5" fill="#8b5cf6" font-weight="600" letter-spacing="1">CLOUD · GAME DEV · MACHINE LEARNING · DSA</text>
+  <text x="575" y="88" text-anchor="middle" font-size="7" fill="#64748b">Nalla Narasimha Reddy Group of Institutions</text>
+  <text x="575" y="100" text-anchor="middle" font-size="6.5" fill="#64748b">Hyderabad, Telangana</text>
+  <!-- Identity Tags Row 1 -->
+  <text x="575" y="116" text-anchor="middle" font-size="6.5" fill="#06b6d4" font-weight="600" letter-spacing="1">AI ENGINEERING · DATA SCIENCE · SOFTWARE DEV</text>
+  <!-- Identity Tags Row 2 -->
+  <text x="575" y="128" text-anchor="middle" font-size="6.5" fill="#8b5cf6" font-weight="600" letter-spacing="1">CLOUD · GAME DEV · MACHINE LEARNING · DSA</text>
 </g>
 
-<!-- ═══════════════════ RIGHT WALL: GOALS + NEON ═══════════════════ -->
-<!-- Goals List -->
+<!-- ═══════════════════ RIGHT WALL: GOALS + NEON (Enhanced) ═══════════════════ -->
 <g filter="url(#sh-sm)">
-  <rect x="780" y="20" width="140" height="110" rx="4" fill="#0a0e1c" stroke="rgba(251,146,60,.25)" stroke-width=".8"/>
-  <text x="850" y="37" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="900" letter-spacing="1">GOALS</text>
-  <line x1="792" y1="42" x2="908" y2="42" stroke="rgba(251,146,60,.2)" stroke-width=".5"/>
-  <text x="798" y="56" font-size="7" fill="#94a3b8"><tspan fill="#22c55e">✓</tspan> Master Python &amp; DSA</text>
-  <text x="798" y="68" font-size="7" fill="#94a3b8"><tspan fill="#22c55e">✓</tspan> Build Real Projects</text>
-  <text x="798" y="80" font-size="7" fill="#94a3b8"><tspan fill="#22c55e">✓</tspan> Explore AI &amp; Data</text>
-  <text x="798" y="92" font-size="7" fill="#94a3b8"><tspan fill="#06b6d4">◻</tspan> Get Placed (2027)</text>
-  <text x="798" y="104" font-size="7" fill="#94a3b8"><tspan fill="#06b6d4">◻</tspan> Continuous Learning</text>
-  <text x="798" y="116" font-size="7" fill="#94a3b8"><tspan fill="#06b6d4">◻</tspan> Make Impact</text>
+  <rect x="780" y="17" width="145" height="115" rx="5" fill="#080c1a" stroke="rgba(251,146,60,.3)" stroke-width=".8"/>
+  <rect x="780" y="17" width="145" height="2" rx="1" fill="rgba(251,146,60,.25)"/>
+  <text x="852" y="36" text-anchor="middle" font-size="9.5" fill="#f59e0b" font-weight="900" letter-spacing="1.5">GOALS</text>
+  <line x1="794" y1="42" x2="912" y2="42" stroke="rgba(251,146,60,.2)" stroke-width=".5"/>
+  <text x="800" y="57" font-size="7" fill="#94a3b8"><tspan fill="#22c55e">✓</tspan> Master Python &amp; DSA</text>
+  <text x="800" y="69" font-size="7" fill="#94a3b8"><tspan fill="#22c55e">✓</tspan> Build Real Projects</text>
+  <text x="800" y="81" font-size="7" fill="#94a3b8"><tspan fill="#22c55e">✓</tspan> Explore AI &amp; Data</text>
+  <text x="800" y="93" font-size="7" fill="#94a3b8"><tspan fill="#06b6d4">◻</tspan> Get Placed (2027)</text>
+  <text x="800" y="105" font-size="7" fill="#94a3b8"><tspan fill="#06b6d4">◻</tspan> Continuous Learning</text>
+  <text x="800" y="117" font-size="7" fill="#94a3b8"><tspan fill="#06b6d4">◻</tspan> Make an Impact</text>
 </g>
 
-<!-- Neon Signs (Right side) -->
-<text x="950" y="40" font-size="9" fill="#22c55e" font-weight="700" class="np" filter="url(#glow-g)">Good</text>
-<text x="950" y="52" font-size="9" fill="#3b82f6" font-weight="700" class="np" style="animation-delay:.5s" filter="url(#glow-b)">Code</text>
-<text x="950" y="64" font-size="9" fill="#f59e0b" font-weight="700" class="np" style="animation-delay:1s" filter="url(#glow-w)">Good</text>
-<text x="950" y="76" font-size="9" fill="#06b6d4" font-weight="700" class="np" style="animation-delay:1.5s" filter="url(#glow-c)">Health</text>
-<text x="950" y="88" font-size="9" fill="#22c55e" font-weight="700" class="np" style="animation-delay:2s" filter="url(#glow-g)">Good</text>
-<text x="950" y="100" font-size="9" fill="#f59e0b" font-weight="700" class="np" style="animation-delay:2.5s" filter="url(#glow-w)">Life</text>
+<!-- Neon Signs (Right side, enhanced glow) -->
+<text x="952" y="38" font-size="10" fill="#22c55e" font-weight="700" class="np" filter="url(#glow-g)">Good</text>
+<text x="952" y="52" font-size="10" fill="#3b82f6" font-weight="700" class="np" style="animation-delay:.5s" filter="url(#glow-b)">Code</text>
+<text x="952" y="66" font-size="10" fill="#f59e0b" font-weight="700" class="np" style="animation-delay:1s" filter="url(#glow-w)">Good</text>
+<text x="952" y="80" font-size="10" fill="#06b6d4" font-weight="700" class="np" style="animation-delay:1.5s" filter="url(#glow-c)">Health</text>
+<text x="952" y="94" font-size="10" fill="#22c55e" font-weight="700" class="np" style="animation-delay:2s" filter="url(#glow-g)">Good</text>
+<text x="952" y="108" font-size="10" fill="#f59e0b" font-weight="700" class="np" style="animation-delay:2.5s" filter="url(#glow-w)">Life</text>
 
 <!-- Right neon: Dream Learn Build Grow -->
-<g transform="translate(1088,30)">
-  <text y="0" font-size="9" fill="#ec4899" font-weight="700" font-style="italic" class="np">Dream</text>
-  <text y="14" font-size="9" fill="#8b5cf6" font-weight="700" font-style="italic" class="np" style="animation-delay:.6s">Learn</text>
-  <text y="28" font-size="9" fill="#3b82f6" font-weight="700" font-style="italic" class="np" style="animation-delay:1.2s">Build</text>
-  <text y="42" font-size="9" fill="#06b6d4" font-weight="700" font-style="italic" class="np" style="animation-delay:1.8s">Grow</text>
-  <text y="58" font-size="7" fill="#64748b" font-style="italic">Sumanth</text>
+<g transform="translate(1090,28)">
+  <text y="0" font-size="10" fill="#ec4899" font-weight="700" font-style="italic" class="np" filter="url(#glow-v)">Dream</text>
+  <text y="15" font-size="10" fill="#8b5cf6" font-weight="700" font-style="italic" class="np" style="animation-delay:.6s" filter="url(#glow-v)">Learn</text>
+  <text y="30" font-size="10" fill="#3b82f6" font-weight="700" font-style="italic" class="np" style="animation-delay:1.2s" filter="url(#glow-b)">Build</text>
+  <text y="45" font-size="10" fill="#06b6d4" font-weight="700" font-style="italic" class="np" style="animation-delay:1.8s" filter="url(#glow-c)">Grow</text>
+  <text y="62" font-size="7" fill="#475569" font-style="italic">— Sumanth</text>
 </g>
 
-<!-- ═══════════════════ SHELF ═══════════════════ -->
-<rect x="135" y="130" width="210" height="4" rx="1" fill="#1a1510" filter="url(#sh-sm)"/>
-<!-- Books on shelf -->
-<rect x="140" y="105" width="8" height="25" rx="1" fill="#3b82f6"/><text x="144" y="120" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,144,120)">PYTHON</text>
-<rect x="150" y="108" width="8" height="22" rx="1" fill="#22c55e"/><text x="154" y="120" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,154,120)">DSA</text>
-<rect x="160" y="106" width="10" height="24" rx="1" fill="#f59e0b"/><text x="165" y="120" font-size="3.5" fill="#0f172a" transform="rotate(-90,165,120)">ML</text>
-<rect x="172" y="110" width="8" height="20" rx="1" fill="#ec4899"/><text x="176" y="122" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,176,122)">DATA</text>
-<rect x="182" y="107" width="8" height="23" rx="1" fill="#8b5cf6"/><text x="186" y="120" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,186,120)">SQL</text>
-<rect x="192" y="109" width="10" height="21" rx="1" fill="#06b6d4"/><text x="197" y="122" font-size="3.5" fill="#0f172a" transform="rotate(-90,197,122)">CLOUD</text>
+<!-- ═══════════════════ SHELF (Enhanced) ═══════════════════ -->
+<rect x="135" y="130" width="215" height="5" rx="1.5" fill="#1a1510" filter="url(#sh-sm)"/>
+<!-- Books on shelf (more detailed) -->
+<rect x="140" y="103" width="9" height="27" rx="1.5" fill="#3b82f6"/><text x="144" y="120" font-size="3.8" fill="#e2e8f0" transform="rotate(-90,144,120)">PYTHON</text>
+<rect x="151" y="106" width="9" height="24" rx="1.5" fill="#22c55e"/><text x="155" y="120" font-size="3.8" fill="#e2e8f0" transform="rotate(-90,155,120)">DSA</text>
+<rect x="162" y="104" width="11" height="26" rx="1.5" fill="#f59e0b"/><text x="167" y="120" font-size="3.5" fill="#0f172a" transform="rotate(-90,167,120)">ML</text>
+<rect x="175" y="108" width="9" height="22" rx="1.5" fill="#ec4899"/><text x="179" y="122" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,179,122)">DATA</text>
+<rect x="186" y="105" width="9" height="25" rx="1.5" fill="#8b5cf6"/><text x="190" y="120" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,190,120)">SQL</text>
+<rect x="197" y="107" width="11" height="23" rx="1.5" fill="#06b6d4"/><text x="202" y="122" font-size="3.5" fill="#0f172a" transform="rotate(-90,202,122)">CLOUD</text>
+<rect x="210" y="106" width="9" height="24" rx="1.5" fill="#ef4444"/><text x="214" y="120" font-size="3.5" fill="#e2e8f0" transform="rotate(-90,214,120)">JAVA</text>
 
-<!-- Small figurine on shelf -->
-<circle cx="225" cy="118" r="5" fill="#1e40af" opacity=".7"/>
-<rect x="222" y="123" width="6" height="7" rx="1" fill="#1e40af" opacity=".7"/>
+<!-- Figurine on shelf -->
+<circle cx="238" cy="116" r="5.5" fill="#1e40af" opacity=".7"/>
+<rect x="234" y="121" width="7" height="9" rx="1.5" fill="#1e40af" opacity=".7"/>
 
-<!-- Plant on left shelf edge -->
-<circle cx="320" cy="118" r="8" fill="#166534" opacity=".55"/>
-<circle cx="316" cy="114" r="6" fill="#15803d" opacity=".55"/>
-<circle cx="324" cy="112" r="5" fill="#22c55e" opacity=".4"/>
-<rect x="318" y="120" width="4" height="10" fill="#78350f" opacity=".6"/>
+<!-- Plant on left shelf -->
+<circle cx="325" cy="116" r="9" fill="#166534" opacity=".5"/>
+<circle cx="320" cy="112" r="7" fill="#15803d" opacity=".5"/>
+<circle cx="328" cy="110" r="5.5" fill="#22c55e" opacity=".35"/>
+<rect x="323" y="118" width="4" height="12" fill="#78350f" opacity=".55"/>
 
 <!-- Right shelf -->
-<rect x="940" y="115" width="140" height="4" rx="1" fill="#1a1510" filter="url(#sh-sm)"/>
-<!-- Items on right shelf -->
-<rect x="945" y="100" width="8" height="15" rx="1" fill="#ef4444"/>
-<rect x="955" y="98" width="8" height="17" rx="1" fill="#3b82f6"/>
-<rect x="965" y="101" width="8" height="14" rx="1" fill="#f59e0b"/>
-<!-- Small plant right -->
-<circle cx="1060" cy="103" r="7" fill="#166534" opacity=".5"/>
-<circle cx="1056" cy="100" r="5" fill="#22c55e" opacity=".4"/>
-<rect x="1058" y="105" width="3" height="10" fill="#78350f" opacity=".5"/>
+<rect x="940" y="115" width="145" height="5" rx="1.5" fill="#1a1510" filter="url(#sh-sm)"/>
+<rect x="945" y="98" width="9" height="17" rx="1.5" fill="#ef4444"/>
+<rect x="956" y="96" width="9" height="19" rx="1.5" fill="#3b82f6"/>
+<rect x="967" y="99" width="9" height="16" rx="1.5" fill="#f59e0b"/>
+<rect x="978" y="97" width="9" height="18" rx="1.5" fill="#22c55e"/>
+<!-- Right plant -->
+<circle cx="1062" cy="102" r="8" fill="#166534" opacity=".45"/>
+<circle cx="1058" cy="98" r="6" fill="#22c55e" opacity=".35"/>
+<rect x="1060" y="104" width="3.5" height="11" fill="#78350f" opacity=".5"/>
 
 
-<!-- ═══════════════════ DESK LAMP (LEFT) ═══════════════════ -->
+<!-- ═══════════════════ DESK LAMP ═══════════════════ -->
 <g class="lg">
-  <rect x="42" y="250" width="3" height="120" fill="#374151" rx="1"/>
-  <rect x="28" y="240" width="30" height="14" rx="4" fill="#374151"/>
-  <ellipse cx="43" cy="380" rx="20" ry="5" fill="#374151"/>
-  <!-- Lamp light cone -->
-  <rect x="20" y="255" width="46" height="120" rx="0" fill="url(#lamp-r)" class="lg"/>
+  <rect x="42" y="248" width="3.5" height="125" fill="#374151" rx="1"/>
+  <rect x="26" y="238" width="34" height="15" rx="5" fill="#374151"/>
+  <ellipse cx="43" cy="380" rx="22" ry="6" fill="#374151"/>
+  <rect x="18" y="253" width="50" height="125" rx="0" fill="url(#lamp-r)" class="lg"/>
 </g>
 
 
 <!-- ═══════════════════ MONITOR 1: AI / SOFTWARE DEVELOPMENT ═══════════════════ -->
 <g filter="url(#sh)">
-  <!-- Bezel -->
   <rect x="88" y="164" width="266" height="180" rx="6" fill="#111111"/>
-  <!-- Screen -->
   <rect x="92" y="168" width="258" height="168" rx="3" fill="url(#scr)"/>
-  <!-- Stand -->
   <rect x="208" y="344" width="26" height="16" fill="#1a1a1a"/><rect x="195" y="360" width="52" height="6" rx="2" fill="#222"/>
-  <!-- Screen content (clipped) -->
   <g clip-path="url(#clip-m1)">
+    <!-- Scanline effect -->
+    <rect x="92" y="168" width="258" height="2" fill="rgba(59,130,246,.08)" class="sl"/>
     <!-- Sidebar -->
-    <rect x="92" y="168" width="50" height="168" fill="rgba(0,0,0,.4)"/>
+    <rect x="92" y="168" width="52" height="168" fill="rgba(0,0,0,.45)"/>
     <text x="98" y="180" font-size="5" fill="#64748b">EXPLORER</text>
-    <text x="100" y="190" font-size="5.5" fill="#e2e8f0">📁 Projects</text>
-    <text x="106" y="199" font-size="5" fill="#94a3b8">📄 main.py</text>
-    <text x="106" y="208" font-size="5" fill="#94a3b8">📄 model.py</text>
-    <text x="106" y="217" font-size="5" fill="#94a3b8">📄 train.py</text>
-    <text x="100" y="228" font-size="5.5" fill="#e2e8f0">📁 data</text>
-    <text x="100" y="239" font-size="5.5" fill="#e2e8f0">📁 models</text>
-    <text x="100" y="250" font-size="5" fill="#64748b">📄 README.md</text>
+    <text x="100" y="191" font-size="5.5" fill="#e2e8f0">📁 Projects</text>
+    <text x="108" y="201" font-size="5" fill="#94a3b8">📄 main.py</text>
+    <text x="108" y="211" font-size="5" fill="#94a3b8">📄 model.py</text>
+    <text x="108" y="221" font-size="5" fill="#94a3b8">📄 train.py</text>
+    <text x="100" y="233" font-size="5.5" fill="#e2e8f0">📁 data</text>
+    <text x="100" y="244" font-size="5.5" fill="#e2e8f0">📁 models</text>
+    <text x="100" y="255" font-size="5" fill="#64748b">📄 README.md</text>
     <!-- Tab bar -->
-    <rect x="142" y="168" width="55" height="11" fill="rgba(13,17,23,.9)" stroke="rgba(59,130,246,.3)" stroke-width=".5"/>
-    <text x="148" y="176" font-size="5" fill="#e2e8f0">main.py</text>
-    <rect x="197" y="168" width="55" height="11" fill="rgba(0,0,0,.3)"/>
-    <text x="203" y="176" font-size="5" fill="#64748b">model.py</text>
-    <!-- Code Area (scrolling) -->
-    <g class="code-scroll" transform="translate(148, 186)">
-      <text y="0" font-size="5.5"><tspan fill="#c084fc">def</tspan><tspan fill="#e2e8f0"> calculate_bmi(weight, height):</tspan></text>
-      <text y="9" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">return</tspan><tspan fill="#e2e8f0"> weight / (height ** 2)</tspan></text>
-      <text y="21" font-size="5.5"><tspan fill="#c084fc">def</tspan><tspan fill="#e2e8f0"> calculate_bmr(wt, ht, age, gender):</tspan></text>
-      <text y="30" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">if</tspan><tspan fill="#e2e8f0"> gender == </tspan><tspan fill="#22c55e">"male"</tspan><tspan fill="#e2e8f0">:</tspan></text>
-      <text y="39" font-size="5.5"><tspan fill="#64748b">        </tspan><tspan fill="#c084fc">return</tspan><tspan fill="#06b6d4"> 10</tspan><tspan fill="#e2e8f0">*wt + </tspan><tspan fill="#06b6d4">6.25</tspan><tspan fill="#e2e8f0">*ht*</tspan><tspan fill="#06b6d4">100</tspan></text>
-      <text y="48" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">return</tspan><tspan fill="#06b6d4"> 10</tspan><tspan fill="#e2e8f0">*wt + </tspan><tspan fill="#06b6d4">6.25</tspan><tspan fill="#e2e8f0">*ht - 161</tspan></text>
-      <text y="60" font-size="5.5"><tspan fill="#c084fc">class</tspan><tspan fill="#f59e0b"> NeuralNetwork</tspan><tspan fill="#e2e8f0">:</tspan></text>
-      <text y="69" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">def</tspan><tspan fill="#e2e8f0"> __init__(self, layers):</tspan></text>
-      <text y="78" font-size="5.5"><tspan fill="#64748b">        </tspan><tspan fill="#e2e8f0">self.layers = layers</tspan></text>
-      <text y="87" font-size="5.5"><tspan fill="#64748b">        </tspan><tspan fill="#e2e8f0">self.weights = []</tspan></text>
-      <!-- Duplicate for seamless scrolling -->
-      <text y="100" font-size="5.5"><tspan fill="#c084fc">def</tspan><tspan fill="#e2e8f0"> calculate_bmi(weight, height):</tspan></text>
-      <text y="109" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">return</tspan><tspan fill="#e2e8f0"> weight / (height ** 2)</tspan></text>
+    <rect x="144" y="168" width="58" height="12" fill="rgba(13,17,23,.9)" stroke="rgba(59,130,246,.35)" stroke-width=".5"/>
+    <text x="150" y="177" font-size="5.5" fill="#e2e8f0">main.py</text>
+    <rect x="202" y="168" width="58" height="12" fill="rgba(0,0,0,.35)"/>
+    <text x="208" y="177" font-size="5.5" fill="#64748b">model.py</text>
+    <!-- Code (scrolling) -->
+    <g class="code-scroll" transform="translate(150, 188)">
+      <text y="0" font-size="5.5"><tspan fill="#c084fc">import</tspan><tspan fill="#e2e8f0"> torch</tspan></text>
+      <text y="9" font-size="5.5"><tspan fill="#c084fc">from</tspan><tspan fill="#e2e8f0"> transformers </tspan><tspan fill="#c084fc">import</tspan><tspan fill="#e2e8f0"> AutoModel</tspan></text>
+      <text y="21" font-size="5.5"><tspan fill="#c084fc">def</tspan><tspan fill="#22c55e"> calculate_bmi</tspan><tspan fill="#e2e8f0">(weight, height):</tspan></text>
+      <text y="30" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">return</tspan><tspan fill="#e2e8f0"> weight / (height ** </tspan><tspan fill="#06b6d4">2</tspan><tspan fill="#e2e8f0">)</tspan></text>
+      <text y="42" font-size="5.5"><tspan fill="#c084fc">class</tspan><tspan fill="#f59e0b"> NeuralNetwork</tspan><tspan fill="#e2e8f0">(nn.Module):</tspan></text>
+      <text y="51" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">def</tspan><tspan fill="#22c55e"> __init__</tspan><tspan fill="#e2e8f0">(self, layers):</tspan></text>
+      <text y="60" font-size="5.5"><tspan fill="#64748b">        </tspan><tspan fill="#e2e8f0">super().__init__()</tspan></text>
+      <text y="69" font-size="5.5"><tspan fill="#64748b">        </tspan><tspan fill="#e2e8f0">self.layers = nn.ModuleList(</tspan></text>
+      <text y="78" font-size="5.5"><tspan fill="#64748b">    </tspan><tspan fill="#c084fc">def</tspan><tspan fill="#22c55e"> forward</tspan><tspan fill="#e2e8f0">(self, x):</tspan></text>
+      <text y="87" font-size="5.5"><tspan fill="#64748b">        </tspan><tspan fill="#c084fc">for</tspan><tspan fill="#e2e8f0"> layer </tspan><tspan fill="#c084fc">in</tspan><tspan fill="#e2e8f0"> self.layers:</tspan></text>
+      <!-- Duplicate for seamless loop -->
+      <text y="100" font-size="5.5"><tspan fill="#c084fc">import</tspan><tspan fill="#e2e8f0"> torch</tspan></text>
+      <text y="109" font-size="5.5"><tspan fill="#c084fc">from</tspan><tspan fill="#e2e8f0"> transformers </tspan><tspan fill="#c084fc">import</tspan><tspan fill="#e2e8f0"> AutoModel</tspan></text>
     </g>
-    <!-- Terminal strip at bottom -->
-    <rect x="92" y="315" width="258" height="21" fill="rgba(0,0,0,.6)"/>
+    <!-- Terminal -->
+    <rect x="92" y="314" width="258" height="22" fill="rgba(0,0,0,.65)"/>
     <text x="98" y="328" font-size="5.5"><tspan fill="#22c55e">$</tspan><tspan fill="#94a3b8"> python train_model.py --epochs 50</tspan></text>
-    <rect class="cursor" x="282" y="321" width="5" height="8" fill="#22c55e"/>
-    <!-- Label overlays -->
-    <text x="260" y="180" font-size="4.5" fill="rgba(59,130,246,.4)" text-anchor="end">AI ENGINEERING</text>
+    <rect class="cursor" x="285" y="321" width="5" height="8" fill="#22c55e"/>
+    <!-- Label -->
+    <text x="262" y="181" font-size="4.5" fill="rgba(59,130,246,.35)" text-anchor="end">AI ENGINEERING</text>
   </g>
-  <!-- Screen reflection shimmer -->
   <rect x="92" y="168" width="258" height="168" rx="3" fill="url(#scr-glow-1)" class="sg"/>
 </g>
 
 
-<!-- ═══════════════════ MONITOR 2: DATA SCIENCE / DASHBOARD ═══════════════════ -->
+<!-- ═══════════════════ MONITOR 2: DATA DASHBOARD (CENTER) ═══════════════════ -->
 <g filter="url(#sh)">
-  <!-- Bezel (larger, center) -->
   <rect x="400" y="142" width="348" height="210" rx="6" fill="#111111"/>
-  <!-- Screen -->
   <rect x="405" y="148" width="338" height="198" rx="3" fill="url(#scr)"/>
-  <!-- Stand -->
   <rect x="560" y="352" width="28" height="14" fill="#1a1a1a"/><rect x="548" y="366" width="52" height="6" rx="2" fill="#222"/>
-  <!-- Screen content (clipped) -->
   <g clip-path="url(#clip-m2)">
+    <!-- Scanline -->
+    <rect x="405" y="148" width="338" height="1.5" fill="rgba(6,182,212,.06)" class="sl" style="animation-delay:2s"/>
     <!-- Header bar -->
-    <rect x="405" y="148" width="338" height="20" fill="rgba(0,0,0,.35)"/>
-    <text x="418" y="161" font-size="7" fill="#94a3b8">Good Morning,</text>
-    <text x="418" y="161" font-size="7"><tspan fill="#94a3b8">Good Morning, </tspan><tspan fill="#e2e8f0" font-weight="700">Sumanth</tspan><tspan fill="#e2e8f0"> 👋</tspan></text>
-    <text x="690" y="161" font-size="7" fill="#64748b" text-anchor="end">09:45 AM</text>
-    <!-- Motivational text -->
-    <text x="575" y="180" text-anchor="middle" font-size="6.5" fill="#06b6d4" font-style="italic">"Small Steps, Big Changes"</text>
+    <rect x="405" y="148" width="338" height="22" fill="rgba(0,0,0,.4)"/>
+    <text x="420" y="163" font-size="7.5"><tspan fill="#94a3b8">Good Morning, </tspan><tspan fill="#f8fafc" font-weight="700">Sumanth</tspan><tspan fill="#e2e8f0"> 👋</tspan></text>
+    <text x="695" y="163" font-size="7" fill="#475569" text-anchor="end">09:45 AM</text>
+    <!-- Motivational -->
+    <text x="575" y="183" text-anchor="middle" font-size="7" fill="#06b6d4" font-style="italic">"Small Steps, Big Changes"</text>
 
-    <!-- Stat Cards Row -->
-    <g transform="translate(415, 188)">
-      <!-- Card 1: Code -->
-      <rect x="0" y="0" width="60" height="35" rx="3" fill="rgba(59,130,246,.1)" stroke="rgba(59,130,246,.2)" stroke-width=".5"/>
-      <text x="30" y="12" text-anchor="middle" font-size="5" fill="#64748b">CODE</text>
-      <text x="30" y="25" text-anchor="middle" font-size="10" fill="#3b82f6" font-weight="700">▶</text>
-      <!-- Card 2: Learn -->
-      <rect x="66" y="0" width="60" height="35" rx="3" fill="rgba(6,182,212,.1)" stroke="rgba(6,182,212,.2)" stroke-width=".5"/>
-      <text x="96" y="12" text-anchor="middle" font-size="5" fill="#64748b">LEARN</text>
-      <text x="96" y="25" text-anchor="middle" font-size="10" fill="#06b6d4" font-weight="700">📚</text>
-      <!-- Card 3: Build -->
-      <rect x="132" y="0" width="60" height="35" rx="3" fill="rgba(34,197,94,.1)" stroke="rgba(34,197,94,.2)" stroke-width=".5"/>
-      <text x="162" y="12" text-anchor="middle" font-size="5" fill="#64748b">BUILD</text>
-      <text x="162" y="25" text-anchor="middle" font-size="10" fill="#22c55e" font-weight="700">🚀</text>
-      <!-- Card 4: Data -->
-      <rect x="198" y="0" width="60" height="35" rx="3" fill="rgba(168,85,247,.1)" stroke="rgba(168,85,247,.2)" stroke-width=".5"/>
-      <text x="228" y="12" text-anchor="middle" font-size="5" fill="#64748b">DATA</text>
-      <text x="228" y="25" text-anchor="middle" font-size="10" fill="#a855f7" font-weight="700">📊</text>
-      <!-- Card 5: Achieve -->
-      <rect x="264" y="0" width="60" height="35" rx="3" fill="rgba(251,146,60,.1)" stroke="rgba(251,146,60,.2)" stroke-width=".5"/>
-      <text x="294" y="12" text-anchor="middle" font-size="5" fill="#64748b">ACHIEVE</text>
-      <text x="294" y="25" text-anchor="middle" font-size="10" fill="#fb923c" font-weight="700">🏆</text>
+    <!-- Stat Cards -->
+    <g transform="translate(415, 192)">
+      <rect x="0" y="0" width="62" height="36" rx="4" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.2)" stroke-width=".5"/>
+      <text x="31" y="13" text-anchor="middle" font-size="5.5" fill="#64748b">CODE</text>
+      <text x="31" y="27" text-anchor="middle" font-size="11" fill="#3b82f6" font-weight="700">▶</text>
+      <rect x="66" y="0" width="62" height="36" rx="4" fill="rgba(6,182,212,.08)" stroke="rgba(6,182,212,.2)" stroke-width=".5"/>
+      <text x="97" y="13" text-anchor="middle" font-size="5.5" fill="#64748b">LEARN</text>
+      <text x="97" y="27" text-anchor="middle" font-size="11" fill="#06b6d4" font-weight="700">📚</text>
+      <rect x="132" y="0" width="62" height="36" rx="4" fill="rgba(34,197,94,.08)" stroke="rgba(34,197,94,.2)" stroke-width=".5"/>
+      <text x="163" y="13" text-anchor="middle" font-size="5.5" fill="#64748b">BUILD</text>
+      <text x="163" y="27" text-anchor="middle" font-size="11" fill="#22c55e" font-weight="700">🚀</text>
+      <rect x="198" y="0" width="62" height="36" rx="4" fill="rgba(168,85,247,.08)" stroke="rgba(168,85,247,.2)" stroke-width=".5"/>
+      <text x="229" y="13" text-anchor="middle" font-size="5.5" fill="#64748b">DATA</text>
+      <text x="229" y="27" text-anchor="middle" font-size="11" fill="#a855f7" font-weight="700">📊</text>
+      <rect x="264" y="0" width="62" height="36" rx="4" fill="rgba(251,146,60,.08)" stroke="rgba(251,146,60,.2)" stroke-width=".5"/>
+      <text x="295" y="13" text-anchor="middle" font-size="5.5" fill="#64748b">ACHIEVE</text>
+      <text x="295" y="27" text-anchor="middle" font-size="11" fill="#fb923c" font-weight="700">🏆</text>
     </g>
 
-    <!-- Data Visualization: Bar Chart -->
-    <g transform="translate(420, 230)">
+    <!-- Bar Chart -->
+    <g transform="translate(420, 236)">
       <text y="0" font-size="5" fill="#64748b">DATA PIPELINE THROUGHPUT</text>
-      <rect class="b1" x="5" y="8" width="14" height="38" rx="1" fill="#3b82f6" opacity=".8"/>
-      <rect class="b2" x="24" y="8" width="14" height="38" rx="1" fill="#06b6d4" opacity=".8"/>
-      <rect class="b3" x="43" y="8" width="14" height="38" rx="1" fill="#22c55e" opacity=".8"/>
-      <rect class="b4" x="62" y="8" width="14" height="38" rx="1" fill="#f59e0b" opacity=".8"/>
-      <rect class="b5" x="81" y="8" width="14" height="38" rx="1" fill="#8b5cf6" opacity=".8"/>
-      <text x="12" y="52" text-anchor="middle" font-size="4" fill="#64748b">ETL</text>
-      <text x="31" y="52" text-anchor="middle" font-size="4" fill="#64748b">SQL</text>
-      <text x="50" y="52" text-anchor="middle" font-size="4" fill="#64748b">API</text>
-      <text x="69" y="52" text-anchor="middle" font-size="4" fill="#64748b">ML</text>
-      <text x="88" y="52" text-anchor="middle" font-size="4" fill="#64748b">DB</text>
+      <rect class="b1" x="5" y="8" width="14" height="40" rx="1.5" fill="#3b82f6" opacity=".85"/>
+      <rect class="b2" x="24" y="8" width="14" height="40" rx="1.5" fill="#06b6d4" opacity=".85"/>
+      <rect class="b3" x="43" y="8" width="14" height="40" rx="1.5" fill="#22c55e" opacity=".85"/>
+      <rect class="b4" x="62" y="8" width="14" height="40" rx="1.5" fill="#f59e0b" opacity=".85"/>
+      <rect class="b5" x="81" y="8" width="14" height="40" rx="1.5" fill="#8b5cf6" opacity=".85"/>
+      <rect class="b6" x="100" y="8" width="14" height="40" rx="1.5" fill="#ec4899" opacity=".85"/>
+      <text x="12" y="54" text-anchor="middle" font-size="4" fill="#64748b">ETL</text>
+      <text x="31" y="54" text-anchor="middle" font-size="4" fill="#64748b">SQL</text>
+      <text x="50" y="54" text-anchor="middle" font-size="4" fill="#64748b">API</text>
+      <text x="69" y="54" text-anchor="middle" font-size="4" fill="#64748b">ML</text>
+      <text x="88" y="54" text-anchor="middle" font-size="4" fill="#64748b">DB</text>
+      <text x="107" y="54" text-anchor="middle" font-size="4" fill="#64748b">RAG</text>
     </g>
 
-    <!-- Line Chart / Data Flow -->
-    <g transform="translate(530, 230)">
+    <!-- Line Chart -->
+    <g transform="translate(540, 236)">
       <text y="0" font-size="5" fill="#64748b">CLOUD DATA STREAM</text>
-      <polyline points="0,40 15,32 30,35 45,22 60,28 75,15 90,20 105,10 120,18 135,8 150,14 165,5" fill="none" stroke="#06b6d4" stroke-width="1.2" class="line-draw"/>
-      <polyline points="0,42 15,38 30,40 45,30 60,35 75,25 90,28 105,20 120,25 135,18 150,22 165,15" fill="none" stroke="#3b82f6" stroke-width=".8" opacity=".5"/>
-      <!-- AWS / Cloud labels -->
-      <text x="170" y="12" font-size="4.5" fill="#fb923c" font-weight="600">AWS</text>
-      <text x="170" y="20" font-size="4" fill="#64748b">Lambda</text>
-      <text x="170" y="28" font-size="4" fill="#64748b">DynamoDB</text>
-      <text x="170" y="36" font-size="4" fill="#64748b">S3</text>
+      <polyline points="0,42 15,34 30,37 45,24 60,30 75,17 90,22 105,12 120,20 135,10 150,16 165,7" fill="none" stroke="#06b6d4" stroke-width="1.3" class="line-draw"/>
+      <polyline points="0,44 15,40 30,42 45,32 60,37 75,27 90,30 105,22 120,27 135,20 150,24 165,17" fill="none" stroke="#3b82f6" stroke-width=".8" opacity=".45"/>
+      <text x="170" y="12" font-size="5" fill="#fb923c" font-weight="700">AWS</text>
+      <text x="170" y="22" font-size="4" fill="#64748b">Lambda</text>
+      <text x="170" y="30" font-size="4" fill="#64748b">DynamoDB</text>
+      <text x="170" y="38" font-size="4" fill="#64748b">S3 · EC2</text>
     </g>
 
-    <!-- GitHub Contribution Grid -->
-    <g transform="translate(415, 296)">
+    <!-- Contribution Grid -->
+    <g transform="translate(415, 300)">
       <text y="0" font-size="4.5" fill="#64748b">CONTRIBUTION ACTIVITY</text>
       <g transform="translate(0,5)">
-        <!-- Row of contribution squares (simplified) -->
         <rect x="0" y="0" width="4" height="4" rx=".5" fill="#0e4429" class="cp"/><rect x="5" y="0" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:.1s"/>
         <rect x="10" y="0" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:.2s"/><rect x="15" y="0" width="4" height="4" rx=".5" fill="#26a641" class="cp" style="animation-delay:.3s"/>
         <rect x="20" y="0" width="4" height="4" rx=".5" fill="#39d353" class="cp" style="animation-delay:.4s"/><rect x="25" y="0" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:.5s"/>
@@ -371,7 +437,6 @@ text{font-family:'JetBrains Mono','Fira Code',Consolas,monospace}
         <rect x="40" y="0" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:.8s"/><rect x="45" y="0" width="4" height="4" rx=".5" fill="#39d353" class="cp" style="animation-delay:.9s"/>
         <rect x="50" y="0" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:1s"/><rect x="55" y="0" width="4" height="4" rx=".5" fill="#26a641" class="cp" style="animation-delay:1.1s"/>
         <rect x="60" y="0" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:1.2s"/><rect x="65" y="0" width="4" height="4" rx=".5" fill="#39d353" class="cp" style="animation-delay:1.3s"/>
-        <!-- Row 2 -->
         <rect x="0" y="5" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:1.4s"/><rect x="5" y="5" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:1.5s"/>
         <rect x="10" y="5" width="4" height="4" rx=".5" fill="#26a641" class="cp" style="animation-delay:1.6s"/><rect x="15" y="5" width="4" height="4" rx=".5" fill="#006d32" class="cp" style="animation-delay:1.7s"/>
         <rect x="20" y="5" width="4" height="4" rx=".5" fill="#0e4429" class="cp" style="animation-delay:1.8s"/><rect x="25" y="5" width="4" height="4" rx=".5" fill="#39d353" class="cp" style="animation-delay:1.9s"/>
@@ -383,104 +448,103 @@ text{font-family:'JetBrains Mono','Fira Code',Consolas,monospace}
     </g>
 
     <!-- Bottom motto -->
-    <text x="575" y="340" text-anchor="middle" font-size="6" fill="#64748b" font-style="italic">"Discipline Today, A Better Tomorrow"</text>
+    <text x="575" y="340" text-anchor="middle" font-size="6.5" fill="#64748b" font-style="italic">"Discipline Today, A Better Tomorrow"</text>
   </g>
-  <!-- Screen glow -->
   <rect x="405" y="148" width="338" height="198" rx="3" fill="url(#scr-glow-2)" class="sg"/>
 </g>
 
 
-<!-- ═══════════════════ MONITOR 3: BODY IQ PROJECT ═══════════════════ -->
+<!-- ═══════════════════ MONITOR 3: BODY IQ ═══════════════════ -->
 <g filter="url(#sh)">
-  <!-- Bezel -->
   <rect x="794" y="164" width="266" height="180" rx="6" fill="#111111"/>
-  <!-- Screen -->
   <rect x="798" y="168" width="258" height="168" rx="3" fill="url(#scr)"/>
-  <!-- Stand -->
   <rect x="914" y="344" width="26" height="16" fill="#1a1a1a"/><rect x="901" y="360" width="52" height="6" rx="2" fill="#222"/>
-  <!-- Screen content (clipped) -->
   <g clip-path="url(#clip-m3)">
+    <!-- Scanline -->
+    <rect x="798" y="168" width="258" height="1.5" fill="rgba(139,92,246,.06)" class="sl" style="animation-delay:3s"/>
     <!-- Header -->
-    <rect x="798" y="168" width="258" height="18" fill="rgba(139,92,246,.08)"/>
-    <text x="812" y="180" font-size="8" fill="#c4b5fd" font-weight="900">Body IQ</text>
-    <text x="976" y="180" font-size="5" fill="#64748b" text-anchor="end">Health Analysis</text>
-    <!-- Body IQ Subtitle -->
-    <text x="812" y="195" font-size="4.5" fill="#94a3b8">Personalized Fitness, Nutrition and</text>
-    <text x="812" y="202" font-size="4.5" fill="#94a3b8">Transformation Optimization Through</text>
-    <text x="812" y="209" font-size="4.5" fill="#94a3b8">Integrated Health Analysis</text>
+    <rect x="798" y="168" width="258" height="20" fill="rgba(139,92,246,.1)"/>
+    <text x="814" y="182" font-size="9" fill="#c4b5fd" font-weight="900">Body IQ</text>
+    <text x="978" y="182" font-size="5.5" fill="#64748b" text-anchor="end">Health Analysis</text>
+    <!-- Subtitle -->
+    <text x="814" y="198" font-size="4.5" fill="#94a3b8">Personalized Fitness, Nutrition and</text>
+    <text x="814" y="206" font-size="4.5" fill="#94a3b8">Transformation Optimization Through</text>
+    <text x="814" y="214" font-size="4.5" fill="#94a3b8">Integrated Health Analysis</text>
 
-    <!-- Body silhouette (simplified) -->
-    <g transform="translate(830, 218)" opacity=".4">
-      <circle cx="12" cy="0" r="5" fill="none" stroke="#06b6d4" stroke-width=".8"/>
-      <line x1="12" y1="5" x2="12" y2="28" stroke="#06b6d4" stroke-width=".8"/>
-      <line x1="12" y1="10" x2="2" y2="20" stroke="#06b6d4" stroke-width=".8"/>
-      <line x1="12" y1="10" x2="22" y2="20" stroke="#06b6d4" stroke-width=".8"/>
-      <line x1="12" y1="28" x2="4" y2="42" stroke="#06b6d4" stroke-width=".8"/>
-      <line x1="12" y1="28" x2="20" y2="42" stroke="#06b6d4" stroke-width=".8"/>
+    <!-- Body silhouette with scanning -->
+    <g transform="translate(832, 222)" opacity=".45">
+      <circle cx="12" cy="0" r="5.5" fill="none" stroke="#06b6d4" stroke-width=".9"/>
+      <line x1="12" y1="6" x2="12" y2="30" stroke="#06b6d4" stroke-width=".9"/>
+      <line x1="12" y1="12" x2="1" y2="22" stroke="#06b6d4" stroke-width=".9"/>
+      <line x1="12" y1="12" x2="23" y2="22" stroke="#06b6d4" stroke-width=".9"/>
+      <line x1="12" y1="30" x2="3" y2="45" stroke="#06b6d4" stroke-width=".9"/>
+      <line x1="12" y1="30" x2="21" y2="45" stroke="#06b6d4" stroke-width=".9"/>
       <!-- Scan lines -->
-      <line x1="-5" y1="5" x2="28" y2="5" stroke="#06b6d4" stroke-width=".3" stroke-dasharray="2 2" class="pf"/>
-      <line x1="-5" y1="18" x2="28" y2="18" stroke="#06b6d4" stroke-width=".3" stroke-dasharray="2 2" class="pf"/>
-      <line x1="-5" y1="32" x2="28" y2="32" stroke="#06b6d4" stroke-width=".3" stroke-dasharray="2 2" class="pf"/>
+      <line x1="-6" y1="6" x2="30" y2="6" stroke="#06b6d4" stroke-width=".4" stroke-dasharray="2 2" class="pf"/>
+      <line x1="-6" y1="20" x2="30" y2="20" stroke="#06b6d4" stroke-width=".4" stroke-dasharray="2 2" class="pf"/>
+      <line x1="-6" y1="34" x2="30" y2="34" stroke="#06b6d4" stroke-width=".4" stroke-dasharray="2 2" class="pf"/>
+      <!-- Data points around body -->
+      <circle cx="-4" cy="10" r="1.5" fill="#3b82f6" class="nn1"/>
+      <circle cx="28" cy="15" r="1.5" fill="#22c55e" class="nn2"/>
+      <circle cx="-4" cy="28" r="1.5" fill="#8b5cf6" class="nn3"/>
     </g>
 
     <!-- Metric Cards -->
-    <g transform="translate(880, 218)">
-      <!-- BMI -->
-      <rect x="0" y="0" width="68" height="18" rx="2" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.2)" stroke-width=".4"/>
-      <text x="5" y="8" font-size="4.5" fill="#64748b">BMI</text><text x="60" y="8" font-size="5.5" fill="#3b82f6" font-weight="700" text-anchor="end" class="mp">24.3</text>
-      <rect x="5" y="11" width="40" height="3" rx="1" fill="rgba(59,130,246,.15)"/><rect x="5" y="11" width="28" height="3" rx="1" fill="#3b82f6" opacity=".6"/>
-      <!-- BMR -->
-      <rect x="0" y="22" width="68" height="18" rx="2" fill="rgba(6,182,212,.08)" stroke="rgba(6,182,212,.2)" stroke-width=".4"/>
-      <text x="5" y="30" font-size="4.5" fill="#64748b">BMR</text><text x="60" y="30" font-size="5.5" fill="#06b6d4" font-weight="700" text-anchor="end" class="mp" style="animation-delay:.3s">1780</text>
-      <text x="64" y="30" font-size="3.5" fill="#64748b">kcal</text>
-      <!-- TDEE -->
-      <rect x="0" y="44" width="68" height="18" rx="2" fill="rgba(34,197,94,.08)" stroke="rgba(34,197,94,.2)" stroke-width=".4"/>
-      <text x="5" y="52" font-size="4.5" fill="#64748b">TDEE</text><text x="60" y="52" font-size="5.5" fill="#22c55e" font-weight="700" text-anchor="end" class="mp" style="animation-delay:.6s">2450</text>
-      <text x="64" y="52" font-size="3.5" fill="#64748b">kcal</text>
-      <!-- Body Fat -->
-      <rect x="0" y="66" width="68" height="18" rx="2" fill="rgba(251,146,60,.08)" stroke="rgba(251,146,60,.2)" stroke-width=".4"/>
-      <text x="5" y="74" font-size="4.5" fill="#64748b">Body Fat</text><text x="60" y="74" font-size="5.5" fill="#fb923c" font-weight="700" text-anchor="end" class="mp" style="animation-delay:.9s">18.6</text>
-      <text x="64" y="74" font-size="3.5" fill="#64748b">%</text>
+    <g transform="translate(882, 222)">
+      <rect x="0" y="0" width="72" height="19" rx="3" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.2)" stroke-width=".4"/>
+      <text x="5" y="9" font-size="4.5" fill="#64748b">BMI</text><text x="63" y="9" font-size="6" fill="#3b82f6" font-weight="700" text-anchor="end" class="mp">24.3</text>
+      <rect x="5" y="12" width="42" height="3.5" rx="1.5" fill="rgba(59,130,246,.15)"/><rect x="5" y="12" width="30" height="3.5" rx="1.5" fill="#3b82f6" opacity=".6"/>
+
+      <rect x="0" y="23" width="72" height="19" rx="3" fill="rgba(6,182,212,.08)" stroke="rgba(6,182,212,.2)" stroke-width=".4"/>
+      <text x="5" y="32" font-size="4.5" fill="#64748b">BMR</text><text x="63" y="32" font-size="6" fill="#06b6d4" font-weight="700" text-anchor="end" class="mp" style="animation-delay:.3s">1780</text>
+      <text x="67" y="32" font-size="3.5" fill="#64748b">kcal</text>
+
+      <rect x="0" y="46" width="72" height="19" rx="3" fill="rgba(34,197,94,.08)" stroke="rgba(34,197,94,.2)" stroke-width=".4"/>
+      <text x="5" y="55" font-size="4.5" fill="#64748b">TDEE</text><text x="63" y="55" font-size="6" fill="#22c55e" font-weight="700" text-anchor="end" class="mp" style="animation-delay:.6s">2450</text>
+      <text x="67" y="55" font-size="3.5" fill="#64748b">kcal</text>
+
+      <rect x="0" y="69" width="72" height="19" rx="3" fill="rgba(251,146,60,.08)" stroke="rgba(251,146,60,.2)" stroke-width=".4"/>
+      <text x="5" y="78" font-size="4.5" fill="#64748b">Body Fat</text><text x="63" y="78" font-size="6" fill="#fb923c" font-weight="700" text-anchor="end" class="mp" style="animation-delay:.9s">18.6</text>
+      <text x="67" y="78" font-size="3.5" fill="#64748b">%</text>
     </g>
 
     <!-- Feature tags -->
-    <g transform="translate(812, 280)">
-      <rect x="0" y="0" width="45" height="10" rx="2" fill="rgba(139,92,246,.1)"/><text x="22" y="7.5" text-anchor="middle" font-size="4" fill="#c4b5fd">Fitness</text>
-      <rect x="48" y="0" width="50" height="10" rx="2" fill="rgba(6,182,212,.1)"/><text x="73" y="7.5" text-anchor="middle" font-size="4" fill="#06b6d4">Nutrition</text>
-      <rect x="101" y="0" width="55" height="10" rx="2" fill="rgba(34,197,94,.1)"/><text x="128" y="7.5" text-anchor="middle" font-size="4" fill="#22c55e">Progress</text>
-      <rect x="159" y="0" width="55" height="10" rx="2" fill="rgba(251,146,60,.1)"/><text x="186" y="7.5" text-anchor="middle" font-size="4" fill="#fb923c">AI Assistant</text>
+    <g transform="translate(814, 284)">
+      <rect x="0" y="0" width="48" height="11" rx="3" fill="rgba(139,92,246,.1)"/><text x="24" y="8" text-anchor="middle" font-size="4.5" fill="#c4b5fd">Fitness</text>
+      <rect x="52" y="0" width="55" height="11" rx="3" fill="rgba(6,182,212,.1)"/><text x="79" y="8" text-anchor="middle" font-size="4.5" fill="#06b6d4">Nutrition</text>
+      <rect x="111" y="0" width="58" height="11" rx="3" fill="rgba(34,197,94,.1)"/><text x="140" y="8" text-anchor="middle" font-size="4.5" fill="#22c55e">Progress</text>
+      <rect x="173" y="0" width="62" height="11" rx="3" fill="rgba(251,146,60,.1)"/><text x="204" y="8" text-anchor="middle" font-size="4.5" fill="#fb923c">AI Assistant</text>
     </g>
 
-    <!-- Neural Network Nodes (subtle behind body) -->
-    <g transform="translate(815, 250)" opacity=".25">
+    <!-- Neural nodes (subtle) -->
+    <g transform="translate(818, 256)" opacity=".22">
       <circle class="nn1" cx="0" cy="0" r="2.5" fill="#8b5cf6"/>
-      <circle class="nn2" cx="15" cy="-8" r="2.5" fill="#06b6d4"/>
-      <circle class="nn3" cx="15" cy="8" r="2.5" fill="#3b82f6"/>
-      <circle class="nn4" cx="30" cy="0" r="2.5" fill="#22c55e"/>
-      <line x1="2" y1="0" x2="13" y2="-7" stroke="#8b5cf6" stroke-width=".4"/>
-      <line x1="2" y1="0" x2="13" y2="7" stroke="#8b5cf6" stroke-width=".4"/>
-      <line x1="17" y1="-7" x2="28" y2="0" stroke="#06b6d4" stroke-width=".4"/>
-      <line x1="17" y1="7" x2="28" y2="0" stroke="#3b82f6" stroke-width=".4"/>
+      <circle class="nn2" cx="16" cy="-8" r="2.5" fill="#06b6d4"/>
+      <circle class="nn3" cx="16" cy="8" r="2.5" fill="#3b82f6"/>
+      <circle class="nn4" cx="32" cy="0" r="2.5" fill="#22c55e"/>
+      <line x1="2" y1="0" x2="14" y2="-7" stroke="#8b5cf6" stroke-width=".4"/>
+      <line x1="2" y1="0" x2="14" y2="7" stroke="#8b5cf6" stroke-width=".4"/>
+      <line x1="18" y1="-7" x2="30" y2="0" stroke="#06b6d4" stroke-width=".4"/>
+      <line x1="18" y1="7" x2="30" y2="0" stroke="#3b82f6" stroke-width=".4"/>
     </g>
 
     <!-- Bottom text -->
-    <text x="927" y="325" text-anchor="middle" font-size="5" fill="#64748b" font-style="italic">"A Healthier You, A Brighter Tomorrow"</text>
+    <text x="927" y="328" text-anchor="middle" font-size="5.5" fill="#64748b" font-style="italic">"A Healthier You, A Brighter Tomorrow"</text>
   </g>
-  <!-- Screen glow -->
   <rect x="798" y="168" width="258" height="168" rx="3" fill="url(#scr-glow-3)" class="sg"/>
 </g>
 
 
 <!-- ═══════════════════ DESK SURFACE ═══════════════════ -->
 <rect x="0" y="375" width="1200" height="145" fill="url(#desk-g)"/>
-<line x1="0" y1="375" x2="1200" y2="375" stroke="rgba(139,92,246,.08)" stroke-width=".5"/>
+<line x1="0" y1="375" x2="1200" y2="375" stroke="rgba(139,92,246,.06)" stroke-width=".5"/>
+<!-- Desk edge highlight -->
+<line x1="0" y1="376" x2="1200" y2="376" stroke="rgba(59,130,246,.03)" stroke-width=".3"/>
 
-<!-- ═══════════════════ KEYBOARD ═══════════════════ -->
+<!-- ═══════════════════ KEYBOARD (Enhanced) ═══════════════════ -->
 <g filter="url(#sh-sm)">
   <rect x="435" y="395" width="280" height="75" rx="6" fill="#1a1a1a"/>
-  <!-- RGB underglow -->
-  <rect x="435" y="466" width="280" height="4" rx="2" fill="url(#rgb-kb)" opacity=".5"/>
-  <!-- Key rows (simplified) -->
+  <rect x="435" y="466" width="280" height="4" rx="2" fill="url(#rgb-kb)" opacity=".55"/>
   <g opacity=".6">
     <!-- Row 1 -->
     <rect x="445" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="460" y="400" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
@@ -501,15 +565,14 @@ text{font-family:'JetBrains Mono','Fira Code',Consolas,monospace}
     <rect x="598" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="613" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
     <rect x="628" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="643" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
     <rect x="658" y="413" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="673" y="413" width="30" height="10" rx="1.5" fill="#2a2a2a"/>
-    <!-- Row 3 (spacebar row) -->
+    <!-- Row 3 -->
     <rect x="448" y="426" width="18" height="10" rx="1.5" fill="#2a2a2a"/><rect x="469" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
-    <rect x="484" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
-    <rect x="499" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="514" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
-    <rect x="529" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="544" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
-    <rect x="559" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="574" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
-    <rect x="589" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="604" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
-    <rect x="619" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="634" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
-    <rect x="649" y="426" width="55" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="484" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="499" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="514" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="529" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="544" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="559" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="574" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="589" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="604" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="619" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/>
+    <rect x="634" y="426" width="12" height="10" rx="1.5" fill="#2a2a2a"/><rect x="649" y="426" width="55" height="10" rx="1.5" fill="#2a2a2a"/>
     <!-- Row 4: spacebar -->
     <rect x="448" y="439" width="25" height="10" rx="1.5" fill="#2a2a2a"/>
     <rect x="476" y="439" width="15" height="10" rx="1.5" fill="#2a2a2a"/>
@@ -524,95 +587,118 @@ text{font-family:'JetBrains Mono','Fira Code',Consolas,monospace}
 
 <!-- Mouse -->
 <g filter="url(#sh-sm)">
-  <rect x="735" y="410" width="35" height="50" rx="12" fill="#1a1a1a" stroke="rgba(59,130,246,.15)" stroke-width=".5"/>
-  <line x1="752" y1="415" x2="752" y2="430" stroke="rgba(59,130,246,.2)" stroke-width=".5"/>
-  <rect x="749" y="418" width="7" height="8" rx="2" fill="rgba(59,130,246,.15)"/>
+  <rect x="735" y="408" width="36" height="52" rx="13" fill="#1a1a1a" stroke="rgba(59,130,246,.18)" stroke-width=".6"/>
+  <line x1="753" y1="413" x2="753" y2="430" stroke="rgba(59,130,246,.25)" stroke-width=".5"/>
+  <rect x="749" y="416" width="8" height="9" rx="2.5" fill="rgba(59,130,246,.18)"/>
+  <!-- Mouse LED -->
+  <circle cx="753" cy="445" r="1.5" fill="#3b82f6" opacity=".3" class="np"/>
 </g>
 
-<!-- Coffee Mug -->
-<g transform="translate(390, 420)">
-  <rect x="0" y="5" width="22" height="25" rx="3" fill="#374151" stroke="rgba(139,92,246,.2)" stroke-width=".5"/>
-  <path d="M 22 12 Q 32 12 32 20 Q 32 28 22 28" fill="none" stroke="#374151" stroke-width="2"/>
-  <rect x="3" y="8" width="16" height="4" rx="1" fill="#1e40af" opacity=".4"/>
+<!-- Coffee Mug with Steam -->
+<g transform="translate(388, 418)">
+  <rect x="0" y="5" width="24" height="27" rx="4" fill="#374151" stroke="rgba(139,92,246,.2)" stroke-width=".6"/>
+  <path d="M 24 12 Q 35 12 35 21 Q 35 30 24 30" fill="none" stroke="#374151" stroke-width="2.5"/>
+  <rect x="3" y="8" width="18" height="5" rx="1.5" fill="#1e40af" opacity=".4"/>
+  <!-- Steam -->
+  <path d="M 8 5 Q 10 -2 8 -6" fill="none" stroke="rgba(200,200,220,.2)" stroke-width=".8" class="sr"/>
+  <path d="M 14 4 Q 16 -3 14 -8" fill="none" stroke="rgba(200,200,220,.15)" stroke-width=".8" class="sr" style="animation-delay:1s"/>
+  <path d="M 20 5 Q 22 -1 20 -5" fill="none" stroke="rgba(200,200,220,.18)" stroke-width=".8" class="sr" style="animation-delay:2s"/>
 </g>
 
-<!-- ═══════════════════ LEFT BOTTOM: IDENTITY CARD ═══════════════════ -->
-<g transform="translate(15, 460)">
-  <text y="0" font-size="14" fill="#f8fafc" font-weight="900" letter-spacing="2">SUMANTH</text>
-  <text y="14" font-size="7" fill="#94a3b8">B.Tech CSE  |  2027</text>
-  <text y="26" font-size="6" fill="#06b6d4" letter-spacing="1">LEARN • BUILD • GROW</text>
+<!-- ═══════════════════ HEADPHONES (New desk detail) ═══════════════════ -->
+<g transform="translate(790, 395)" opacity=".4">
+  <path d="M 5 25 Q 5 5 25 5 Q 45 5 45 25" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="0" y="22" width="10" height="16" rx="4" fill="#374151"/>
+  <rect x="40" y="22" width="10" height="16" rx="4" fill="#374151"/>
+  <rect x="2" y="24" width="6" height="12" rx="3" fill="#1e293b"/>
+  <rect x="42" y="24" width="6" height="12" rx="3" fill="#1e293b"/>
 </g>
 
-<!-- ═══════════════════ BOTTOM CENTER: TASKBAR ═══════════════════ -->
-<g transform="translate(475, 482)">
-  <rect x="0" y="0" width="200" height="22" rx="8" fill="rgba(17,17,17,.8)" stroke="rgba(59,130,246,.15)" stroke-width=".5"/>
-  <!-- Icons -->
-  <circle cx="25" cy="11" r="4" fill="rgba(59,130,246,.3)"/><text x="25" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">💻</text>
-  <circle cx="50" cy="11" r="4" fill="rgba(6,182,212,.3)"/><text x="50" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">📊</text>
-  <circle cx="75" cy="11" r="4" fill="rgba(34,197,94,.3)"/><text x="75" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">🔬</text>
-  <circle cx="100" cy="11" r="4" fill="rgba(139,92,246,.3)"/><text x="100" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">🎮</text>
-  <circle cx="125" cy="11" r="4" fill="rgba(251,146,60,.3)"/><text x="125" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">☁️</text>
-  <circle cx="150" cy="11" r="4" fill="rgba(236,72,153,.3)"/><text x="150" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">🏋️</text>
-  <circle cx="175" cy="11" r="4" fill="rgba(248,113,113,.3)"/><text x="175" y="13" text-anchor="middle" font-size="5" fill="#e2e8f0">📁</text>
+<!-- ═══════════════════ LEFT BOTTOM: IDENTITY CARD (Enhanced) ═══════════════════ -->
+<g transform="translate(15, 455)">
+  <text y="0" font-size="16" fill="#f8fafc" font-weight="900" letter-spacing="3" filter="url(#glow-name)">SUMANTH</text>
+  <text y="16" font-size="7.5" fill="#94a3b8">B.Tech CSE  |  2027</text>
+  <text y="30" font-size="6.5" fill="#06b6d4" letter-spacing="1.5" font-weight="600">LEARN • BUILD • GROW</text>
 </g>
 
-<!-- ═══════════════════ BOTTOM RIGHT: MOTIVATIONAL ═══════════════════ -->
-<g transform="translate(1050, 430)">
-  <text y="0" font-size="11" fill="#8b5cf6" font-style="italic" font-weight="700" opacity=".5">Progress</text>
-  <text y="16" font-size="11" fill="#06b6d4" font-style="italic" font-weight="700" opacity=".5">Over</text>
-  <text y="32" font-size="11" fill="#f59e0b" font-style="italic" font-weight="700" opacity=".5">Perfection</text>
+<!-- ═══════════════════ BOTTOM CENTER: TASKBAR (Enhanced) ═══════════════════ -->
+<g transform="translate(460, 480)">
+  <rect x="0" y="0" width="230" height="24" rx="10" fill="rgba(17,17,17,.85)" stroke="rgba(59,130,246,.12)" stroke-width=".5"/>
+  <circle cx="28" cy="12" r="5" fill="rgba(59,130,246,.25)"/><text x="28" y="14.5" text-anchor="middle" font-size="6" fill="#e2e8f0">💻</text>
+  <circle cx="56" cy="12" r="5" fill="rgba(6,182,212,.25)"/><text x="56" y="14.5" text-anchor="middle" font-size="6" fill="#e2e8f0">📊</text>
+  <circle cx="84" cy="12" r="5" fill="rgba(34,197,94,.25)"/><text x="84" y="14.5" text-anchor="middle" font-size="6" fill="#e2e8f0">🔬</text>
+  <circle cx="112" cy="12" r="5" fill="rgba(139,92,246,.25)"/><text x="112" y="14.5" text-anchor="middle" font-size="6" fill="#e2e8f0">🎮</text>
+  <circle cx="140" cy="12" r="5" fill="rgba(251,146,60,.25)"/><text x="140" y="14.5" text-anchor="middle" font-size="6" fill="#e2e8f0">☁️</text>
+  <circle cx="168" cy="12" r="5" fill="rgba(236,72,153,.25)"/><text x="168" y="14.5" text-anchor="middle" font-size="6" fill="#e2e8f0">🏋️</text>
+  <circle cx="196" cy="12" r="5" fill="rgba(248,113,113,.25)"/><text x="196" y="14.5" text-anchor="middle" font-size="6" fill="#e2e8f0">📁</text>
 </g>
 
-<!-- Backpack silhouette (bottom left) -->
-<g transform="translate(20, 395)" opacity=".25">
-  <rect x="0" y="15" width="40" height="55" rx="6" fill="#1e293b" stroke="rgba(59,130,246,.15)" stroke-width=".5"/>
-  <rect x="8" y="20" width="24" height="12" rx="2" fill="rgba(59,130,246,.08)"/>
-  <rect x="12" y="35" width="16" height="8" rx="1.5" fill="rgba(59,130,246,.05)"/>
+<!-- ═══════════════════ BOTTOM RIGHT: MOTIVATIONAL (Enhanced) ═══════════════════ -->
+<g transform="translate(1050, 425)">
+  <text y="0" font-size="12" fill="#8b5cf6" font-style="italic" font-weight="700" opacity=".45">Progress</text>
+  <text y="18" font-size="12" fill="#06b6d4" font-style="italic" font-weight="700" opacity=".45">Over</text>
+  <text y="36" font-size="12" fill="#f59e0b" font-style="italic" font-weight="700" opacity=".45">Perfection</text>
 </g>
 
-<!-- Right side small laptop/tablet -->
-<g transform="translate(1100, 380)" opacity=".35">
-  <rect x="0" y="0" width="70" height="45" rx="3" fill="#111" stroke="rgba(139,92,246,.2)" stroke-width=".5"/>
-  <rect x="3" y="3" width="64" height="36" rx="2" fill="#0d1117"/>
-  <text x="35" y="18" text-anchor="middle" font-size="4.5" fill="#64748b">Same</text>
-  <text x="35" y="26" text-anchor="middle" font-size="4.5" fill="#64748b">Guy</text>
-  <text x="35" y="34" text-anchor="middle" font-size="4.5" fill="#f59e0b" font-weight="700">Bigger</text>
-  <text x="35" y="42" text-anchor="middle" font-size="4.5" fill="#f59e0b" font-weight="700">Goals</text>
-  <rect x="0" y="45" width="70" height="4" rx="1" fill="#222"/>
+<!-- Backpack -->
+<g transform="translate(18, 392)" opacity=".22">
+  <rect x="0" y="15" width="42" height="58" rx="7" fill="#1e293b" stroke="rgba(59,130,246,.12)" stroke-width=".5"/>
+  <rect x="8" y="20" width="26" height="13" rx="2.5" fill="rgba(59,130,246,.06)"/>
+  <rect x="12" y="36" width="18" height="9" rx="2" fill="rgba(59,130,246,.04)"/>
+</g>
+
+<!-- Right side small laptop -->
+<g transform="translate(1098, 378)" opacity=".32">
+  <rect x="0" y="0" width="74" height="48" rx="3.5" fill="#111" stroke="rgba(139,92,246,.22)" stroke-width=".6"/>
+  <rect x="3" y="3" width="68" height="38" rx="2" fill="#0d1117"/>
+  <text x="37" y="18" text-anchor="middle" font-size="5" fill="#64748b">Same</text>
+  <text x="37" y="27" text-anchor="middle" font-size="5" fill="#64748b">Guy</text>
+  <text x="37" y="36" text-anchor="middle" font-size="5" fill="#f59e0b" font-weight="700">Bigger</text>
+  <text x="37" y="45" text-anchor="middle" font-size="5" fill="#f59e0b" font-weight="700">Goals</text>
+  <rect x="0" y="48" width="74" height="4" rx="1.5" fill="#222"/>
 </g>
 
 <!-- ═══════════════════ HOLOGRAPHIC FLOATING PANELS ═══════════════════ -->
-<!-- Left: small floating AI panel -->
-<g class="fl" opacity=".35" transform="translate(48, 155)">
-  <rect x="0" y="0" width="35" height="40" rx="3" fill="rgba(10,10,20,.6)" stroke="rgba(59,130,246,.25)" stroke-width=".5"/>
-  <text x="17" y="12" text-anchor="middle" font-size="4.5" fill="#3b82f6" font-weight="700">[AI]</text>
-  <circle class="nn1" cx="10" cy="22" r="2" fill="#3b82f6"/>
-  <circle class="nn2" cx="24" cy="22" r="2" fill="#06b6d4"/>
-  <circle class="nn3" cx="17" cy="32" r="2" fill="#22c55e"/>
-  <line x1="10" y1="22" x2="17" y2="32" stroke="#3b82f6" stroke-width=".3"/><line x1="24" y1="22" x2="17" y2="32" stroke="#06b6d4" stroke-width=".3"/>
+<!-- Left: AI panel -->
+<g class="fl" opacity=".32" transform="translate(46, 152)">
+  <rect x="0" y="0" width="38" height="44" rx="4" fill="rgba(10,10,20,.65)" stroke="rgba(59,130,246,.3)" stroke-width=".6"/>
+  <text x="19" y="13" text-anchor="middle" font-size="5" fill="#3b82f6" font-weight="700">[AI]</text>
+  <circle class="nn1" cx="10" cy="24" r="2.5" fill="#3b82f6"/>
+  <circle class="nn2" cx="26" cy="24" r="2.5" fill="#06b6d4"/>
+  <circle class="nn3" cx="18" cy="35" r="2.5" fill="#22c55e"/>
+  <line x1="10" y1="24" x2="18" y2="35" stroke="#3b82f6" stroke-width=".4"/><line x1="26" y1="24" x2="18" y2="35" stroke="#06b6d4" stroke-width=".4"/>
 </g>
 
-<!-- Right: small floating CLOUD panel -->
-<g class="fl" style="animation-delay:2s" opacity=".3" transform="translate(1090, 150)">
-  <rect x="0" y="0" width="35" height="35" rx="3" fill="rgba(10,10,20,.6)" stroke="rgba(251,146,60,.25)" stroke-width=".5"/>
-  <text x="17" y="12" text-anchor="middle" font-size="4.5" fill="#fb923c" font-weight="700">[CLOUD]</text>
-  <text x="17" y="22" text-anchor="middle" font-size="3.5" fill="#64748b">AWS</text>
-  <text x="17" y="30" text-anchor="middle" font-size="3.5" fill="#64748b">Lambda</text>
+<!-- Right: CLOUD panel -->
+<g class="fl" style="animation-delay:2s" opacity=".28" transform="translate(1088, 148)">
+  <rect x="0" y="0" width="38" height="38" rx="4" fill="rgba(10,10,20,.65)" stroke="rgba(251,146,60,.3)" stroke-width=".6"/>
+  <text x="19" y="13" text-anchor="middle" font-size="5" fill="#fb923c" font-weight="700">[CLOUD]</text>
+  <text x="19" y="24" text-anchor="middle" font-size="4" fill="#64748b">AWS</text>
+  <text x="19" y="33" text-anchor="middle" font-size="4" fill="#64748b">Lambda</text>
 </g>
 
-<!-- Small game icon float -->
-<g class="fl" style="animation-delay:3s" opacity=".3" transform="translate(1070, 100)">
-  <rect x="0" y="0" width="35" height="28" rx="3" fill="rgba(10,10,20,.6)" stroke="rgba(139,92,246,.25)" stroke-width=".5"/>
-  <text x="17" y="12" text-anchor="middle" font-size="4.5" fill="#c4b5fd" font-weight="700">[GAME]</text>
-  <text x="17" y="22" text-anchor="middle" font-size="3.5" fill="#64748b">Unity · C#</text>
+<!-- Right: GAME panel -->
+<g class="fl" style="animation-delay:3s" opacity=".28" transform="translate(1068, 98)">
+  <rect x="0" y="0" width="38" height="30" rx="4" fill="rgba(10,10,20,.65)" stroke="rgba(139,92,246,.3)" stroke-width=".6"/>
+  <text x="19" y="13" text-anchor="middle" font-size="5" fill="#c4b5fd" font-weight="700">[GAME]</text>
+  <text x="19" y="24" text-anchor="middle" font-size="4" fill="#64748b">Unity · C#</text>
+</g>
+
+<!-- Left: DATA panel (New) -->
+<g class="fl" style="animation-delay:4s" opacity=".25" transform="translate(50, 210)">
+  <rect x="0" y="0" width="36" height="30" rx="4" fill="rgba(10,10,20,.65)" stroke="rgba(6,182,212,.3)" stroke-width=".6"/>
+  <text x="18" y="12" text-anchor="middle" font-size="5" fill="#06b6d4" font-weight="700">[DATA]</text>
+  <text x="18" y="23" text-anchor="middle" font-size="3.8" fill="#64748b">Pandas</text>
 </g>
 
 <!-- ═══════════════════ SCREEN AMBIENT LIGHT EFFECTS ═══════════════════ -->
-<!-- Monitor 1 light on wall -->
-<ellipse cx="221" cy="160" rx="100" ry="50" fill="url(#scr-glow-1)" opacity=".4" class="sg"/>
-<!-- Monitor 2 light on wall -->
-<ellipse cx="574" cy="140" rx="120" ry="55" fill="url(#scr-glow-2)" opacity=".4" class="sg" style="animation-delay:1s"/>
-<!-- Monitor 3 light on wall -->
-<ellipse cx="927" cy="160" rx="100" ry="50" fill="url(#scr-glow-3)" opacity=".35" class="sg" style="animation-delay:2s"/>
+<ellipse cx="221" cy="158" rx="110" ry="55" fill="url(#scr-glow-1)" opacity=".45" class="sg"/>
+<ellipse cx="574" cy="138" rx="130" ry="60" fill="url(#scr-glow-2)" opacity=".45" class="sg" style="animation-delay:1s"/>
+<ellipse cx="927" cy="158" rx="110" ry="55" fill="url(#scr-glow-3)" opacity=".4" class="sg" style="animation-delay:2s"/>
+
+<!-- Desk surface reflections from monitors -->
+<ellipse cx="221" cy="395" rx="80" ry="15" fill="url(#scr-glow-1)" opacity=".15" class="sg"/>
+<ellipse cx="574" cy="395" rx="100" ry="18" fill="url(#scr-glow-2)" opacity=".12" class="sg" style="animation-delay:1s"/>
+<ellipse cx="927" cy="395" rx="80" ry="15" fill="url(#scr-glow-3)" opacity=".12" class="sg" style="animation-delay:2s"/>
 
 </svg>
