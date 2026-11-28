@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 160" width="1200" height="160">
+<defs>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
+text{font-family:'JetBrains Mono',monospace}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flow{0%{stroke-dashoffset:20}100%{stroke-dashoffset:0}}
+.p{animation:pulse 2.5s ease-in-out infinite}
+.f{stroke-dasharray:4 4;animation:flow 2s linear infinite}
+</style>
+</defs>
+<rect width="1200" height="160" fill="#050505"/>
+<rect x="0" y="0" width="1200" height="1" fill="#00ff41" opacity=".3"/>
+
+<!-- Project cards as connected nodes -->
+<!-- Card 1: BenefitX -->
+<rect x="30" y="20" width="175" height="120" rx="8" fill="rgba(8,8,8,.95)" stroke="rgba(0,255,65,.15)" stroke-width=".8"/>
+<circle cx="50" cy="40" r="5" fill="#00ff41" opacity=".6" class="p"/>
+<text x="62" y="43" font-size="8" fill="#e8e8e8" font-weight="700">BENEFITX</text>
+<text x="162" y="43" font-size="6" fill="#00ff41" text-anchor="end">LIVE</text>
+<line x1="40" y1="52" x2="195" y2="52" stroke="rgba(0,255,65,.06)" stroke-width=".5"/>
+<text x="40" y="66" font-size="6" fill="#666">Gov benefit navigator</text>
+<text x="40" y="78" font-size="6" fill="#666">AI-powered matching</text>
+<text x="40" y="96" font-size="5.5" fill="#444">React · TanStack · Supabase</text>
+<rect x="40" y="108" width="40" height="12" rx="3" fill="rgba(0,255,65,.06)"/><text x="60" y="117" text-anchor="middle" font-size="5" fill="#00ff41">▸ LIVE</text>
+<rect x="85" y="108" width="45" height="12" rx="3" fill="rgba(0,255,65,.06)"/><text x="107" y="117" text-anchor="middle" font-size="5" fill="#00ff41">▸ CODE</text>
+
+<!-- Connection line 1→2 -->
+<line x1="205" y1="80" x2="230" y2="80" stroke="#00ff41" stroke-width=".5" class="f"/>
+
+<!-- Card 2: HandScape -->
+<rect x="230" y="20" width="175" height="120" rx="8" fill="rgba(8,8,8,.95)" stroke="rgba(0,255,65,.15)" stroke-width=".8"/>
+<circle cx="250" cy="40" r="5" fill="#00ff41" opacity=".6" class="p" style="animation-delay:.4s"/>
+<text x="262" y="43" font-size="8" fill="#e8e8e8" font-weight="700">HANDSCAPE</text>
+<text x="362" y="43" font-size="6" fill="#00ff41" text-anchor="end">3D</text>
+<line x1="240" y1="52" x2="395" y2="52" stroke="rgba(0,255,65,.06)" stroke-width=".5"/>
+<text x="240" y="66" font-size="6" fill="#666">3D escape room game</text>
+<text x="240" y="78" font-size="6" fill="#666">Hand gesture controls</text>
+<text x="240" y="96" font-size="5.5" fill="#444">Three.js · MediaPipe · React</text>
+<rect x="240" y="108" width="45" height="12" rx="3" fill="rgba(0,255,65,.06)"/><text x="262" y="117" text-anchor="middle" font-size="5" fill="#00ff41">▸ CODE</text>
+
+<!-- Connection 2→3 -->
+<line x1="405" y1="80" x2="430" y2="80" stroke="#00ff41" stroke-width=".5" class="f" style="animation-delay:.5s"/>
+
+<!-- Card 3: Agentic Research -->
+<rect x="430" y="20" width="175" height="120" rx="8" fill="rgba(8,8,8,.95)" stroke="rgba(0,255,65,.15)" stroke-width=".8"/>
+<circle cx="450" cy="40" r="5" fill="#00ff41" opacity=".6" class="p" style="animation-delay:.8s"/>
+<text x="462" y="43" font-size="7.5" fill="#e8e8e8" font-weight="700">RESEARCH AGENT</text>
+<text x="562" y="43" font-size="6" fill="#00ff41" text-anchor="end">AI</text>
+<line x1="440" y1="52" x2="595" y2="52" stroke="rgba(0,255,65,.06)" stroke-width=".5"/>
+<text x="440" y="66" font-size="6" fill="#666">Autonomous ReAct agent</text>
+<text x="440" y="78" font-size="6" fill="#666">Tool use &amp; reasoning</text>
+<text x="440" y="96" font-size="5.5" fill="#444">Python · FastAPI · LangChain</text>
+<rect x="440" y="108" width="45" height="12" rx="3" fill="rgba(0,255,65,.06)"/><text x="462" y="117" text-anchor="middle" font-size="5" fill="#00ff41">▸ CODE</text>
+
+<!-- Connection 3→4 -->
+<line x1="605" y1="80" x2="630" y2="80" stroke="#00ff41" stroke-width=".5" class="f" style="animation-delay:1s"/>
+
+<!-- Card 4: Body IQ -->
+<rect x="630" y="20" width="175" height="120" rx="8" fill="rgba(8,8,8,.95)" stroke="rgba(0,255,65,.15)" stroke-width=".8"/>
+<circle cx="650" cy="40" r="5" fill="#00ff41" opacity=".6" class="p" style="animation-delay:1.2s"/>
+<text x="662" y="43" font-size="8" fill="#e8e8e8" font-weight="700">BODY IQ</text>
+<text x="762" y="43" font-size="6" fill="#00ff41" text-anchor="end">HEALTH</text>
+<line x1="640" y1="52" x2="795" y2="52" stroke="rgba(0,255,65,.06)" stroke-width=".5"/>
+<text x="640" y="66" font-size="6" fill="#666">Health optimization</text>
+<text x="640" y="78" font-size="6" fill="#666">BMI · BMR · AI Analysis</text>
+<text x="640" y="96" font-size="5.5" fill="#444">Python · ML · Data Science</text>
+<rect x="640" y="108" width="45" height="12" rx="3" fill="rgba(0,255,65,.06)"/><text x="662" y="117" text-anchor="middle" font-size="5" fill="#00ff41">▸ CODE</text>
+
+<!-- Connection 4→5 -->
+<line x1="805" y1="80" x2="830" y2="80" stroke="#00ff41" stroke-width=".5" class="f" style="animation-delay:1.5s"/>
+
+<!-- Card 5: StudyBuddy -->
+<rect x="830" y="20" width="160" height="120" rx="8" fill="rgba(8,8,8,.95)" stroke="rgba(0,255,65,.15)" stroke-width=".8"/>
+<circle cx="850" cy="40" r="5" fill="#00ff41" opacity=".6" class="p" style="animation-delay:1.6s"/>
+<text x="862" y="43" font-size="8" fill="#e8e8e8" font-weight="700">STUDYBUDDY</text>
+<text x="947" y="43" font-size="6" fill="#00ff41" text-anchor="end">RAG</text>
+<line x1="840" y1="52" x2="980" y2="52" stroke="rgba(0,255,65,.06)" stroke-width=".5"/>
+<text x="840" y="66" font-size="6" fill="#666">AI study companion</text>
+<text x="840" y="78" font-size="6" fill="#666">RAG document Q&amp;A</text>
+<text x="840" y="96" font-size="5.5" fill="#444">Python · RAG · FastAPI</text>
+<rect x="840" y="108" width="45" height="12" rx="3" fill="rgba(0,255,65,.06)"/><text x="862" y="117" text-anchor="middle" font-size="5" fill="#00ff41">▸ CODE</text>
+
+<!-- Connection 5→6 -->
+<line x1="990" y1="80" x2="1010" y2="80" stroke="#00ff41" stroke-width=".5" class="f" style="animation-delay:2s"/>
+
+<!-- Card 6: Last Standing Thief -->
+<rect x="1010" y="20" width="170" height="120" rx="8" fill="rgba(8,8,8,.95)" stroke="rgba(0,255,65,.15)" stroke-width=".8"/>
+<circle cx="1030" cy="40" r="5" fill="#00ff41" opacity=".6" class="p" style="animation-delay:2s"/>
+<text x="1042" y="43" font-size="7.5" fill="#e8e8e8" font-weight="700">LAST THIEF</text>
+<text x="1137" y="43" font-size="6" fill="#00ff41" text-anchor="end">GAME</text>
+<line x1="1020" y1="52" x2="1170" y2="52" stroke="rgba(0,255,65,.06)" stroke-width=".5"/>
+<text x="1020" y="66" font-size="6" fill="#666">2D stealth game</text>
+<text x="1020" y="78" font-size="6" fill="#666">Unity physics engine</text>
+<text x="1020" y="96" font-size="5.5" fill="#444">Unity · C# · 2D Design</text>
+<rect x="1020" y="108" width="45" height="12" rx="3" fill="rgba(0,255,65,.06)"/><text x="1042" y="117" text-anchor="middle" font-size="5" fill="#00ff41">▸ CODE</text>
+
+<rect x="0" y="159" width="1200" height="1" fill="#00ff41" opacity=".15"/>
+</svg>
