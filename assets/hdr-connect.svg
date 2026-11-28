@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 54" width="1200" height="54">
+
+<defs>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap');
+text{font-family:'JetBrains Mono','Fira Code',monospace}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes scan{0%{transform:translateY(-400px)}100%{transform:translateY(400px)}}
+@keyframes flow{0%{stroke-dashoffset:40}100%{stroke-dashoffset:0}}
+@keyframes dashDraw{0%{stroke-dashoffset:600}100%{stroke-dashoffset:0}}
+@keyframes nodePulse{0%,100%{r:3;opacity:.5}50%{r:4.8;opacity:1}}
+.pl{animation:pulse 3s ease-in-out infinite}
+.sc{animation:scan 9s linear infinite;opacity:.035}
+.flw{stroke-dasharray:6 6;animation:flow 2.5s linear infinite}
+.dd{stroke-dasharray:600;animation:dashDraw 3s ease-out forwards}
+.np{animation:nodePulse 2.6s ease-in-out infinite}
+</style>
+<filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="shadow"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity=".65"/></filter>
+<linearGradient id="glassBg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#0f1511" stop-opacity=".88"/>
+  <stop offset="50%" stop-color="#080b09" stop-opacity=".92"/>
+  <stop offset="100%" stop-color="#0b100d" stop-opacity=".86"/>
+</linearGradient>
+<linearGradient id="glassRim" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".35"/>
+  <stop offset="35%" stop-color="#ffffff" stop-opacity=".12"/>
+  <stop offset="70%" stop-color="#00ff41" stop-opacity=".08"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity=".28"/>
+</linearGradient>
+<linearGradient id="glassShine" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#ffffff" stop-opacity=".08"/>
+  <stop offset="45%" stop-color="#ffffff" stop-opacity=".02"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".32"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity=".01"/>
+</linearGradient>
+<radialGradient id="ambient" cx="50%" cy="50%" r="55%">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".07"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity="0"/>
+</radialGradient>
+</defs>
+
+<rect width="1200" height="54" fill="#030303"/>
+
+<g filter="url(#shadow)">
+  <rect x="10" y="5" width="1180" height="44" rx="10" fill="url(#glassBg)" stroke="url(#glassRim)" stroke-width="1"/>
+  <rect x="11" y="6" width="1178" height="12.3" rx="9" fill="url(#glassShine)"/>
+  <rect x="10" y="5" width="1180" height="44" rx="10" fill="url(#ambient)"/>
+  <line x1="24" y1="5.5" x2="1176" y2="5.5" stroke="#ffffff" stroke-opacity=".18" stroke-width=".7"/>
+</g>
+
+<circle cx="34" cy="27" r="4" fill="#00ff41" class="pl" filter="url(#glow)"/>
+<text x="48" y="31" font-size="11" fill="#00ff41" font-weight="700" letter-spacing="1.5">07 // NETWORK_UPLINK</text>
+<line x1="255" y1="15" x2="255" y2="39" stroke="rgba(0,255,65,0.18)" stroke-width="1"/>
+<text x="272" y="31" font-size="12" fill="#e6e6e6" font-weight="600">Connect &amp; Live Metrics</text>
+<text x="1168" y="30" text-anchor="end" font-size="9" fill="#4f6b56" letter-spacing="1">STATUS: VERIFIED</text>
+</svg>

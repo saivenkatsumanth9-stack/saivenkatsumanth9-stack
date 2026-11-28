@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 285" width="1200" height="285">
+
+<defs>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap');
+text{font-family:'JetBrains Mono','Fira Code',monospace}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes scan{0%{transform:translateY(-400px)}100%{transform:translateY(400px)}}
+@keyframes flow{0%{stroke-dashoffset:40}100%{stroke-dashoffset:0}}
+@keyframes dashDraw{0%{stroke-dashoffset:600}100%{stroke-dashoffset:0}}
+@keyframes nodePulse{0%,100%{r:3;opacity:.5}50%{r:4.8;opacity:1}}
+.pl{animation:pulse 3s ease-in-out infinite}
+.sc{animation:scan 9s linear infinite;opacity:.035}
+.flw{stroke-dasharray:6 6;animation:flow 2.5s linear infinite}
+.dd{stroke-dasharray:600;animation:dashDraw 3s ease-out forwards}
+.np{animation:nodePulse 2.6s ease-in-out infinite}
+</style>
+<filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="shadow"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity=".65"/></filter>
+<linearGradient id="glassBg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#0f1511" stop-opacity=".88"/>
+  <stop offset="50%" stop-color="#080b09" stop-opacity=".92"/>
+  <stop offset="100%" stop-color="#0b100d" stop-opacity=".86"/>
+</linearGradient>
+<linearGradient id="glassRim" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".35"/>
+  <stop offset="35%" stop-color="#ffffff" stop-opacity=".12"/>
+  <stop offset="70%" stop-color="#00ff41" stop-opacity=".08"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity=".28"/>
+</linearGradient>
+<linearGradient id="glassShine" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#ffffff" stop-opacity=".08"/>
+  <stop offset="45%" stop-color="#ffffff" stop-opacity=".02"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".32"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity=".01"/>
+</linearGradient>
+<radialGradient id="ambient" cx="50%" cy="50%" r="55%">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".07"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity="0"/>
+</radialGradient>
+</defs>
+
+<rect width="1200" height="285" fill="#030303"/>
+
+<!-- Card 4: 52-Week Heatmap -->
+
+<g filter="url(#shadow)">
+  <rect x="12" y="10" width="780" height="265" rx="14" fill="url(#glassBg)" stroke="url(#glassRim)" stroke-width="1"/>
+  <rect x="13" y="11" width="778" height="48.0" rx="13" fill="url(#glassShine)"/>
+  <rect x="12" y="10" width="780" height="265" rx="14" fill="url(#ambient)"/>
+  <line x1="26" y1="10.5" x2="778" y2="10.5" stroke="#ffffff" stroke-opacity=".18" stroke-width=".7"/>
+</g>
+
+<text x="36" y="38" font-size="8.5" fill="#00ff41" letter-spacing="1.8">GRAPH_04 // CONTRIBUTION_HEATMAP</text>
+<text x="36" y="56" font-size="13" fill="#efefef" font-weight="700">52-Week Activity Matrix</text>
+<text x="36" y="72" font-size="8.5" fill="#738c79">81 contributions in the last year · Peak sprint: Jun–Sep 2026</text>
+<text x="766" y="42" text-anchor="end" font-size="9" fill="#00ff41" font-weight="700">21 ACTIVE DAYS</text>
+
+<text x="38" y="102" font-size="7.5" fill="#666">Dec</text>
+<text x="148" y="102" font-size="7.5" fill="#666">Feb</text>
+<text x="260" y="102" font-size="7.5" fill="#666">Apr</text>
+<text x="372" y="102" font-size="7.5" fill="#666">Jun</text>
+<text x="484" y="102" font-size="7.5" fill="#666">Aug</text>
+<text x="596" y="102" font-size="7.5" fill="#666">Oct</text>
+<text x="708" y="102" font-size="7.5" fill="#00ff41">Nov</text>
+
+
+
+<g transform="translate(560, 232)">
+  <text x="0" y="9" font-size="7.5" fill="#666">Less</text>
+  <rect x="28" y="1" width="10" height="10" rx="2" fill="rgba(255,255,255,0.04)"/>
+  <rect x="42" y="1" width="10" height="10" rx="2" fill="#0a4a1c"/>
+  <rect x="56" y="1" width="10" height="10" rx="2" fill="#0e852e"/>
+  <rect x="70" y="1" width="10" height="10" rx="2" fill="#00c934"/>
+  <rect x="84" y="1" width="10" height="10" rx="2" fill="#00ff41"/>
+  <text x="100" y="9" font-size="7.5" fill="#666">More</text>
+</g>
+
+<!-- Card 5: Weekday Pulse Bar Chart -->
+
+<g filter="url(#shadow)">
+  <rect x="812" y="10" width="376" height="265" rx="14" fill="url(#glassBg)" stroke="url(#glassRim)" stroke-width="1"/>
+  <rect x="813" y="11" width="374" height="48.0" rx="13" fill="url(#glassShine)"/>
+  <rect x="812" y="10" width="376" height="265" rx="14" fill="url(#ambient)"/>
+  <line x1="826" y1="10.5" x2="1174" y2="10.5" stroke="#ffffff" stroke-opacity=".18" stroke-width=".7"/>
+</g>
+
+<text x="834" y="38" font-size="8.5" fill="#00ff41" letter-spacing="1.8">GRAPH_05 // WEEKDAY_CADENCE</text>
+<text x="834" y="56" font-size="13" fill="#efefef" font-weight="700">Coding Rhythm by Day</text>
+<text x="834" y="72" font-size="8.5" fill="#738c79">Peak output on Thursdays</text>
+
+    <rect x="845" y="125" width="26" height="115" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(0,255,65,0.1)" stroke-width=".5"/>
+    <rect x="845" y="232.0" width="26" height="8.0" rx="5" fill="rgba(0,255,65,0.45)" />
+    <text x="858" y="226.0" text-anchor="middle" font-size="8.5" fill="#aaa" font-weight="700">0</text>
+    <text x="858" y="256" text-anchor="middle" font-size="8.5" fill="#888">Mon</text>
+    
+    <rect x="891" y="125" width="26" height="115" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(0,255,65,0.1)" stroke-width=".5"/>
+    <rect x="891" y="232.0" width="26" height="8.0" rx="5" fill="rgba(0,255,65,0.45)" />
+    <text x="904" y="226.0" text-anchor="middle" font-size="8.5" fill="#aaa" font-weight="700">0</text>
+    <text x="904" y="256" text-anchor="middle" font-size="8.5" fill="#888">Tue</text>
+    
+    <rect x="937" y="125" width="26" height="115" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(0,255,65,0.1)" stroke-width=".5"/>
+    <rect x="937" y="232.0" width="26" height="8.0" rx="5" fill="rgba(0,255,65,0.45)" />
+    <text x="950" y="226.0" text-anchor="middle" font-size="8.5" fill="#aaa" font-weight="700">0</text>
+    <text x="950" y="256" text-anchor="middle" font-size="8.5" fill="#888">Wed</text>
+    
+    <rect x="983" y="125" width="26" height="115" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(0,255,65,0.1)" stroke-width=".5"/>
+    <rect x="983" y="232.0" width="26" height="8.0" rx="5" fill="rgba(0,255,65,0.45)" />
+    <text x="996" y="226.0" text-anchor="middle" font-size="8.5" fill="#aaa" font-weight="700">0</text>
+    <text x="996" y="256" text-anchor="middle" font-size="8.5" fill="#888">Thu</text>
+    
+    <rect x="1029" y="125" width="26" height="115" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(0,255,65,0.1)" stroke-width=".5"/>
+    <rect x="1029" y="232.0" width="26" height="8.0" rx="5" fill="rgba(0,255,65,0.45)" />
+    <text x="1042" y="226.0" text-anchor="middle" font-size="8.5" fill="#aaa" font-weight="700">0</text>
+    <text x="1042" y="256" text-anchor="middle" font-size="8.5" fill="#888">Fri</text>
+    
+    <rect x="1075" y="125" width="26" height="115" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(0,255,65,0.1)" stroke-width=".5"/>
+    <rect x="1075" y="232.0" width="26" height="8.0" rx="5" fill="rgba(0,255,65,0.45)" />
+    <text x="1088" y="226.0" text-anchor="middle" font-size="8.5" fill="#aaa" font-weight="700">0</text>
+    <text x="1088" y="256" text-anchor="middle" font-size="8.5" fill="#888">Sat</text>
+    
+    <rect x="1121" y="125" width="26" height="115" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(0,255,65,0.1)" stroke-width=".5"/>
+    <rect x="1121" y="232.0" width="26" height="8.0" rx="5" fill="rgba(0,255,65,0.45)" />
+    <text x="1134" y="226.0" text-anchor="middle" font-size="8.5" fill="#aaa" font-weight="700">0</text>
+    <text x="1134" y="256" text-anchor="middle" font-size="8.5" fill="#888">Sun</text>
+    
+</svg>

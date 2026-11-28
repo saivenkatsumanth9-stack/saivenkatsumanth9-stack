@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320">
+
+<defs>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap');
+text{font-family:'JetBrains Mono','Fira Code',monospace}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes scan{0%{transform:translateY(-400px)}100%{transform:translateY(400px)}}
+@keyframes flow{0%{stroke-dashoffset:40}100%{stroke-dashoffset:0}}
+@keyframes dashDraw{0%{stroke-dashoffset:600}100%{stroke-dashoffset:0}}
+@keyframes nodePulse{0%,100%{r:3;opacity:.5}50%{r:4.8;opacity:1}}
+.pl{animation:pulse 3s ease-in-out infinite}
+.sc{animation:scan 9s linear infinite;opacity:.035}
+.flw{stroke-dasharray:6 6;animation:flow 2.5s linear infinite}
+.dd{stroke-dasharray:600;animation:dashDraw 3s ease-out forwards}
+.np{animation:nodePulse 2.6s ease-in-out infinite}
+</style>
+<filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="shadow"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity=".65"/></filter>
+<linearGradient id="glassBg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#0f1511" stop-opacity=".88"/>
+  <stop offset="50%" stop-color="#080b09" stop-opacity=".92"/>
+  <stop offset="100%" stop-color="#0b100d" stop-opacity=".86"/>
+</linearGradient>
+<linearGradient id="glassRim" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".35"/>
+  <stop offset="35%" stop-color="#ffffff" stop-opacity=".12"/>
+  <stop offset="70%" stop-color="#00ff41" stop-opacity=".08"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity=".28"/>
+</linearGradient>
+<linearGradient id="glassShine" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#ffffff" stop-opacity=".08"/>
+  <stop offset="45%" stop-color="#ffffff" stop-opacity=".02"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".32"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity=".01"/>
+</linearGradient>
+<radialGradient id="ambient" cx="50%" cy="50%" r="55%">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".07"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity="0"/>
+</radialGradient>
+</defs>
+
+<rect width="1200" height="320" fill="#030303"/>
+<rect x="0" y="0" width="1200" height="2" fill="#00ff41" class="sc"/>
+
+<!-- Card 1: Language Donut -->
+
+<g filter="url(#shadow)">
+  <rect x="12" y="10" width="376" height="300" rx="14" fill="url(#glassBg)" stroke="url(#glassRim)" stroke-width="1"/>
+  <rect x="13" y="11" width="374" height="48.0" rx="13" fill="url(#glassShine)"/>
+  <rect x="12" y="10" width="376" height="300" rx="14" fill="url(#ambient)"/>
+  <line x1="26" y1="10.5" x2="374" y2="10.5" stroke="#ffffff" stroke-opacity=".18" stroke-width=".7"/>
+</g>
+
+<text x="32" y="38" font-size="8.5" fill="#00ff41" letter-spacing="1.8">GRAPH_01 // LANGUAGE_DONUT</text>
+<text x="32" y="56" font-size="13" fill="#efefef" font-weight="700">Codebase Distribution</text>
+<text x="32" y="72" font-size="8.5" fill="#738c79">Real byte share across 22 repositories</text>
+<circle cx="125" cy="195" r="82" fill="none" stroke="rgba(0,255,65,0.1)" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M 125.00 119.00 A 76 76 0 1 1 54.22 222.68 L 80.30 212.48 A 48 48 0 1 0 125.00 147.00 Z" fill="#00ff41" opacity="0.9"/><path d="M 53.66 221.19 A 76 76 0 0 1 51.59 175.33 L 78.64 182.58 A 48 48 0 0 0 79.94 211.54 Z" fill="#22d35e" opacity="0.9"/><path d="M 52.02 173.80 A 76 76 0 0 1 70.15 142.40 L 90.36 161.78 A 48 48 0 0 0 78.91 181.61 Z" fill="#10a347" opacity="0.9"/><path d="M 71.26 141.26 A 76 76 0 0 1 89.09 128.02 L 102.32 152.70 A 48 48 0 0 0 91.06 161.06 Z" fill="#0c7a35" opacity="0.9"/><path d="M 90.50 127.28 A 76 76 0 0 1 103.64 122.06 L 111.51 148.93 A 48 48 0 0 0 103.21 152.23 Z" fill="#7dff9e" opacity="0.9"/><path d="M 105.18 121.63 A 76 76 0 0 1 123.41 119.02 L 123.99 147.01 A 48 48 0 0 0 112.48 148.66 Z" fill="#4a6651" opacity="0.9"/>
+<circle cx="125" cy="195" r="44" fill="rgba(5,8,6,0.9)" stroke="rgba(0,255,65,0.2)" stroke-width="1"/>
+<text x="125" y="191" text-anchor="middle" font-size="16" fill="#00ff41" font-weight="800">3.29 MB</text>
+<text x="125" y="207" text-anchor="middle" font-size="7.5" fill="#888">14 LANGUAGES</text>
+
+    <rect x="225" y="128" width="140" height="19" rx="4" fill="rgba(255,255,255,0.025)" stroke="rgba(0,255,65,0.12)" stroke-width=".6"/>
+    <circle cx="236" cy="137.5" r="3.5" fill="#00ff41"/>
+    <text x="246" y="140.5" font-size="8.5" fill="#d8d8d8">TypeScript</text>
+    <text x="357" y="140.5" text-anchor="end" font-size="8.5" fill="#00ff41" font-weight="700">69.4%</text>
+    
+    <rect x="225" y="152" width="140" height="19" rx="4" fill="rgba(255,255,255,0.025)" stroke="rgba(0,255,65,0.12)" stroke-width=".6"/>
+    <circle cx="236" cy="161.5" r="3.5" fill="#22d35e"/>
+    <text x="246" y="164.5" font-size="8.5" fill="#d8d8d8">JavaScript</text>
+    <text x="357" y="164.5" text-anchor="end" font-size="8.5" fill="#00ff41" font-weight="700">10.1%</text>
+    
+    <rect x="225" y="176" width="140" height="19" rx="4" fill="rgba(255,255,255,0.025)" stroke="rgba(0,255,65,0.12)" stroke-width=".6"/>
+    <circle cx="236" cy="185.5" r="3.5" fill="#10a347"/>
+    <text x="246" y="188.5" font-size="8.5" fill="#d8d8d8">HTML</text>
+    <text x="357" y="188.5" text-anchor="end" font-size="8.5" fill="#00ff41" font-weight="700">8.0%</text>
+    
+    <rect x="225" y="200" width="140" height="19" rx="4" fill="rgba(255,255,255,0.025)" stroke="rgba(0,255,65,0.12)" stroke-width=".6"/>
+    <circle cx="236" cy="209.5" r="3.5" fill="#0c7a35"/>
+    <text x="246" y="212.5" font-size="8.5" fill="#d8d8d8">Dart</text>
+    <text x="357" y="212.5" text-anchor="end" font-size="8.5" fill="#00ff41" font-weight="700">5.0%</text>
+    
+    <rect x="225" y="224" width="140" height="19" rx="4" fill="rgba(255,255,255,0.025)" stroke="rgba(0,255,65,0.12)" stroke-width=".6"/>
+    <circle cx="236" cy="233.5" r="3.5" fill="#7dff9e"/>
+    <text x="246" y="236.5" font-size="8.5" fill="#d8d8d8">Python</text>
+    <text x="357" y="236.5" text-anchor="end" font-size="8.5" fill="#00ff41" font-weight="700">3.3%</text>
+    
+    <rect x="225" y="248" width="140" height="19" rx="4" fill="rgba(255,255,255,0.025)" stroke="rgba(0,255,65,0.12)" stroke-width=".6"/>
+    <circle cx="236" cy="257.5" r="3.5" fill="#4a6651"/>
+    <text x="246" y="260.5" font-size="8.5" fill="#d8d8d8">CSS &amp; SQL &amp; C++</text>
+    <text x="357" y="260.5" text-anchor="end" font-size="8.5" fill="#00ff41" font-weight="700">4.2%</text>
+    
+
+<!-- Card 2: Skill Radar -->
+
+<g filter="url(#shadow)">
+  <rect x="408" y="10" width="384" height="300" rx="14" fill="url(#glassBg)" stroke="url(#glassRim)" stroke-width="1"/>
+  <rect x="409" y="11" width="382" height="48.0" rx="13" fill="url(#glassShine)"/>
+  <rect x="408" y="10" width="384" height="300" rx="14" fill="url(#ambient)"/>
+  <line x1="422" y1="10.5" x2="778" y2="10.5" stroke="#ffffff" stroke-opacity=".18" stroke-width=".7"/>
+</g>
+
+<text x="428" y="38" font-size="8.5" fill="#00ff41" letter-spacing="1.8">GRAPH_02 // CAPABILITY_RADAR</text>
+<text x="428" y="56" font-size="13" fill="#efefef" font-weight="700">Engineering Domain Matrix</text>
+<text x="428" y="72" font-size="8.5" fill="#738c79">Project &amp; certification footprint</text>
+<polygon points="600.0,176.5 616.9,186.2 616.9,205.8 600.0,215.5 583.1,205.8 583.1,186.2" fill="none" stroke="rgba(0,255,65,0.08)" stroke-width="0.8"/><polygon points="600.0,157.0 633.8,176.5 633.8,215.5 600.0,235.0 566.2,215.5 566.2,176.5" fill="none" stroke="rgba(0,255,65,0.08)" stroke-width="0.8"/><polygon points="600.0,137.5 650.7,166.8 650.7,225.2 600.0,254.5 549.3,225.2 549.3,166.8" fill="none" stroke="rgba(0,255,65,0.08)" stroke-width="0.8"/><polygon points="600.0,118.0 667.5,157.0 667.5,235.0 600.0,274.0 532.5,235.0 532.5,157.0" fill="none" stroke="rgba(0,255,65,0.22)" stroke-width="0.8"/>
+<line x1="600" y1="196" x2="600.0" y2="118.0" stroke="rgba(0,255,65,0.14)" stroke-width="0.7"/><line x1="600" y1="196" x2="667.5" y2="157.0" stroke="rgba(0,255,65,0.14)" stroke-width="0.7"/><line x1="600" y1="196" x2="667.5" y2="235.0" stroke="rgba(0,255,65,0.14)" stroke-width="0.7"/><line x1="600" y1="196" x2="600.0" y2="274.0" stroke="rgba(0,255,65,0.14)" stroke-width="0.7"/><line x1="600" y1="196" x2="532.5" y2="235.0" stroke="rgba(0,255,65,0.14)" stroke-width="0.7"/><line x1="600" y1="196" x2="532.5" y2="157.0" stroke="rgba(0,255,65,0.14)" stroke-width="0.7"/>
+<polygon points="600.0,124.2 664.2,159.0 658.1,229.5 600.0,256.8 546.0,227.2 550.0,167.1" fill="rgba(0,255,65,0.16)" stroke="#00ff41" stroke-width="1.8" filter="url(#glow)"/>
+<circle cx="600.0" cy="124.2" r="3.5" fill="#00ff41" class="np" style="animation-delay:0.00s" filter="url(#glow)"/><circle cx="664.2" cy="159.0" r="3.5" fill="#00ff41" class="np" style="animation-delay:0.35s" filter="url(#glow)"/><circle cx="658.1" cy="229.5" r="3.5" fill="#00ff41" class="np" style="animation-delay:0.70s" filter="url(#glow)"/><circle cx="600.0" cy="256.8" r="3.5" fill="#00ff41" class="np" style="animation-delay:1.05s" filter="url(#glow)"/><circle cx="546.0" cy="227.2" r="3.5" fill="#00ff41" class="np" style="animation-delay:1.40s" filter="url(#glow)"/><circle cx="550.0" cy="167.1" r="3.5" fill="#00ff41" class="np" style="animation-delay:1.75s" filter="url(#glow)"/>
+<text x="600.0" y="103.0" text-anchor="middle" font-size="8.5" fill="#cfcfcf" font-weight="600">AI / Agents</text><text x="682.3" y="151.0" text-anchor="start" font-size="8.5" fill="#cfcfcf" font-weight="600">Full-Stack</text><text x="682.3" y="247.0" text-anchor="start" font-size="8.5" fill="#cfcfcf" font-weight="600">ML / Vision</text><text x="600.0" y="295.0" text-anchor="middle" font-size="8.5" fill="#cfcfcf" font-weight="600">Cloud / DB</text><text x="517.7" y="247.0" text-anchor="end" font-size="8.5" fill="#cfcfcf" font-weight="600">DSA / Core</text><text x="517.7" y="151.0" text-anchor="end" font-size="8.5" fill="#cfcfcf" font-weight="600">3D / Game</text>
+
+<!-- Card 3: Repo Growth Trajectory -->
+
+<g filter="url(#shadow)">
+  <rect x="812" y="10" width="376" height="300" rx="14" fill="url(#glassBg)" stroke="url(#glassRim)" stroke-width="1"/>
+  <rect x="813" y="11" width="374" height="48.0" rx="13" fill="url(#glassShine)"/>
+  <rect x="812" y="10" width="376" height="300" rx="14" fill="url(#ambient)"/>
+  <line x1="826" y1="10.5" x2="1174" y2="10.5" stroke="#ffffff" stroke-opacity=".18" stroke-width=".7"/>
+</g>
+
+<text x="832" y="38" font-size="8.5" fill="#00ff41" letter-spacing="1.8">GRAPH_03 // GROWTH_TRAJECTORY</text>
+<text x="832" y="56" font-size="13" fill="#efefef" font-weight="700">Cumulative Repository Growth</text>
+<text x="832" y="72" font-size="8.5" fill="#738c79">Sep 2025 → Nov 2026 (22 repos · 54 ★)</text>
+<line x1="846" y1="265" x2="1156" y2="265" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+<line x1="846" y1="192.5" x2="1156" y2="192.5" stroke="rgba(0,255,65,0.08)" stroke-width=".7" stroke-dasharray="4 4"/>
+<line x1="846" y1="120" x2="1156" y2="120" stroke="rgba(0,255,65,0.08)" stroke-width=".7" stroke-dasharray="4 4"/>
+<polygon points="846.0,265 846.0,259.0 908.0,228.8 970.0,222.7 1032.0,150.2 1094.0,132.1 1156.0,132.1 1156.0,265" fill="url(#areaGrad)"/>
+<polyline points="846.0,259.0 908.0,228.8 970.0,222.7 1032.0,150.2 1094.0,132.1 1156.0,132.1" fill="none" stroke="#00ff41" stroke-width="2.2" class="dd" filter="url(#glow)"/>
+<circle cx="846.0" cy="259.0" r="4" fill="#030303" stroke="#00ff41" stroke-width="2" filter="url(#glow)"/><text x="846.0" y="249.0" text-anchor="middle" font-size="8.5" fill="#00ff41" font-weight="700">1</text><circle cx="908.0" cy="228.8" r="4" fill="#030303" stroke="#00ff41" stroke-width="2" filter="url(#glow)"/><text x="908.0" y="218.8" text-anchor="middle" font-size="8.5" fill="#00ff41" font-weight="700">6</text><circle cx="970.0" cy="222.7" r="4" fill="#030303" stroke="#00ff41" stroke-width="2" filter="url(#glow)"/><text x="970.0" y="212.7" text-anchor="middle" font-size="8.5" fill="#00ff41" font-weight="700">7</text><circle cx="1032.0" cy="150.2" r="4" fill="#030303" stroke="#00ff41" stroke-width="2" filter="url(#glow)"/><text x="1032.0" y="140.2" text-anchor="middle" font-size="8.5" fill="#00ff41" font-weight="700">19</text><circle cx="1094.0" cy="132.1" r="4" fill="#030303" stroke="#00ff41" stroke-width="2" filter="url(#glow)"/><text x="1094.0" y="122.1" text-anchor="middle" font-size="8.5" fill="#00ff41" font-weight="700">22</text><circle cx="1156.0" cy="132.1" r="4" fill="#030303" stroke="#00ff41" stroke-width="2" filter="url(#glow)"/><text x="1156.0" y="122.1" text-anchor="middle" font-size="8.5" fill="#00ff41" font-weight="700">22</text>
+<text x="846.0" y="281" text-anchor="middle" font-size="7.5" fill="#777">Sep '25</text><text x="908.0" y="281" text-anchor="middle" font-size="7.5" fill="#777">Jun '26</text><text x="970.0" y="281" text-anchor="middle" font-size="7.5" fill="#777">Jul '26</text><text x="1032.0" y="281" text-anchor="middle" font-size="7.5" fill="#777">Aug '26</text><text x="1094.0" y="281" text-anchor="middle" font-size="7.5" fill="#777">Sep '26</text><text x="1156.0" y="281" text-anchor="middle" font-size="7.5" fill="#777">Nov '26</text>
+</svg>

@@ -1,39 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" width="1200" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 96" width="1200" height="96">
+
 <defs>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
-text{font-family:'JetBrains Mono',monospace}
-@keyframes scanH{0%{transform:translateX(-100px)}100%{transform:translateX(1300px)}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.sc{animation:scanH 8s linear infinite;opacity:.08}
-.bk{animation:blink 1.2s step-end infinite}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap');
+text{font-family:'JetBrains Mono','Fira Code',monospace}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes scan{0%{transform:translateY(-400px)}100%{transform:translateY(400px)}}
+@keyframes flow{0%{stroke-dashoffset:40}100%{stroke-dashoffset:0}}
+@keyframes dashDraw{0%{stroke-dashoffset:600}100%{stroke-dashoffset:0}}
+@keyframes nodePulse{0%,100%{r:3;opacity:.5}50%{r:4.8;opacity:1}}
+.pl{animation:pulse 3s ease-in-out infinite}
+.sc{animation:scan 9s linear infinite;opacity:.035}
+.flw{stroke-dasharray:6 6;animation:flow 2.5s linear infinite}
+.dd{stroke-dasharray:600;animation:dashDraw 3s ease-out forwards}
+.np{animation:nodePulse 2.6s ease-in-out infinite}
 </style>
+<filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="shadow"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity=".65"/></filter>
+<linearGradient id="glassBg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#0f1511" stop-opacity=".88"/>
+  <stop offset="50%" stop-color="#080b09" stop-opacity=".92"/>
+  <stop offset="100%" stop-color="#0b100d" stop-opacity=".86"/>
+</linearGradient>
+<linearGradient id="glassRim" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".35"/>
+  <stop offset="35%" stop-color="#ffffff" stop-opacity=".12"/>
+  <stop offset="70%" stop-color="#00ff41" stop-opacity=".08"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity=".28"/>
+</linearGradient>
+<linearGradient id="glassShine" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#ffffff" stop-opacity=".08"/>
+  <stop offset="45%" stop-color="#ffffff" stop-opacity=".02"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".32"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity=".01"/>
+</linearGradient>
+<radialGradient id="ambient" cx="50%" cy="50%" r="55%">
+  <stop offset="0%" stop-color="#00ff41" stop-opacity=".07"/>
+  <stop offset="100%" stop-color="#00ff41" stop-opacity="0"/>
+</radialGradient>
 </defs>
-<rect width="1200" height="80" fill="#0a0a0a"/>
-<!-- Top line -->
-<rect x="0" y="0" width="1200" height="1" fill="#00ff41" opacity=".2"/>
-<!-- Scan -->
-<rect x="0" y="0" width="80" height="80" fill="#00ff41" class="sc"/>
-<!-- Grid dots -->
-<g opacity=".06">
-<circle cx="30" cy="40" r="1" fill="#00ff41"/><circle cx="60" cy="40" r="1" fill="#00ff41"/>
-<circle cx="90" cy="40" r="1" fill="#00ff41"/><circle cx="120" cy="40" r="1" fill="#00ff41"/>
-<circle cx="1080" cy="40" r="1" fill="#00ff41"/><circle cx="1110" cy="40" r="1" fill="#00ff41"/>
-<circle cx="1140" cy="40" r="1" fill="#00ff41"/><circle cx="1170" cy="40" r="1" fill="#00ff41"/>
+
+<rect width="1200" height="96" fill="#030303"/>
+
+<g filter="url(#shadow)">
+  <rect x="12" y="8" width="1176" height="80" rx="14" fill="url(#glassBg)" stroke="url(#glassRim)" stroke-width="1"/>
+  <rect x="13" y="9" width="1174" height="22.4" rx="13" fill="url(#glassShine)"/>
+  <rect x="12" y="8" width="1176" height="80" rx="14" fill="url(#ambient)"/>
+  <line x1="26" y1="8.5" x2="1174" y2="8.5" stroke="#ffffff" stroke-opacity=".18" stroke-width=".7"/>
 </g>
-<!-- Signature -->
-<text x="600" y="30" text-anchor="middle" font-size="9" fill="#333" letter-spacing="3">DESIGNED &amp; BUILT BY</text>
-<text x="600" y="50" text-anchor="middle" font-size="16" fill="#00ff41" font-weight="700" letter-spacing="4" opacity=".7">SUMANTH</text>
-<text x="600" y="65" text-anchor="middle" font-size="7" fill="#333" letter-spacing="2">© 2024-2027 · LEARN · BUILD · GROW</text>
-<!-- Terminal cursor -->
-<rect x="678" y="40" width="8" height="14" fill="#00ff41" opacity=".5" class="bk"/>
-<!-- Corner accents -->
-<line x1="15" y1="10" x2="15" y2="25" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
-<line x1="15" y1="10" x2="30" y2="10" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
-<line x1="1185" y1="10" x2="1185" y2="25" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
-<line x1="1170" y1="10" x2="1185" y2="10" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
-<line x1="15" y1="70" x2="15" y2="55" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
-<line x1="15" y1="70" x2="30" y2="70" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
-<line x1="1185" y1="70" x2="1185" y2="55" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
-<line x1="1170" y1="70" x2="1185" y2="70" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
+
+<rect x="12" y="8" width="1176" height="2" fill="#00ff41" class="sc"/>
+<text x="600" y="34" text-anchor="middle" font-size="8.5" fill="#6d8c75" letter-spacing="3">DESIGNED &amp; ENGINEERED BY</text>
+<text x="600" y="57" text-anchor="middle" font-size="18" fill="#00ff41" font-weight="800" letter-spacing="5" filter="url(#glow)">SUMANTH</text>
+<text x="600" y="75" text-anchor="middle" font-size="8" fill="#5e5e5e" letter-spacing="2">B.TECH CSE 2027 · AI · FULL-STACK · CLOUD</text>
 </svg>
