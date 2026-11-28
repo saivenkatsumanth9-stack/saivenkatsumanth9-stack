@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" width="1200" height="80">
+<defs>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
+text{font-family:'JetBrains Mono',monospace}
+@keyframes scanH{0%{transform:translateX(-100px)}100%{transform:translateX(1300px)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.sc{animation:scanH 8s linear infinite;opacity:.08}
+.bk{animation:blink 1.2s step-end infinite}
+</style>
+</defs>
+<rect width="1200" height="80" fill="#0a0a0a"/>
+<!-- Top line -->
+<rect x="0" y="0" width="1200" height="1" fill="#00ff41" opacity=".2"/>
+<!-- Scan -->
+<rect x="0" y="0" width="80" height="80" fill="#00ff41" class="sc"/>
+<!-- Grid dots -->
+<g opacity=".06">
+<circle cx="30" cy="40" r="1" fill="#00ff41"/><circle cx="60" cy="40" r="1" fill="#00ff41"/>
+<circle cx="90" cy="40" r="1" fill="#00ff41"/><circle cx="120" cy="40" r="1" fill="#00ff41"/>
+<circle cx="1080" cy="40" r="1" fill="#00ff41"/><circle cx="1110" cy="40" r="1" fill="#00ff41"/>
+<circle cx="1140" cy="40" r="1" fill="#00ff41"/><circle cx="1170" cy="40" r="1" fill="#00ff41"/>
+</g>
+<!-- Signature -->
+<text x="600" y="30" text-anchor="middle" font-size="9" fill="#333" letter-spacing="3">DESIGNED &amp; BUILT BY</text>
+<text x="600" y="50" text-anchor="middle" font-size="16" fill="#00ff41" font-weight="700" letter-spacing="4" opacity=".7">SUMANTH</text>
+<text x="600" y="65" text-anchor="middle" font-size="7" fill="#333" letter-spacing="2">© 2024-2027 · LEARN · BUILD · GROW</text>
+<!-- Terminal cursor -->
+<rect x="678" y="40" width="8" height="14" fill="#00ff41" opacity=".5" class="bk"/>
+<!-- Corner accents -->
+<line x1="15" y1="10" x2="15" y2="25" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
+<line x1="15" y1="10" x2="30" y2="10" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
+<line x1="1185" y1="10" x2="1185" y2="25" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
+<line x1="1170" y1="10" x2="1185" y2="10" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
+<line x1="15" y1="70" x2="15" y2="55" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
+<line x1="15" y1="70" x2="30" y2="70" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
+<line x1="1185" y1="70" x2="1185" y2="55" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
+<line x1="1170" y1="70" x2="1185" y2="70" stroke="#00ff41" stroke-width=".5" opacity=".3"/>
+</svg>
